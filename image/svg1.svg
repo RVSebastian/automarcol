@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <path stroke="#FFF" stroke-opacity="0" d="M0 48L48 48 48 0 0 0z" transform="translate(-406 -1474) translate(244 1419) translate(163 56)"/>
+                    <g>
+                        <path stroke="#16212A" stroke-linecap="round" stroke-linejoin="round" d="M6 21.5c0-.276-.223-.5-.5-.5-.276 0-.5.224-.5.5 0 .277.224.501.5.501.277 0 .5-.224.5-.5z" transform="translate(-406 -1474) translate(244 1419) translate(163 56) translate(6 8)"/>
+                        <path stroke="#16212A" stroke-linecap="round" stroke-linejoin="round" d="M3 21.5C3 20.12 4.12 19 5.5 19S8 20.12 8 21.5 6.88 24 5.5 24 3 22.88 3 21.5zM6 6.5c0-.276-.223-.5-.5-.5-.276 0-.5.224-.5.5 0 .277.224.502.5.502.277 0 .5-.225.5-.501z" transform="translate(-406 -1474) translate(244 1419) translate(163 56) translate(6 8)"/>
+                        <path stroke="#16212A" stroke-linecap="round" stroke-linejoin="round" d="M3 6.5C3 5.12 4.12 4 5.5 4S8 5.12 8 6.5 6.88 9 5.5 9 3 7.88 3 6.5zM19.765 3.765L9.412 7.529M7.529 10.353L7.529 17.882M3.706 17.882L3.706 10.353M8.733 21.647L9.889 21.647 11.294 26.85 11.294 32 0 32 0 26.85 1.439 21.647 2.561 21.647M20.706 13.176L20.706 16M8.47 3.765L19.867.1c1.25-.403 2.605.444 2.715 1.778.005.063.007.126.007.19" transform="translate(-406 -1474) translate(244 1419) translate(163 56) translate(6 8)"/>
+                        <path stroke="#16212A" stroke-linecap="round" stroke-linejoin="round" d="M22.588 1.882h0c-.166 3.048-.415 6.09-.747 9.12l-.13 1.177c-.099.58-.548.997-1.07.997-.523 0-.972-.418-1.071-.997l-.627-5.724-.12-1.132M27 29c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3zM36.706 22.588h-3.7c-2.27 0-4.513-.627-6.583-1.841l-.07-.041M19.765 29.176h-2.83c-1.036 0-1.876-1.023-1.876-2.286v-.537" transform="translate(-406 -1474) translate(244 1419) translate(163 56) translate(6 8)"/>
+                        <path stroke="#16212A" stroke-linecap="round" stroke-linejoin="round" d="M36.706 16.941c-2.61.077-5.519.696-8.487 2.318l-2.423 1.368s-7.491.006-10.737 3.21v1.575h1.53l1.48-.838v-.903M36.5 29.5L28.5 29.5" transform="translate(-406 -1474) translate(244 1419) translate(163 56) translate(6 8)"/>
+                        <path fill="#EF0C1B" d="M24 30c-.552 0-1-.449-1-1 0-.551.448-1 1-1 .551 0 1 .449 1 1 0 .551-.449 1-1 1" transform="translate(-406 -1474) translate(244 1419) translate(163 56) translate(6 8)"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
