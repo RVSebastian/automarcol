@@ -3,127 +3,27 @@
         <div class='header-chat' style="background: var(--main);">
             <div class="encabezado pt-4">
                 <h3>Lista de contactos</h3>
-
             </div>
         </div>
-        <a href="https://web.whatsapp.com/send?phone=573222863938&text=Hola" target="_blank">
-            <div class='header-chat'>
-                <div class='head-home'>
+        <?php
+            $query = "SELECT * FROM usuarios WHERE contactable='SI'";
+            $result_task = mysqli_query($conn, $query);
+            while ($row = mysqli_fetch_array($result_task)) { ?>
+            <a href="https://web.whatsapp.com/send?phone=57<?php echo $row['telefono'] ?>" target="_blank">
+                <div class='header-chat'>
+                    <div class='head-home'>
+                        <div class='info-avatar'><img src='./image/plantilla.jpg' /></div>
+                    </div>
+                    <div class='get-new'>
+                        <div id='get-label'><?php echo $row['cargo'] ?></div>
+                        <div id='get-nama'><?php echo $row['nombre'] ?></div>
 
-                    <div class='info-avatar'><img src='./image/plantilla.jpg' /></div>
-
+                    </div>
                 </div>
+            </a>
+        <?php } ?>
 
-                <div class='get-new'>
-                    <div id='get-label'>Contact Center</div>
-                    <div id='get-nama'>Sebastian</div>
 
-                </div>
-            </div>
-        </a>
-        <a href="https://web.whatsapp.com/send?phone=573222863938&text=Hola" target="_blank">
-            <div class='header-chat'>
-                <div class='head-home'>
-
-                    <div class='info-avatar'><img src='./image/plantilla.jpg' /></div>
-
-                </div>
-
-                <div class='get-new'>
-                    <div id='get-label'>Asesor Ford</div>
-                    <div id='get-nama'>Sebastian</div>
-
-                </div>
-            </div>
-        </a>
-        <a href="https://web.whatsapp.com/send?phone=573222863938&text=Hola" target="_blank">
-            <div class='header-chat'>
-                <div class='head-home'>
-
-                    <div class='info-avatar'><img src='./image/plantilla.jpg' /></div>
-
-                </div>
-
-                <div class='get-new'>
-                    <div id='get-label'>Asesor Bajaj</div>
-                    <div id='get-nama'>Sebastian</div>
-
-                </div>
-            </div>
-        </a> <a href="https://web.whatsapp.com/send?phone=573222863938&text=Hola" target="_blank">
-            <div class='header-chat'>
-                <div class='head-home'>
-
-                    <div class='info-avatar'><img src='./image/plantilla.jpg' /></div>
-
-                </div>
-
-                <div class='get-new'>
-                    <div id='get-label'>Asesor Peugeot</div>
-                    <div id='get-nama'>Sebastian</div>
-
-                </div>
-            </div>
-        </a> <a href="https://web.whatsapp.com/send?phone=573222863938&text=Hola" target="_blank">
-            <div class='header-chat'>
-                <div class='head-home'>
-
-                    <div class='info-avatar'><img src='./image/plantilla.jpg' /></div>
-
-                </div>
-
-                <div class='get-new'>
-                    <div id='get-label'>Asesor FCA</div>
-                    <div id='get-nama'>Sebastian</div>
-
-                </div>
-            </div>
-        </a>
-        <a href="https://web.whatsapp.com/send?phone=573222863938&text=Hola" target="_blank">
-            <div class='header-chat'>
-                <div class='head-home'>
-
-                    <div class='info-avatar'><img src='./image/plantilla.jpg' /></div>
-
-                </div>
-
-                <div class='get-new'>
-                    <div id='get-label'>Asesor Foton</div>
-                    <div id='get-nama'>Sebastian</div>
-
-                </div>
-            </div>
-        </a>
-        <a href="https://web.whatsapp.com/send?phone=573222863938&text=Hola" target="_blank">
-            <div class='header-chat'>
-                <div class='head-home'>
-
-                    <div class='info-avatar'><img src='./image/plantilla.jpg' /></div>
-
-                </div>
-
-                <div class='get-new'>
-                    <div id='get-label'>Repuestos Ford</div>
-                    <div id='get-nama'>Sebastian</div>
-
-                </div>
-            </div>
-        </a>
-        <a href="https://web.whatsapp.com/send?phone=573222863938&text=Hola" target="_blank">
-            <div class='header-chat'>
-                <div class='head-home'>
-
-                    <div class='info-avatar'><img src='./image/plantilla.jpg' /></div>
-
-                </div>
-
-                <div class='get-new'>
-                    <div id='get-label'>Repuestos Multimarcas</div>
-                    <div id='get-nama'>Sebastian</div>
-
-                </div>
-            </div>
-        </a>
         <br>
         <br>
         <div id='get-number'></div><a class='close-chat' style="text-decoration: none;" onclick="cerrar_chat();">×</a>

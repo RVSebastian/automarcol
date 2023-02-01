@@ -49,7 +49,7 @@
                                 <p class="fs-4 fw-bold">DOMINGO</p>
                                 <p class="fs-4">CERRADO</p>
                             </div>
-                            <p class="fs-4 text-center text-muted">Encuentranos en la Av. Libertadores #2-160, Cúcuta,
+                            <p class="fs-4 text-center  text-black">Encuentranos en la Av. Libertadores #2-160, Cúcuta,
                                 Norte de Santander</p>
                             <div class="d-grid gap-2">
                                 <button class="btn btn-dark fs-3" type="button" data-bs-toggle="modal"

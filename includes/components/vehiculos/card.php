@@ -1,19 +1,18 @@
 <style>
 .vehicle {
-    margin: 30px;
-    margin-bottom: 30px;
-    height: 44rem;
+    margin: 8px;
+    margin-bottom: 5px;
+    height: 35rem;
     background-color: white;
-    width: 32rem;
-     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 30rem;
+    border-radius: 10px;
+
 }
 
 .vehicle img {
     width: 100% !important;
-    height: 30rem !important;
-    border-radius: 8px 8px 0px 0px;
-    margin-bottom: 30px;
-    padding: auto;
+    height: 18rem !important;
+    margin-bottom: 50px;
 }
 
 .vehicle:hover img {
@@ -30,265 +29,77 @@ figure {
 
 .vehicle .bg-dark {}
 
-.card {
+.Ford .fondo-marca {
+    background-color: var(--main) !important;
+}
+
+.Peugeot .fondo-marca {
+    background-color: #5D6D7E !important;
+}
+
+.Bajaj .fondo-marca {
+    background-color: var(--main) !important;
+}
+
+.Foton .fondo-marca {
+    background-color: #CCD1D1 !important;
+}
+
+.Fca .fondo-marca {
+    background-color: gray !important;
+}
+
+.vehiculosc .card {
     border-radius: 25px !important;
 }
+.fondo-marca , .text-muted{
+    color: white !important;
+}
 </style>
-<div class="container">
-    <div class="row animate__animated animate__fadeInLeftBig animate__delay-1s animate__slow">
-        <div class="col-md-12">
-            <div class="card-carousel rounded pb-2"
-                data-flickity='{ "cellAlign": "center", "contain": true, "draggable": true, "prevNextButtons": false, "pageDots": false, "autoPlay": 6000, "friction": 0.5, "selectedAttraction": 0.15 }'>
-                <div class="card rounded vehicle carousel-cells border">
-                    <figure class="bg-dark" style="border-radius: 30% 70% 59% 41% / 30% 41% 59% 70% ;"> <img src="./image/fotobase.png"
-                            class="card-img-top rounded">
-                    </figure>
 
-                    <div class="container p-4 pb-0">
-                        <div class="position-relative">
-                            <div class="position-absolute bottom-0">
-                                <div class="card-body p-4 bg-white" style="border-radius: 20px 20px 0px 0px">
-                                    <h2 class="card-title fs-3">SUZUKI SWIFT DZIRE GA 1.2 2016</h2>
-                                </div>
+<div class="container vehiculosc tagline animation_repuestos">
+    <div class="row">
+        <?php
+            foreach ($data as $datos){
+            ?>
+        <div class="col-sm-12 col-md-3">
+            <div class="card rounded vehicle carousel-cells shadow border-0 mx-auto animation_repuestos">
+                <figure class="card-img-top"> 
+                    <!--<img src="./dashboard/galery/<?php echo $datos['Version_DescipcionModelo'];?>/<?php echo $datos['PresentationIMG'];?>" class="img-fluid"> -->
+                    <img src="https://www.ford.com.co/content/ford/co/es_co/home/jcr:content/par/tabpanel/tabs-0/splitter_957603780/splitter2/mediacarouselitem_846172113/image.imgs.full.high.jpg/1670958810803.jpg" class="img-fluid">
+                </figure>
+                <div class="container p-2 pt-4 pb-0">
+                    <div class="position-relative">
+                        <div class="position-absolute bottom-0" style='width: 100%'>
+                            <div class="card-body p-2 fondo-marca text-center" style="border-radius: 20px 20px 0px 0px">
+                                <h2 class="card-title fs-4"><?php echo $datos['Version_DescipcionModelo'];?></h2>
                             </div>
                         </div>
-                        <a href="./detalle" class="stretched-link"></a>      
                     </div>
-                    <div class="p-2 pt-0 pb-0">
-                        <div class="row">
-                            <div class="col-6">
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Oil: Gasolina</p>
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Traction: 4x4</p>
-                            </div>
-                            <div class="col-6">
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Oil: Gasolina</p>
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Traction: 4x4</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                
-                <div class="card rounded vehicle carousel-cells border  ">
-
-                     <figure class="bg-dark" style="border-radius: 15px;"> <img src="./image/fotobase.png"
-                            class="card-img-top rounded">
-                    </figure>
-
-                    <div class="container p-4 pb-0">
-                        <div class="position-relative">
-                            <div class="position-absolute bottom-0">
-                                <div class="card-body p-4 bg-white" style="border-radius: 20px 20px 0px 0px">
-                                    <h2 class="card-title fs-3">SUZUKI SWIFT DZIRE GA 1.2 2016</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="./detalle" class="stretched-link"></a>
-                    </div>
-                    <div class="p-2 pt-0 pb-0">
-                        <div class="row">
-                            <div class="col-6">
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Oil: Gasolina</p>
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Traction: 4x4</p>
-                            </div>
-                            <div class="col-6">
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Oil: Gasolina</p>
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Traction: 4x4</p>
-                            </div>
-                        </div>
-                        <a href="./detalle" class="stretched-link"></a>
-                    </div>
-                </div>
-                <div class="card rounded vehicle carousel-cells border  ">
-
-                     <figure class="bg-dark" style="border-radius: 15px;"> <img src="./image/fotobase.png"
-                            class="card-img-top rounded">
-                    </figure>
-
-                    <div class="container p-4 pb-0">
-                        <div class="position-relative">
-                            <div class="position-absolute bottom-0">
-                                <div class="card-body p-4 bg-white" style="border-radius: 20px 20px 0px 0px">
-                                    <h2 class="card-title fs-3">SUZUKI SWIFT DZIRE GA 1.2 2016</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="./detalle" class="stretched-link"></a>
-                    </div>
-                    <div class="p-2 pt-0 pb-0">
-                        <div class="row">
-                            <div class="col-6">
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Oil: Gasolina</p>
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Traction: 4x4</p>
-                            </div>
-                            <div class="col-6">
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Oil: Gasolina</p>
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Traction: 4x4</p>
-                            </div>
-                        </div>
-                        <a href="./detalle" class="stretched-link"></a>
-                    </div>
-                </div>
-                <div class="card rounded vehicle carousel-cells border  ">
-
-                     <figure class="bg-dark" style="border-radius: 15px;"> <img src="./image/fotobase.png"
-                            class="card-img-top rounded">
-                    </figure>
-
-                    <div class="container p-4 pb-0">
-                        <div class="position-relative">
-                            <div class="position-absolute bottom-0">
-                                <div class="card-body p-4 bg-white" style="border-radius: 20px 20px 0px 0px">
-                                    <h2 class="card-title fs-3">SUZUKI SWIFT DZIRE GA 1.2 2016</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="./detalle" class="stretched-link"></a>
-                    </div>
-                    <div class="p-2 pt-0 pb-0">
-                        <div class="row">
-                            <div class="col-6">
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Oil: Gasolina</p>
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Traction: 4x4</p>
-                            </div>
-                            <div class="col-6">
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Oil: Gasolina</p>
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Traction: 4x4</p>
-                            </div>
-                        </div>
-                        <a href="./detalle" class="stretched-link"></a>
-                    </div>
-                </div>
-                <div class="card rounded vehicle carousel-cells border  ">
-
-                     <figure class="bg-dark" style="border-radius: 15px;"> <img src="./image/fotobase.png"
-                            class="card-img-top rounded">
-                    </figure>
-
-                    <div class="container p-4 pb-0">
-                        <div class="position-relative">
-                            <div class="position-absolute bottom-0">
-                                <div class="card-body p-4 bg-white" style="border-radius: 20px 20px 0px 0px">
-                                    <h2 class="card-title fs-3">SUZUKI SWIFT DZIRE GA 1.2 2016</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="./detalle" class="stretched-link"></a>
-                    </div>
-                    <div class="p-2 pt-0 pb-0">
-                        <div class="row">
-                            <div class="col-6">
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Oil: Gasolina</p>
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Traction: 4x4</p>
-                            </div>
-                            <div class="col-6">
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Oil: Gasolina</p>
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Traction: 4x4</p>
-                            </div>
-                        </div>
-                        <a href="./detalle" class="stretched-link"></a>
-                    </div>
-                </div>
-                <div class="card rounded vehicle carousel-cells border  ">
-
-                     <figure class="bg-dark" style="border-radius: 15px;"> <img src="./image/fotobase.png"
-                            class="card-img-top rounded">
-                    </figure>
-
-                    <div class="container p-4 pb-0">
-                        <div class="position-relative">
-                            <div class="position-absolute bottom-0">
-                                <div class="card-body p-4 bg-white" style="border-radius: 20px 20px 0px 0px">
-                                    <h2 class="card-title fs-3">SUZUKI SWIFT DZIRE GA 1.2 2016</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="./detalle" class="stretched-link"></a>
-                    </div>
-                    <div class="p-2 pt-0 pb-0">
-                        <div class="row">
-                            <div class="col-6">
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Oil: Gasolina</p>
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Traction: 4x4</p>
-                            </div>
-                            <div class="col-6">
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Oil: Gasolina</p>
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Traction: 4x4</p>
-                            </div>
-                        </div>
-                        <a href="./detalle" class="stretched-link"></a>
-                    </div>
-                </div>
-                <div class="card rounded vehicle carousel-cells border  ">
-
-                     <figure class="bg-dark" style="border-radius: 15px;"> <img src="./image/fotobase.png"
-                            class="card-img-top rounded">
-                    </figure>
-
-                    <div class="container p-4 pb-0">
-                        <div class="position-relative">
-                            <div class="position-absolute bottom-0">
-                                <div class="card-body p-4 bg-white" style="border-radius: 20px 20px 0px 0px">
-                                    <h2 class="card-title fs-3">SUZUKI SWIFT DZIRE GA 1.2 2016</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="./detalle" class="stretched-link"></a>
-                    </div>
-                    <div class="p-2 pt-0 pb-0">
-                        <div class="row">
-                            <div class="col-6">
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Oil: Gasolina</p>
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Traction: 4x4</p>
-                            </div>
-                            <div class="col-6">
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Oil: Gasolina</p>
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Traction: 4x4</p>
-                            </div>
-                        </div>
-                        <a href="./detalle" class="stretched-link"></a>
-                    </div>
-                </div>
-                <div class="card rounded vehicle carousel-cells border  ">
-
-                     <figure class="bg-dark" style="border-radius: 15px;"> <img src="./image/fotobase.png"
-                            class="card-img-top rounded">
-                    </figure>
-
-                    <div class="container p-4 pb-0">
-                        <div class="position-relative">
-                            <div class="position-absolute bottom-0">
-                                <div class="card-body p-4 bg-white" style="border-radius: 20px 20px 0px 0px">
-                                    <h2 class="card-title fs-3">SUZUKI SWIFT DZIRE GA 1.2 2016</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="./detalle" class="stretched-link"></a>
-                    </div>
-                    <div class="p-2 pt-0 pb-0">
-                        <div class="row">
-                            <div class="col-6">
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Oil: Gasolina</p>
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Traction: 4x4</p>
-                            </div>
-                            <div class="col-6">
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Oil: Gasolina</p>
-                                <p class="fs-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Traction: 4x4</p>
-                            </div>
-                        </div>
-                        <a href="./detalle" class="stretched-link"></a>
-                    </div>
+                    <a href="./detalle?modelo=<?php echo $datos['Version_DescipcionModelo'];?>" class="stretched-link"></a>
                 </div>
 
+                <div class="p-2 pt-4 fondo-marca">
+                    <div class="row  align-items-center">
+                        <div class="col-6">
+                            <p class="fs-5 m-0 mb-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Oil: <?php echo $datos['Combustible'];?></p>
+                            <p class="fs-5 m-0 mb-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Traction: <?php echo $datos['Traccion'];?></p>
+                        </div>
+                        <div class="col-6">
+                            <p class="fs-5 m-0 mb-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Cilindraje: <?php echo $datos['Cilindraje'];?></p>
+                            <p class="fs-5 m-0 mb-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Cojineria: <?php echo $datos['Cojineria'];?></p>
+                        </div>
+                    </div>
 
-
-
+                </div>
             </div>
         </div>
+        <?php
+            }
+            ?>
     </div>
 
 </div>
-
 
 <script>
 var elem = document.querySelector('.card-carrousel');

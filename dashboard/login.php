@@ -1,22 +1,20 @@
-<?php include'./includes/cn.php';?>
-<?php
-
-session_start();
-
-
-
+<?php 
+include'./includes/cn.php';
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 if(isset($_POST['login'])){
     $usuario = $_POST['usuario'];
     $contraseña = $_POST['contraseña'];
-    $query = "SELECT * FROM usuarios WHERE usuario='$usuario' and contraseña='$contraseña' and estado='activo'";
+    $query = "SELECT usuario,cargo FROM usuarios WHERE usuario='$usuario' and contraseña='$contraseña' and estado='activo'";
     $result = mysqli_query($conn, $query);
-    
     while ($row = mysqli_fetch_array($result)) { 
     $_SESSION['key'] = $row;
+    $_SESSION['ipaddress'] =  $_SERVER['REMOTE_ADDR'];
+    $_SESSION['useragent'] =  $_SERVER['HTTP_USER_AGENT'];
     header("Location: index");
     }
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,6 +1,30 @@
 <?php include'./includes/components/header.php';?>
-
+<?php include'./dashboard/includes/cn.php';?>
+<?php 
+function cotizor(){
+    if (isset($_POST['cotizor'])) {
+      
+    }
+}
+?>
 <style>
+figure {
+    overflow: hidden;
+}
+
+.galery img:hover {
+    -webkit-transform: rotate(3deg) scale(1.2);
+    transform: rotate(3deg) scale(1.2);
+    -webkit-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
+}
+
+.img-thumbnail {
+    border: 0;
+    margin: 10px;
+    padding: 0;
+}
+
 .carousel-cell {
     width: 100%;
     counter-increment: carousel-cell;
@@ -64,165 +88,231 @@
 
 .fs-2 {
     color: var(--main) !important;
-    font-size: 35px;
-    font-weight: 600;
 
 }
+
+input,
+select {
+    padding: 6px !important;
+    border: 0 !important;
+    font-size: 15px !important;
+    background-color: #EBEDEF !important;
+}
+
+.ch {
+    background-color: var(--main) !important;
+}
+
+.text-dark {
+    color: var(--main) !important;
+}
+
+.colores {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.colores img {
+    width: 50px;
+    margin: 5px;
+}
+
+.colores li {
+    list-style: none !important;
+    display: inline-block !important;
+
+}
+
+.colores u {
+    justify-content: center !important;
+}
+
+@media (max-width: 1200px) {
+
+    .wall h2,
+    h1 {
+        font-size: 2rem !important;
+    }
+}
+
+@media (max-width: 770px) {
+    .top-50 {
+        top: 10% !important;
+    }
+}
 </style>
-<section class="bg-gray">
-    <br>
-    <div class="container-md  rounded  md-p-4">
-        <div class="row sm-p-2 md-p-4 pt-5">
-            <div class="col-md-8 md-p-5">
-                <div class="carousel carousel-main h-80"
-                    data-flickity='{"contain": true, "prevNextButtons": true, "pageDots": false}'>
-                    <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                            src="image/detail1.webp" alt=""></div>
-                    <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                            src="image/detail2.webp" alt=""></div>
-                    <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                            src="image/detail3.webp" alt=""></div>
-                    <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                            src="image/detail4.webp" alt=""></div>
-                    <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                            src="image/detail5.webp" alt=""></div>
-                    <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                            src="image/detail6.webp" alt=""></div>
-                    <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                            src="image/detail7.webp" alt=""></div>
-                </div>
-                <div class="carousel carousel-nav"
-                    data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false, "prevNextButtons": false }'>
-                    <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                            src="image/detail1.webp" alt=""></div>
-                    <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                            src="image/detail2.webp" alt=""></div>
-                    <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                            src="image/detail3.webp" alt=""></div>
-                    <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                            src="image/detail4.webp" alt=""></div>
-                    <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                            src="image/detail5.webp" alt=""></div>
-                    <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                            src="image/detail6.webp" alt=""></div>
-                    <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                            src="image/detail7.webp" alt=""></div>
-                </div>
-                <div class="bg-white rounded p-4 mb-4 mt-4">
-                    <p class="fs-4 text-muted">2022 | 0 km · Publicado hace 51 días</p>
-                    <h1 class="fs-1">Ford Bronco Wildtrak 2.0 2022 </h2>
-                        <p class="fs-4 pt-2 text-justify">
-                            Publicado por <span class="fw-bold" style="color: var(--main)">Sebastian Vargaz</span>
-                        </p>
-                        <h1 class="fs-1 fw-bold" style="color: var(--main)">$195.990.000</h1>
-                        <a href="" class="btn btn-success fs-3"><i class="fab fa-whatsapp"></i> Contactar a un
-                            Asesor</a>
-                </div>
-                <div class="bg-white rounded  p-4 mt-4">
-                    <h1 class="fs-3 text-muted p-2">Caracteristicas</h2>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-8 col-sm-12">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <img src="./image/svg1.svg" class="img-fluid w-100">
-                                    </div>
-                                    <div class="col-8">
-                                        <h2 class="fs-3">Titulo</h2>
-                                        <p class="fs-4">Descripcion</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-8 col-sm-12">
-                                <div class="row">
-                                    <div class="col-4 ml-0">
-                                        <img src="./image/svg2.svg" class="img-fluid w-100">
-                                    </div>
-                                    <div class="col-8">
-                                        <h2 class="fs-3">Titulo</h2>
-                                        <p class="fs-4">Descripcion</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-8 col-sm-12">
-                                <div class="row">
-                                    <div class="col-4 ml-0">
-                                        <img src="./image/svg3.svg" class="img-fluid w-100">
-                                    </div>
-                                    <div class="col-8">
-                                        <h2 class="fs-3">Titulo</h2>
-                                        <p class="fs-4">Descripcion</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-8 col-sm-12">
-                                <div class="row">
-                                    <div class="col-4 ml-0">
-                                        <img src="./image/sv4.svg" class="img-fluid w-100">
-                                    </div>
-                                    <div class="col-8">
-                                        <h2 class="fs-3">Titulo</h2>
-                                        <p class="fs-4">Descripcion</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-8 col-sm-12">
-                                <div class="row">
-                                    <div class="col-4 ml-0">
-                                        <img src="./image/svg5.svg" class="img-fluid w-100">
-                                    </div>
-                                    <div class="col-8">
-                                        <h2 class="fs-3">Titulo</h2>
-                                        <p class="fs-4">Descripcion</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-8 col-sm-12">
-                                <div class="row">
-                                    <div class="col-4 ml-0">
-                                        <img src="./image/svg6.svg" class="img-fluid w-100">
-                                    </div>
-                                    <div class="col-8">
-                                        <h2 class="fs-3">Titulo</h2>
-                                        <p class="fs-4">Descripcion</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-                <div class="bg-white rounded  p-4 mb-4 mt-4">
-                    <h1 class="fs-2 text-muted">Información de la tienda</h2>
+<br>
 
-                        <h3 class="p-2"><i class='bx bx-time-five'></i> Horario de atención
-                    </h1>
-                    <p class="fs-4">Lunes a Domingo</p>
-                    <h3 class="p-2"><i class='bx bxs-map'></i> Ubicación del vehículo</h1>
-                        <p class="fs-4 pl-4"> Zona Franca, Av. Libertadores #2-160, Cúcuta</p>
-
-                </div>
-                <h3 class="p-4 text-center text-muted"><i class="fas fa-shield-alt"></i>¿Necesitas ayuda? Llámanos al
-                    12345 1246 12514</h2>
+<section class="bg-gray pt-5 mt-5">
+    <div class="container wl animate__animated animate__slideInDown animate__delay-1s animate__slow">
+        <div class="position-relative">
+            <div class="position-absolute top-50 end-0 p-4 text-white wall">
+                <h2 class="p-0 m-0">FORD</h2>
+                <h1 style="font-size:60px" class="pb-0 mb-0">RANGER XLT</h1>
+                <h1 class="fs-1 fw-bold" style="font-size: 70px;">$195.990.000</h1>
+                <a href="https://web.whatsapp.com/send?phone=573222863938" class="btn btn-success fs-3"><i
+                        class="fab fa-whatsapp"></i> Contactar a un Asesor</a>
             </div>
+            <img src="https://www.ford.com.co/content/ford/co/es_co/ranger-content/billboard-carousels/overview-header/jcr:content/par/billboard_1471196822/imageComponent/image.imgs.full.high.jpg"
+                class="img-fluid shadow rounded rounded-4" alt=""
+                style="background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.131) 19%, rgba(0, 0, 0, 0.2295) 34%, rgba(0, 0, 0, 0.309) 47%, rgba(0, 0, 0, 0.361) 56.5%, rgba(0, 0, 0, 0.403) 65%, rgba(0, 0, 0, 0.437) 73%, rgba(0, 0, 0, 0.4625) 80.2%, rgba(0, 0, 0, 0.479) 86.1%, rgba(0, 0, 0, 0.4895) 91%, rgba(0, 0, 0, 0.496) 95.2%, rgba(0, 0, 0, 0.499) 98.2%, rgba(0, 0, 0, 0.5) 100%);">
+        </div>
+    </div>
+</section>
+<section class="bg-gray">
+    <div class="container rounded-3 bg-white animate__animated animate__slideInUp animate__delay-1s animate__slow"
+        style="background-color: #f7f7f7">
+        <div class="p-5">
+            <div class="row text-center">
+                <div class="col-md-3 col-sm-5 border-md-end border-sm-bottom border-2">
+                    <h1>Kilometraje</h1>
+                    <h1 class="text-dark">0</h1>
+                </div>
+                <div class="col-md-3 col-sm-5  border-md-end border-sm-bottom border-2">
+                    <h1>Estado</h1>
+                    <h1 class="text-dark">Nuevo</h1>
+                </div>
+                <div class="col-md-3 col-sm-6  border-md-end border-sm-bottom border-2">
+                    <h1>Transmisión</h1>
+                    <h1 class="text-dark">Automático</h1>
+                </div>
+                <div class="col-md-3 col-sm-6 border-2">
+                    <h1>Numero de Asientos</h1>
+                    <h1 class="text-dark">4</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-gray pt-0 mt-0 animate__animated animate__slideInUp animate__delay-2s animate__slow">
+    <div class="container-md md-p-4">
+        <div class="row sm-p-2 pt-5">
+            <div class="col-md-8 md-p-5 pt-0">
+                <!--
+                <div class="bg-white p-4 mt-2 rounded">
+                    <img src="https://www.ford.com.co/content/dam/Ford/website-assets/latam/co/nameplate/raptor/2021/colores/colorizer/negro-agata/fco-f150-raptor-colorizer-negro-agata.jpg.dam.full.high.jpg/1636765571485.jpg"
+                        alt="" class="img-fluid">
+
+                    <ul class="colores">
+                        <li> <img src="./image/color-gris.webp" alt=""></li>
+                        <li> <img src="./image/color-azul.webp" alt=""></li>
+                        <li> <img src="./image/color-rojo.webp" alt=""></li>
+                        <li> <img src="./image/color-blanco.webp" alt=""></li>
+                        <li> <img src="./image/color-naranja.webp" alt=""></li>
+                        <li> <img src="./image/color-negro.webp" alt=""></li>
+                    </ul>
+                </div>
+                -->
+                <div class="bg-white pt-4 p-4">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <p class="fs-2 m-0">Marca</p>
+                            <h2 class="m-0 fw-bold mb-4">Renault</h2>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="fs-2 m-0">Modelo</p>
+                            <h2 class="m-0 fw-bold mb-4">2022</h2>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="fs-2 m-0">Línea</p>
+                            <h2 class="m-0 fw-bold mb-4">Alaskan</h2>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="fs-2 m-0">Versión</p>
+                            <h2 class="m-0 fw-bold mb-4">INTENS AT 4x4</h2>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="fs-2 m-0">Combustible</p>
+                            <h2 class="m-0 fw-bold mb-4">Diesel</h2>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="fs-2 m-0">Cilindraje (motor)</p>
+                            <h2 class="m-0 fw-bold mb-4">2500 cc (2.5 L)</h2>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="fs-2 m-0">Tracción</p>
+                            <h2 class="m-0 fw-bold mb-4">4x4</h2>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="fs-2 m-0">Cojinería</p>
+                            <h2 class="m-0 fw-bold mb-4">Cuero</h2>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="galery rounded pt-2">
+                    <div class="row gx-0 gy-0">
+                        <div class="col-3">
+                            <figure>
+                                <img src="https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image1/image.imgs.full.high.jpg/1635456003638.jpg"
+                                    class="img-thumbnail">
+                            </figure>
+                        </div>
+                        <div class="col-3">
+                            <figure>
+                                <img src="https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image2/image.imgs.full.high.jpg/1635456907780.jpg"
+                                    class="img-thumbnail">
+                            </figure>
+                        </div>
+                        <div class="col-3">
+                            <figure>
+                                <img src="https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image3/image.imgs.full.high.jpg/1635456907110.jpg"
+                                    class="img-thumbnail">
+                            </figure>
+                        </div>
+                        <div class="col-3">
+                            <figure>
+                                <img src="https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image4/image.imgs.full.high.jpg/1635456906428.jpg"
+                                    class="img-thumbnail">
+                            </figure>
+                        </div>
+                        <div class="col-4">
+                            <figure>
+                                <img src="https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image5/image.imgs.full.high.jpg/1635456905820.jpg"
+                                    class="img-thumbnail">
+                            </figure>
+                        </div>
+                        <div class="col-4">
+                            <figure>
+                                <img src="https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image6/image.imgs.full.high.jpg/1635456902271.jpg"
+                                    class="img-thumbnail">
+                            </figure>
+                        </div>
+                        <div class="col-4">
+                            <figure>
+                                <img src="https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image7/image.imgs.full.high.jpg/1635457399335.jpg"
+                                    class="img-thumbnail">
+                            </figure>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
 
             <div class="col-md-4 p-4 pt-0 ml-4">
                 <div class="sticky-top" style="top:11rem">
-                    <div class="bg-white rounded p-4 mb-4 mt-4">
-                        <h1 class="fw-bold text-center fs-2">Cotizador Online</h2>
-                            <form class="fs-4">
+                    <div class="bg-white rounded-3 p-4 mb-4 mt-4">
+                        <h1 class="fw-bold text-center fs-2">Cotiza tu RANGER XLT</h2>
+                            <form class="fs-4" method='POST' id='cotizador'>
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Nombre Completo</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp">
+                                    <label for="nombre" class="form-label">Nombre Completo</label>
+                                    <input type="text" class="form-control" id="nombre" name='nombre'
+                                        aria-describedby="emailHelp" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Correo Electronico</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1">
+                                    <label for="correo" class="form-label">Correo Electronico</label>
+                                    <input type="email" class="form-control" id="correo" name='correo' required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Telefono Movil</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1">
+                                    <label for="telefono" class="form-label">Telefono Movil</label>
+                                    <input type="number" class="form-control" id="telefono" name='telefono' required>
                                 </div>
                                 <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <input type="checkbox" class="form-check-input ch" id="exampleCheck1" required>
                                     <label class="form-check-label" for="exampleCheck1">Acepto el tratamiento de mis
                                         datos personales</label>
                                 </div>
@@ -239,45 +329,41 @@
                                         <div id="flush-collapseOne" class="accordion-collapse collapse"
                                             aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                             <div class="accordion-body fs-4 text-muted text-justify bg-light"> De
-                                                conformidad con lo
-                                                dispuesto en la ley
-                                                1581 de 2012 y el
-                                                decreto 1377 de 2013, declaro
-                                                que entrego de forma libre y voluntaria mis datos personales, para su
-                                                respectivo
-                                                tratamiento
-                                                por parte de CENTRAL MOTOR AMERICA SAS o sus empresas aliadas (Descritas
-                                                en la
-                                                política de
-                                                tratamiento de datos personales). La autorización expresa se
-                                                circunscribe a las
-                                                siguientes
-                                                ﬁnalidades: Medir niveles de satisfacción, informar sobre campañas de
-                                                servicio,
-                                                comunicar
-                                                campañas promocionales, realizar encuestas, realizar recordatorio para
-                                                mantenimientos,
-                                                ejecutar campañas de fidelización de clientes, enviar invitaciones a
-                                                eventos, rifas,
-                                                realizar actualización de datos, invitar a pruebas de vehículos,
-                                                ofrecimiento de
-                                                productos y
-                                                servicios, comunicar noticias de sus marcas y de la red de ventas y
-                                                servicios,
-                                                comunicar
-                                                información relacionada con productos para la ﬁnanciación en la
-                                                adquisición de
-                                                nuestros
-                                                bienes y servicios.</div>
+                                                De Conformidad Con Lo Dispuesto En La Ley 1581 De 2012 Y El Decreto 1377
+                                                De 2013, Declaro Que Entrego De Forma Libre Y Voluntaria Mis Datos
+                                                Personales, Para Su Respectivo Tratamiento Por Parte De AUTOMARCOL SAS O
+                                                Sus Empresas Aliadas (Descritas En La Política De Tratamiento De Datos
+                                                Personales). La Autorización Expresa Se Circunscribe A Las Siguientes
+                                                ﬁnalidades: Medir Niveles De Satisfacción, Informar Sobre Campañas De
+                                                Servicio, Comunicar Campañas Promocionales, Realizar Encuestas, Realizar
+                                                Recordatorio Para Mantenimientos, Ejecutar Campañas De Fidelización De
+                                                Clientes, Enviar Invitaciones A Eventos, Rifas, Realizar Actualización
+                                                De Datos, Invitar A Pruebas De Vehículos, Ofrecimiento De Productos Y
+                                                Servicios, Comunicar Noticias De Sus Marcas Y De La Red De Ventas Y
+                                                Servicios, Comunicar Información Relacionada Con Productos Para La
+                                                ﬁnanciación En La Adquisición De Nuestros Bienes Y Servicios.</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="d-grid gap-2">
-                                    <button class="btn btn-dark fs-3" type="button">Solicitar Cotización</button>
+                                    <button class="btn btn-dark fs-3" name='cotizor' type="submit">Solicitar
+                                        Cotización</button>
                                 </div>
+                                <script>
+                                document.getElementById("cotizador").addEventListener("submit", cotizor);
+
+                                function cotizor() {
+                                    alert('<?php echo cotizor(); ?>');
+                                    document.write('<?php echo cotizor(); ?>');
+                                }
+                                </script>
                             </form>
                     </div>
-                    <div class="bg-white">
+
+
+
+
+                    <div class="bg-white rounded-3">
 
                         <?php
                           $vh=18990000; //valor del vehiculo
@@ -328,22 +414,11 @@
 
     </div>
 
+
 </section>
 <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js"
     integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
-<script>
-function calcular() {
-    $.ajax({
-                url: "./includes/pros/cotizador.php",
-                success: function(result) {
-                    $("div").text(result);
-                }
-            }
-</script>
-<?php
-$text = $_POST['text'];
-$output = wordwrap($text, 60, "<br>");
-echo $output;
-?>
+
+
 
 <?php include'./includes/components/footer.php';?>

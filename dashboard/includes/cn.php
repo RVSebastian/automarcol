@@ -1,10 +1,8 @@
 <?php
-
 $conn = mysqli_connect(
-    'localhost', 
-    'root',
-    '',
-    'automarcol'
+    'sql529.main-hosting.eu', 
+    'u667101417_automarcol',
+    'Automarcol+2023*',
+    'u667101417_automarcol'
 );
-
 ?>

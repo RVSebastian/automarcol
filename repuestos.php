@@ -57,6 +57,7 @@
     width: 12rem;
     padding: 10px;
 }
+
 .bg-dark {
     background-color: #2c3b6d !important;
 }
@@ -97,7 +98,7 @@
             </div>
 
             <div class="col-md-6 p-4 pt-0 ml-4">
-                <div class="bg-gray rounded p-4 mb-4 mt-4">
+                <div class="bg-light rounded p-4 mb-4 mt-4">
                     <p class="fs-4 text-muted">Publicado hace 51 días</p>
                     <h1 class="fs-1">VARIOUS MFR FO2503343</h2>
                         <p class="fs-4 pt-2 text-justify">
@@ -107,7 +108,7 @@
                         <a href="" class="btn btn-dark fs-2 p-2"><i class='bx bx-store-alt bx-tada'></i> Añadir al
                             carrito</a>
                 </div>
-                <div class="bg-gray rounded  p-4 mb-4 mt-4">
+                <div class="bg-light rounded  p-4 mb-4 mt-4">
                     <h1 class="fs-2 text-muted">Detalle del articulo</h2>
                         <p class="p-2">Los faros de Various MFR provienen de fabricantes como TYC, TYG, DEPO (MaxZone),
                             Eagle Eyes y los fabricantes del equipo original.. A veces, el inventario de nuestro almacén
@@ -119,7 +120,7 @@
                     </h1>
 
                 </div>
-                <div class="bg-gray rounded  p-4 mb-4 mt-4">
+                <div class="bg-light rounded  p-4 mb-4 mt-4">
                     <h1 class="fs-2 text-muted">Información de la tienda</h2>
 
                         <h3 class="p-2"><i class='bx bx-time-five'></i> Horario de atención

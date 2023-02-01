@@ -1,6 +1,15 @@
 ScrollReveal().reveal('.left', {
-    duration: 7000,
-    interval: 7000,
+    duration: 500,
+    interval: 500,
+    desktop: true,
+    mobile: false,
+    scale: 0.2,
+    opacity: 0,
+    repeat: true
+});
+ScrollReveal().reveal('.animation_repuestos', {
+    duration: 1000,
+    interval: 500,
     desktop: true,
     mobile: false,
     scale: 0.2,
