@@ -1,7 +1,9 @@
 <?php
     $url_insert = "../../galery";
     $url_insert = $url_insert.'/'.$_POST['modelo'];
-
+    if (!file_exists($url_insert)) {
+        mkdir($url_insert, 0777, true);
+    };
 
     $collage_img = array(
         'img1' => $_FILES['p1']['name'],
@@ -13,9 +15,7 @@
         'img7' => $_FILES['p7']['name'],
         'img8' => $_FILES['p8']['name'],
     );
-    if (!file_exists($url_insert)) {
-        mkdir($url_insert, 0777, true);
-    };
+
     
     for ($i=1; $i <8 ; $i++) { 
         $file = $_FILES["p$i"]["name"]; 

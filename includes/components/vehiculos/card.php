@@ -1,30 +1,29 @@
 <style>
 .vehicle {
-    margin: 8px;
-    margin-bottom: 5px;
-    height: 35rem;
+    margin: 10px;
+    margin-bottom: 10px;
+    height: 36rem;
     background-color: white;
     width: 30rem;
-    border-radius: 10px;
-
 }
 
 .vehicle img {
     width: 100% !important;
-    height: 18rem !important;
+    height: 16rem !important;
     margin-bottom: 50px;
 }
 
 .vehicle:hover img {
     -webkit-transform: rotate(1deg) scale(1.4);
     transform: scale(1.1);
-    -webkit-transition: .3s ease-in-out;
-    transition: .3s ease-in-out;
+    -webkit-transition: .6s ease-in-out;
+    transition: .6s ease-in-out;
 }
 
 figure {
     overflow: hidden;
-    border-radius: 8px 8px 0px 0px;
+    margin-top: 10px;
+    padding-top: 10px;
 }
 
 .vehicle .bg-dark {}
@@ -58,15 +57,17 @@ figure {
 </style>
 
 <div class="container vehiculosc tagline animation_repuestos">
-    <div class="row">
+    <div class="row g-4">
         <?php
             foreach ($data as $datos){
             ?>
-        <div class="col-sm-12 col-md-3">
+            <?php 
+              if ($datos['PresentationIMG'] !='') {
+            ?>
+        <div class="col-sm-12 col-lg-3">
             <div class="card rounded vehicle carousel-cells shadow border-0 mx-auto animation_repuestos">
                 <figure class="card-img-top"> 
-                    <!--<img src="./dashboard/galery/<?php echo $datos['Version_DescipcionModelo'];?>/<?php echo $datos['PresentationIMG'];?>" class="img-fluid"> -->
-                    <img src="https://www.ford.com.co/content/ford/co/es_co/home/jcr:content/par/tabpanel/tabs-0/splitter_957603780/splitter2/mediacarouselitem_846172113/image.imgs.full.high.jpg/1670958810803.jpg" class="img-fluid">
+                    <img src="./dashboard/galery/<?php echo $datos['Version_DescipcionModelo'];?>/<?php echo $datos['PresentationIMG'];?>" class="img-fluid">
                 </figure>
                 <div class="container p-2 pt-4 pb-0">
                     <div class="position-relative">
@@ -76,17 +77,17 @@ figure {
                             </div>
                         </div>
                     </div>
-                    <a href="./detalle?modelo=<?php echo $datos['Version_DescipcionModelo'];?>" class="stretched-link"></a>
+                    <a href="./detalle?marca=<?php echo $datos['Marca'];?>&modelo=<?php echo $datos['Version_DescipcionModelo'];?>" class="stretched-link"></a>
                 </div>
 
-                <div class="p-2 pt-4 fondo-marca">
+                <div class="p-4 pt-4 fondo-marca">
                     <div class="row  align-items-center">
                         <div class="col-6">
-                            <p class="fs-5 m-0 mb-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Oil: <?php echo $datos['Combustible'];?></p>
-                            <p class="fs-5 m-0 mb-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Traction: <?php echo $datos['Traccion'];?></p>
+                            <p class="fs-5 m-0 mb-4 text-bold text-muted"><i class="fas fa-gas-pump m-2"></i><?php echo $datos['Combustible'];?></p>
+                            <p class="fs-5 m-0 mb-4 text-bold text-muted"><i class="fas fa-cogs m-2"></i>Traccion: <?php echo $datos['Traccion'];?></p>
                         </div>
                         <div class="col-6">
-                            <p class="fs-5 m-0 mb-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Cilindraje: <?php echo $datos['Cilindraje'];?></p>
+                            <p class="fs-5 m-0 mb-4 text-bold text-muted"><i class="fas fa-tachometer-alt m-2"></i>Cilindraje: <?php echo $datos['Cilindraje'];?></p>
                             <p class="fs-5 m-0 mb-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Cojineria: <?php echo $datos['Cojineria'];?></p>
                         </div>
                     </div>
@@ -94,6 +95,9 @@ figure {
                 </div>
             </div>
         </div>
+        <?php
+            }
+            ?>
         <?php
             }
             ?>

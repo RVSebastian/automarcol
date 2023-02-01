@@ -5,6 +5,10 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script>
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+<script src="https://cdn.rawgit.com/kensnyder/quill-image-resize-module/3411c9a7/image-resize.min.js">
+</script>
 
 <style>
 .bg-white {
@@ -21,6 +25,11 @@ input {
     font-weight: 600;
     margin: 5px;
     text-transform: uppercase;
+}
+
+.presentation {
+    width: 100% !important;
+    height: 180px !important;
 }
 </style>
 
@@ -47,10 +56,6 @@ if (count($filtro)>0) {
 <?php foreach (array_slice($data, 0, 1) as $datos) { ?>
 <div class="home-content">
     <form method="POST" name="form" action="./includes/php/almacenador.php" enctype="multipart/form-data">
-        <?php if (isset($result)) {
-            echo $result;
-        }
-        ?>
         <div class="flex flex-wrap p-4 justify-center">
             <div class="basis-11/12 md:basis-1/1">
                 <div class="">
@@ -59,7 +64,7 @@ if (count($filtro)>0) {
                             <input type="file" required id="c1" name="c1" id='c1' value='w' accept="image/*"
                                 onchange="loadFile(event,img='c1img')" style="display:none;" />
                             <label for="c1" class="w-full">
-                                <img class='rounded-lg' src="
+                                <img class='rounded' src="
                                     <?php 
                                         if ($datos['CarrouselIMG']) {
                                             echo './galery/'.$datos['Version_DescipcionModelo'].'/'.$datos['CarrouselIMG'];
@@ -138,113 +143,104 @@ if (count($filtro)>0) {
                 </div>
                 <div class="flex flex-wrap p-4 mr-2">
                     <div class="basis-1/4 p-2">
-                        <input type="file" required id="p1" name="p1" accept="image/*" onchange="loadFile(event,img='p1img')"
-                            style="display:none;" />
+                        <input type="file" required id="p1" name="p1" accept="image/*"
+                            onchange="loadFile(event,img='p1img')" style="display:none;" />
                         <label for="p1" class="w-full">
-                            <img class='rounded-lg'
+                            <img class='rounded'
                                 src="https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image2/image.imgs.full.high.jpg/1635456907780.jpg"
                                 id="p1img" style="height: 100%; width: 100%">
                         </label>
                     </div>
                     <div class="basis-1/4  p-2">
-                        <input type="file" required id="p2" name="p2" accept="image/*" onchange="loadFile(event,img='p2img')"
-                            style="display:none;" />
+                        <input type="file" required id="p2" name="p2" accept="image/*"
+                            onchange="loadFile(event,img='p2img')" style="display:none;" />
                         <label for="p2">
-                            <img class='rounded-lg'
+                            <img class='rounded'
                                 src="https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image2/image.imgs.full.high.jpg/1635456907780.jpg"
                                 id="p2img" style="height: 100%; width: 100%">
                         </label>
                     </div>
                     <div class="basis-1/4  p-2">
-                        <input type="file" required id="p3" name="p3" accept="image/*" onchange="loadFile(event,img='p3img')"
-                            style="display:none;" />
+                        <input type="file" required id="p3" name="p3" accept="image/*"
+                            onchange="loadFile(event,img='p3img')" style="display:none;" />
                         <label for="p3">
-                            <img class='rounded-lg'
+                            <img class='rounded'
                                 src="https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image2/image.imgs.full.high.jpg/1635456907780.jpg"
                                 id="p3img" style="height: 100%; width: 100%">
                         </label>
                     </div>
                     <div class="basis-1/4  p-2">
-                        <input type="file" required id="p4" name="p4" accept="image/*" onchange="loadFile(event,img='p4img')"
-                            style="display:none;" />
+                        <input type="file" required id="p4" name="p4" accept="image/*"
+                            onchange="loadFile(event,img='p4img')" style="display:none;" />
                         <label for="p4">
-                            <img class='rounded-lg'
+                            <img class='rounded'
                                 src="https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image2/image.imgs.full.high.jpg/1635456907780.jpg"
                                 id="p4img" style="height: 100%; width: 100%">
                         </label>
                     </div>
 
                     <div class="basis-1/4 mb-5 p-2">
-                        <input type="file" required id="p5" name="p5" accept="image/*" onchange="loadFile(event,img='p5img')"
-                            style="display:none;" />
+                        <input type="file" required id="p5" name="p5" accept="image/*"
+                            onchange="loadFile(event,img='p5img')" style="display:none;" />
                         <label for="p5">
-                            <img class='rounded-lg'
+                            <img class='rounded'
                                 src="https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image2/image.imgs.full.high.jpg/1635456907780.jpg"
                                 id="p5img" style="height: 100%; width: 100%">
                         </label>
                     </div>
                     <div class="basis-1/4 mb-5 p-2">
-                        <input type="file" required id="p6" name="p6" accept="image/*" onchange="loadFile(event,img='p6img')"
-                            style="display:none;" />
+                        <input type="file" required id="p6" name="p6" accept="image/*"
+                            onchange="loadFile(event,img='p6img')" style="display:none;" />
                         <label for="p6">
-                            <img class='rounded-lg'
+                            <img class='rounded'
                                 src="https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image2/image.imgs.full.high.jpg/1635456907780.jpg"
                                 id="p6img" style="height: 100%; width: 100%">
                         </label>
                     </div>
                     <div class="basis-1/4 mb-5 p-2">
-                        <input type="file" required id="p7" name="p7" accept="image/*" onchange="loadFile(event,img='p7img')"
-                            style="display:none;" />
+                        <input type="file" required id="p7" name="p7" accept="image/*"
+                            onchange="loadFile(event,img='p7img')" style="display:none;" />
                         <label for="p7">
-                            <img class='rounded-lg'
+                            <img class='rounded'
                                 src="https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image2/image.imgs.full.high.jpg/1635456907780.jpg"
                                 id="p7img" style="height: 100%; width: 100%">
                         </label>
                     </div>
                     <div class="basis-1/4 mb-5 p-2">
-                        <input type="file" required id="p8" name="p8" accept="image/*" onchange="loadFile(event,img='p8img')"
-                            style="display:none;" />
+                        <input type="file" required id="p8" name="p8" accept="image/*"
+                            onchange="loadFile(event,img='p8img')" style="display:none;" />
                         <label for="p8">
-                            <img class='rounded-lg'
+                            <img class='rounded'
                                 src="https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image2/image.imgs.full.high.jpg/1635456907780.jpg"
                                 id="p8img" style="height: 100%; width: 100%">
                         </label>
                     </div>
                 </div>
             </div>
-            <div class="basis-11/12 md:basis-1/4 ">
-                <div class="p-4 m-4 mb-0 mt-0 bg-white rounded">
+            <div class="basis-11/12 md:basis-1/4">
+                <div class="p-4 m-4 mb-0 mt-0 pt-0 bg-white rounded">
                     <input type="file" required id="presentation" name="presentacion" accept="image/*"
                         onchange="loadFile(event,img='presentation_img')" style="display:none;" />
-                    <label for="presentation" class="w-full">
-                        <figure class="max-w-lg">
-                            <img class="h-auto max-w-full rounded-lg mx-auto"
-                                src="http://localhost/automarcol/image/fotobase.png" id="presentation_img"
-                                alt="image description">
-                        </figure>
+                    <label for="presentation" class="">
+                        <img class="presentation mx-auto"
+                            src="https://www.ford.com.co/content/dam/Ford/website-assets/latam/co/nameplate/raptor/2021/colores/colorizer/negro-agata/fco-f150-raptor-colorizer-negro-agata.jpg.dam.full.high.jpg/1636765571485.jpg"
+                            id="presentation_img" alt="image description">
                     </label>
-                    <div class="bg-gray-100">
+                    <div class="">
                         <p class='font-semibold p-4 text-center pt-2 pb-0'>
                             <?php echo $datos['Version_DescipcionModelo'] ?></p>
-                        <p class='p-4 text-justify pt-0 text-gray-600 text-sm'>Porfavor añadir imagen sin fondo, si
-                            no la tiene puedes subirla a <a class='text-blue-400' href="https://www.remove.bg/es/upload"
-                                TARGET="_blank">https://www.remove.bg/es/upload</a></p>
+                        <p class='p-4 text-center'>Imagen de Presentacion</p>
                     </div>
                 </div>
             </div>
-            <!-- Include the Quill library -->
-            <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-            <!-- Initialize Quill editor -->
-            <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
-            <script src="https://cdn.rawgit.com/kensnyder/quill-image-resize-module/3411c9a7/image-resize.min.js">
-            </script>
-            <div class="basic-12/12">
+
+            <div class="basis-12/12 p-4 m-4 h-full max-w-5xl">
                 <textarea type='text' name="otro" id='otro' style='display: none'></textarea>
-                <div id="editor" class=' border-0 shadow-0'>
+                <div id="editor" class='w-full mb-4 border border-gray-200  bg-gray-50'>
                     <?php echo $datos['Otro']?>
                 </div>
-                <button type="submit" id="GUARDAR" name="GUARDAR" onclick="change()"
-                    class="focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Guardar</button>
+                <button type="submit" id="GUARDAR" name="GUARDAR" 
+                    class="p-4 mt-4 focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Guardar</button>
             </div>
         </div>
     </form>

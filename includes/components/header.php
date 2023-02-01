@@ -1,4 +1,9 @@
 <?php include'./dashboard/includes/cn.php';?>
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+} // inicimoas la session nuevamente
+?>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
@@ -171,7 +176,7 @@ p {
         style="  background-color: #2c3b6d !important;" id="nav">
         <div class="container-lg p-4 pb-2 pt-0 ">
             <a class="navbar-brand fs-1 text-white mb-2 p-4" href="./index"><img src="./image/logo.png"
-                    style="width: 27vh" alt=""></a>
+                    style="width: 27rem" alt=""></a>
             <button class="navbar-toggler border-0 fs-1" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -192,13 +197,13 @@ p {
                             </a>
 
                             <ul class="dropdown-menu fs-2 bg-dark border-0  rounded" style="transition-delay: 4s;">
-                                <li><a class="dropdown-item bg-dark text-white" href="./ford">Catalogo Ford</a></li>
-                                <li><a class="dropdown-item bg-dark text-white" href="./peugeot">Catalogo Peugeot</a>
+                                <li><a class="dropdown-item bg-dark text-white" href="./listado?marca=Ford">Catalogo Ford</a></li>
+                                <li><a class="dropdown-item bg-dark text-white" href="./listado?marca=Peugeot">Catalogo Peugeot</a>
                                 </li>
-                                <li><a class="dropdown-item bg-dark text-white" href="./bajaj">Catalogo Bajaj</a></li>
-                                <li><a class="dropdown-item bg-dark text-white" href="./fca">Catalogo Fca</a></li>
-                                <li><a class="dropdown-item bg-dark text-white" href="./foton">Catalogo Foton</a></li>
-                                <li><a class="dropdown-item bg-dark text-white" href="./usados">Catalogo Usados</a></li>
+                                <li><a class="dropdown-item bg-dark text-white" href="./listado?marca=Bajaj">Catalogo Bajaj</a></li>
+                                <li><a class="dropdown-item bg-dark text-white" href="./listado?marca=Fca">Catalogo Fca</a></li>
+                                <li><a class="dropdown-item bg-dark text-white" href="./listado?marca=Foton">Catalogo Foton</a></li>
+                                <li><a class="dropdown-item bg-dark text-white" href="./listado?marca=Usados">Catalogo Usados</a></li>
                             </ul>
                         </div>
                     </li>

@@ -2,6 +2,9 @@
 
 <p id="home"></p>
 <style>
+    :root {
+        --swiper-navigation-colo: gray;
+    }
 .marcas-carousel {
     transition: opacity 0.3s ease-in-out;
 }
@@ -30,6 +33,11 @@
 
 }
 
+.swiper-slide {
+    align-items: center;
+    justify-content: center;
+}
+
 .carousel-nav .carousel-cell.is-nav-selected {
     opacity: .4;
 }
@@ -55,8 +63,28 @@
     border-radius: 20px;
 }
 
+
 .swiper {
+    width: 100%;
     height: 45rem !important;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .card-marcas {
@@ -83,21 +111,21 @@
     opacity: 1;
     transition-delay: 5s;
     bottom: 75;
-    left: 50;
+    left: 20;
 }
 
 .titulo-marca {
     position: absolute;
     bottom: 50;
-    left: 50;
-    font-size: 5vh;
+    left: 20;
+    font-size: 5rem;
     text-shadow: 5px 5px var(--main);
     text-size-adjust: 80%;
 }
 
 .card-marcas:hover .titulo-marca {
     bottom: 170;
-    left: 50;
+    left: 20;
 }
 
 .texto {
@@ -213,7 +241,8 @@
                                         aventura.</h3>
                                     <p>Ver Catalogo</p>
                                 </div>
-                                <div class="sombral"> <a href="./listado?marca=Bajaj" class="stretched-link texto"></a></div>
+                                <div class="sombral"> <a href="./listado?marca=Bajaj" class="stretched-link texto"></a>
+                                </div>
                             </div>
 
                         </div>
@@ -235,19 +264,26 @@
                         </div>
                     </div>
                 </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
                 <div class="swiper-pagination"></div>
             </div>
             <script>
             const swiper = new Swiper('.swiper', {
                 // Optional parameters
                 direction: 'horizontal',
-
                 slidesPerView: 1,
                 spaceBetween: 20,
                 freeMode: true,
-                // If we need pagination
+                loop: true,
+                centeredSlides: true,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
                 pagination: {
                     el: '.swiper-pagination',
+                    type: 'bullets',
                 },
                 breakpoints: {
                     640: {
@@ -258,7 +294,7 @@
                         slidesPerView: 2,
                         spaceBetween: 20,
                     },
-                    1024: {
+                    1204: {
                         slidesPerView: 3,
                         spaceBetween: 20,
                     },

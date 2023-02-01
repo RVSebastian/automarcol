@@ -33,6 +33,7 @@ switch ($marca) {
             $inspect = array_values(json_decode($inspect, true));
             $vacio = 'VACIO';
             $data = $inspect;
+            $_SESSION['data'] = $data;
         }
 
 ?>
@@ -41,7 +42,6 @@ switch ($marca) {
 <section class="bg-gray pt-0 mt-0 <?php echo $marca ?>" id="vehiculos">
     <?php include'./includes/components/carrousel/encabezado.php';?>
     <?php include'./includes/components/vehiculos/card.php';?>
-
 </section>
 
 
