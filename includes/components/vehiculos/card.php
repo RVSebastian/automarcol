@@ -57,15 +57,15 @@ figure {
 </style>
 
 <div class="container vehiculosc tagline animation_repuestos">
-    <div class="row g-4">
+    <div class="row gx-4 gy-5">
         <?php
             foreach ($data as $datos){
             ?>
             <?php 
               if ($datos['PresentationIMG'] !='') {
             ?>
-        <div class="col-sm-12 col-lg-3">
-            <div class="card rounded vehicle carousel-cells shadow border-0 mx-auto animation_repuestos">
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="card rounded vehicle carousel-cells m-4  shadow border-0 mx-auto animation_repuestos">
                 <figure class="card-img-top"> 
                     <img src="./dashboard/galery/<?php echo $datos['Version_DescipcionModelo'];?>/<?php echo $datos['PresentationIMG'];?>" class="img-fluid">
                 </figure>

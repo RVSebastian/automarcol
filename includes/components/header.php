@@ -140,10 +140,11 @@ p {
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <script>
     ScrollReveal().destroy();
     </script>
-    <!-- Meta Pixel Code -->
+    <!--
     <script>
     ! function(f, b, e, v, n, t, s) {
         if (f.fbq) return;
@@ -168,7 +169,7 @@ p {
     </script>
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=349777653590610&ev=PageView&noscript=1" /></noscript>
-    <!-- End Meta Pixel Code -->
+   -->
 </head>
 
 <body class="bg-gray">
@@ -197,13 +198,19 @@ p {
                             </a>
 
                             <ul class="dropdown-menu fs-2 bg-dark border-0  rounded" style="transition-delay: 4s;">
-                                <li><a class="dropdown-item bg-dark text-white" href="./listado?marca=Ford">Catalogo Ford</a></li>
-                                <li><a class="dropdown-item bg-dark text-white" href="./listado?marca=Peugeot">Catalogo Peugeot</a>
+                                <li><a class="dropdown-item bg-dark text-white" href="./listado?marca=Ford">Catalogo
+                                        Ford</a></li>
+                                <li><a class="dropdown-item bg-dark text-white" href="./listado?marca=Peugeot">Catalogo
+                                        Peugeot</a>
                                 </li>
-                                <li><a class="dropdown-item bg-dark text-white" href="./listado?marca=Bajaj">Catalogo Bajaj</a></li>
-                                <li><a class="dropdown-item bg-dark text-white" href="./listado?marca=Fca">Catalogo Fca</a></li>
-                                <li><a class="dropdown-item bg-dark text-white" href="./listado?marca=Foton">Catalogo Foton</a></li>
-                                <li><a class="dropdown-item bg-dark text-white" href="./listado?marca=Usados">Catalogo Usados</a></li>
+                                <li><a class="dropdown-item bg-dark text-white" href="./listado?marca=Bajaj">Catalogo
+                                        Bajaj</a></li>
+                                <li><a class="dropdown-item bg-dark text-white" href="./listado?marca=Fca">Catalogo
+                                        Fca</a></li>
+                                <li><a class="dropdown-item bg-dark text-white" href="./listado?marca=Foton">Catalogo
+                                        Foton</a></li>
+                                <li><a class="dropdown-item bg-dark text-white" href="./listado?marca=Usados">Catalogo
+                                        Usados</a></li>
                             </ul>
                         </div>
                     </li>

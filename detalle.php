@@ -101,12 +101,13 @@ select {
         </div>
     </div>
 </section>
-<section class="bg-gray pt-0 mt-0 animate__animated animate__slideInUp animate__delay-2s animate__slow">
+
+<section class="bg-gray pt-0 mt-0 animate__animated animate__slideInUp animate__delay-1s animate__slow">
     <div class="container-md md-p-4">
-        <div class="row sm-p-2 pt-5">
-            <div class="col-md-8 md-p-5 pt-0">
-                <div class="bg-white pt-4 p-4">
-                    <div class="row">
+        <div class="row justify-content-center sm-p-2 pt-5 pb-0">
+            <div class="col-md-9 md-p-5 pt-0">
+                <div class="bg-white pt-4 p-5">
+                    <div class="row ">
                         <div class="col-md-3">
                             <p class="fs-2 m-0">Marca</p>
                             <h2 class="m-0 fw-bold mb-4"><?php echo $datos['Marca']?></h2>
@@ -140,23 +141,25 @@ select {
                             <h2 class="m-0 fw-bold mb-4"><?php echo $datos['Cojineria']?></h2>
                         </div>
                     </div>
+                    <input type="hidden" id="marca" value='<?php echo $datos['Marca']?>'>
+                    <div class="pt-3">
+                        <?php echo $datos['Otro']?>
+                    </div>
+
                 </div>
 
-                <div class="bg-white p-5">
-                    <?php echo $datos['Otro']?>
-                </div>
-
-                <div class="galery rounded pt-2">
-                    <div class="row gx-0 gy-0">
+                <div class="galery rounded pt-5">
+                    <div class="row gy-3 ">
                         <?php 
                         $imagenes = json_decode($datos['CollageIMG'],true);
                         $indice = 0;
                         foreach ($imagenes as $key) {
                             $indice++;
                         ?>
-                        <div class="col-4">
+                        <div class="col-3">
                             <figure>
-                                <img src="./dashboard/galery/<?php echo $datos['Version_DescipcionModelo'].'/'.$imagenes['img'.$indice]?>" class='img-thumbnail'>
+                                <img src="./dashboard/galery/<?php echo $datos['Version_DescipcionModelo'].'/'.$imagenes['img'.$indice]?>"
+                                    class='img-fluid mx-auto d-block'>
                             </figure>
                         </div>
                         <?php    }?>
@@ -164,73 +167,15 @@ select {
                     </div>
 
                 </div>
-              
-            </div>
-
-
-            <div class="col-md-4 p-4 pt-0 ml-4">
-                <div class="sticky-top" style="top:11rem">
-                    <div class="bg-white rounded-3 p-4 mb-4 mt-4">
-                        <h1 class="fw-bold text-center fs-2">Cotiza tu <?php echo $datos['Version_DescipcionModelo']?>
-                            </h2>
-                            <form class="fs-4" method='POST' id='cotizador'>
-                                <div class="mb-3">
-                                    <label for="nombre" class="form-label">Nombre Completo</label>
-                                    <input type="text" class="form-control" id="nombre" name='nombre'
-                                        aria-describedby="emailHelp" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="correo" class="form-label">Correo Electronico</label>
-                                    <input type="email" class="form-control" id="correo" name='correo' required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="telefono" class="form-label">Telefono Movil</label>
-                                    <input type="number" class="form-control" id="telefono" name='telefono' required>
-                                </div>
-                                <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input ch" id="exampleCheck1" required>
-                                    <label class="form-check-label" for="exampleCheck1">Acepto el tratamiento de mis
-                                        datos personales</label>
-                                </div>
-                                <div class="accordion accordion-flush mb-2" id="accordionFlushExample">
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="flush-headingOne">
-                                            <button class="accordion-button collapsed fs-3 bg-light text-black"
-                                                type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#flush-collapseOne" aria-expanded="false"
-                                                aria-controls="flush-collapseOne">
-                                                Leer Terminos y condiciones
-                                            </button>
-                                        </h2>
-                                        <div id="flush-collapseOne" class="accordion-collapse collapse"
-                                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                            <div class="accordion-body fs-4 text-muted text-justify bg-light"> De
-                                                De Conformidad Con Lo Dispuesto En La Ley 1581 De 2012 Y El Decreto 1377
-                                                De 2013, Declaro Que Entrego De Forma Libre Y Voluntaria Mis Datos
-                                                Personales, Para Su Respectivo Tratamiento Por Parte De AUTOMARCOL SAS O
-                                                Sus Empresas Aliadas (Descritas En La Política De Tratamiento De Datos
-                                                Personales). La Autorización Expresa Se Circunscribe A Las Siguientes
-                                                ﬁnalidades: Medir Niveles De Satisfacción, Informar Sobre Campañas De
-                                                Servicio, Comunicar Campañas Promocionales, Realizar Encuestas, Realizar
-                                                Recordatorio Para Mantenimientos, Ejecutar Campañas De Fidelización De
-                                                Clientes, Enviar Invitaciones A Eventos, Rifas, Realizar Actualización
-                                                De Datos, Invitar A Pruebas De Vehículos, Ofrecimiento De Productos Y
-                                                Servicios, Comunicar Noticias De Sus Marcas Y De La Red De Ventas Y
-                                                Servicios, Comunicar Información Relacionada Con Productos Para La
-                                                ﬁnanciación En La Adquisición De Nuestros Bienes Y Servicios.</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-grid gap-2">
-                                    <button class="btn btn-dark fs-3" name='cotizor' type="submit">Solicitar
-                                        Cotización</button>
-                                </div>
-
-                            </form>
-                    </div>
-                </div>
 
             </div>
+            <?php 
+            if ($marca == 'FORD') {
+                include'./includes/php/cotiza.php';
+            }else{
+                include'./includes/php/cotiza.php';
+            }
+            ?>
         </div>
 
 
