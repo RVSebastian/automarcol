@@ -74,5 +74,6 @@
         'Content-Length: ' . strlen($data_string))
     );
     $result = curl_exec($ch);
-    header("location: ../../stock")
+    
+   header("location: ../../stock")
 ?>

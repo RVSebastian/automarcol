@@ -31,6 +31,10 @@ input {
     width: 100% !important;
     height: 180px !important;
 }
+#editor img{
+    float: left;
+    padding: 10px;
+}
 </style>
 
 
@@ -61,7 +65,7 @@ if (count($filtro)>0) {
                 <div class="">
                     <div class="swiper-wrapper bg-dark">
                         <div class="swiper-slide">
-                            <input type="file" required id="c1" name="c1" id='c1' value='w' accept="image/*"
+                            <input type="file" id="c1" name="c1" id='c1' value='w' accept="image/*"
                                 onchange="loadFile(event,img='c1img')" style="display:none;" />
                             <label for="c1" class="w-full">
                                 <img class='rounded' src="
@@ -141,78 +145,105 @@ if (count($filtro)>0) {
                     <input type="hidden" name='usuario' value="<?php echo $_SESSION['key']['usuario'] ?>">
                     <input type="hidden" name='modelo' value="<?php echo $datos['Version_DescipcionModelo'] ?>">
                 </div>
+                <?php
+                 $imagenes = json_decode($datos['CollageIMG'],true);
+                ?>
                 <div class="flex flex-wrap p-4 mr-2">
                     <div class="basis-1/4 p-2">
-                        <input type="file" required id="p1" name="p1" accept="image/*"
-                            onchange="loadFile(event,img='p1img')" style="display:none;" />
+                        <input type="file" id="p1" name="p1" accept="image/*" onchange="loadFile(event,img='p1img')"
+                            style="display:none;" />
                         <label for="p1" class="w-full">
-                            <img class='rounded'
-                                src="https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image2/image.imgs.full.high.jpg/1635456907780.jpg"
-                                id="p1img" style="height: 100%; width: 100%">
+                            <img class='rounded' src="<?php if (isset($imagenes['img1'])) {
+                                  echo './galery/'.$datos['Version_DescipcionModelo'].'/'.$imagenes['img1'];
+                                }else {
+                                    echo 'https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image2/image.imgs.full.high.jpg/1635456907780.jpg';
+                                }
+                                ?>" id="p1img" style="height: 100%; width: 100%">
                         </label>
                     </div>
                     <div class="basis-1/4  p-2">
-                        <input type="file" required id="p2" name="p2" accept="image/*"
-                            onchange="loadFile(event,img='p2img')" style="display:none;" />
+                        <input type="file" id="p2" name="p2" accept="image/*" onchange="loadFile(event,img='p2img')"
+                            style="display:none;" />
                         <label for="p2">
-                            <img class='rounded'
-                                src="https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image2/image.imgs.full.high.jpg/1635456907780.jpg"
-                                id="p2img" style="height: 100%; width: 100%">
+                            <img class='rounded' src="<?php if (isset($imagenes['img2'])) {
+                                  echo './galery/'.$datos['Version_DescipcionModelo'].'/'.$imagenes['img2'];
+                                }else {
+                                    echo 'https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image2/image.imgs.full.high.jpg/1635456907780.jpg';
+                                }
+                                ?>" id="p2img" style="height: 100%; width: 100%">
                         </label>
                     </div>
                     <div class="basis-1/4  p-2">
-                        <input type="file" required id="p3" name="p3" accept="image/*"
-                            onchange="loadFile(event,img='p3img')" style="display:none;" />
+                        <input type="file" id="p3" name="p3" accept="image/*" onchange="loadFile(event,img='p3img')"
+                            style="display:none;" />
                         <label for="p3">
-                            <img class='rounded'
-                                src="https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image2/image.imgs.full.high.jpg/1635456907780.jpg"
-                                id="p3img" style="height: 100%; width: 100%">
+                            <img class='rounded' src="<?php if (isset($imagenes['img3'])) {
+                                  echo './galery/'.$datos['Version_DescipcionModelo'].'/'.$imagenes['img3'];
+                                }else {
+                                    echo 'https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image2/image.imgs.full.high.jpg/1635456907780.jpg';
+                                }
+                                ?>" id="p3img" style="height: 100%; width: 100%">
                         </label>
                     </div>
                     <div class="basis-1/4  p-2">
-                        <input type="file" required id="p4" name="p4" accept="image/*"
-                            onchange="loadFile(event,img='p4img')" style="display:none;" />
+                        <input type="file" id="p4" name="p4" accept="image/*" onchange="loadFile(event,img='p4img')"
+                            style="display:none;" />
                         <label for="p4">
-                            <img class='rounded'
-                                src="https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image2/image.imgs.full.high.jpg/1635456907780.jpg"
-                                id="p4img" style="height: 100%; width: 100%">
+                            <img class='rounded' src="<?php if (isset($imagenes['img4'])) {
+                                  echo './galery/'.$datos['Version_DescipcionModelo'].'/'.$imagenes['img4'];
+                                }else {
+                                    echo 'https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image2/image.imgs.full.high.jpg/1635456907780.jpg';
+                                }
+                                ?>" id="p4img" style="height: 100%; width: 100%">
                         </label>
                     </div>
 
                     <div class="basis-1/4 mb-5 p-2">
-                        <input type="file" required id="p5" name="p5" accept="image/*"
-                            onchange="loadFile(event,img='p5img')" style="display:none;" />
+                        <input type="file" id="p5" name="p5" accept="image/*" onchange="loadFile(event,img='p5img')"
+                            style="display:none;" />
                         <label for="p5">
-                            <img class='rounded'
-                                src="https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image2/image.imgs.full.high.jpg/1635456907780.jpg"
-                                id="p5img" style="height: 100%; width: 100%">
+                            <img class='rounded' src="<?php if (isset($imagenes['img5'])) {
+                                  echo './galery/'.$datos['Version_DescipcionModelo'].'/'.$imagenes['img5'];
+                                }else {
+                                    echo 'https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image2/image.imgs.full.high.jpg/1635456907780.jpg';
+                                }
+                                ?>" id="p5img" style="height: 100%; width: 100%">
                         </label>
                     </div>
                     <div class="basis-1/4 mb-5 p-2">
-                        <input type="file" required id="p6" name="p6" accept="image/*"
-                            onchange="loadFile(event,img='p6img')" style="display:none;" />
+                        <input type="file" id="p6" name="p6" accept="image/*" onchange="loadFile(event,img='p6img')"
+                            style="display:none;" />
                         <label for="p6">
-                            <img class='rounded'
-                                src="https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image2/image.imgs.full.high.jpg/1635456907780.jpg"
-                                id="p6img" style="height: 100%; width: 100%">
+                            <img class='rounded' src="<?php if (isset($imagenes['img6'])) {
+                                  echo './galery/'.$datos['Version_DescipcionModelo'].'/'.$imagenes['img6'];
+                                }else {
+                                    echo 'https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image2/image.imgs.full.high.jpg/1635456907780.jpg';
+                                }
+                                ?>" id="p6img" style="height: 100%; width: 100%">
                         </label>
                     </div>
                     <div class="basis-1/4 mb-5 p-2">
-                        <input type="file" required id="p7" name="p7" accept="image/*"
-                            onchange="loadFile(event,img='p7img')" style="display:none;" />
+                        <input type="file" id="p7" name="p7" accept="image/*" onchange="loadFile(event,img='p7img')"
+                            style="display:none;" />
                         <label for="p7">
-                            <img class='rounded'
-                                src="https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image2/image.imgs.full.high.jpg/1635456907780.jpg"
-                                id="p7img" style="height: 100%; width: 100%">
+                            <img class='rounded' src="<?php if (isset($imagenes['img7'])) {
+                                  echo './galery/'.$datos['Version_DescipcionModelo'].'/'.$imagenes['img7'];
+                                }else {
+                                    echo 'https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image2/image.imgs.full.high.jpg/1635456907780.jpg';
+                                }
+                                ?>" id="p7img" style="height: 100%; width: 100%">
                         </label>
                     </div>
                     <div class="basis-1/4 mb-5 p-2">
-                        <input type="file" required id="p8" name="p8" accept="image/*"
-                            onchange="loadFile(event,img='p8img')" style="display:none;" />
+                        <input type="file" id="p8" name="p8" accept="image/*" onchange="loadFile(event,img='p8img')"
+                            style="display:none;" />
                         <label for="p8">
-                            <img class='rounded'
-                                src="https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image2/image.imgs.full.high.jpg/1635456907780.jpg"
-                                id="p8img" style="height: 100%; width: 100%">
+                            <img class='rounded' src="<?php if (isset($imagenes['img8'])) {
+                                  echo './galery/'.$datos['Version_DescipcionModelo'].'/'.$imagenes['img8'];
+                                }else {
+                                    echo 'https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image2/image.imgs.full.high.jpg/1635456907780.jpg';
+                                }
+                                ?>" id="p8img" style="height: 100%; width: 100%">
                         </label>
                     </div>
                 </div>
@@ -220,11 +251,15 @@ if (count($filtro)>0) {
             <div class="basis-11/12 md:basis-1/4">
                 <div class="p-4 m-4 mb-0 mt-0 pt-0 bg-white rounded">
                     <input type="file" required id="presentation" name="presentacion" accept="image/*"
+                        value='<?php echo $datos['PresentationIMG'] ?>'
                         onchange="loadFile(event,img='presentation_img')" style="display:none;" />
                     <label for="presentation" class="">
-                        <img class="presentation mx-auto"
-                            src="https://www.ford.com.co/content/dam/Ford/website-assets/latam/co/nameplate/raptor/2021/colores/colorizer/negro-agata/fco-f150-raptor-colorizer-negro-agata.jpg.dam.full.high.jpg/1636765571485.jpg"
-                            id="presentation_img" alt="image description">
+                        <img class="presentation mx-auto" src="<?php if (isset($datos['PresentationIMG'])) {
+                                  echo './galery/'.$datos['Version_DescipcionModelo'].'/'.$datos['PresentationIMG'];
+                                }else {
+                                    echo 'https://www.ford.com.co/content/ford/co/es_co/home/performance/raptor/jcr:content/par/brandgallery/image2/image.imgs.full.high.jpg/1635456907780.jpg';
+                                }
+                                ?>" id="presentation_img" alt="image description">
                     </label>
                     <div class="">
                         <p class='font-semibold p-4 text-center pt-2 pb-0'>
@@ -234,12 +269,12 @@ if (count($filtro)>0) {
                 </div>
             </div>
 
-            <div class="basis-12/12 p-4 m-4 h-full max-w-5xl">
+            <div class="basis-12/12 p-4 m-4 h-full max-w-6xl">
                 <textarea type='text' name="otro" id='otro' style='display: none'></textarea>
                 <div id="editor" class='w-full mb-4 border border-gray-200  bg-gray-50'>
-                    <?php echo $datos['Otro']?>
+                    <?php print_r($datos['Otro'])?>
                 </div>
-                <button type="submit" id="GUARDAR" name="GUARDAR" 
+                <button type="submit" id="GUARDAR" name="GUARDAR" onclick='change()'
                     class="p-4 mt-4 focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Guardar</button>
             </div>
         </div>

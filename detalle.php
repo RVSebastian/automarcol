@@ -23,6 +23,7 @@ figure {
     transform: rotate(3deg) scale(1.2);
     -webkit-transition: 1s ease-in-out;
     transition: 1s ease-in-out;
+    object-fit: contain;
 }
 
 .img-thumbnail {
@@ -141,27 +142,29 @@ select {
                     </div>
                 </div>
 
-
-                <div class="galery rounded pt-2">
-                    <div class="row gx-0 gy-0">
-                        <?php 
-                        $imagenes = $datos['CollageIMG'];
-                        var_dump($imagenes['1']);
-                        ?>
-                        <div class="col-auto">
-                            <figure>
-                               
-                            </figure>
-                        </div>
-                        <?php  ?>
-
-                    </div>
-
-                </div>
                 <div class="bg-white p-5">
                     <?php echo $datos['Otro']?>
                 </div>
 
+                <div class="galery rounded pt-2">
+                    <div class="row gx-0 gy-0">
+                        <?php 
+                        $imagenes = json_decode($datos['CollageIMG'],true);
+                        $indice = 0;
+                        foreach ($imagenes as $key) {
+                            $indice++;
+                        ?>
+                        <div class="col-4">
+                            <figure>
+                                <img src="./dashboard/galery/<?php echo $datos['Version_DescipcionModelo'].'/'.$imagenes['img'.$indice]?>" class='img-thumbnail'>
+                            </figure>
+                        </div>
+                        <?php    }?>
+
+                    </div>
+
+                </div>
+              
             </div>
 
 
