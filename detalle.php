@@ -61,6 +61,10 @@ select {
     width: 50%;
     padding: 3px;
 }
+.ql-video{
+    width: 100%;
+    height: 50rem;
+}
 </style>
 <br>
 

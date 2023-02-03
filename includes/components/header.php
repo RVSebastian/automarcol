@@ -142,6 +142,7 @@ p {
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <meta name="facebook-domain-verification" content="7xnb71hrtw0vv915x2d3v09ssc1rfc" />
 
     <script>
     ScrollReveal().destroy();
