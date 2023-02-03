@@ -28,7 +28,6 @@
                                 <option value="RFCA">Repuestos Fca</option>
                                 <option value="RPEUGEOT">Repuestos Peugeot</option>
                                 <option value="RBAJAJ">Repuestos Bajaj</option>
-
                             </select>
                         </div>
                         <div id='buscarmd2' style='display: none;'>

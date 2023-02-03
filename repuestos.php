@@ -62,7 +62,20 @@
     background-color: #2c3b6d !important;
 }
 </style>
+<?php
+$data = $_SESSION['data'];
+$modelo = $_GET['modelo'];
+$filtro = array_filter($data, function($array) use ($modelo){
+    if (str_contains($array['Parte'], $modelo)) {
+        return $array;
+    }
+    });
+$data = $filtro;
+?>
 
+<?php foreach (array_slice($data, 0, 1) as $datos) { 
+    $imagenes = json_decode($datos['collage_img'],true);
+?>
 <section class="bg-gray">
     <br><br><br>
     <div class="container-md bg-white rounded p-4">
@@ -71,51 +84,52 @@
                 <div class="carousel carousel-main"
                     data-flickity='{"contain": true, "prevNextButtons": true, "pageDots": false}'>
                     <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                            src="image/repv1.jpg" alt=""></div>
+                            src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img1'];?>"
+                            alt=""></div>
                     <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                            src="image/rev2.jpg" alt=""></div>
+                            src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img2'];?>"
+                            alt=""></div>
                     <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                            src="image/rev3.jpg" alt=""></div>
+                            src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img3'];?>"
+                            alt=""></div>
                     <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                            src="image/rev4.jpg" alt=""></div>
+                            src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img4'];?>"
+                            alt=""></div>
                     <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                            src="image/rev5.jpg" alt=""></div>
+                            src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img5'];?>"
+                            alt=""></div>
                 </div>
                 <div class="carousel carousel-nav"
                     data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false, "prevNextButtons": false }'>
                     <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                            src="image/repv1.jpg" alt=""></div>
+                    src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img1'];?>" alt=""></div>
                     <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                            src="image/rev2.jpg" alt=""></div>
+                    src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img2'];?>" alt=""></div>
                     <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                            src="image/rev3.jpg" alt=""></div>
+                    src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img3'];?>" alt=""></div>
                     <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                            src="image/rev4.jpg" alt=""></div>
+                    src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img4'];?>" alt=""></div>
                     <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                            src="image/rev5.jpg" alt=""></div>
+                    src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img5'];?>" alt=""></div>
                 </div>
 
             </div>
 
             <div class="col-md-6 p-4 pt-0 ml-4">
                 <div class="bg-light rounded p-4 mb-4 mt-4">
-                    <p class="fs-4 text-muted">Publicado hace 51 días</p>
-                    <h1 class="fs-1">VARIOUS MFR FO2503343</h2>
+                    <p class="fs-4 text-muted">Publicado hace 1 hora</p>
+                    <h1 class="fs-1"><?php echo $datos['Descripcion'];?></h2>
                         <p class="fs-4 pt-2 text-justify">
-                            Publicado por <span class="fw-bold" style="color: var(--main)">Sebastian Vargaz</span>
+                            En stock <span class="fw-bold"
+                                style="color: var(--main)"><?php echo $datos['existencia'];?></span>
                         </p>
-                        <h1 class="fs-1 fw-bold" style="color: var(--main)">$392.790</h1>
+                        <h1 class="fs-1 fw-bold" style="color: var(--main)">$<?php echo $datos['Costo$'];?></h1>
                         <a href="" class="btn btn-dark fs-2 p-2"><i class='bx bx-store-alt bx-tada'></i> Añadir al
                             carrito</a>
                 </div>
                 <div class="bg-light rounded  p-4 mb-4 mt-4">
                     <h1 class="fs-2 text-muted">Detalle del articulo</h2>
-                        <p class="p-2">Los faros de Various MFR provienen de fabricantes como TYC, TYG, DEPO (MaxZone),
-                            Eagle Eyes y los fabricantes del equipo original.. A veces, el inventario de nuestro almacén
-                            puede tener el mismo repuesto de dos o más fabricantes, por lo que no podemos garantizar qué
-                            marca recibirá (excepto en el caso de Lámparas Nuevas de Equipo Original).
-                            Independientemente del fabricante, estos repuestos están diseñados para encajar y funcionar
-                            como el equipo original.
+                        <p class="p-2"><?php echo $datos['otro'];?>
                         </p>
                     </h1>
 
@@ -139,7 +153,7 @@
     </div>
 
 </section>
-
+<?php } ?>
 
 <?php include'./includes/components/comentarios.php';?>
 <?php include'./includes/components/footer.php';?>

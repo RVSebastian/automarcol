@@ -72,7 +72,7 @@ if (isset($datos['CollageIMG'])) {
                     <input type="file" id="c1" name="c1" accept="image/*" onchange="loadFile(event,img='c1img')"
                         style="display:none;" />
                     <label for="c1">
-                        <img class='rounded' src="<?php if (isset($datos['presentation_img'])) {
+                        <img class='rounded mx-auto' src="<?php if (isset($datos['presentation_img'])) {
                                   echo './galery/'.$datos['Parte'].'/'.$datos['presentation_img'];
                                 }else {
                                     echo 'https://qsystems.com.co/wp-content/uploads/2021/02/placeholder.png';
@@ -80,7 +80,7 @@ if (isset($datos['CollageIMG'])) {
                                 ?>" id="c1img" style="height: 30rem; width: 100%rem">
                     </label>
                     <div class="basis-11/12 m-4 flex flex-row">
-                        <div class="basis-1/4 m-2">
+                        <div class="basis-1/5 m-2">
                             <input type="file" id="p1" name="p1" accept="image/*" onchange="loadFile(event,img='p1img')"
                                 style="display:none;" />
                             <label for="p1" class="w-full">
@@ -92,7 +92,7 @@ if (isset($datos['CollageIMG'])) {
                                 ?>" id="p1img" style="height: 100%; width: 100%">
                             </label>
                         </div>
-                        <div class="basis-1/4 m-2">
+                        <div class="basis-1/5 m-2">
                             <input type="file" id="p2" name="p2" accept="image/*" onchange="loadFile(event,img='p2img')"
                                 style="display:none;" />
                             <label for="p2" class="w-full">
@@ -104,7 +104,7 @@ if (isset($datos['CollageIMG'])) {
                                 ?>" id="p2img" style="height: 100%; width: 100%">
                             </label>
                         </div>
-                        <div class="basis-1/4 m-2">
+                        <div class="basis-1/5 m-2">
                             <input type="file" id="p3" name="p3" accept="image/*" onchange="loadFile(event,img='p3img')"
                                 style="display:none;" />
                             <label for="p3" class="w-full">
@@ -116,7 +116,7 @@ if (isset($datos['CollageIMG'])) {
                                 ?>" id="p3img" style="height: 100%; width: 100%">
                             </label>
                         </div>
-                        <div class="basis-1/4 m-2">
+                        <div class="basis-1/5 m-2">
                             <input type="file" id="p4" name="p4" accept="image/*" onchange="loadFile(event,img='p4img')"
                                 style="display:none;" />
                             <label for="p4" class="w-full">
@@ -128,8 +128,21 @@ if (isset($datos['CollageIMG'])) {
                                 ?>" id="p4img" style="height: 100%; width: 100%">
                             </label>
                         </div>
+                        <div class="basis-1/5 m-2">
+                            <input type="file" id="p5" name="p5" accept="image/*" onchange="loadFile(event,img='p5img')"
+                                style="display:none;" />
+                            <label for="p5" class="w-full">
+                                <img class='rounded' src="<?php if (isset($imagenes['img5'])) {
+                                  echo './galery/'.$datos['Parte'].'/'.$imagenes['img5'];
+                                }else {
+                                    echo 'https://qsystems.com.co/wp-content/uploads/2021/02/placeholder.png';
+                                }
+                                ?>" id="p5img" style="height: 100%; width: 100%">
+                            </label>
+                        </div>
                     </div>
                     <input type="hidden" name="parte" value='<?php echo $datos['Parte'] ?>'>
+                    <input type="hidden" name="Usuario" value='<?php echo $_SESSION['key']['usuario'] ?>'>
                     <button type="submit" name="saverepuest" onclick='change();'
                         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-2xl px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600">Guardar</button>
                 </div>

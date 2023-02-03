@@ -2,9 +2,10 @@
 
 <p id="home"></p>
 <style>
-    :root {
-        --swiper-navigation-colo: gray;
-    }
+:root {
+    --swiper-navigation-colo: gray;
+}
+
 .marcas-carousel {
     transition: opacity 0.3s ease-in-out;
 }
@@ -316,7 +317,23 @@
 </section>
 
 
-<?php include'./includes/components/repuestos/card.php';?>
+<?php 
+$url = 'https://apiautomarcol.up.railway.app/api/ford/rep';
+   if (($inspect = file_get_contents($url)) == false) {
+    $error = error_get_last();
+    echo $error;
+    $oculto = 'block';
+} else {
+    $oculto = 'hidden';
+    $inspect = array_values(json_decode($inspect, true));
+    $vacio = 'VACIO';
+    $data = $inspect['1'];
+    $_SESSION['data'] = $data;
+}
+
+include'./includes/components/repuestos/card.php';
+
+?>
 <?php include'./includes/components/anuncios/reviews.php';?>
 <br>
 <br>

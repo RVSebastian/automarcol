@@ -47,7 +47,6 @@ switch ($marca) {
         $url = 'none';
         break;
 };
-
     if (($inspect = file_get_contents($url)) == false) {
         $error = error_get_last();
         $oculto = 'block';
@@ -55,7 +54,6 @@ switch ($marca) {
         $oculto = 'hidden';
         $inspect = array_values(json_decode($inspect, true));
         $vacio = 'VACIO';
-
 
         if (isset($buscador)) {
             $filtro = array_filter($inspect, function($array) use ($buscador){
@@ -71,8 +69,15 @@ switch ($marca) {
                 $_SESSION['modelo']=$data;
             }
             
-        }else{
-            $data = $inspect;
+        }
+        else{
+
+            if(isset($repuesto)){
+                $data = $inspect['1'];
+            }else{
+                $data = $inspect;
+            }
+        
             $_SESSION['modelo']=$data;
         }
     };

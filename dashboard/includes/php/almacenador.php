@@ -15,6 +15,7 @@ $collage_img = array(
     'img3' => $_FILES['p2']['name'],
     'img4' => $_FILES['p3']['name'],
     'img5' => $_FILES['p4']['name'],
+    'img5' => $_FILES['p5']['name'],
 );
 $data = array(
     'modelo' =>  $_POST['parte'],

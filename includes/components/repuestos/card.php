@@ -137,19 +137,26 @@ option {
             <div class="col-sm-12 col-md-9 r">
                 <div class="row g-sm-4 gy-4 g-md-1">
                     <?php
-            for ($i = 1; $i <= 25; $i++) {
+            foreach ($data as $datos){
+            ?>
+                    <?php 
+              if ($datos['presentation_img'] !='') {
             ?>
                     <div class="col-md-3 col-sm-6 col-6 animation_repuestos">
                         <div class="card rounded shadow rounded-3 repuestos border-0 m-sm-4 m-md-4">
-                            <figure> <img src="./image/rep3.jpg" class="card-img-top"></figure>
+                            <figure> <img src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $datos['presentation_img'];?>" class="card-img-top"></figure>
                             <div class="card-body bg-light">
-                                <p class="trepuestos t-d p-2 pb-0 pt-0">Modulo Abs Original Ford Fusion</p>
-                                <h3 class="fs-2 fw-bold p-2 pt-0 pb-0" style="color: var(--main)">$963.708</h1>
-                                    <p class="p-2 pt-0 pb-0 d"> <i class='bx bx-package'></i> 3 Disponibles</p>
-                                    <a href="./repuestos" class="stretched-link"></a>
+                                <p class="trepuestos t-d p-2 pb-0 pt-0"><?php echo $datos['Descripcion'];?></p>
+                                <h3 class="fs-2 fw-bold p-2 pt-0 pb-0" style="color: var(--main)">$<?php echo $datos['Costo$'];?></h1>
+                                    <p class="p-2 pt-0 pb-0 d"> <i class='bx bx-package'></i><?php echo $datos['existencia'];?> Disponibles</p>
+                                    <p class="text-muted p-2 pb-0 pt-0"><i class='bx bx-purchase-tag'></i><?php echo $datos['Marca'];?></p>
+                                    <a href="./repuestos?parte=<?php echo $datos['Parte'];?>" class="stretched-link"></a>
                             </div>
                         </div>
                     </div>
+                    <?php
+            }
+            ?>
                     <?php
             }
             ?>
