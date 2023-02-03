@@ -61,6 +61,10 @@
 .bg-dark {
     background-color: #2c3b6d !important;
 }
+.otro img{
+    float: left !important;
+    padding: 3px;
+}
 </style>
 <?php
 $data = $_SESSION['data'];
@@ -127,7 +131,7 @@ $data = $filtro;
                         <a href="" class="btn btn-dark fs-2 p-2"><i class='bx bx-store-alt bx-tada'></i> Añadir al
                             carrito</a>
                 </div>
-                <div class="bg-light rounded  p-4 mb-4 mt-4">
+                <div class="bg-light rounded p-4 mb-4 mt-4 otro">
                     <h1 class="fs-2 text-muted">Detalle del articulo</h2>
                         <p class="p-2"><?php echo $datos['otro'];?>
                         </p>

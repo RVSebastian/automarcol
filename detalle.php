@@ -56,6 +56,11 @@ select {
 .text-dark {
     color: var(--main) !important;
 }
+.otro img{
+    float: left !important;
+    width: 50%;
+    padding: 3px;
+}
 </style>
 <br>
 
@@ -142,7 +147,7 @@ select {
                         </div>
                     </div>
                     <input type="hidden" id="marca" value='<?php echo $datos['Marca']?>'>
-                    <div class="pt-3">
+                    <div class="pt-3 otro">
                         <?php echo $datos['Otro']?>
                     </div>
 
@@ -157,9 +162,9 @@ select {
                             $indice++;
                         ?>
                         <div class="col-3">
-                            <figure>
+                            <figure class='rounded'>
                                 <img src="./dashboard/galery/<?php echo $datos['Version_DescipcionModelo'].'/'.$imagenes['img'.$indice]?>"
-                                    class='img-fluid mx-auto d-block'>
+                                    class='img-fluid mx-auto d-block rounded'>
                             </figure>
                         </div>
                         <?php    }?>
