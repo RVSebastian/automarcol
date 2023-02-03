@@ -1,10 +1,34 @@
 <?php
-    $url_insert = "../../galery";
-    $url_insert = $url_insert.'/'.$_POST['modelo'];
-    if (!file_exists($url_insert)) {
-        mkdir($url_insert, 0777, true);
-    };
 
+$url_insert = "../../galery";
+
+
+
+if (isset($_POST['saverepuest'])) {
+    $url_insert = $url_insert.'/'.$_POST['parte'];
+if (!file_exists($url_insert)) {
+    mkdir($url_insert, 0777, true);
+};
+$collage_img = array(
+    'img1' => $_FILES['c1']['name'],
+    'img2' => $_FILES['p1']['name'],
+    'img3' => $_FILES['p2']['name'],
+    'img4' => $_FILES['p3']['name'],
+    'img5' => $_FILES['p4']['name'],
+);
+$data = array(
+    'modelo' =>  $_POST['parte'],
+    'presentation_img' =>$_FILES['c1']['name'],
+    'collage_img' => json_encode($collage_img),
+    'usuario' =>  $_POST['usuario'],
+    'otro' =>  $_POST['otro'],
+);
+
+}else{
+$url_insert = $url_insert.'/'.$_POST['modelo'];
+if (!file_exists($url_insert)) {
+    mkdir($url_insert, 0777, true);
+};
     $collage_img = array(
         'img1' => $_FILES['p1']['name'],
         'img2' => $_FILES['p2']['name'],
@@ -15,40 +39,6 @@
         'img7' => $_FILES['p7']['name'],
         'img8' => $_FILES['p8']['name'],
     );
-
-    
-    for ($i=1; $i <8 ; $i++) { 
-        $file = $_FILES["p$i"]["name"]; 
-        $url_temp = $_FILES["p$i"]["tmp_name"]; 
-        $url_target = str_replace('\\', '/', $url_insert) . '/' . $file;
-        if (move_uploaded_file($url_temp, $url_target)) {
-            echo "El archivo " . htmlspecialchars(basename($file)) . " ha sido cargado con éxito.";
-        } else {
-            echo "El archivo " . htmlspecialchars(basename($file)) . " no se ha podido cargar.";
-        }
-    };
-    for ($i=1; $i <2 ; $i++) { 
-        $file = $_FILES["c1"]["name"]; 
-        $url_temp = $_FILES["c1"]["tmp_name"]; 
-        $url_target = str_replace('\\', '/', $url_insert) . '/' . $file;
-        if (move_uploaded_file($url_temp, $url_target)) {
-            echo "El archivo " . htmlspecialchars(basename($file)) . " ha sido cargado con éxito.";
-        } else {
-            echo "El archivo " . htmlspecialchars(basename($file)) . " no se ha podido cargar.";
-        }
-    };
-    for ($i=1; $i <2 ; $i++) { 
-        $file = $_FILES["presentacion"]["name"]; 
-        $url_temp = $_FILES["presentacion"]["tmp_name"]; 
-        $url_target = str_replace('\\', '/', $url_insert) . '/' . $file;
-        if (move_uploaded_file($url_temp, $url_target)) {
-            echo "El archivo " . htmlspecialchars(basename($file)) . " ha sido cargado con éxito.";
-        } else {
-            echo "El archivo " . htmlspecialchars(basename($file)) . " no se ha podido cargar.";
-        }
-    };
-
-
 
     $data = array(
         'modelo' =>  $_POST['modelo'],
@@ -63,7 +53,40 @@
         'combustible' =>  $_POST['gasolina'],
         'otro' =>  $_POST['otro'],
     );
-    
+}
+
+for ($i=1; $i <8 ; $i++) { 
+    $file = $_FILES["p$i"]["name"]; 
+    $url_temp = $_FILES["p$i"]["tmp_name"]; 
+    $url_target = str_replace('\\', '/', $url_insert) . '/' . $file;
+    if (move_uploaded_file($url_temp, $url_target)) {
+        echo "El archivo " . htmlspecialchars(basename($file)) . " ha sido cargado con éxito.";
+    } else {
+        echo "El archivo " . htmlspecialchars(basename($file)) . " no se ha podido cargar.";
+    }
+};
+for ($i=1; $i <2 ; $i++) { 
+    $file = $_FILES["c1"]["name"]; 
+    $url_temp = $_FILES["c1"]["tmp_name"]; 
+    $url_target = str_replace('\\', '/', $url_insert) . '/' . $file;
+    if (move_uploaded_file($url_temp, $url_target)) {
+        echo "El archivo " . htmlspecialchars(basename($file)) . " ha sido cargado con éxito.";
+    } else {
+        echo "El archivo " . htmlspecialchars(basename($file)) . " no se ha podido cargar.";
+    }
+};
+for ($i=1; $i <2 ; $i++) { 
+    $file = $_FILES["presentacion"]["name"]; 
+    $url_temp = $_FILES["presentacion"]["tmp_name"]; 
+    $url_target = str_replace('\\', '/', $url_insert) . '/' . $file;
+    if (move_uploaded_file($url_temp, $url_target)) {
+        echo "El archivo " . htmlspecialchars(basename($file)) . " ha sido cargado con éxito.";
+    } else {
+        echo "El archivo " . htmlspecialchars(basename($file)) . " no se ha podido cargar.";
+    }
+};
+
+
     $data_string = json_encode($data);
     $ch = curl_init('https://apiautomarcol.up.railway.app/api/image/vehicles/model');
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");

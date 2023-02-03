@@ -11,29 +11,28 @@ if (isset($_POST['cotizar'])) {
     mysqli_query($conn, $query);
     unset($_POST['cotizar']);
     $response = "<script> enviado(); </script>";
-    if ($marca == 'FORD') {
-       
-$curl = curl_init();
+    if ($marca == 'PRUEBA') { 
+        $curl = curl_init();
 
-curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://example.com/api/send_data",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => "",
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 0,
-  CURLOPT_FOLLOWLOCATION => true,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS => array(
-    "field1" => "value1",
-    "field2" => "value2"
-  ),
-));
+        curl_setopt_array($curl, array(
+        CURLOPT_URL => "https://example.com/api/send_data",
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => "",
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => "POST",
+        CURLOPT_POSTFIELDS => array(
+            "field1" => "value1",
+            "field2" => "value2"
+        ),
+        ));
 
-$response = curl_exec($curl);
-curl_close($curl);
-echo $response;
-    }
+        $response = curl_exec($curl);
+        curl_close($curl);
+        echo $response;
+    };
 }
 
 ?>

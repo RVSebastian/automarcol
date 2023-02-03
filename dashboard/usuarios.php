@@ -88,7 +88,10 @@ if (isset($_POST['edit'])) {
                                 <?php echo $row['usuario']; ?>
                             </td>
                             <td class="px-6 py-4">
-                                <?php echo $row['estado']; ?>
+                                <div class="flex items-center">
+                                    <div class="h-2.5 w-2.5 rounded-full <?php echo $row['estado'] ?> mr-2"></div>
+                                    <?php echo $row['estado'] ?>
+                                </div>
                             </td>
                             <td class="px-6 py-4">
                                 <a href="?id=<?php echo $row['id'] ?>"><i class='bx bx-edit'></i></a> /
@@ -176,7 +179,8 @@ if (isset($_POST['edit'])) {
                         class="rounded bg-blue-900 w-96 p-2 mt-2 text-white">Editar</button>
                 </form>
                 <?php } else{ ?>
-                <div class="font-semi-bold text-lg mb-4 text-center title text-lg font-semibold text-gray-900">Crecion de usuarios</div>
+                <div class="font-semi-bold text-lg mb-4 text-center title text-lg font-semibold text-gray-900">Crecion
+                    de usuarios</div>
                 <form action="" method="POST">
                     <label class="block">
                         <span class="block text-md font-medium text-slate-700">Nombre completo</span>

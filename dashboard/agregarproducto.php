@@ -31,7 +31,8 @@ input {
     width: 100% !important;
     height: 180px !important;
 }
-#editor img{
+
+#editor img {
     float: left;
     padding: 10px;
 }

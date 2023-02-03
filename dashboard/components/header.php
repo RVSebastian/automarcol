@@ -36,13 +36,13 @@ include'./includes/php/validador.php'; // añadimos las validaciones de session
             </li>
             <li class="">
                 <a href="#">
-                    <i class='bx bx-box'></i>
-                    <span class="links_name">Productos</span>
+                    <i class='bx bx-line-chart'></i>
+                    <span class="links_name">Cartera</span>
                 </a>
             </li>
             <li class="">
                 <a href="#">
-                    <i class='bx bx-list-ul'></i>
+                    <i class='bx bxs-credit-card'></i>
                     <span class="links_name">Lista de pagos</span>
                 </a>
             </li>
@@ -51,16 +51,21 @@ include'./includes/php/validador.php'; // añadimos las validaciones de session
             <li>
                 <a href="./stock">
                     <i class='bx bx-coin-stack'></i>
-                    <span class="links_name">Stock</span>
+                    <span class="links_name">Inventario</span>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <i class='bx bx-book-alt'></i>
-                    <span class="links_name">Pedidos</span>
+                    <span class="links_name">Reportes</span>
                 </a>
             </li>
-
+            <li>
+                <a href="./leads">
+                    <i class='bx bx-user-voice'></i>
+                    <span class="links_name">Leads</span>
+                </a>
+            </li>
             <li>
                 <a href="#">
                     <i class='bx bxs-notification'></i>
@@ -75,7 +80,7 @@ include'./includes/php/validador.php'; // añadimos las validaciones de session
             </li>
             <li>
                 <a href="./citas">
-                    <i class='bx bxs-car-mechanic' ></i>
+                    <i class='bx bxs-car-mechanic'></i>
                     <span class="links_name">Citas</span>
                 </a>
             </li>
@@ -98,15 +103,15 @@ include'./includes/php/validador.php'; // añadimos las validaciones de session
                     $cg = $_SESSION["key"]["cargo"];
                     if($cg == "Administrador") {
             ?>
-             <li>
-                <a href="./ajustes">
+            <li>
+                <a href="#">
                     <i class='bx bx-cog'></i>
                     <span class="links_name">Setting</span>
                 </a>
             </li>
             <?php } ?>
             <?php } ?>
-          
+
             <!--
             <script>
             $(document).ready(function() {
@@ -128,12 +133,13 @@ include'./includes/php/validador.php'; // añadimos las validaciones de session
             </li>
             -->
             <li class="log_out">
-                <a href="?l=1">
-                    <i class='bx bx-log-out'></i>
-                    <span class="links_name">Cerrar Sesión</span>
-                </a>
+                <form method="POST">
+                    <button type="submit" class="text-white" name='logout'>
+                        <i class='bx bx-log-out'></i>
+                        <span class="links_name text-white">Cerrar Sesión</span>
+                    </button>
+                </form>
             </li>
-
         </ul>
     </div>
     <section class="home-section ">
@@ -145,3 +151,18 @@ include'./includes/php/validador.php'; // añadimos las validaciones de session
 
 
         </nav>
+
+        <style>
+        .Activo {
+            background-color: #27AE60;
+        }
+
+        .Atendido {
+            background-color: #F4D03F;
+        }
+
+        .Rechazado,
+        .bloqueado {
+            background-color: #C0392B;
+        }
+        </style>

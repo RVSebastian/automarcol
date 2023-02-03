@@ -14,8 +14,10 @@ if ($_SERVER['HTTP_USER_AGENT'] != $_SESSION['useragent'])
   session_destroy();
 }
 */
-if (isset($_GET['l'])) { // detectamos un cerrar cession, destruimos la seccion y lo enviamos al login
-    session_destroy(); 
+if (isset($_POST['logout'])) {
+  session_destroy(); 
+  header("Location: login");
+// detectamos un cerrar cession, destruimos la seccion y lo enviamos al login
 }
    /*$usi = $_SESSION["key"]["id"];
         $query = "SELECT * FROM usuarios WHERE id = '$usi'";
