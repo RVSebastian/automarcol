@@ -61,14 +61,15 @@
 .bg-dark {
     background-color: #2c3b6d !important;
 }
-.otro img{
+
+.otro img {
     float: left !important;
     padding: 3px;
 }
 </style>
 <?php
 $data = $_SESSION['data'];
-$modelo = $_GET['modelo'];
+$modelo = $_GET['parte'];
 $filtro = array_filter($data, function($array) use ($modelo){
     if (str_contains($array['Parte'], $modelo)) {
         return $array;
@@ -106,22 +107,26 @@ $data = $filtro;
                 <div class="carousel carousel-nav"
                     data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false, "prevNextButtons": false }'>
                     <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                    src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img1'];?>" alt=""></div>
+                            src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img1'];?>"
+                            alt=""></div>
                     <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                    src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img2'];?>" alt=""></div>
+                            src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img2'];?>"
+                            alt=""></div>
                     <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                    src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img3'];?>" alt=""></div>
+                            src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img3'];?>"
+                            alt=""></div>
                     <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                    src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img4'];?>" alt=""></div>
+                            src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img4'];?>"
+                            alt=""></div>
                     <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                    src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img5'];?>" alt=""></div>
+                            src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img5'];?>"
+                            alt=""></div>
                 </div>
 
             </div>
 
             <div class="col-md-6 p-4 pt-0 ml-4">
                 <div class="bg-light rounded p-4 mb-4 mt-4">
-                    <p class="fs-4 text-muted">Publicado hace 1 hora</p>
                     <h1 class="fs-1"><?php echo $datos['Descripcion'];?></h2>
                         <p class="fs-4 pt-2 text-justify">
                             En stock <span class="fw-bold"
@@ -133,7 +138,7 @@ $data = $filtro;
                 </div>
                 <div class="bg-light rounded p-4 mb-4 mt-4 otro">
                     <h1 class="fs-2 text-muted">Detalle del articulo</h2>
-                        <p class="p-2"><?php echo $datos['otro'];?>
+                        <p class="p-2" style="background: transparent;"><?php echo $datos['otro'];?>
                         </p>
                     </h1>
 

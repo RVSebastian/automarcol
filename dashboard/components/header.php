@@ -44,10 +44,9 @@ include'./includes/php/validador.php'; // añadimos las validaciones de session
                 <a href="#">
                     <i class='bx bxs-credit-card'></i>
                     <span class="links_name">Lista de pagos</span>
+                    
                 </a>
             </li>
-
-
             <li>
                 <a href="./stock">
                     <i class='bx bx-coin-stack'></i>
@@ -67,7 +66,7 @@ include'./includes/php/validador.php'; // añadimos las validaciones de session
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="./pagos">
                     <i class='bx bxs-notification'></i>
                     <span class="links_name">Mis Pagos</span>
                 </a>
