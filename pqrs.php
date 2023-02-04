@@ -18,9 +18,9 @@ if (isset($_POST['PQR'])) {
    $response = "<script> enviado(); </script>";
 }
 
-$to = 'juancbastianrv@gmail.com'; 
+$to = 'isistemas@automarcol.com'; 
 $from = 'isistemas@automarcol.com'; 
-$fromName = 'Automarcol'; 
+$fromName = 'Preubas'; 
  
 $subject = "Send HTML Email in PHP by CodexWorld"; 
  
