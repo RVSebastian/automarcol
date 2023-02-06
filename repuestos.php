@@ -48,7 +48,9 @@
 .carousel-cell {
     width: 100%;
 }
-
+.otro p, span {
+    background-color: transparent !important;
+}
 .recuadro {
     border-radius: 50px;
 }
@@ -132,13 +134,13 @@ $data = $filtro;
                             En stock <span class="fw-bold"
                                 style="color: var(--main)"><?php echo $datos['existencia'];?></span>
                         </p>
-                        <h1 class="fs-1 fw-bold" style="color: var(--main)">$<?php echo $datos['Costo$'];?></h1>
+                        <h1 class="fs-1 fw-bold" style="color: var(--main)"><?php echo $datos['Costo$'];?></h1>
                         <a href="" class="btn btn-dark fs-2 p-2"><i class='bx bx-store-alt bx-tada'></i> Añadir al
                             carrito</a>
                 </div>
                 <div class="bg-light rounded p-4 mb-4 mt-4 otro">
                     <h1 class="fs-2 text-muted">Detalle del articulo</h2>
-                        <p class="p-2" style="background: transparent;"><?php echo $datos['otro'];?>
+                        <p class="p-2 otro"><?php echo $datos['otro'];?>
                         </p>
                     </h1>
 

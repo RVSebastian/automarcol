@@ -29,7 +29,7 @@
                     class="bg-white" width="100%" height="100%"></iframe>
             </div>
             <div class="col-md-12 mt-2" style="height: 500px">
-                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1bkbfoTRJ9Y0gLiFmYtbIVmWi5qfg_bs&ehbc=2E312F"
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1fPJ19JV9HRot2ML5InoP6KPyuq1wXFo&ehbc=2E312F"
                     class="bg-white" width="100%" height="100%"></iframe>
             </div>
         </div>

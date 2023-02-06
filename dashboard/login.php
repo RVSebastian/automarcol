@@ -6,7 +6,7 @@ if (session_status() === PHP_SESSION_NONE) {
 if(isset($_POST['login'])){
     $usuario = $_POST['usuario'];
     $contraseña = $_POST['contraseña'];
-    $query = "SELECT usuario,cargo FROM usuarios WHERE usuario='$usuario' and contraseña='$contraseña' and estado='activo'";
+    $query = "SELECT usuario,cargo,permisos FROM usuarios as us INNER JOIN roles as rl on rl.nombre=us.cargo  WHERE usuario='$usuario' and contraseña='$contraseña' and estado='activo'";
     $result = mysqli_query($conn, $query);
     while ($row = mysqli_fetch_array($result)) { 
     $_SESSION['key'] = $row;

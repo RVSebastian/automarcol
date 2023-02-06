@@ -75,7 +75,7 @@ select {
             <div class="position-absolute top-50 end-0 p-4 text-white wall">
                 <h2 class="p-0 m-0"><?php echo $datos['Marca']?></h2>
                 <h1 style="font-size:60px" class="pb-0 mb-0"><?php echo $datos['Version_DescipcionModelo']?></h1>
-                <h1 class="fs-1 fw-bold" style="font-size: 70px;">$<?php echo $datos['CostoTotal']?></h1>
+                <h1 class="fs-1 fw-bold" style="font-size: 70px;"><?php echo $datos['CostoTotal']?></h1>
                 <a href="https://web.whatsapp.com/send?phone=573222863938" class="btn btn-success fs-3"><i
                         class="fab fa-whatsapp"></i> Contactar a un Asesor</a>
             </div>

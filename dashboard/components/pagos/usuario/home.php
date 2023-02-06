@@ -3,28 +3,6 @@
    // leemos los pagos
    $query = "SELECT * FROM pagos where usuario='vargazs'";
    $result_task = mysqli_query($conn, $query);
-    var_dump($result_task);
-   $Rechazado = array_filter($resultarray, function($array){
-    if (str_contains($array['estado'], 'Rechazado')) {
-        return $array;
-    }
-    });
-    $Autorizado = array_filter($resultarray, function($array){
-    if (str_contains($array['estado'], 'Autorizado')) {
-        return $array;
-    }
-    });
-    $Pendiente = array_filter($resultarray, function($array){
-    if (str_contains($array['estado'], 'Pendiente')) {
-        return $array;
-    }
-    });
-    var_dump($Rechazado);
-    var_dump($Autorizado);
-    var_dump($Pendiente);
-
-
-
 
    // subir pagos
    $url_insert = "./galery/Pagos";
@@ -44,19 +22,17 @@
     $query = "INSERT INTO pagos(cuenta, valor, nombret, documentot, otro, usuario, img, estado) 
     VALUES ('$cuenta', '$valor', '$nombret','$documentot', '$otro', '$usuario','$basename','Pendiente')";
     mysqli_query($conn, $query);
+    header("Refresh:0");
     unset($_POST['guardar']);
    }
 ?>
 <div class="home-content">
     <div class="flex flex-wrap">
-        <div class="basis-11/12 md:basis-2/4  mt-0 p-2">
-            <div class="relative overflow-x-auto overflow-y-auto shadow-md sm:rounded-lg bg-white p-4">
+        <div class="basis-11/12 md:basis-1/4  mt-0 p-2">
+            <div class="relative overflow-x-auto shadow-md sm:rounded-lg bg-white p-4">
                 <table class="w-full text-sm text-left text-gray-500">
                     <thead class="text-xs uppercase bg-gray-100 text-gray-900">
                         <tr>
-                            <th scope="col" class="px-6 py-3">
-                                Usuario
-                            </th>
                             <th scope="col" class="px-6 py-3">
                                 Cuenta
                             </th>
@@ -79,12 +55,10 @@
                     </thead>
                     <tbody>
                         <?php 
-                                  foreach($Rechazado as $row){ 
-                                ?>
+                                  foreach($result_task as $row){ 
+                                    if($row['estado'] == 'Pendiente'){
+                        ?>
                         <tr class="bg-white border-b hover:bg-gray-200 ">
-                            <td class="px-6 py-4">
-                                <?php echo $row['usuario'] ?>
-                            </td>
                             <td class="px-6 py-4">
                                 <?php echo $row['cuenta'] ?>
                             </td>
@@ -107,7 +81,7 @@
                                 </div>
                             </td>
                         </tr>
-
+                        <?php } ?>
                         <?php } ?>
 
                     </tbody>
@@ -115,14 +89,11 @@
             </div>
 
         </div>
-        <div class="basis-11/12 md:basis-2/4 mt-0 p-2">
+        <div class="basis-11/12 md:basis-1/4 mt-0 p-2">
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg bg-white p-4">
                 <table class="w-full text-sm text-left text-gray-500">
                     <thead class="text-xs uppercase bg-gray-100 text-gray-900">
                         <tr>
-                            <th scope="col" class="px-6 py-3">
-                                Usuario
-                            </th>
                             <th scope="col" class="px-6 py-3">
                                 Cuenta
                             </th>
@@ -145,12 +116,10 @@
                     </thead>
                     <tbody>
                         <?php 
-                               foreach($Rechazado as $row) { 
-                                ?>
+                                  foreach($result_task as $row){ 
+                                    if($row['estado'] != 'Pendiente'){
+                        ?>
                         <tr class="bg-white border-b hover:bg-gray-200 ">
-                            <td class="px-6 py-4">
-                                <?php echo $row['usuario'] ?>
-                            </td>
                             <td class="px-6 py-4">
                                 <?php echo $row['cuenta'] ?>
                             </td>
@@ -173,9 +142,8 @@
                                 </div>
                             </td>
                         </tr>
-
                         <?php } ?>
-
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>

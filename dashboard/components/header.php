@@ -35,16 +35,26 @@ include'./includes/php/validador.php'; // añadimos las validaciones de session
                 </a>
             </li>
             <li class="">
-                <a href="#">
+                <a href="
+                <?php if ($_SESSION["key"]['permisos'] >= 7) {
+                    echo "./cartera";
+                }else{ echo "#";}
+                ?>
+                ">
                     <i class='bx bx-line-chart'></i>
                     <span class="links_name">Cartera</span>
                 </a>
             </li>
             <li class="">
-                <a href="#">
+                <a href="
+                <?php if ($_SESSION["key"]['permisos'] >= 8) {
+                    echo "./pagos";
+                }else{ echo "#";}
+                ?>
+                ">
                     <i class='bx bxs-credit-card'></i>
                     <span class="links_name">Lista de pagos</span>
-                    
+
                 </a>
             </li>
             <li>
@@ -54,13 +64,23 @@ include'./includes/php/validador.php'; // añadimos las validaciones de session
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="
+                <?php if ($_SESSION["key"]['permisos'] >= 7) {
+                    echo "./reports";
+                }else{ echo "#";}
+                ?>
+                ">
                     <i class='bx bx-book-alt'></i>
                     <span class="links_name">Reportes</span>
                 </a>
             </li>
             <li>
-                <a href="./leads">
+                <a href="
+                <?php if ($_SESSION["key"]['permisos'] >= 7) {
+                    echo "./leads";
+                }else{ echo "#";}
+                ?>
+                ">
                     <i class='bx bx-user-voice'></i>
                     <span class="links_name">Leads</span>
                 </a>
@@ -72,35 +92,41 @@ include'./includes/php/validador.php'; // añadimos las validaciones de session
                 </a>
             </li>
             <li>
-                <a href="./pqrs">
+                <a href="
+                <?php if ($_SESSION["key"]['permisos'] >= 7) {
+                    echo "./pqrs";
+                }else{ echo "#";}
+                ?>
+                ">
                     <i class='bx bx-message-dots'></i>
                     <span class="links_name">Pqrs</span>
                 </a>
             </li>
             <li>
-                <a href="./citas">
+                <a href="
+                <?php if ($_SESSION["key"]['permisos'] >= 7) {
+                    echo "./citas";
+                }else{ echo "#";}
+                ?>
+                ">
                     <i class='bx bxs-car-mechanic'></i>
                     <span class="links_name">Citas</span>
                 </a>
             </li>
-            <?php 
-                if (isset($_SESSION["key"])) {
-                    $cg = $_SESSION["key"]["cargo"];
-                    if($cg == "Administrador") {
-            ?>
             <li>
-                <a href="./usuarios">
+                <a href="
+                <?php if ($_SESSION["key"]['permisos'] >= 7) {
+                    echo "./usuarios";
+                }else{ echo "#";}
+                ?>
+                ">
                     <i class='bx bx-user'></i>
                     <span class="links_name">Usuarios</span>
                 </a>
             </li>
-            <?php } ?>
-            <?php } ?>
 
             <?php 
-                if (isset($_SESSION["key"])) {
-                    $cg = $_SESSION["key"]["cargo"];
-                    if($cg == "Administrador") {
+                if ($_SESSION["key"]['permisos'] >= 7) {
             ?>
             <li>
                 <a href="#">
@@ -108,7 +134,6 @@ include'./includes/php/validador.php'; // añadimos las validaciones de session
                     <span class="links_name">Setting</span>
                 </a>
             </li>
-            <?php } ?>
             <?php } ?>
 
             <!--
