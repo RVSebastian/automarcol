@@ -1,6 +1,32 @@
 <?php
+
+   // leemos los pagos
    $query = "SELECT * FROM pagos where usuario='vargazs'";
    $result_task = mysqli_query($conn, $query);
+    var_dump($result_task);
+   $Rechazado = array_filter($resultarray, function($array){
+    if (str_contains($array['estado'], 'Rechazado')) {
+        return $array;
+    }
+    });
+    $Autorizado = array_filter($resultarray, function($array){
+    if (str_contains($array['estado'], 'Autorizado')) {
+        return $array;
+    }
+    });
+    $Pendiente = array_filter($resultarray, function($array){
+    if (str_contains($array['estado'], 'Pendiente')) {
+        return $array;
+    }
+    });
+    var_dump($Rechazado);
+    var_dump($Autorizado);
+    var_dump($Pendiente);
+
+
+
+
+   // subir pagos
    $url_insert = "./galery/Pagos";
    if (isset($_POST['guardar'])) {
     $filename   = uniqid() . "-" . time(); // 5dab1961e93a7-1571494241
@@ -53,7 +79,7 @@
                     </thead>
                     <tbody>
                         <?php 
-                                 while ($row = mysqli_fetch_array($result_task)) { 
+                                  foreach($Rechazado as $row){ 
                                 ?>
                         <tr class="bg-white border-b hover:bg-gray-200 ">
                             <td class="px-6 py-4">
@@ -119,7 +145,7 @@
                     </thead>
                     <tbody>
                         <?php 
-                                 while ($row = mysqli_fetch_array($result_task)) { 
+                               foreach($Rechazado as $row) { 
                                 ?>
                         <tr class="bg-white border-b hover:bg-gray-200 ">
                             <td class="px-6 py-4">
