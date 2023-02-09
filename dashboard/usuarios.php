@@ -20,14 +20,12 @@ if (isset($_POST['create'])) {
     $contactable = $_POST['contactable'];
     $query = "INSERT INTO usuarios(nombre, contraseña, cargo, usuario, estado, telefono, contactable) VALUES ('$nombre', '$contraseña', '$cargo','$usuario', 'activo', '$telefono', '$contactable')";
     mysqli_query($conn, $query);
-    header("Location: usuarios");
 };
 
 if (isset($_GET['del'])) {
     $id = $_GET['del'];
     $query = "DELETE FROM usuarios WHERE id=$id";
     mysqli_query($conn, $query);
-    header("Location: usuarios");
 };
 
 if (isset($_POST['edit'])) {
@@ -41,8 +39,6 @@ if (isset($_POST['edit'])) {
     $contactable = $_POST['contactable'];
     $query = "UPDATE usuarios SET nombre = '$nombre', contraseña = '$contraseña', cargo = '$cargo', usuario = '$usuario', estado = '$estado', telefono = '$telefono', contactable='$contactable' where id='$id'";
     mysqli_query($conn, $query);
-    header("Location: usuarios");
-
 };
 
 ?>

@@ -1,9 +1,15 @@
 <?php include'./includes/components/header.php';?>
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+} // inicimoas la session nuevamente
+?>
 <?php include'./dashboard/includes/cn.php';?>
 <?php 
 $marca = $_GET['marca'];
 $modelo = $_GET['modelo'];
 $data = $_SESSION['data'];
+
 $filtro = array_filter($data, function($array) use ($modelo){
     if (str_contains($array['Version_DescipcionModelo'], $modelo)) {
         return $array;
@@ -56,25 +62,46 @@ select {
 .text-dark {
     color: var(--main) !important;
 }
-.otro img{
+
+.otro img {
     float: left !important;
     width: 50%;
     padding: 3px;
 }
-.ql-video{
+
+.ql-video {
     width: 100%;
     height: 50rem;
+}
+
+@media (max-width: 400px) {
+    .modelo {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 800px) {
+    .modelo {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 3000px) {
+    .modelo {
+        font-size: 60px;
+    }
 }
 </style>
 <br>
 
 <?php foreach (array_slice($data, 0, 1) as $datos) { ?>
 <section class="bg-gray pt-5 mt-5">
-    <div class="container wl animate__animated animate__slideInDown animate__delay-1s animate__slow">
+    <div class="container wl animate__animated animate__slideInDown animate__delay-1s animate__slow"
+        style="padding-top: 5rem;">
         <div class="position-relative">
             <div class="position-absolute top-50 end-0 p-4 text-white wall">
                 <h2 class="p-0 m-0"><?php echo $datos['Marca']?></h2>
-                <h1 style="font-size:60px" class="pb-0 mb-0"><?php echo $datos['Version_DescipcionModelo']?></h1>
+                <h1 class="pb-0 mb-0 modelo"><?php echo $datos['Version_DescipcionModelo']?></h1>
                 <h1 class="fs-1 fw-bold" style="font-size: 70px;"><?php echo $datos['CostoTotal']?></h1>
                 <a href="https://web.whatsapp.com/send?phone=573222863938" class="btn btn-success fs-3"><i
                         class="fab fa-whatsapp"></i> Contactar a un Asesor</a>
@@ -86,25 +113,24 @@ select {
     </div>
 </section>
 <section class="bg-gray">
-    <div class="container rounded-3 bg-white animate__animated animate__slideInUp animate__delay-1s animate__slow"
-        style="background-color: #f7f7f7">
-        <div class="p-5">
-            <div class="row text-center">
+    <div class="container rounded-3 bg-white animate__animated animate__slideInUp animate__delay-1s animate__slow">
+        <div class="p-5 bg-white">
+            <div class="row text-md-center text-sm-start">
                 <div class="col-md-3 col-sm-5 border-md-end border-sm-bottom border-2">
                     <h1>Kilometraje</h1>
-                    <h1 class="text-dark">0</h1>
+                    <h2 class="text-dark m-0 fw-bold mb-4">0</h2>
                 </div>
                 <div class="col-md-3 col-sm-5  border-md-end border-sm-bottom border-2">
                     <h1>Estado</h1>
-                    <h1 class="text-dark">Nuevo</h1>
+                    <h2 class="text-dark m-0 fw-bold mb-4">Nuevo</h2>
                 </div>
                 <div class="col-md-3 col-sm-6  border-md-end border-sm-bottom border-2">
                     <h1>Transmisión</h1>
-                    <h1 class="text-dark">Automático</h1>
+                    <h2 class="text-dark m-0 fw-bold mb-4">Automático</h2>
                 </div>
                 <div class="col-md-3 col-sm-6 border-2">
                     <h1>Numero de Puertas</h1>
-                    <h1 class="text-dark"><?php echo $datos['Puertas']?></h1>
+                    <h2 class="text-dark m-0 fw-bold mb-4"><?php echo $datos['Puertas']?></h2>
                 </div>
             </div>
         </div>
@@ -113,7 +139,7 @@ select {
 
 <section class="bg-gray pt-0 mt-0 animate__animated animate__slideInUp animate__delay-1s animate__slow">
     <div class="container-md md-p-4">
-        <div class="row justify-content-center sm-p-2 pt-5 pb-0">
+        <div class="row justify-content-center sm-p-2 pt-1 pb-0">
             <div class="col-md-9 md-p-5 pt-0">
                 <div class="bg-white pt-4 p-5">
                     <div class="row ">
@@ -165,7 +191,7 @@ select {
                         foreach ($imagenes as $key) {
                             $indice++;
                         ?>
-                        <div class="col-3">
+                        <div class="col-md-3 col-6">
                             <figure class='rounded'>
                                 <img src="./dashboard/galery/<?php echo $datos['Version_DescipcionModelo'].'/'.$imagenes['img'.$indice]?>"
                                     class='img-fluid mx-auto d-block rounded'>

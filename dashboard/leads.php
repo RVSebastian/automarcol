@@ -42,7 +42,7 @@
                     </thead>
                     <tbody>
                         <?php 
-                                 $query = "SELECT * FROM leads";
+                                 $query = "SELECT * FROM leads order by fecha desc";
                                  $result_task = mysqli_query($conn, $query);
                                  while ($row = mysqli_fetch_array($result_task)) { 
                                 ?>

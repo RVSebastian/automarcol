@@ -31,18 +31,18 @@ p .d {
 .repuestos {
     background-color: #eeeee;
 }
-
-.repuestos:hover img {
-    -webkit-transform: rotate(1deg) scale(1.4);
-    transform: rotate(1deg) scale(1.1);
-    -webkit-transition: .3s ease-in-out;
-    transition: .3s ease-in-out;
-}
-
 figure {
     overflow: hidden;
-    background-color: transparent;
 }
+.repuestos:hover img {
+    -webkit-transform: rotate(3deg) scale(1.2);
+    transform: rotate(3deg) scale(1.2);
+    -webkit-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
+    object-fit: contain;
+}
+
+
 
 .bg-dark {
     background-color: #2c3b6d !important;
@@ -134,34 +134,35 @@ option {
                 </div>
             </div>
 
-            <div class="col-sm-12 col-md-9 r">
-                <div class="row g-sm-4 gy-4 g-md-1">
+            <div class="col-12 col-md-9">
+                <div class="row g-sm-4 g-4">
                     <?php
             foreach ($data as $datos){
             ?>
                     <?php 
               if ($datos['presentation_img'] !='') {
             ?>
-                    <div class="col-md-3 col-sm-6 col-6 animation_repuestos">
+                    <div class="col-md-3 col-sm-6 animation_repuestos">
                         <div class="card rounded shadow rounded-3 repuestos border-0 m-sm-4 m-md-4">
-                            <figure> <img
+                            <figure class="rounded rounded-3"> <img
                                     src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $datos['presentation_img'];?>"
-                                    class="card-img-top"></figure>
+                                    class='img-fluid mx-auto d-block rounded rounded-3'></figure>
                             <div class="card-body bg-light">
                                 <p class="trepuestos t-d p-2 pb-0 pt-0"><?php echo $datos['Descripcion'];?></p>
                                 <h3 class="fs-2 fw-bold p-2 pt-0 pb-0" style="color: var(--main)">
                                     <?php echo $datos['Costo$'];?></h1>
-                                        <p class="p-2 pt-0 pb-0 d"> <i
-                                                class='bx bx-package'></i><?php echo $datos['existencia'];?> Disponibles
-                                        </p>
-                                        <p class="text-muted p-2 pb-0 pt-0"><i
-                                                class='bx bx-purchase-tag'></i><?php echo $datos['Marca'];?></p>
-                                        <a href="./repuestos?parte=<?php echo $datos['Parte'];?>"
-                                            class="stretched-link"></a>
+                                    <p class="p-2 pt-0 pb-0 d"> <i
+                                            class='bx bx-package'></i><?php echo $datos['existencia'];?> Disponibles
+                                    </p>
+                                    <p class="text-muted p-2 pb-0 pt-0"><i
+                                            class='bx bx-purchase-tag'></i><?php echo $datos['Marca'];?></p>
+                                    <a href="./repuestos?parte=<?php echo $datos['Parte'];?>"
+                                        class="stretched-link"></a>
                             </div>
                         </div>
                     </div>
-                    <input type="hidden" id='prueba' value='<?php echo floatval(preg_replace("/[^0-9]/", "", $datos['Costo$'])); ?>'>
+                    <input type="hidden" id='prueba'
+                        value='<?php echo floatval(preg_replace("/[^0-9]/", "", $datos['Costo$'])); ?>'>
                     <?php
             }
             ?>

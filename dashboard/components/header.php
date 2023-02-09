@@ -37,7 +37,7 @@ include'./includes/php/validador.php'; // añadimos las validaciones de session
             <li class="">
                 <a href="
                 <?php if ($_SESSION["key"]['permisos'] >= 7) {
-                    echo "./cartera";
+                    echo "./";
                 }else{ echo "#";}
                 ?>
                 ">
@@ -48,7 +48,7 @@ include'./includes/php/validador.php'; // añadimos las validaciones de session
             <li class="">
                 <a href="
                 <?php if ($_SESSION["key"]['permisos'] >= 8) {
-                    echo "./pagos";
+                    echo "./";
                 }else{ echo "#";}
                 ?>
                 ">
@@ -66,7 +66,7 @@ include'./includes/php/validador.php'; // añadimos las validaciones de session
             <li>
                 <a href="
                 <?php if ($_SESSION["key"]['permisos'] >= 7) {
-                    echo "./reports";
+                    echo "./";
                 }else{ echo "#";}
                 ?>
                 ">
@@ -160,7 +160,7 @@ include'./includes/php/validador.php'; // añadimos las validaciones de session
                 <form method="POST">
                     <button type="submit" class="text-white" name='logout'>
                         <i class='bx bx-log-out'></i>
-                        <span class="links_name text-white">Cerrar Sesión</span>
+                        <span class="links_name text-white">Salir</span>
                     </button>
                 </form>
             </li>
@@ -188,5 +188,8 @@ include'./includes/php/validador.php'; // añadimos las validaciones de session
         .Rechazado,
         .bloqueado {
             background-color: #C0392B;
+        }
+        .z-40{
+            z-index: 120;
         }
         </style>

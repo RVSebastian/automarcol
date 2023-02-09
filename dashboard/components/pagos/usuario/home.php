@@ -1,8 +1,9 @@
 <?php
-
+   include './includes/alerts.php';
+    $usuario = $_SESSION['key']['usuario'];
    // leemos los pagos
-   $query = "SELECT * FROM pagos where usuario='vargazs'";
-   $result_task = mysqli_query($conn, $query);
+   $select = "SELECT * FROM pagos where usuario='$usuario' order by fecha desc";
+   $result_task = mysqli_query($conn, $select);
 
    // subir pagos
    $url_insert = "./galery/Pagos";
@@ -18,18 +19,20 @@
     $documentot = $_POST['documentot'];
     $nombret = $_POST['nombret'];
     $otro = $_POST['otro'];
-    $usuario = 'vargazs';
-    $query = "INSERT INTO pagos(cuenta, valor, nombret, documentot, otro, usuario, img, estado) 
-    VALUES ('$cuenta', '$valor', '$nombret','$documentot', '$otro', '$usuario','$basename','Pendiente')";
+    $query = "INSERT INTO pagos(cuenta, valor, nombret, documentot, otro, usuario, img, estado,fecha) 
+    VALUES ('$cuenta', '$valor', '$nombret','$documentot', '$otro', '$usuario','$basename','Pendiente', NOW())";
     mysqli_query($conn, $query);
-    header("Refresh:0");
-    unset($_POST['guardar']);
+    unset($result_task);
+    $result_task = mysqli_query($conn, $select);
+    success($msg='Se ha creado el pago #'.$cuenta.' con exito');
    }
+   unset($_POST['guardar']);
 ?>
+
 <div class="home-content">
-    <div class="flex flex-wrap">
-        <div class="basis-11/12 md:basis-1/4  mt-0 p-2">
-            <div class="relative overflow-x-auto shadow-md sm:rounded-lg bg-white p-4">
+    <div class="flex flex-row">
+        <div class='basis-11/12 md:basis-2/4 m-4 mt-1'>
+            <div class="relative overflow-x-auto bg-white shadow p-4">
                 <table class="w-full text-sm text-left text-gray-500">
                     <thead class="text-xs uppercase bg-gray-100 text-gray-900">
                         <tr>
@@ -58,7 +61,9 @@
                                   foreach($result_task as $row){ 
                                     if($row['estado'] == 'Pendiente'){
                         ?>
-                        <tr class="bg-white border-b hover:bg-gray-200 ">
+                        <tr class="bg-white border-b hover:bg-gray-200 "
+                            data-modal-target="defaultModal<?php echo $row['id'] ?>"
+                            data-modal-toggle="defaultModal<?php echo $row['id'] ?>">
                             <td class="px-6 py-4">
                                 <?php echo $row['cuenta'] ?>
                             </td>
@@ -81,16 +86,17 @@
                                 </div>
                             </td>
                         </tr>
+                        <?php include './components/pagos/usuario/viewpay.php' ?>
+                        <?php include './components/pagos/usuario/viewimg.php' ?>
                         <?php } ?>
                         <?php } ?>
 
                     </tbody>
                 </table>
             </div>
-
         </div>
-        <div class="basis-11/12 md:basis-1/4 mt-0 p-2">
-            <div class="relative overflow-x-auto shadow-md sm:rounded-lg bg-white p-4">
+        <div class='basis-11/12 md:basis-2/4 m-4 mt-1'>
+            <div class="relative overflow-x-auto bg-white shadow p-4">
                 <table class="w-full text-sm text-left text-gray-500">
                     <thead class="text-xs uppercase bg-gray-100 text-gray-900">
                         <tr>
@@ -119,7 +125,9 @@
                                   foreach($result_task as $row){ 
                                     if($row['estado'] != 'Pendiente'){
                         ?>
-                        <tr class="bg-white border-b hover:bg-gray-200 ">
+                        <tr class="bg-white border-b hover:bg-gray-200 "
+                            data-modal-target="defaultModal<?php echo $row['id'] ?>"
+                            data-modal-toggle="defaultModal<?php echo $row['id'] ?>">
                             <td class="px-6 py-4">
                                 <?php echo $row['cuenta'] ?>
                             </td>
@@ -142,64 +150,80 @@
                                 </div>
                             </td>
                         </tr>
+                        <?php include './components/pagos/usuario/viewpay.php' ?>
+                        <?php include './components/pagos/usuario/viewimg.php' ?>
                         <?php } ?>
                         <?php } ?>
+
                     </tbody>
                 </table>
             </div>
-
         </div>
-
     </div>
 </div>
+
+
 <div id="defaultModal" tabindex="-1" aria-hidden="true" style="z-index: 150 !important"
-    class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
+    class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal">
     <form method="POST" enctype="multipart/form-data">
-        <div class="relative w-full h-full max-w-2xl md:h-auto">
+        <div class="relative w-full h-full max-w-4xl md:h-auto">
             <div class="relative bg-white rounded-lg shadow">
-                <input type="file" id="imagen1" name="imagen1" accept="image/*" onchange="loadFile(event,img='img1')"
-                    style="display:none;" />
-                <label for="imagen1">
-                    <img class='rounded mx-auto'
-                        src="https://qsystems.com.co/wp-content/uploads/2021/02/placeholder.png" id="img1"
-                        style="height: 30rem; width: 100%">
-                </label>
-                <div class="p-6">
-                    <label for="cuenta" class="block text-sm font-medium text-gray-900 ">Cuenta</label>
-                    <select id="cuenta" name='cuenta'
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                        <option disabled selected>Selecciona la cuenta</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-                    <div class="mb-2">
-                        <label for="small-input" class="block mb-1 text-sm font-medium text-gray-900">Valor</label>
-                        <input type="text" id="small-input" name='valor'
-                            class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
+                <div class="flex flex-row">
+                    <div class="basis-2/4">
+                        <input required type="file" id="imagen1" name="imagen1" accept="image/*"
+                            onchange="loadFile(event,img='img1')" style="display:none;" />
+                        <label for="imagen1">
+                            <img class='rounded mx-auto'
+                                src="https://qsystems.com.co/wp-content/uploads/2021/02/placeholder.png" id="img1"
+                                style="height: 600px !important; margin: 0 auto;">
+                        </label>
                     </div>
-                    <div class="grid gap-6 mb-6 md:grid-cols-2">
-                        <div>
-                            <label for="small-input" class="block mb-1 text-sm font-medium text-gray-900">Nombre</label>
-                            <input type="text" id="small-input" name='nombret'
-                                class="block w-full  p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
-                        </div>
-                        <div>
-                            <label for="small-input"
-                                class="block mb-1 text-sm font-medium text-gray-900">Documento</label>
-                            <input type="text" id="small-input" name='documentot'
-                                class="block w-full  p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
+                    <div class="basis-2/4">
+                        <div class="p-6">
+                            <label for="cuenta" class="block text-sm font-medium text-gray-900 ">Cuenta</label>
+                            <select required id="cuenta" name='cuenta'
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                <option disabled selected>Selecciona la cuenta</option>
+                                <option value="1">BANCOLOMBIA: 49784801986 CORRIENTE</option>
+                                <option value="2">BANCOLOMBIA: 49796209967 AHORROS</option>
+                                <option value="3">BANCOLOMBIA: 49796484542 AHORROS</option>
+                                <option value="4">BANCO OCCIDENTE: 600882203 AHORROS</option>
+                                <option value="4">BANCO OCCIDENTE: 600100234 CORRIENTE</option>
+                                <option value="4">BBVA: 697910100007623 CORRIENTE</option>
+                                <option value="4">BANCOLOMBIA: 49798522255 AHORROS</option>
+                                <option value="4">DAVIVIENDA: 66800158801 AHORROS</option>
+                                <option value="4">BANCO DE BOGOTA: 614247591 CORRIENTE</option>
+                            </select>
+                            <div class="mb-2">
+                                <label for="small-input"
+                                    class="block mb-1 text-sm font-medium text-gray-900">Valor</label>
+                                <input required type="text" id="small-input" name='valor'
+                                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div class="mb-2">
+                                <label for="small-input"
+                                    class="block mb-1 text-sm font-medium text-gray-900">Nombre</label>
+                                <input required type="text" id="small-input" name='nombret'
+                                    class="block w-full  p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div class="mb-2">
+                                <label for="small-input"
+                                    class="block mb-1 text-sm font-medium text-gray-900">Documento</label>
+                                <input required type="text" id="small-input" name='documentot'
+                                    class="block w-full  p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div class="mb-2">
+                                <label for="small-input"
+                                    class="block mb-1 text-sm font-medium text-gray-900">Adicional</label>
+                                <input required type="text" id="small-input" name='otro'
+                                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
+                            </div>
                         </div>
 
+
                     </div>
-                    <div class="mb-2">
-                        <label for="small-input" class="block mb-1 text-sm font-medium text-gray-900">Adicional</label>
-                        <input type="text" id="small-input" name='otro'
-                            class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
-                    </div>
+
                 </div>
-
                 <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b bg-gray-100">
                     <button data-modal-hide="defaultModal" type="submit" name="guardar"
                         class="text-white bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Guardar</button>

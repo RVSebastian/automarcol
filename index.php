@@ -1,5 +1,9 @@
 <?php include'./includes/components/header.php';?>
-
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+} // inicimoas la session nuevamente
+?>
 <p id="home"></p>
 <style>
 :root {
