@@ -150,7 +150,7 @@ if (isset($datos['CollageIMG'])) {
                     <div class=" p-4">
                         <div class="bg-gray-100 mb-5 rounded p-4">
                             <h1 class="font-semibold"><?php echo $datos['Descripcion'] ?></h1>
-                            <p class="pt-2">Precio: $<?php echo $datos['Costo$'] ?> </p>
+                            <p class="pt-2">Precio: <?php echo $datos['Costo$'] ?> </p>
                         </div>
                         <div class="bg-gray-100 mb-5 rounded p-4"">
                             <textarea type='text' name=" otro" id='otro' style='display: none'></textarea>
