@@ -1,10 +1,15 @@
 <?php
    include './includes/alerts.php';
-    $usuario = $_SESSION['key']['usuario'];
+   $usuario = $_SESSION['key']['usuario'];
    // leemos los pagos
    $select = "SELECT * FROM pagos where usuario='$usuario' order by fecha desc";
+   $autorizados = "SELECT * FROM pagos where estado='Autorizado' order by fecha desc";
    $result_task = mysqli_query($conn, $select);
-
+   if (!isset($_SESSION)) {
+    session_start();
+    }
+    
+ 
    // subir pagos
    $url_insert = "./galery/Pagos";
    if (isset($_POST['guardar'])) {
@@ -25,17 +30,20 @@
     unset($result_task);
     $result_task = mysqli_query($conn, $select);
     success($msg='Se ha creado el pago #'.$cuenta.' con exito');
+  
    }
-   unset($_POST['guardar']);
-?>
 
+?>
 <div class="home-content">
-    <div class="flex flex-row">
-        <div class='basis-11/12 md:basis-2/4 m-4 mt-1'>
-            <div class="relative overflow-x-auto bg-white shadow p-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 mb-0 pb-0">
+        <div class="p-4" style="height: 50rem">
+            <div class="relative overflow-x-auto bg-white shadow p-4 h-5/6">
                 <table class="w-full text-sm text-left text-gray-500">
                     <thead class="text-xs uppercase bg-gray-100 text-gray-900">
                         <tr>
+                            <th scope="col" class="px-6 py-3">
+                                ID
+                            </th>
                             <th scope="col" class="px-6 py-3">
                                 Cuenta
                             </th>
@@ -44,9 +52,6 @@
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Tercero
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Documento
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Fecha
@@ -65,6 +70,9 @@
                             data-modal-target="defaultModal<?php echo $row['id'] ?>"
                             data-modal-toggle="defaultModal<?php echo $row['id'] ?>">
                             <td class="px-6 py-4">
+                                <?php echo $row['id'] ?>
+                            </td>
+                            <td class="px-6 py-4">
                                 <?php echo $row['cuenta'] ?>
                             </td>
                             <td class="px-6 py-4">
@@ -72,9 +80,6 @@
                             </td>
                             <td class="px-6 py-4">
                                 <?php echo $row['nombret'] ?>
-                            </td>
-                            <td class="px-6 py-4">
-                                <?php echo $row['documentot'] ?>
                             </td>
                             <td class="px-6 py-4">
                                 <?php echo $row['fecha'] ?>
@@ -95,11 +100,14 @@
                 </table>
             </div>
         </div>
-        <div class='basis-11/12 md:basis-2/4 m-4 mt-1'>
-            <div class="relative overflow-x-auto bg-white shadow p-4">
+        <div class="p-4" style="height: 50rem">
+            <div class="relative overflow-x-auto bg-white shadow p-4  h-5/6">
                 <table class="w-full text-sm text-left text-gray-500">
                     <thead class="text-xs uppercase bg-gray-100 text-gray-900">
                         <tr>
+                            <th scope="col" class="px-6 py-3">
+                                ID
+                            </th>
                             <th scope="col" class="px-6 py-3">
                                 Cuenta
                             </th>
@@ -108,9 +116,6 @@
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Tercero
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Documento
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Fecha
@@ -129,6 +134,9 @@
                             data-modal-target="defaultModal<?php echo $row['id'] ?>"
                             data-modal-toggle="defaultModal<?php echo $row['id'] ?>">
                             <td class="px-6 py-4">
+                                <?php echo $row['id'] ?>
+                            </td>
+                            <td class="px-6 py-4">
                                 <?php echo $row['cuenta'] ?>
                             </td>
                             <td class="px-6 py-4">
@@ -136,9 +144,6 @@
                             </td>
                             <td class="px-6 py-4">
                                 <?php echo $row['nombret'] ?>
-                            </td>
-                            <td class="px-6 py-4">
-                                <?php echo $row['documentot'] ?>
                             </td>
                             <td class="px-6 py-4">
                                 <?php echo $row['fecha'] ?>
@@ -160,12 +165,18 @@
             </div>
         </div>
     </div>
+    <?php
+        if($_SESSION['key']['cargo'] == 'Cajera'){
+            $aut = mysqli_query($conn, $autorizados);
+            include './components/pagos/caja/home.php';
+        }
+    ?>
 </div>
 
 
 <div id="defaultModal" tabindex="-1" aria-hidden="true" style="z-index: 150 !important"
     class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal">
-    <form method="POST" enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data" name="post" action="<?= $_SERVER['PHP_SELF']; ?>">
         <div class="relative w-full h-full max-w-4xl md:h-auto">
             <div class="relative bg-white rounded-lg shadow">
                 <div class="flex flex-row">
@@ -184,15 +195,22 @@
                             <select required id="cuenta" name='cuenta'
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                 <option disabled selected>Selecciona la cuenta</option>
-                                <option value="1">BANCOLOMBIA: 49784801986 CORRIENTE</option>
-                                <option value="2">BANCOLOMBIA: 49796209967 AHORROS</option>
-                                <option value="3">BANCOLOMBIA: 49796484542 AHORROS</option>
-                                <option value="4">BANCO OCCIDENTE: 600882203 AHORROS</option>
-                                <option value="4">BANCO OCCIDENTE: 600100234 CORRIENTE</option>
-                                <option value="4">BBVA: 697910100007623 CORRIENTE</option>
-                                <option value="4">BANCOLOMBIA: 49798522255 AHORROS</option>
-                                <option value="4">DAVIVIENDA: 66800158801 AHORROS</option>
-                                <option value="4">BANCO DE BOGOTA: 614247591 CORRIENTE</option>
+                                <option value="BANCOLOMBIA: 49784801986 CORRIENTE">BANCOLOMBIA: 49784801986 CORRIENTE
+                                </option>
+                                <option value="BANCOLOMBIA: 49796209967 AHORROS">BANCOLOMBIA: 49796209967 AHORROS
+                                </option>
+                                <option value="BANCOLOMBIA: 49796484542 AHORROS">BANCOLOMBIA: 49796484542 AHORROS
+                                </option>
+                                <option value="BANCO OCCIDENTE: 600882203 AHORROS">BANCO OCCIDENTE: 600882203 AHORROS
+                                </option>
+                                <option value="BANCO OCCIDENTE: 600100234 CORRIENTE">BANCO OCCIDENTE: 600100234
+                                    CORRIENTE</option>
+                                <option value="BBVA: 697910100007623 CORRIENTE">BBVA: 697910100007623 CORRIENTE</option>
+                                <option value="BANCOLOMBIA: 49798522255 AHORROS">BANCOLOMBIA: 49798522255 AHORROS
+                                </option>
+                                <option value="DAVIVIENDA: 66800158801 AHORROS">DAVIVIENDA: 66800158801 AHORROS</option>
+                                <option value="BANCO DE BOGOTA: 614247591 CORRIENTE">BANCO DE BOGOTA: 614247591
+                                    CORRIENTE</option>
                             </select>
                             <div class="mb-2">
                                 <label for="small-input"
@@ -215,14 +233,12 @@
                             <div class="mb-2">
                                 <label for="small-input"
                                     class="block mb-1 text-sm font-medium text-gray-900">Adicional</label>
-                                <input required type="text" id="small-input" name='otro'
-                                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
+                                <textarea required cols="30" rows="10" id="small-input" name='otro' id='otro'
+                                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500"></textarea>
                             </div>
                         </div>
-
-
+                        <input type="hidden" name="send" value='true'>
                     </div>
-
                 </div>
                 <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b bg-gray-100">
                     <button data-modal-hide="defaultModal" type="submit" name="guardar"
