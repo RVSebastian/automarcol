@@ -9,7 +9,7 @@
             $query = "SELECT * FROM usuarios WHERE contactable='SI'";
             $result_task = mysqli_query($conn, $query);
             while ($row = mysqli_fetch_array($result_task)) { ?>
-            <a href="https://web.whatsapp.com/send?phone=57<?php echo $row['telefono'] ?>" target="_blank">
+            <a href="https://web.whatsapp.com/send?phone=57<?php echo $row['telefono'] ?>&text=Hola <?php echo $row['nombre'] ?>, vengo del aplicativo Web y estoy interesado en algo 🤔" target="_blank">
                 <div class='header-chat'>
                     <div class='head-home'>
                         <div class='info-avatar'><img src='./image/plantilla.jpg' /></div>
