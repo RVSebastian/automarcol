@@ -58,7 +58,12 @@ include'./includes/php/validador.php'; // añadimos las validaciones de session
                 </a>
             </li>
             <li>
-                <a href="./stock">
+                <a href="
+                <?php if ($_SESSION["key"]['permisos'] >= 7) {
+                    echo "./stock";
+                }else{ echo "#";}
+                ?>
+                ">
                     <i class='bx bx-coin-stack'></i>
                     <span class="links_name">Inventario</span>
                 </a>
@@ -189,7 +194,8 @@ include'./includes/php/validador.php'; // añadimos las validaciones de session
         .bloqueado {
             background-color: #C0392B;
         }
-        .z-40{
+
+        .z-40 {
             z-index: 120;
         }
         </style>

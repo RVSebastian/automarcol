@@ -1,12 +1,12 @@
 <?php include'./components/header.php';?>
 <?php
     $data = array(
-        'initialMonth' => '1',
-        'finalMonth' => '12',
-        'initialYear' => '2023',
-        'finalYear' => '2023',
-        'initialDay' => '1',
-        'finalDay' => '30',
+        'initialMonth' => '',
+        'finalMonth' => '',
+        'initialYear' => '',
+        'finalYear' => '',
+        'initialDay' => '',
+        'finalDay' => '',
     );
     $data_string = json_encode($data);
     $ch = curl_init('https://apiautomarcol.up.railway.app/api/ford/vta');
@@ -171,11 +171,22 @@
 
                     <?php } ?>
                 </tbody>
-                <tfoot>
+                <tfoot class=" bg-gray-100">
                     <tr class="font-semibold text-gray-900">
                         <th scope="row" class="px-6 py-3 text-base">Total</th>
                         <td class="px-6 py-3"></td>
-                        <td class="px-6 py-3"><?php echo  $ventatotal; ?></td>
+                        <td class="px-6 py-3">$<?php    echo number_format($ventatotal); ?></td>
+                        <td class="px-6 py-3"></td>
+                        <td class="px-6 py-3"></td>
+                        <td class="px-6 py-3"></td>
+                        <td class="px-6 py-3"></td>
+                        <td class="px-6 py-3"></td>
+                        <td class="px-6 py-3"></td>
+                        <td class="px-6 py-3"></td>
+                        <td class="px-6 py-3"></td>
+                        <td class="px-6 py-3"></td>
+                        <td class="px-6 py-3"></td>
+                        <td class="px-6 py-3"></td>
                     </tr>
                 </tfoot>
 

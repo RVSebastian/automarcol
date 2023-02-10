@@ -13,7 +13,7 @@
                 <div class="basis-11/12 md:basis-2/4">
                     <div class="p-6 space-y-6 overflow-y-auto text-justify">
                         <p class="text-base leading-relaxed text-gray-800 mt-0 mb-0">
-                           Del usuario: <?php echo $row['usuario'] ?>
+                            Del usuario: <?php echo $row['usuario'] ?>
                         </p>
                         <p class="text-base leading-relaxed text-gray-800 mt-0 mb-0">
                             Subido el: <?php echo $row['fecha'] ?>
@@ -35,10 +35,14 @@
                             <span class="text-gray-900 text-semibold">Documento</span>
                         </p>
                         <?php echo $row['documentot'] ?>
-                        <p class="text-base leading-relaxed text-gray-800 mt-0">
-                            Nota
-                        </p>
-                        <?php echo $row['otro'] ?>
+                        <div class="mb-2">
+                            <p class="text-base leading-relaxed text-gray-800 mt-0">
+                                Nota
+                            </p>
+                            <textarea required cols="30" rows="10" disabled
+                                class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500"><?php echo $row['otro'] ?>
+                            </textarea>
+                        </div>
 
                     </div>
                 </div>

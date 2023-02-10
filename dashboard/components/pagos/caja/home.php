@@ -1,26 +1,18 @@
 <?php
-    include './includes/alerts.php';
    // leemos los pagos
    $select = "SELECT * FROM pagos order by fecha desc";
    $result_task = mysqli_query($conn, $select);
 
    $autorizador = $_SESSION['key']['usuario'];
 
-   if (isset($_POST['rechazado'])) {
+   if (isset($_POST['rc'])) {
     $id = $_POST['id'];
-    $query = "UPDATE pagos SET estado='Rechazado',autorizador='$autorizador', fecha_autorizado= NOW() WHERE id='$id'";
+    $recibo = $_POST['recibo'];
+    $query = "UPDATE pagos SET recibo_creador='$autorizador',recibo='$recibo', recibo_fecha= NOW() WHERE id='$id'";
     mysqli_query($conn, $query);
     unset($result_task);
     $result_task = mysqli_query($conn, $select);
     error($msg='Se ha Rechazado el pago #'.$id.' con exito');
-   }
-   if (isset($_POST['autorizado'])) {
-    $id = $_POST['id'];
-    $query = "UPDATE pagos SET estado='Autorizado',autorizador='$autorizador', fecha_autorizado= NOW() WHERE id='$id'";
-    mysqli_query($conn, $query);
-    unset($result_task);
-    $result_task = mysqli_query($conn, $select);
-    success($msg='Se ha Autorizado el pago #'.$id.' con exito');
    }
    unset($autorizado);
    unset($rechazado);
@@ -63,8 +55,8 @@
                 <?php 
                                   foreach($aut as $row){ 
                         ?>
-                <tr class="bg-white border-b hover:bg-gray-200" data-modal-target="defaultModal<?php echo $row['id'] ?>"
-                    data-modal-toggle="defaultModal<?php echo $row['id'] ?>">
+                <tr class="bg-white border-b hover:bg-gray-200" data-modal-target="cajaview<?php echo $row['id'] ?>"
+                    data-modal-toggle="cajaview<?php echo $row['id'] ?>">
                     <td class="px-6 py-4">
                         <?php echo $row['id'] ?>
                     </td>
