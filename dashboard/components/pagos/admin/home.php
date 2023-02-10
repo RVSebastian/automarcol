@@ -27,7 +27,7 @@
 ?>
 
 <div class="home-content">
-    <div class='basis-11/12 md:basis-1/4 m-4 mt-1'>
+    <div class='basis-11/12 md:basis-1/4 m-5 p-5 mt-1'>
         <div class="relative overflow-x-auto bg-white shadow p-4  h-4/6">
             <table class="w-full text-sm text-left text-gray-500">
                 <thead class="text-xs uppercase bg-gray-100 text-gray-900">
@@ -105,7 +105,7 @@
 
     </div>
 
-    <div class="basis-11/12  m-4 mt-1">
+    <div class="basis-11/12 m-5 p-5 mt-1">
         <div class="relative overflow-x-auto bg-white shadow p-4  h-4/6">
             <table class="w-full text-sm text-left text-gray-500">
                 <thead class="text-xs uppercase bg-gray-100 text-gray-900">
@@ -145,6 +145,7 @@
                 </thead>
                 <tbody>
                     <?php 
+                      
                                   foreach($result_task as $row){ 
                                     if($row['estado'] == 'Autorizado'){
                         ?>
@@ -194,7 +195,7 @@
             </table>
         </div>
     </div>
-    <div class="basis-11/12  m-4 mt-1">
+    <div class="basis-11/12 m-5 p-5 mt-1">
         <div class="relative overflow-x-auto bg-white shadow p-4 h-4/6">
             <table class="w-full text-sm text-left text-gray-500">
                 <thead class="text-xs uppercase bg-gray-100 text-gray-900">

@@ -5,17 +5,17 @@
 
    $autorizador = $_SESSION['key']['usuario'];
 
-   if (isset($_POST['rc'])) {
+   if (isset($_POST['recibo'])) {
     $id = $_POST['id'];
     $recibo = $_POST['recibo'];
     $query = "UPDATE pagos SET recibo_creador='$autorizador',recibo='$recibo', recibo_fecha= NOW() WHERE id='$id'";
     mysqli_query($conn, $query);
     unset($result_task);
     $result_task = mysqli_query($conn, $select);
-    error($msg='Se ha Rechazado el pago #'.$id.' con exito');
+    success($msg='El pago #'.$id.' ha sido generado con el recibo '.$recibo);
+    unset($recibo);
    }
-   unset($autorizado);
-   unset($rechazado);
+   unset($recibo);
 ?>
 <div class="basis-11/12 p-4 mt-0">
     <div class="relative overflow-x-auto bg-white shadow p-4 h-4/6">
