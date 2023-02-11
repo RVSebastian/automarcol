@@ -4,31 +4,30 @@
 
         <div class="box">
             <h3>Nuestras vitrinas</h3>
-            <a href="#"> <i class="fas fa-map-marker-alt"></i> FORD </a>
-            <a href="#"> <i class="fas fa-map-marker-alt"></i> JEEP </a>
-            <a href="#"> <i class="fas fa-map-marker-alt"></i> FOTON </a>
-            <a href="#"> <i class="fas fa-map-marker-alt"></i> PEUGEOT </a>
-            <a href="#"> <i class="fas fa-map-marker-alt"></i> BAJAJ </a>
+            <a href="./listado?marca=Ford"> <i class="fas fa-map-marker-alt"></i> FORD </a>
+            <a href="./listado?marca=Fca"> <i class="fas fa-map-marker-alt"></i> Fca </a>
+            <a href="./listado?marca=Foton"> <i class="fas fa-map-marker-alt"></i> FOTON </a>
+            <a href="./listado?marca=Peugeot"> <i class="fas fa-map-marker-alt"></i> PEUGEOT </a>
+            <a href="./listado?marca=Bajaj"> <i class="fas fa-map-marker-alt"></i> BAJAJ </a>
         </div>
 
         <div class="box">
             <h3>Secciones</h3>
-            <a href="#"> <i class="fas fa-arrow-right"></i> home </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> vehicles </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> services </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> featured </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> reviews </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> contact </a>
+            <a href="./index"> <i class="fas fa-arrow-right"></i> Home </a>
+            <a href="./index"> <i class="fas fa-arrow-right"></i> Vehiculos </a>
+            <a href="./citas"> <i class="fas fa-arrow-right"></i> Citas </a>
+            <a href="./pqrs"> <i class="fas fa-arrow-right"></i> Pqrs </a>
+            <a href="./tratamientodp"> <i class="fas fa-arrow-right"></i> Tratamiento de Datos </a>
         </div>
 
         <div class="box">
             <h3>Informacion de contacto</h3>
             <a href="https://api.whatsapp.com/send/?phone=%2B573157006633&text&type=phone_number&app_absent=0"> <i
                     class="fas fa-phone"></i> Pedir una cita </a>
-            <a href="#"> <i class="fas fa-phone"></i> Asesoria FORD-FOTON-USADOS </a>
-            <a href="#"> <i class="fas fa-phone"></i> Asesoria FIAT-PEUGEOT-JEEP-BAJAJ-DODGE</a>
+            <a href="#"> <i class="fas fa-phone"></i> Asesoria FORD-FOTON-USADOS</a>
+            <a href="#"> <i class="fas fa-phone"></i> Asesoria Multimarcas</a>
             <a href="#"> <i class="fas fa-phone"></i> Asesoria repuestos FORD </a>
-            <a href="#"> <i class="fas fa-phone"></i> Asesoria repuestos FIAT-JEEP-DODGE-RAM-PEUGEOT </a>
+            <a href="#"> <i class="fas fa-phone"></i> Asesoria repuestos Multimarcas </a>
         </div>
 
         <div class="box">

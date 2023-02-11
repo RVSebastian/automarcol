@@ -17,7 +17,7 @@
     $extension  = pathinfo( $_FILES["imagen1"]["name"], PATHINFO_EXTENSION ); // jpg
     $basename   = $filename . "." . $extension; // 5dab1961e93a7_1571494241.jpg
     $source       = $_FILES["imagen1"]["tmp_name"];
-    $destination  = "./galery/Pagos/{$basename}";
+    $destination  = "./galery/pagos/{$basename}";
     move_uploaded_file( $source, $destination );
     $cuenta = $_POST['cuenta'];
     $valor = $_POST['valor'];

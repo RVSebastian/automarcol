@@ -44,7 +44,7 @@ switch ($marca) {
 
 
 <section class="bg-gray pt-0 mt-0 <?php echo $marca ?>" id="vehiculos">
-    <?php include'./includes/components/carrousel/encabezado.php';?>
+<br><br><br><br><br><br><br><br>
     <?php include'./includes/components/vehiculos/card.php';?>
 </section>
 
