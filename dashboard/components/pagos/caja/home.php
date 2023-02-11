@@ -2,7 +2,7 @@
    // leemos los pagos
    $select = "SELECT * FROM pagos order by fecha desc";
    $result_task = mysqli_query($conn, $select);
-
+   $autorizados = "SELECT * FROM pagos where estado='Autorizado' order by fecha desc";
    $autorizador = $_SESSION['key']['usuario'];
 
    if (isset($_POST['recibo'])) {

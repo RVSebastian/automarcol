@@ -1,5 +1,5 @@
 <?php
-    include './includes/alerts.php';
+    require  './includes/alerts.php';
    // leemos los pagos
    $select = "SELECT * FROM pagos order by fecha desc";
    $result_task = mysqli_query($conn, $select);

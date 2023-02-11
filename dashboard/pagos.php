@@ -7,5 +7,6 @@ if($_SESSION['key']['permisos']>=8){
 else{
     include'./components/pagos/usuario/home.php';
 }
+
 include'./components/footer.php';
 ?>

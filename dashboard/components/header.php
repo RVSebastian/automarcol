@@ -1,6 +1,8 @@
 <?php 
 include'./includes/cn.php'; // incluimos la base de datos
 date_default_timezone_set('America/Bogota'); // detectamos la hora
+header("Cache-Control: no-store, no-cache, must-revalidate");
+header("Cache-Control: post-check=0, pre-check=0", false);
 $Hora=date('h:i:s '); // y se la damos a una variable
 if (session_status() === PHP_SESSION_NONE) {
     session_start();

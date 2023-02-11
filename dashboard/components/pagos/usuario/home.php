@@ -1,169 +1,33 @@
 <?php
-   include './includes/alerts.php';
-   $usuario = $_SESSION['key']['usuario'];
-   // leemos los pagos
-   $select = "SELECT * FROM pagos where usuario='$usuario' order by fecha desc";
+   require './includes/alerts.php';
    $autorizados = "SELECT * FROM pagos where estado='Autorizado' order by fecha desc";
-   $result_task = mysqli_query($conn, $select);
    if (!isset($_SESSION)) {
     session_start();
     }
-    
- 
-   // subir pagos
-   $url_insert = "./galery/Pagos";
-   if (isset($_POST['guardar'])) {
-    $filename   = uniqid() . "-" . time(); // 5dab1961e93a7-1571494241
-    $extension  = pathinfo( $_FILES["imagen1"]["name"], PATHINFO_EXTENSION ); // jpg
-    $basename   = $filename . "." . $extension; // 5dab1961e93a7_1571494241.jpg
-    $source       = $_FILES["imagen1"]["tmp_name"];
-    $destination  = "./galery/pagos/{$basename}";
-    move_uploaded_file( $source, $destination );
-    $cuenta = $_POST['cuenta'];
-    $valor = $_POST['valor'];
-    $documentot = $_POST['documentot'];
-    $nombret = $_POST['nombret'];
-    $otro = $_POST['otro'];
-    $query = "INSERT INTO pagos(cuenta, valor, nombret, documentot, otro, usuario, img, estado,fecha) 
-    VALUES ('$cuenta', '$valor', '$nombret','$documentot', '$otro', '$usuario','$basename','Pendiente', NOW())";
-    mysqli_query($conn, $query);
-    unset($result_task);
-    $result_task = mysqli_query($conn, $select);
-    success($msg='Se ha creado el pago #'.$cuenta.' con exito');
-  
-   }
-
+    $usuario = $_SESSION['key']['usuario'];
 ?>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script>
+
+$( document ).ready(function() {
+    refresh_div();
+});
+
+function refresh_div() {
+    jQuery.ajax({
+        url: './funciones/select.php',
+        type: 'POST',
+        success: function(res) {
+            $("#resp").html(res);
+        }
+    })
+}
+t = setInterval(refresh_div, 60000);
+</script>
 <div class="home-content">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 mb-0 pb-0">
-        <div class="p-4" style="height: 50rem">
-            <div class="relative overflow-x-auto bg-white shadow p-4 h-5/6">
-                <table class="w-full text-sm text-left text-gray-500">
-                    <thead class="text-xs uppercase bg-gray-100 text-gray-900">
-                        <tr>
-                            <th scope="col" class="px-6 py-3">
-                                ID
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Cuenta
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Valor
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Tercero
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Fecha
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Estado
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php 
-                                  foreach($result_task as $row){ 
-                                    if($row['estado'] == 'Pendiente'){
-                        ?>
-                        <tr class="bg-white border-b hover:bg-gray-200 "
-                            data-modal-target="defaultModal<?php echo $row['id'] ?>"
-                            data-modal-toggle="defaultModal<?php echo $row['id'] ?>">
-                            <td class="px-6 py-4">
-                                <?php echo $row['id'] ?>
-                            </td>
-                            <td class="px-6 py-4">
-                                <?php echo $row['cuenta'] ?>
-                            </td>
-                            <td class="px-6 py-4">
-                                <?php echo $row['valor'] ?>
-                            </td>
-                            <td class="px-6 py-4">
-                                <?php echo $row['nombret'] ?>
-                            </td>
-                            <td class="px-6 py-4">
-                                <?php echo $row['fecha'] ?>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex items-center">
-                                    <div class="h-2.5 w-2.5 rounded-full <?php echo $row['estado'] ?> mr-2"></div>
-                                    <?php echo $row['estado'] ?>
-                                </div>
-                            </td>
-                        </tr>
-                        <?php include './components/pagos/usuario/viewpay.php' ?>
-                        <?php include './components/pagos/usuario/viewimg.php' ?>
-                        <?php } ?>
-                        <?php } ?>
+    <div id="resp">
 
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="p-4" style="height: 50rem">
-            <div class="relative overflow-x-auto bg-white shadow p-4  h-5/6">
-                <table class="w-full text-sm text-left text-gray-500">
-                    <thead class="text-xs uppercase bg-gray-100 text-gray-900">
-                        <tr>
-                            <th scope="col" class="px-6 py-3">
-                                ID
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Cuenta
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Valor
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Tercero
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Fecha
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Estado
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php 
-                                  foreach($result_task as $row){ 
-                                    if($row['estado'] != 'Pendiente'){
-                        ?>
-                        <tr class="bg-white border-b hover:bg-gray-200 "
-                            data-modal-target="defaultModal<?php echo $row['id'] ?>"
-                            data-modal-toggle="defaultModal<?php echo $row['id'] ?>">
-                            <td class="px-6 py-4">
-                                <?php echo $row['id'] ?>
-                            </td>
-                            <td class="px-6 py-4">
-                                <?php echo $row['cuenta'] ?>
-                            </td>
-                            <td class="px-6 py-4">
-                                <?php echo $row['valor'] ?>
-                            </td>
-                            <td class="px-6 py-4">
-                                <?php echo $row['nombret'] ?>
-                            </td>
-                            <td class="px-6 py-4">
-                                <?php echo $row['fecha'] ?>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex items-center">
-                                    <div class="h-2.5 w-2.5 rounded-full <?php echo $row['estado'] ?> mr-2"></div>
-                                    <?php echo $row['estado'] ?>
-                                </div>
-                            </td>
-                        </tr>
-                        <?php include './components/pagos/usuario/viewpay.php' ?>
-                        <?php include './components/pagos/usuario/viewimg.php' ?>
-                        <?php } ?>
-                        <?php } ?>
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
     </div>
     <?php
         if($_SESSION['key']['cargo'] == 'Cajera'){
@@ -176,7 +40,7 @@
 
 <div id="defaultModal" tabindex="-1" aria-hidden="true" style="z-index: 150 !important"
     class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal">
-    <form method="POST" enctype="multipart/form-data" name="post" action="<?= $_SERVER['PHP_SELF']; ?>">
+    <form method="POST" enctype="multipart/form-data" name="post" action="./funciones/addpago.php">
         <div class="relative w-full h-full max-w-4xl md:h-auto">
             <div class="relative bg-white rounded-lg shadow">
                 <div class="flex flex-row">
@@ -237,12 +101,12 @@
                                     class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500"></textarea>
                             </div>
                         </div>
-                        <input type="hidden" name="send" value='true'>
+                        <input type="hidden" name="usuario" value='<?php echo  $usuario ?>'>
                     </div>
                 </div>
                 <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b bg-gray-100">
                     <button data-modal-hide="defaultModal" type="submit" name="guardar"
-                        class="text-white bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Guardar</button>
+                        class="text-white bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-4.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Guardar</button>
                 </div>
             </div>
         </div>
