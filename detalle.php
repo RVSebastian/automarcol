@@ -74,23 +74,34 @@ select {
     height: 50rem;
 }
 
-@media (max-width: 400px) {
+@media only screen and (min-width: 400px) {
     .modelo {
         font-size: 10px;
     }
+    .wall{
+        top: 10%!important;
+    }
 }
 
-@media (max-width: 800px) {
+@media only screen and (min-width: 500px) {
     .modelo {
         font-size: 20px;
     }
+    .wall{
+        top: 40%!important;
+    }
 }
 
-@media (max-width: 3000px) {
+@media only screen and (min-width: 810px) {
     .modelo {
         font-size: 60px;
     }
+    .wall{
+        top: 50% !important;
+        left: 40% !important
+    }
 }
+
 </style>
 <br>
 
@@ -101,7 +112,7 @@ $query = "select * from usuarios where "
     <div class="container wl animate__animated animate__slideInDown animate__delay-1s animate__slow"
         style="padding-top: 5rem;">
         <div class="position-relative">
-            <div class="position-absolute top-50 end-0 p-4 text-white wall">
+            <div class="position-absolute p-4 text-white wall">
                 <h2 class="p-0 m-0"><?php echo $datos['Marca']?></h2>
                 <h1 class="pb-0 mb-0 modelo"><?php echo $datos['Version_DescipcionModelo']?></h1>
                 <h1 class="fs-1 fw-bold" style="font-size: 70px;"><?php echo $datos['CostoTotal']?></h1>
