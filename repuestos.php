@@ -198,8 +198,8 @@ $data = $filtro;
                                 style="color: var(--main)"><?php echo $datos['existencia'];?></span>
                         </p>
                         <h1 class="fs-1 fw-bold" style="color: var(--main)"><?php echo $datos['Costo$'];?></h1>
-                        <a href="" class="btn btn-dark fs-2 p-2"><i class='fab fa-whatsapp bx-tada'> </i> Contactar a un
-                            Asesor</a>
+                       <!-- <a href="" class="btn btn-dark fs-2 p-2"><i class='fab fa-whatsapp bx-tada'> </i> Contactar a un
+                            Asesor</a> -->
                 </div>
                 <div class="bg-light rounded p-4 mb-4 mt-4 otro">
                     <h1 class="fs-2 text-muted">Detalle del articulo</h2>

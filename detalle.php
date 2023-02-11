@@ -94,7 +94,9 @@ select {
 </style>
 <br>
 
-<?php foreach (array_slice($data, 0, 1) as $datos) { ?>
+<?php foreach (array_slice($data, 0, 1) as $datos) { 
+$query = "select * from usuarios where "    
+?>
 <section class="bg-gray pt-5 mt-5">
     <div class="container wl animate__animated animate__slideInDown animate__delay-1s animate__slow"
         style="padding-top: 5rem;">
