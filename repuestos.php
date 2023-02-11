@@ -48,9 +48,12 @@
 .carousel-cell {
     width: 100%;
 }
-.otro p, span {
+
+.otro p,
+span {
     background-color: transparent !important;
 }
+
 .recuadro {
     border-radius: 50px;
 }
@@ -90,39 +93,99 @@ $data = $filtro;
             <div class="col-md-6 p-4">
                 <div class="carousel carousel-main"
                     data-flickity='{"contain": true, "prevNextButtons": true, "pageDots": false}'>
+                    <?php 
+                    if (!empty($imagenes['img1'])) {
+                    ?>
                     <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
                             src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img1'];?>"
                             alt=""></div>
+                    <?php 
+                    }
+                    ?>
+                    <?php 
+                    if (!empty($imagenes['img2'])) {
+                    ?>
                     <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
                             src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img2'];?>"
                             alt=""></div>
+                    <?php 
+                    }
+                    ?>
+                    <?php 
+                    if (!empty($imagenes['img3'])) {
+                    ?>
                     <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
                             src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img3'];?>"
                             alt=""></div>
+                    <?php 
+                    }
+                    ?>
+                    <?php 
+                    if (!empty($imagenes['img4'])) {
+                    ?>
                     <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
                             src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img4'];?>"
                             alt=""></div>
+                    <?php 
+                    }
+                    ?>
+                    <?php 
+                    if (!empty($imagenes['img5'])) {
+                    ?>
                     <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
                             src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img5'];?>"
                             alt=""></div>
+                    <?php 
+                    }
+                    ?>
                 </div>
                 <div class="carousel carousel-nav"
                     data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false, "prevNextButtons": false }'>
+                    <?php 
+                    if (!empty($imagenes['img1'])) {
+                    ?>
                     <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
                             src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img1'];?>"
                             alt=""></div>
+                    <?php 
+                    }
+                    ?>
+                    <?php 
+                    if (!empty($imagenes['img2'])) {
+                    ?>
                     <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
                             src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img2'];?>"
                             alt=""></div>
+                    <?php 
+                    }
+                    ?>
+                    <?php 
+                    if (!empty($imagenes['img3'])) {
+                    ?>
                     <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
                             src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img3'];?>"
                             alt=""></div>
+                    <?php 
+                    }
+                    ?>
+                    <?php 
+                    if (!empty($imagenes['img4'])) {
+                    ?>
                     <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
                             src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img4'];?>"
                             alt=""></div>
+                    <?php 
+                    }
+                    ?>
+                    <?php 
+                    if (!empty($imagenes['img5'])) {
+                    ?>
                     <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
                             src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $imagenes['img5'];?>"
                             alt=""></div>
+                    <?php 
+                    }
+                    ?>
                 </div>
 
             </div>
@@ -135,8 +198,8 @@ $data = $filtro;
                                 style="color: var(--main)"><?php echo $datos['existencia'];?></span>
                         </p>
                         <h1 class="fs-1 fw-bold" style="color: var(--main)"><?php echo $datos['Costo$'];?></h1>
-                        <!--<a href="" class="btn btn-dark fs-2 p-2"><i class='bx bx-store-alt bx-tada'></i> Añadir al
-                            carrito</a> -->
+                        <a href="" class="btn btn-dark fs-2 p-2"><i class='fab fa-whatsapp bx-tada'> </i> Contactar a un
+                            Asesor</a>
                 </div>
                 <div class="bg-light rounded p-4 mb-4 mt-4 otro">
                     <h1 class="fs-2 text-muted">Detalle del articulo</h2>

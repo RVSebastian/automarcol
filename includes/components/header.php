@@ -91,7 +91,7 @@ p {
 }
 
 .disppear {
-    animation: vanish 1s ease-in-out forwards;
+    animation: vanish 0.7s ease-in-out forwards;
 }
 
 .navbar .a {
@@ -250,26 +250,7 @@ p {
         </div>
 
     </nav>
-
-
     <div class="loader">
         <img src="./image/loader2.gif" alt="">
     </div>
-
-
-    <style>
-
-    </style>
-    <script type="text/javascript">
-    var nav = document.querySelector('#nav');
-
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 100) {
-            nav.classList.add('shadow-lg');
-        } else {
-            nav.classList.remove('shadow-lg');
-        }
-    });
-    </script>
-
     <?php include'./includes/components/whatsapp.php';?>
