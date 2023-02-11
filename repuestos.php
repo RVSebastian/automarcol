@@ -198,15 +198,23 @@ $data = $filtro;
                                 style="color: var(--main)"><?php echo $datos['existencia'];?></span>
                         </p>
                         <h1 class="fs-1 fw-bold" style="color: var(--main)"><?php echo $datos['Costo$'];?></h1>
-                       <!-- <a href="" class="btn btn-dark fs-2 p-2"><i class='fab fa-whatsapp bx-tada'> </i> Contactar a un
+                        <!-- <a href="" class="btn btn-dark fs-2 p-2"><i class='fab fa-whatsapp bx-tada'> </i> Contactar a un
                             Asesor</a> -->
                 </div>
                 <div class="bg-light rounded p-4 mb-4 mt-4 otro">
-                    <h1 class="fs-2 text-muted">Detalle del articulo</h2>
-                        <p class="p-2 otro"><?php echo $datos['otro'];?>
-                        </p>
-                    </h1>
+                    <h1 class="fs-2 text-muted">Detalle del articulo</h1>
+                        <p class="fs-4 pt-2">
+                            Todos los repuestos por parte de AUTO MARCOL S.A.S tienen garantía si está es instalada por
+                            medio de nuestros talleres autorizados en la ciudad de Cúcuta, Norte de Santander, contaran
+                            con un año de garantía en sitio, si se instala por otro medio a este contara con 6 meses de
+                            vigencia en su garantía sujeta a revisión.
 
+                        </p>
+                        <p class="fs-4">
+                            Tenemos disponibilidad en taller con horarios de 8-12 am y 2-6 pm y puedes apartar tu cita
+                            por medio de nuestro personal de atención al cliente <span style="color: #2D5EC6;">3157006633</span> o  <span style="color: #2D5EC6;">
+                            contactcenter@automarcol.com</span> 
+                        </p>
                 </div>
                 <div class="bg-light rounded  p-4 mb-4 mt-4">
                     <h1 class="fs-2 text-muted">Información de la tienda</h2>
@@ -219,7 +227,7 @@ $data = $filtro;
 
                 </div>
                 <h3 class="p-4 text-center text-muted"><i class="fas fa-shield-alt"></i>¿Necesitas ayuda? Llámanos al
-                   +57 3222863938</h2>
+                    +57 3222863938</h2>
             </div>
 
         </div>
