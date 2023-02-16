@@ -1,5 +1,8 @@
 <?php include'./components/header.php';?>
 <?php
+    if (isset($data)) {
+        unset($data);
+    }
     $data = array(
         'initialMonth' => '',
         'finalMonth' => '',
@@ -119,6 +122,7 @@
                 <tbody>
                     <?php 
                        $ventatotal = 0;
+                       var_dump($result);
                        foreach($result as $row) { 
                     ?>
                     <tr class="border-b text-slate-900  hover:bg-gray-200">

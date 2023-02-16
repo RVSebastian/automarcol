@@ -47,6 +47,16 @@
                             <div class="h-2.5 w-2.5 rounded-full <?php echo $row['estado'] ?> mr-2"></div>
                             Autorizado el: <?php echo $row['fecha_autorizado'] ?>
                         </div>
+                        <?php
+                        if (!empty($row['recibo'])){
+                        ?>
+                        <div class="flex items-center">
+                            <div class="h-2.5 w-2.5 rounded-full bg-yellow-400 mr-2"></div>
+                            Recibo: <?php echo $row['recibo'] ?>
+                        </div>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>

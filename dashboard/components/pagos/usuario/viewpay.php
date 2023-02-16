@@ -1,4 +1,4 @@
-<div id="defaultModal<?php echo $row['id'] ?>" tabindex="110" style='z-index: 20000 !important' aria-hidden="true"
+<div id="viewpay<?php echo $row['id'] ?>" tabindex="110" style='z-index: 20000 !important' aria-hidden="true"
     class="fixed top-0 left-0 right-0 z-0 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal">
     <div class="relative w-full h-full max-w-4xl md:h-auto">
         <div class="relative bg-white rounded-lg shadow">

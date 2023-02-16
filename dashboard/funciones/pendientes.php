@@ -6,7 +6,7 @@
     $usuario = $_SESSION['key']['usuario'];
     $data_array = array();
     // SQL para obtener los datos
-    $sql = "SELECT * FROM pagos where estado!='Pendiente' order by fecha desc";
+    $sql = "SELECT * FROM pagos where estado='Pendiente' order by fecha desc";
     // Ejeuctar el SQL
     $query = $conn->query($sql);
     

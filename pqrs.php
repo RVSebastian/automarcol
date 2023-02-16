@@ -44,7 +44,7 @@ if (isset($_POST['PQR'])) {
         <div class="p-4">
             <h2 class="fs-1 fw-bold text-center "><i class='bx bx-check-shield'></i></h2>
             <h2 class="text-center">Formulario de Peticiones, Quejas y Reclamos (PQR)</h2>
-            <h2 class="fs-3 text-muted text-justify">Para nosotros es muy importante conocer tu opinión, completa los
+            <h2 class="fs-3 text-muted text-center">Para nosotros es muy importante conocer tu opinión, completa los
                 siguientes
                 campos y pronto nos
                 pondremos en

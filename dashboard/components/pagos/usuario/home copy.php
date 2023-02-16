@@ -8,40 +8,28 @@
 ?>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-<script type="text/javascript" src="//cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
-<link rel="stylesheet" href="//cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
 
-<style>
-.dataTables_length {
-    display: none !important;
-}
-</style>
+
 
 <script type="text/javascript">
-$(document).ready(function() {
-    $("#otro").DataTable({
-        ajax: "./funciones/select.php",
-        order: [
-            [0, 'desc']
-        ],
+    $(document).ready(function(){
+        $("#mytable").DataTable({
+            ajax: "./funciones/select.php"
+        });
     });
-});
-$(document).ready(function() {
-    var table = $("#pendiente").DataTable({
-        ajax: "./funciones/pendientes.php",
-        order: [
-            [0, 'desc']
-        ],
-        select: true,
-    });
-});
 </script>
+    <!-- INCLUIR LAS LIBRERIAS QUE FALTAN -->
+<script type="text/javascript" src="datatables/datatables.min.js"></script>
+
 
 <div class="home-content">
+    <div id="resp">
+
+    </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-0 mb-0 pb-0">
         <div class="p-4" style="height: 60rem">
             <div class="relative overflow-x-auto bg-white shadow p-4 h-5/6">
-                <table class="w-full text-sm text-center text-gray-500 hover" id="pendiente">
+                <table class="w-full text-sm text-center text-gray-500" id="mytable">
                     <thead class="text-xs uppercase bg-gray-100 text-gray-900">
                         <tr>
                             <th scope="col" class="px-2 py-3">
@@ -64,12 +52,50 @@ $(document).ready(function() {
                             </th>
                         </tr>
                     </thead>
+                    <tbody>
+                        <?php 
+                                  foreach($result_task as $row){ 
+                                    if($row['estado'] == 'Pendiente'){
+                        ?>
+                        <tr class="bg-white border-b hover:bg-gray-200"
+                            data-modal-target="viewpay<?php echo $row['id'];?>"
+                            data-modal-toggle="viewpay<?php echo $row['id'];?>"
+                            data-toggle="viewpay<?php echo $row['id'];?>"
+                            onclick="modalview(id='viewpay<?php echo $row['id'];?>')">
+                            <td class="px-2 py-4">
+                                <?php echo $row['id'] ?>
+                            </td>
+                            <td class="px-2 py-4">
+                                <?php echo $row['cuenta'] ?>
+                            </td>
+                            <td class="px-2 py-4">
+                                <?php echo $row['valor'] ?>
+                            </td>
+                            <td class="px-2 py-4">
+                                <?php echo $row['nombret'] ?>
+                            </td>
+                            <td class="px-2 py-4">
+                                <?php echo $row['fecha'] ?>
+                            </td>
+                            <td class="px-2 py-4">
+                                <div class="flex items-center">
+                                    <div class="h-2.5 w-2.5 rounded-full <?php echo $row['estado'] ?> mr-2"></div>
+                                    <?php echo $row['estado'] ?>
+                                </div>
+                            </td>
+                        </tr>
+                        <?php include '../components/pagos/usuario/viewpay.php' ?>
+                        <?php include '../components/pagos/usuario/viewimg.php' ?>
+                        <?php } ?>
+                        <?php } ?>
+
+                    </tbody>
                 </table>
             </div>
         </div>
         <div class="p-4" style="height: 60rem">
             <div class="relative overflow-x-auto bg-white shadow p-4  h-5/6">
-                <table class="w-full text-sm text-center text-gray-500 hover" id="otro">
+                <table class="w-full text-sm text-center text-gray-500">
                     <thead class="text-xs uppercase bg-gray-100 text-gray-900">
                         <tr>
                             <th scope="col" class="px-2 py-3">
@@ -92,6 +118,42 @@ $(document).ready(function() {
                             </th>
                         </tr>
                     </thead>
+                    <tbody>
+                        <?php 
+                                  foreach($result_task as $row){ 
+                                    if($row['estado'] != 'Pendiente'){
+                        ?>
+                        <tr class="bg-white border-b hover:bg-gray-200 "
+                            data-modal-target="defaultModal<?php echo $row['id'] ?>"
+                            data-modal-toggle="defaultModal<?php echo $row['id'] ?>">
+                            <td class="px-2 py-4 ">
+                                <?php echo $row['id'] ?>
+                            </td>
+                            <td class="px-2 py-4">
+                                <?php echo $row['cuenta'] ?>
+                            </td>
+                            <td class="px-2 py-4">
+                                <?php echo $row['valor'] ?>
+                            </td>
+                            <td class="px-2 py-4">
+                                <?php echo $row['nombret'] ?>
+                            </td>
+                            <td class="px-2 py-4">
+                                <?php echo $row['fecha'] ?>
+                            </td>
+                            <td class="px-2 py-4">
+                                <div class="flex items-center">
+                                    <div class="h-2.5 w-2.5 rounded-full <?php echo $row['estado'] ?> mr-2"></div>
+                                    <?php echo $row['estado'] ?>
+                                </div>
+                            </td>
+                        </tr>
+                        <?php include '../components/pagos/usuario/viewpay.php' ?>
+                        <?php include '../components/pagos/usuario/viewimg.php' ?>
+                        <?php } ?>
+                        <?php } ?>
+
+                    </tbody>
                 </table>
             </div>
         </div>

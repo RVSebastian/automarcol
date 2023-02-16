@@ -63,7 +63,7 @@
                     contactoford@atento.com.co o directamente en nuestras oficinas.
                 </p>
 
-                <iframe src="./includes/Resumen.pdf&layer=mapnik" style="width:100%; height:700px;" frameborder="0"></iframe>
+              
             </form>
         </div>
     </div>

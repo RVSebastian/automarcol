@@ -143,6 +143,9 @@ p {
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <meta name="facebook-domain-verification" content="7xnb71hrtw0vv915x2d3v09ssc1rfc" />
+    <meta name="description" content="Consesionario Multimarca Autorizado">
+    <meta name="keywords" content="AUTOMARCOL, AUTOMARCOLSAS, FORD,FJDR,BAJAJ,FOTON,FORD CUCUTA, BAJAJ CUCUTA, PEUGEOT CUCUTA, FJDR CUCUTA,CUCUTA">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script>
     ScrollReveal().destroy();

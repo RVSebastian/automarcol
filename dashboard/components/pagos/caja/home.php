@@ -49,6 +49,9 @@
                     <th scope="col" class="px-6 py-3">
                         Estado
                     </th>
+                    <th scope="col" class="px-6 py-3">
+                        Recibo
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -86,6 +89,9 @@
                             <div class="h-2.5 w-2.5 rounded-full <?php echo $row['estado'] ?> mr-2"></div>
                             <?php echo $row['estado'] ?>
                         </div>
+                    </td>
+                    <td class="px-6 py-4">
+                        <?php echo $row['recibo'] ?>
                     </td>
                 </tr>
                 <?php include './components/pagos/caja/viewpay.php' ?>
