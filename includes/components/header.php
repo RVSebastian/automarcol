@@ -125,6 +125,14 @@ p {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./includes/css/global.css" />
     <title>AUTOMARCOL</title>
+    <meta name="title" content="AUTOMARCOL">
+    <meta name="description" content="Concesionario autorizado multimarca, Ford,Jeep,Bajaj,Foton,Peugeot,Lovol">
+    <meta name="keywords" content="automarcol, ford,jeep,bajaj,foton,lovol,peugeot,fca,fjdr,ford cucuta">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="Spanish">
+    <meta name="revisit-after" content="1 days">
+    <meta name="author" content="AUTOMARCOL">
     <link rel="icon" href="logo.jpeg" />
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -142,11 +150,6 @@ p {
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <meta name="facebook-domain-verification" content="7xnb71hrtw0vv915x2d3v09ssc1rfc" />
-    <meta name="description" content="Consesionario Multimarca Autorizado">
-    <meta name="keywords" content="AUTOMARCOL, AUTOMARCOLSAS, FORD,FJDR,BAJAJ,FOTON,FORD CUCUTA, BAJAJ CUCUTA, PEUGEOT CUCUTA, FJDR CUCUTA,CUCUTA">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <script>
     ScrollReveal().destroy();
     </script>
