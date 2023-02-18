@@ -1,11 +1,11 @@
-<div id="viewpay<?php echo $row['id'] ?>" tabindex="110" style='z-index: 20000 !important' aria-hidden="true"
-    class="fixed top-0 left-0 right-0 z-0 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal">
-    <div class="relative w-full h-full max-w-4xl md:h-auto">
-        <div class="relative bg-white rounded-lg shadow">
+<div id="viewpay<?php echo $row['id'] ?>" tabindex="-1" style='z-index: 20000 !important;' aria-hidden="true" 
+    class=" top-50 left-50 right-50 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto absolute inset-0 h-modal md:h-full">
+    <div class="relative w-full h-full max-w-4xl md:h-auto  rounded rounded-3" style="left: 40vh;
+    top: 50px;">
+        <div class="bg-white rounded-lg shadow rounded rounded-3">
             <div class="flex flex-row">
                 <div class="basis-11/12 md:basis-2/4 border">
-                    <label for="img" data-modal-target="imgmodal<?php echo $row['id'] ?>"
-                        data-modal-toggle="imgmodal<?php echo $row['id'] ?>">
+                    <label for="img" onclick="openImg(id='<?php echo $row['id'];?>')">
                         <img style="height: 600px !important; margin: 0 auto;"
                             src="./galery/pagos/<?php echo $row['img'] ?>" id="img">
                     </label>
@@ -50,3 +50,4 @@
         </div>
     </div>
 </div>
+<div class="hidden opacity-25 fixed inset-0 z-40 bg-gray-900" id="backdrop<?php echo $row['id'] ?>" onclick="console.log('hola')"></div>

@@ -1,101 +1,28 @@
 <?php
+   require './includes/cn.php';
    require './includes/alerts.php';
-   $autorizados = "SELECT * FROM pagos where estado='Autorizado' order by fecha desc";
    if (!isset($_SESSION)) {
     session_start();
     }
+   $autorizados = "SELECT * FROM pagos where estado='Autorizado' order by fecha desc";
     $usuario = $_SESSION['key']['usuario'];
 ?>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-<script type="text/javascript" src="//cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
-<link rel="stylesheet" href="//cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
+<script type="text/javascript" src="datatables/datatables.min.js"></script>
+<script>
+$(document).ready(function() {
+    cargador();
+});
 
-<style>
-.dataTables_length {
-    display: none !important;
+
+function cargador() {
+    $('.home-content').load("./components/pagos/usuario/table.php");
 }
-</style>
-
-<script type="text/javascript">
-$(document).ready(function() {
-    $("#otro").DataTable({
-        ajax: "./funciones/select.php",
-        order: [
-            [0, 'desc']
-        ],
-    });
-});
-$(document).ready(function() {
-    var table = $("#pendiente").DataTable({
-        ajax: "./funciones/pendientes.php",
-        order: [
-            [0, 'desc']
-        ],
-        select: true,
-    });
-});
+setInterval(cargador, 90000);
 </script>
 
 <div class="home-content">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 mb-0 pb-0">
-        <div class="p-4" style="height: 60rem">
-            <div class="relative overflow-x-auto bg-white shadow p-4 h-5/6">
-                <table class="w-full text-sm text-center text-gray-500 hover" id="pendiente">
-                    <thead class="text-xs uppercase bg-gray-100 text-gray-900">
-                        <tr>
-                            <th scope="col" class="px-2 py-3">
-                                ID
-                            </th>
-                            <th scope="col" class="px-2 py-3">
-                                Cuenta
-                            </th>
-                            <th scope="col" class="px-2 py-3">
-                                Valor
-                            </th>
-                            <th scope="col" class="px-2 py-3">
-                                Tercero
-                            </th>
-                            <th scope="col" class="px-2 py-3">
-                                Fecha
-                            </th>
-                            <th scope="col" class="px-2 py-3">
-                                Estado
-                            </th>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
-        </div>
-        <div class="p-4" style="height: 60rem">
-            <div class="relative overflow-x-auto bg-white shadow p-4  h-5/6">
-                <table class="w-full text-sm text-center text-gray-500 hover" id="otro">
-                    <thead class="text-xs uppercase bg-gray-100 text-gray-900">
-                        <tr>
-                            <th scope="col" class="px-2 py-3">
-                                ID
-                            </th>
-                            <th scope="col" class="px-2 py-3">
-                                Cuenta
-                            </th>
-                            <th scope="col" class="px-2 py-3">
-                                Valor
-                            </th>
-                            <th scope="col" class="px-2 py-3">
-                                Tercero
-                            </th>
-                            <th scope="col" class="px-2 py-3">
-                                Fecha
-                            </th>
-                            <th scope="col" class="px-2 py-3">
-                                Estado
-                            </th>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
-        </div>
-    </div>
     <?php
         if($_SESSION['key']['cargo'] == 'Cajera'){
             $aut = mysqli_query($conn, $autorizados);

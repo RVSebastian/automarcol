@@ -9,7 +9,9 @@
             $query = "SELECT * FROM usuarios WHERE contactable='SI'";
             $result_task = mysqli_query($conn, $query);
             while ($row = mysqli_fetch_array($result_task)) { ?>
-            <a href="https://web.whatsapp.com/send?phone=57<?php echo $row['telefono'] ?>&text=Hola <?php echo $row['nombre'] ?>, vengo del aplicativo Web y estoy interesado en algo 🤔" target="_blank">
+        <form action="" method="POST">
+            <a href="https://web.whatsapp.com/send?phone=57<?php echo $row['telefono'] ?>&text=Hola <?php echo $row['nombre'] ?>, vengo del aplicativo Web y estoy interesado en algo 🤔"
+                target="_blank" onclick="console.log('hola')">
                 <div class='header-chat'>
                     <div class='head-home'>
                         <div class='info-avatar'><img src='./image/plantilla.jpg' /></div>
@@ -17,10 +19,10 @@
                     <div class='get-new'>
                         <div id='get-label'><?php echo $row['cargo'] ?></div>
                         <div id='get-nama'><?php echo $row['nombre'] ?></div>
-
                     </div>
                 </div>
             </a>
+        </form>
         <?php } ?>
 
 
@@ -276,17 +278,28 @@ function enviar_mensaje() {
         window.open(g, "_blank");
     }
 }
-
+var contador = 0;
 const whatsapp_chat = document.getElementById("whatsapp-chat");
 
 function cerrar_chat() {
     whatsapp_chat.classList.add("hide");
     whatsapp_chat.classList.remove("show");
-
+    contador =0;
 }
 
 function mostrar_chat() {
-    whatsapp_chat.classList.add("show");
-    whatsapp_chat.classList.remove("hide");
+    switch (contador) {
+        case 1:
+            whatsapp_chat.classList.add("hide");
+            whatsapp_chat.classList.remove("show");
+            contador =0;
+            break;
+        case 0:
+            whatsapp_chat.classList.add("show");
+            whatsapp_chat.classList.remove("hide");
+            contador++;
+            break;
+    }
+
 }
 </script>
