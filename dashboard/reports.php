@@ -2,11 +2,6 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script type="text/javascript" src="datatables/datatables.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.1/chart.min.js"
-    integrity="sha512-v3ygConQmvH0QehvQa6gSvTE2VdBZ6wkLOlmK7Mcy2mZ0ZF9saNbbk19QeaoTHdWIEiTlWmrwAL4hS8ElnGFbA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-
 <?php
     if (isset($data)) {
         unset($data);
@@ -19,13 +14,8 @@
         'initialDay' => '',
         'finalDay' => '',
     );
-    $marcas = array(
-        "ford", "bajaj", "foton", "fca", "peugeot"
-    );
     $data_string = json_encode($data);
-    for ($i = 0; $i <= 4; $i++) {
-       
-    $ch = curl_init('https://apiautomarcol.up.railway.app/api/'.$marcas[$i].'/vta');
+    $ch = curl_init('https://apiautomarcol.up.railway.app/api/ford/vta');
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -34,51 +24,60 @@
         'Content-Length: ' . strlen($data_string))
     );
     curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
-    $buscador=json_decode(curl_exec($ch),true);
-    if ($i != 0) {
-        $almacenador=array_merge($almacenador,$buscador);
-    }else{
-        $almacenador=$buscador;
-    }
-    $result =  $almacenador;
-    }
+    $result=json_decode(curl_exec($ch),true);
+
+
+
 ?>
-
-
-
 <div class="home-content">
-    <div class="basis-11/12 m-4 mt-1 bg-white shadow" >
-        <div style="height: 30rem">
-            <canvas id="myChart" class="p-4 h-4/6" ></canvas>
+    <div class="basis-11/12 m-4 mt-0">
+        <div class="bg-white p-4 shadow">
+            <form>
+                <div class="grid md:grid-cols-3 p-2 md:gap-6">
+                    <div class="relative z-0 w-full mb-6 group">
+                        <select name="floating_phone" id="floating_phone"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                            <option selected disabled>Filtrar por Marca</option>
+                            <option value="FVT">FVT</option>
+                        </select>
+                    </div>
+                    <div class="relative z-0 w-full mb-6 group">
+                        <input type="email" name="floating_email" id="floating_email"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_email"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre
+                            del Tercero</label>
+                    </div>
+                    <div class="grid md:grid-cols-2 md:gap-6">
+                        <div class="relative z-0 w-full mb-6 group">
+
+                            <div class="relative max-w-sm">
+                                <input datepicker type="date"
+                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                    placeholder="Select date">
+                            </div>
+
+                        </div>
+                        <div class="relative z-0 w-full mb-6 group">
+
+                            <div class="relative max-w-sm">
+                                <input datepicker type="date"
+                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                    placeholder="Select date">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <button type="submit"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Buscar</button>
+            </form>
+
         </div>
-
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-        <script>
-        const ctx = document.getElementById('myChart');
-
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                datasets: [{
-                    label: 'Post Ventas',
-                    data: [12, 19, 3, 5, 2, 3],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-        </script>
     </div>
-    <div class='basis-11/12 m-4 mt-1' style="height: 60rem">
-        <div class="relative overflow-x-auto bg-white shadow p-4 h-5/6">
+    <div class='basis-11/12 m-4 mt-1'>
+        <div class="relative overflow-x-auto bg-white shadow p-4">
             <table class="w-full text-xs text-left text-gray-500">
                 <thead class="text-xs text-center uppercase bg-gray-100 text-gray-900">
                     <tr>

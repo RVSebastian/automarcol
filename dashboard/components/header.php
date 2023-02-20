@@ -73,7 +73,7 @@ include'./includes/php/validador.php'; // añadimos las validaciones de session
             <li>
                 <a href="
                 <?php if ($_SESSION["key"]['permisos'] >= 7) {
-                    echo "./";
+                    echo "./reports";
                 }else{ echo "#";}
                 ?>
                 ">
