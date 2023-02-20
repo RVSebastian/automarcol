@@ -1,14 +1,12 @@
 <?php
 
-if (isset($_POST['save'])) {
+if (isset($_POST['contactanos'])) {
     $nombres = $_POST['nombre'];
     $apellidos = $_POST['nombre'];
     $celular = $_POST['celular'];
     $correo = $_POST['correo'];
     $comentario = $_POST['comentario'];
     $motivo = $_POST['motivo'];
-    $motivo2 = $_POST['motivo2'];
-    $motivo3 = $_POST['motivo3'];
     $query = "INSERT INTO leads(nombres, apellidos, correo, telefono, vinteres, medio) 
     VALUES ('$nombres', '$apellidos', '$correo','$celular', '$motivo', 'pagina')";
     mysqli_query($conn, $query);
@@ -89,7 +87,7 @@ if (isset($_POST['save'])) {
                             aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form class="p-2 m-2">
+                        <form class="p-2 m-2" method="POST">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Nombres<span
                                         class="text-muted fs-4"></span></label>
@@ -110,32 +108,27 @@ if (isset($_POST['save'])) {
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Correo Electronico <span
                                         class="text-muted fs-4"></span></label>
-                                <input type="text" required class="form-control" name="correo" aria-describedby="emailHelp">
+                                <input type="text" required class="form-control" name="correo"
+                                    aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Comentario <span
+                                <label for="exampleInputEmail1" class="form-label">Comentario<span
                                         class="text-muted fs-4"></span></label>
-                                <input type="text" required class="form-control" name="comentario" aria-describedby="emailHelp">
+                                <input type="text" required class="form-control" name="comentario"
+                                    aria-describedby="emailHelp">
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="motivo" id="flexRadioDefault1">
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                    Compra vehículo Ford
-                                </label>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Propósito<span
+                                        class="text-muted fs-4"></span></label>
+                                <select class="form-control" name="motivo" aria-label="C">
+                                    <option value="Compra vehículo Ford" class="fs-4">Compra vehículo Ford</option>
+                                    <option value="Compra vehículo Multimarca" class="fs-4">Compra vehículo Multimarca</option>
+                                    <option value="Agendamiento taller Ford" class="fs-4">Agendamiento taller Ford</option>
+                                    <option value="Agendamiento taller Multimarca" class="fs-4">Agendamiento taller Multimarca</option>
+                                    <option value="Otro motivo" class="fs-4">Otro motivo</option>
+                                </select>
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="motivo2" id="flexRadioDefault2"
-                                    checked>
-                                <label class="form-check-label" for="flexRadioDefault2">
-                                    Agendamiento taller Ford
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="motivo3" id="flexRadioDefault2">
-                                <label class="form-check-label" for="flexRadioDefault2">
-                                    Otro motivo
-                                </label>
-                            </div>
+
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" required name="terminos">
                                 <label class="form-check-label" for="exampleCheck1">Acepta los términos y
@@ -188,7 +181,7 @@ if (isset($_POST['save'])) {
                                 </div>
                             </div>
                             <div class="d-grid gap-2">
-                                <button type="submit" name="save" class="btn btn-dark fs-3">Enviar</button>
+                                <button type="submit" name="contactanos" class="btn btn-dark fs-3">Enviar</button>
                             </div>
                         </form>
                     </div>
@@ -198,4 +191,3 @@ if (isset($_POST['save'])) {
 
     </div>
 </section>
-

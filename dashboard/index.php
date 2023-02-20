@@ -24,7 +24,6 @@
     );
     $data_string = json_encode($data);
     for ($i = 0; $i <= 4; $i++) {
-       
     $ch = curl_init('https://apiautomarcol.up.railway.app/api/'.$marcas[$i].'/vta');
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
@@ -47,9 +46,14 @@
 
 
 <div class="home-content">
-    <div class="basis-11/12 m-4 mt-1 bg-white shadow" >
-        <div style="height: 30rem">
-            <canvas id="myChart" class="p-4 h-4/6" ></canvas>
+    <div class="basis-11/12 m-4 mt-1 p-4 bg-white shadow">
+        <div class="flex flex-wrap">
+            <div class="basis-1/4">
+                <canvas id="myChart" class="w-fill"></canvas>
+            </div>
+            <div class="basis-1/4">
+                <canvas id="myChart2" class="w-fill"></canvas>
+            </div>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -60,7 +64,29 @@
         new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: ['1', '2', '3', '4', '5', '6'],
+                datasets: [{
+                    label: 'Post Ventas',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        </script>
+        <script>
+        const ctx2 = document.getElementById('myChart2');
+
+        new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: ['1', '2', '3', '4', '5', '6'],
                 datasets: [{
                     label: 'Post Ventas',
                     data: [12, 19, 3, 5, 2, 3],

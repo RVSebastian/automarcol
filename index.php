@@ -27,6 +27,11 @@ if (session_status() === PHP_SESSION_NONE) {
     display: inline;
 }
 
+.bg-dark {
+    background-color: #2c3b6d !important;
+    color: white;
+}
+
 .carousel-nav .carousel-cell {
     height: 10rem;
     width: 10rem;
@@ -322,19 +327,21 @@ if (session_status() === PHP_SESSION_NONE) {
 
 
 <?php 
-$url = 'https://apiautomarcol.up.railway.app/api/ford/rep';
-   if (($inspect = file_get_contents($url)) == false) {
-    $error = error_get_last();
-    echo $error;
-    $oculto = 'block';
-} else {
-    $oculto = 'hidden';
-    $inspect = array_values(json_decode($inspect, true));
-    $vacio = 'VACIO';
-    $data = $inspect['1'];
-    $_SESSION['data'] = $data;
-}
-
+ $marcas = array(
+    "ford", "bajaj", "foton", "fca", "peugeot"
+);
+for ($i = 0; $i <= 4; $i++) {
+    $url = 'https://apiautomarcol.up.railway.app/api/'.$marcas[$i].'/rep';
+    $datos = file_get_contents($url);
+    $buscador = json_decode($datos, true);
+    if ($i != 0) {
+        $almacenador=array_merge($almacenador,$buscador);
+    }else{
+        $almacenador=$buscador;
+    }
+};
+$data =  $almacenador[0];
+$_SESSION['data'] = $data;
 include'./includes/components/repuestos/card.php';
 
 ?>
