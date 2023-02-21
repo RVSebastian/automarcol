@@ -47,12 +47,15 @@
 
 <div class="home-content">
     <div class="basis-11/12 m-4 mt-1 p-4 bg-white shadow">
-        <div class="flex flex-wrap">
+        <div class="flex flex-wrap items-center">
             <div class="basis-1/4">
                 <canvas id="myChart" class="w-fill"></canvas>
             </div>
             <div class="basis-1/4">
                 <canvas id="myChart2" class="w-fill"></canvas>
+            </div>
+            <div class="basis-1/4">
+                <canvas id="myChart3" class="w-fill"></canvas>
             </div>
         </div>
 
@@ -79,11 +82,29 @@
                 }
             }
         });
-        </script>
-        <script>
         const ctx2 = document.getElementById('myChart2');
 
         new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: ['1', '2', '3', '4', '5', '6'],
+                datasets: [{
+                    label: 'Post Ventas',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        const ctx3 = document.getElementById('myChart3');
+
+        new Chart(ctx3, {
             type: 'line',
             data: {
                 labels: ['1', '2', '3', '4', '5', '6'],

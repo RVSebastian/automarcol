@@ -78,8 +78,9 @@ select {
     .modelo {
         font-size: 10px;
     }
-    .wall{
-        top: 10%!important;
+
+    .wall {
+        top: 10% !important;
     }
 }
 
@@ -87,8 +88,9 @@ select {
     .modelo {
         font-size: 20px;
     }
-    .wall{
-        top: 40%!important;
+
+    .wall {
+        top: 40% !important;
     }
 }
 
@@ -96,12 +98,12 @@ select {
     .modelo {
         font-size: 60px;
     }
-    .wall{
+
+    .wall {
         top: 50% !important;
         left: 40% !important
     }
 }
-
 </style>
 <br>
 
@@ -204,12 +206,19 @@ $query = "select * from usuarios where "
                         foreach ($imagenes as $key) {
                             $indice++;
                         ?>
+                        <?php 
+                    if (!empty($imagenes[$indice])) {
+                    ?>
                         <div class="col-md-3 col-6">
                             <figure class='rounded'>
                                 <img src="./dashboard/galery/<?php echo $datos['Version_DescipcionModelo'].'/'.$imagenes['img'.$indice]?>"
                                     class='img-fluid mx-auto d-block rounded'>
                             </figure>
                         </div>
+                        <?php 
+                    }
+                    ?>
+
                         <?php    }?>
 
                     </div>

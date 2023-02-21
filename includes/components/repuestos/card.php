@@ -135,7 +135,7 @@ option {
             </div>
 
             <div class="col-12 col-md-9">
-                <div class="row g-sm-4 g-4">
+                <div class="row g-sm-0 g-4">
                     <?php
             foreach ($data as $datos){
             ?>
