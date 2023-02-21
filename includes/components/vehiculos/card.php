@@ -61,7 +61,7 @@ figure {
                 </figure>
                 <div class="mt-0 pt-0">
                     <div class="p-4 pt-0 fondo-marca">
-                        <div class="row  align-items-center">
+                        <div class="row  align-items-center" style="text-transform: uppercase;">
                             <h1 class="fs-4 px-4 pt-4 text-bold text-center"><?php echo $datos['Version_DescipcionModelo'];?></h1>
                             <div class="col-6">
                                 <p class="fs-5 m-0 mb-4 text-muted"><i
