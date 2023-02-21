@@ -1,18 +1,4 @@
 <style>
-.vehicle {
-    margin: 10px;
-    margin-bottom: 10px;
-    height: 36rem;
-    background-color: white;
-    width: 30rem;
-}
-
-.vehicle img {
-    width: 100% !important;
-    height: 16rem !important;
-    margin-bottom: 50px;
-}
-
 .vehicle:hover img {
     -webkit-transform: rotate(1deg) scale(1.4);
     transform: scale(1.1);
@@ -22,11 +8,8 @@
 
 figure {
     overflow: hidden;
-    margin-top: 10px;
-    padding-top: 10px;
+    margin: 0;
 }
-
-.vehicle .bg-dark {}
 
 .Ford .fondo-marca {
     background-color: var(--main) !important;
@@ -51,7 +34,9 @@ figure {
 .vehiculosc .card {
     border-radius: 25px !important;
 }
-.fondo-marca , .text-muted{
+
+.fondo-marca,
+.text-muted {
     color: white !important;
 }
 </style>
@@ -61,38 +46,40 @@ figure {
         <?php
             foreach ($data as $datos){
             ?>
-            <?php 
+        <?php 
               if ($datos['PresentationIMG'] !='') {
             ?>
         <div class="col-sm-12 col-md-6 col-lg-4">
-            <div class="card rounded vehicle carousel-cells m-4  shadow border-0 mx-auto animation_repuestos">
-                <figure class="card-img-top"> 
-                    <img src="./dashboard/galery/<?php echo $datos['Version_DescipcionModelo'];?>/<?php echo $datos['PresentationIMG'];?>" class="img-fluid">
+            <div class="card rounded vehicle carousel-cells m-4 shadow border-0 mx-auto animation_repuestos"
+                style="width: 30rem;">
+                <figure class="" style="height: 25rem; width: 100%">
+                    <img src="./dashboard/galery/<?php echo $datos['Version_DescipcionModelo'];?>/<?php echo $datos['PresentationIMG'];?>"
+                        class="img-fluid" style="display: block; margin: auto;">
+                    <a href="./detalle?marca=<?php echo $datos['Marca'];?>&modelo=<?php echo $datos['Version_DescipcionModelo'];?>"
+                        class="stretched-link"></a>
                 </figure>
-                <div class="container p-2 pt-4 pb-0">
-                    <div class="position-relative">
-                        <div class="position-absolute bottom-0" style='width: 100%'>
-                            <div class="card-body p-2 fondo-marca text-center" style="border-radius: 20px 20px 0px 0px">
-                                <h2 class="card-title fs-4"><?php echo $datos['Version_DescipcionModelo'];?></h2>
+                <div class="mt-0 pt-0">
+                    <div class="p-4 pt-0 fondo-marca">
+                        <div class="row  align-items-center">
+                            <h1 class="fs-3 px-4 pt-4 text-bold"><?php echo $datos['Version_DescipcionModelo'];?></h1>
+                            <div class="col-6">
+                                <p class="fs-5 m-0 mb-4 text-bold text-muted"><i
+                                        class="fas fa-gas-pump m-2"></i><?php echo $datos['Combustible'];?></p>
+                                <p class="fs-5 m-0 mb-4 text-bold text-muted"><i
+                                        class="fas fa-tachometer-alt m-2"></i>Cilindraje
+                                    <?php echo $datos['Cilindraje'];?></p>
+                            </div>
+                            <div class="col-6">
+                                <p class="fs-5 m-0 mb-4 text-bold text-muted"><i class="fas fa-cogs m-2"></i>Traccion
+                                    <?php echo $datos['Traccion'];?></p>
+                                <p class="fs-5 m-0 mb-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Cojineria de
+                                    <?php echo $datos['Cojineria'];?></p>
                             </div>
                         </div>
+
                     </div>
-                    <a href="./detalle?marca=<?php echo $datos['Marca'];?>&modelo=<?php echo $datos['Version_DescipcionModelo'];?>" class="stretched-link"></a>
                 </div>
 
-                <div class="p-4 pt-4 fondo-marca">
-                    <div class="row  align-items-center">
-                        <div class="col-6">
-                            <p class="fs-5 m-0 mb-4 text-bold text-muted"><i class="fas fa-gas-pump m-2"></i><?php echo $datos['Combustible'];?></p>
-                            <p class="fs-5 m-0 mb-4 text-bold text-muted"><i class="fas fa-cogs m-2"></i>Traccion: <?php echo $datos['Traccion'];?></p>
-                        </div>
-                        <div class="col-6">
-                            <p class="fs-5 m-0 mb-4 text-bold text-muted"><i class="fas fa-tachometer-alt m-2"></i>Cilindraje: <?php echo $datos['Cilindraje'];?></p>
-                            <p class="fs-5 m-0 mb-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Cojineria: <?php echo $datos['Cojineria'];?></p>
-                        </div>
-                    </div>
-
-                </div>
             </div>
         </div>
         <?php
