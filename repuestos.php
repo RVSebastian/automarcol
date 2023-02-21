@@ -75,6 +75,43 @@ span {
 <?php
 $data = $_SESSION['data'];
 $modelo = $_GET['parte'];
+
+$marca = $_GET['marca'];
+
+switch ($marca) {
+        case 'Ford':
+            $url = 'https://apiautomarcol.up.railway.app/api/ford/rep';
+            break;
+        case 'Bajaj':
+            $url = 'https://apiautomarcol.up.railway.app/api/bajaj/inv';
+            break;
+        case 'Peugeot':
+            $url = 'https://apiautomarcol.up.railway.app/api/peugeot/inv';
+            break;
+        case 'Foton':
+            $url = 'https://apiautomarcol.up.railway.app/api/foton/inv';
+            break;
+        case 'Fca':
+            $url = 'https://apiautomarcol.up.railway.app/api/fca/inv';
+            break;
+        default:
+            $url = 'https://apiautomarcol.up.railway.app/api/ford/rep';
+            break;
+    };
+    
+        if (($inspect = file_get_contents($url)) == false) {
+            $error = error_get_last();
+            echo $error;
+            $oculto = 'block';
+        } else {
+            $oculto = 'hidden';
+            $inspect = array_values(json_decode($inspect, true));
+            $vacio = 'VACIO';
+            $data = $inspect['1'];
+            $_SESSION['data'] = $data;
+        }
+
+
 $filtro = array_filter($data, function($array) use ($modelo){
     if (str_contains($array['Parte'], $modelo)) {
         return $array;
@@ -203,18 +240,19 @@ $data = $filtro;
                 </div>
                 <div class="bg-light rounded p-4 mb-4 mt-4 otro">
                     <h1 class="fs-2 text-muted">Detalle del articulo</h1>
-                        <p class="fs-4 pt-2">
-                            Todos los repuestos por parte de AUTO MARCOL S.A.S tienen garantía si está es instalada por
-                            medio de nuestros talleres autorizados en la ciudad de Cúcuta, Norte de Santander, contaran
-                            con un año de garantía en sitio, si se instala por otro medio a este contara con 6 meses de
-                            vigencia en su garantía sujeta a revisión.
+                    <p class="fs-4 pt-2">
+                        Todos los repuestos por parte de AUTO MARCOL S.A.S tienen garantía si está es instalada por
+                        medio de nuestros talleres autorizados en la ciudad de Cúcuta, Norte de Santander, contaran
+                        con un año de garantía en sitio, si se instala por otro medio a este contara con 6 meses de
+                        vigencia en su garantía sujeta a revisión.
 
-                        </p>
-                        <p class="fs-4">
-                            Tenemos disponibilidad en taller con horarios de 8-12 am y 2-6 pm y puedes apartar tu cita
-                            por medio de nuestro personal de atención al cliente <span style="color: #2D5EC6;">3157006633</span> o  <span style="color: #2D5EC6;">
-                            contactcenter@automarcol.com</span> 
-                        </p>
+                    </p>
+                    <p class="fs-4">
+                        Tenemos disponibilidad en taller con horarios de 8-12 am y 2-6 pm y puedes apartar tu cita
+                        por medio de nuestro personal de atención al cliente <span
+                            style="color: #2D5EC6;">3157006633</span> o <span style="color: #2D5EC6;">
+                            contactcenter@automarcol.com</span>
+                    </p>
                 </div>
                 <div class="bg-light rounded  p-4 mb-4 mt-4">
                     <h1 class="fs-2 text-muted">Información de la tienda</h2>

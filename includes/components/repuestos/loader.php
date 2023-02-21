@@ -2,7 +2,7 @@
  $marcas = array(
     "ford", "bajaj", "foton", "fca", "peugeot"
 );
-for ($i = 0; $i <= 4; $i++) {
+for ($i = 0; $i <= 1; $i++) {
     $url = 'https://apiautomarcol.up.railway.app/api/fca/rep';
     $datos = file_get_contents($url);
     $buscador = json_decode($datos, true);

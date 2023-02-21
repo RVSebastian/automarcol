@@ -334,10 +334,10 @@ $(document).ready(function() {
             },
         })
         .done(function(res) {
-            $("#res").html(res), $("#error").hidden(), $("#cargando").hidden();
+            $("#res").html(res), $("#error").hide(), $("#cargando").hide();
         })
         .fail(function() {
-            $("#error").show(), $('$cargando').hidden();
+            $("#error").show(), $('$cargando').hide();
         });
 })
 </script>

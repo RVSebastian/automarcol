@@ -28,7 +28,7 @@ figure {
 }
 
 .Fca .fondo-marca {
-    background-color: gray !important;
+    background-color: #616161 !important;
 }
 
 .vehiculosc .card {
@@ -38,6 +38,7 @@ figure {
 .fondo-marca,
 .text-muted {
     color: white !important;
+    letter-spacing: 1px;
 }
 </style>
 
@@ -49,10 +50,10 @@ figure {
         <?php 
               if ($datos['PresentationIMG'] !='') {
             ?>
-        <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="col-sm-12 col-md-4 col-lg-4">
             <div class="card rounded vehicle carousel-cells m-4 shadow border-0 mx-auto animation_repuestos"
                 style="width: 30rem;">
-                <figure class="" style="height: 25rem; width: 100%">
+                <figure class="" style="height: 22rem; width: 100%">
                     <img src="./dashboard/galery/<?php echo $datos['Version_DescipcionModelo'];?>/<?php echo $datos['PresentationIMG'];?>"
                         class="img-fluid" style="display: block; margin: auto;">
                     <a href="./detalle?marca=<?php echo $datos['Marca'];?>&modelo=<?php echo $datos['Version_DescipcionModelo'];?>"
@@ -61,19 +62,19 @@ figure {
                 <div class="mt-0 pt-0">
                     <div class="p-4 pt-0 fondo-marca">
                         <div class="row  align-items-center">
-                            <h1 class="fs-3 px-4 pt-4 text-bold"><?php echo $datos['Version_DescipcionModelo'];?></h1>
+                            <h1 class="fs-4 px-4 pt-4 text-bold text-center"><?php echo $datos['Version_DescipcionModelo'];?></h1>
                             <div class="col-6">
-                                <p class="fs-5 m-0 mb-4 text-bold text-muted"><i
+                                <p class="fs-5 m-0 mb-4 text-muted"><i
                                         class="fas fa-gas-pump m-2"></i><?php echo $datos['Combustible'];?></p>
-                                <p class="fs-5 m-0 mb-4 text-bold text-muted"><i
+                                <p class="fs-5 m-0 mb-4 text-muted"><i
                                         class="fas fa-tachometer-alt m-2"></i>Cilindraje
                                     <?php echo $datos['Cilindraje'];?></p>
                             </div>
                             <div class="col-6">
-                                <p class="fs-5 m-0 mb-4 text-bold text-muted"><i class="fas fa-cogs m-2"></i>Traccion
+                                <p class="fs-5 m-0 mb-4 text-muted"><i class="fas fa-cogs m-2"></i>Traccion
                                     <?php echo $datos['Traccion'];?></p>
-                                <p class="fs-5 m-0 mb-4 text-bold text-muted"><i class="fas fa-car m-2"></i>Cojineria de
-                                    <?php echo $datos['Cojineria'];?></p>
+                                <p class="fs-5 m-0 mb-4 text-muted"><i class="fas fa-car m-2"></i>Modelo
+                                    <?php echo $datos['Ano_Modelo'];?></p>
                             </div>
                         </div>
 

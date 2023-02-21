@@ -16,7 +16,7 @@
                 </p>
                 <p class="text-muted p-2 pb-0 pt-0"><i class='bx bx-purchase-tag'></i><?php echo $datos['Marca'];?>
                 </p>
-                <a href="./repuestos?parte=<?php echo $datos['Parte'];?>" class="stretched-link"></a>
+                <a href="./repuestos?parte=<?php echo $datos['Parte'];?>&marca=<?php echo $datos['Marca'];?>" class="stretched-link"></a>
         </div>
     </div>
 </div>
