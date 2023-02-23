@@ -73,7 +73,7 @@ switch ($marca) {
         else{
 
             if(isset($repuesto)){
-                $data = $inspect['1'];
+                $data = $inspect;
             }else{
                 $data = $inspect;
             }

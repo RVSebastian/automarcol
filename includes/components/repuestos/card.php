@@ -1,7 +1,7 @@
 
 <?php
-            foreach ($data as $datos){
-            ?>
+foreach ($data as $datos){
+?>
 <div class="col-md-3 col-sm-6 animation_repuestos">
     <div class="card rounded shadow rounded-3 repuestos border-0 m-sm-4 m-md-4">
         <figure class="rounded rounded-3"> <img
@@ -22,5 +22,5 @@
 </div>
 <input type="hidden" id='prueba' value='<?php echo floatval(preg_replace("/[^0-9]/", "", $datos['Costo$'])); ?>'>
 <?php
-            }
-            ?>
+}
+?>

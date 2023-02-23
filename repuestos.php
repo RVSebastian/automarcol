@@ -73,13 +73,12 @@ span {
 }
 </style>
 <?php
-$data = $_SESSION['data'];
-$modelo = $_GET['parte'];
 
+$modelo = $_GET['parte'];
 $marca = $_GET['marca'];
 
 switch ($marca) {
-        case 'Ford':
+        case 'Repuestos Ford':
             $url = 'https://apiautomarcol.up.railway.app/api/ford/rep';
             break;
         case 'Bajaj':
@@ -102,13 +101,9 @@ switch ($marca) {
         if (($inspect = file_get_contents($url)) == false) {
             $error = error_get_last();
             echo $error;
-            $oculto = 'block';
         } else {
-            $oculto = 'hidden';
             $inspect = array_values(json_decode($inspect, true));
-            $vacio = 'VACIO';
             $data = $inspect['1'];
-            $_SESSION['data'] = $data;
         }
 
 
