@@ -83,21 +83,21 @@ if (isset($_POST['cotizar'])) {
             <h1 class="fw-semibold text-center fs-2 pt-5 p-2 pb-0">Cotiza tu</h1>
             <h1 class="fw-semibold text-center fs-2 pt-0 p-2"><?php echo $datos['Version_DescipcionModelo']?></h1>
             <form method="POST" class="p-1 m-2 fs-4">
-                <div class="rounded p-4 mb-2">
+                <div class="rounded p-4 mb-3 pb-2">
                     <label for="m_first_name">Nombre:</label>
-                    <input required id="m_first_name" maxlength="40" class="form-control mb-2" name="first_name" size="20"
+                    <input required id="m_first_name" maxlength="40" class="form-control mb-3 pb-2" name="first_name" size="20"
                         type="text">
                     <label for="m_last_name">Apellido:</label>
-                    <input required id="m_last_name" maxlength="80" class="form-control mb-2" name="last_name" size="20"
+                    <input required id="m_last_name" maxlength="80" class="form-control mb-3 pb-2" name="last_name" size="20"
                         type="text">
                     <label for="m_email">Email:</label>
-                    <input required id="m_email" maxlength="80" name="email" class="form-control mb-2" size="20" type="text">
+                    <input required id="m_email" maxlength="80" name="email" class="form-control mb-3 pb-2" size="20" type="text">
                     <label for="m_mobile">Teléfono Móvil / Contacto:</label>
-                    <input required id="m_mobile" maxlength="40" name="mobile" class="form-control mb-2" size="20"
+                    <input required id="m_mobile" maxlength="40" name="mobile" class="form-control mb-3 pb-2" size="20"
                         type="text">
                     <label for="m_VehicleModelLatam__c">Vehículo de interés</label>
                     <input required id="m_VehicleModelLatam__c" maxlength="40" name="VehicleModelLatam__c"
-                        class="form-control mb-2" size="20" type="text" readonly
+                        class="form-control mb-3 pb-2" size="20" type="text" readonly
                         value="<?php echo $datos['Version_DescipcionModelo']?>">
                     <input type="hidden" id="marca" name="marca" value="<?php echo $datos['Marca']?>">
                     <input type="hidden" id="m_recordType" name="recordType" value="0122K000001QJ5O">
@@ -112,6 +112,7 @@ if (isset($_POST['cotizar'])) {
                     <div class="d-grid gap-2 pb-4 pt-3">
                         <button type="submit" name='cotizar' class='btn btn-dark fs-3 p-2'>Cotiza</button>
                     </div>
+                    
                 </div>
             </form>
         </div>

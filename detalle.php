@@ -6,9 +6,36 @@ if (session_status() === PHP_SESSION_NONE) {
 ?>
 <?php include'./dashboard/includes/cn.php';?>
 <?php 
-$marca = $_GET['marca'];
+if (empty($_SESSION['data'])) {
 $modelo = $_GET['modelo'];
-$data = $_SESSION['data'];
+$marca = $_GET['marca'];
+switch ($marca) {
+        case 'Ford':
+            $url = 'https://apiautomarcol.up.railway.app/api/ford/inv';
+            break;
+        case 'Bajaj':
+            $url = 'https://apiautomarcol.up.railway.app/api/bajaj/inv';
+            break;
+        case 'Peugeot':
+            $url = 'https://apiautomarcol.up.railway.app/api/peugeot/inv';
+            break;
+        case 'Foton':
+            $url = 'https://apiautomarcol.up.railway.app/api/foton/inv';
+            break;
+        case 'Fca':
+            $url = 'https://apiautomarcol.up.railway.app/api/fca/inv';
+            break;
+        default:
+            $url = 'https://apiautomarcol.up.railway.app/api/ford/inv';
+            break;
+    };
+    
+$peticion = file_get_contents($url);
+$data = json_decode($peticion, true);
+}else{
+    $data = $_SESSION['data'];
+}
+// despues de optener los valores de busqueda de data o volverlos a consumir filtramos para mostrar el vehiculo selecionado
 
 $filtro = array_filter($data, function($array) use ($modelo){
     if (str_contains($array['Version_DescipcionModelo'], $modelo)) {
@@ -192,6 +219,7 @@ $query = "select * from usuarios where "
                         </div>
                     </div>
                     <input type="hidden" id="marca" value='<?php echo $datos['Marca']?>'>
+                    <hr>
                     <div class="pt-3 otro">
                         <?php echo $datos['Otro']?>
                     </div>

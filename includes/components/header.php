@@ -220,18 +220,19 @@ p {
                     <li class="nav-item m-sm-2">
                         <a class="nav-link text-white" href="./index#contact" class="fs-2">Contact</a>
                     </li>
-                    <!--
-                        EN DESARROLLO
+                 
                     <li class="nav-item m-sm-2">
                         <a class="nav-link text-white" href="./carrito" class="fs-1 fw-bold carrito bx-tada">Carrito</a>
                     </li>
-                    -->
+               
                 </ul>
             </div>
         </div>
 
     </nav>
     <div class="loader">
-        <img src="./image/loader2.gif" alt="">
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_x62chJ.json" background="transparent"
+            speed="1" style="width: 35rem; height: 35rem;" loop autoplay></lottie-player>
     </div>
     <?php include'./includes/components/whatsapp.php';?>

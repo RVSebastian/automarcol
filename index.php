@@ -154,30 +154,9 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 </style>
 <br>
-
-
-<!--
-<div class="carousel-cell">
-    <img src="./image/fb.png" class="img-thumbnail" alt="">
-</div>
-<div class="carousel-cell">
-    <img src="./image/peugeotl.png" class="img-thumbnail h-75 mx-auto my-auto" alt="">
-</div>
-<div class="carousel-cell">
-    <img src="./image/lg2.png" class="img-thumbnail mx-auto" alt="">
-</div>
-<div class="carousel-cell">
-    <img src="./image/lg3.png" class="img-thumbnail mx-auto" alt="">
-</div>
-<div class="carousel-cell">
-    <img src="./image/lg4.png" class="img-thumbnail mx-auto" alt="">
-</div>
-
--->
 <br>
 <br>
 <br>
-<br><br>
 <br>
 <br>
 <br>
@@ -416,7 +395,6 @@ option {
 
 .menure a:hover {
     color: var(--main);
-    font-size: 18px;
 }
 
 .trepuestos {
@@ -442,63 +420,38 @@ option {
                 <div class="menure">
                     <div class="card-body p-4 m-2 sticky rounded  shadow rounded-3 p-2 bg-white "
                         style="top:150px !important;">
-                        <h4>
-                            <form>
-                                <h2 class="p-2">Categorias</h2>
-                                <ul class="list-group">
-                                    <li class="list-group-item border-0"><a href="">Baterias</a></li>
-                                    <li class="list-group-item border-0"><a href="">Ruedas</a></li>
-                                    <li class="list-group-item border-0"><a href="">Vacio</a></li>
-                                    <li class="list-group-item border-0"><a href="">Vacio</a></li>
-                                </ul>
-                                <h2 class="p-2">Marcas</h2>
-                                <ul class="list-group">
-                                    <li class="list-group-item border-0"><a href="">Ford</a></li>
-                                    <li class="list-group-item border-0"><a href="">Jeep</a></li>
-                                    <li class="list-group-item border-0"><a href="">Bajaj</a></li>
-                                    <li class="list-group-item border-0"><a href="">Peugeot</a></li>
-                                    <li class="list-group-item border-0"><a href="">Levol</a></li>
-                                </ul>
-                                <h2 class="p-2">Repuestos</h2>
-                                <ul class="list-group">
-                                    <li class="list-group-item border-0"><a href="">Camioneta</a></li>
-                                    <li class="list-group-item border-0"><a href="">Camion</a></li>
-                                    <li class="list-group-item border-0"><a href="">Motocicleta</a></li>
-                                    <li class="list-group-item border-0"><a href="">Scooter</a></li>
-                                </ul>
-                                <h2 class="p-2">Descuentos</h2>
-                                <ul class="list-group">
-                                    <li class="list-group-item border-0"><a href="">$400.000</a></li>
-                                    <li class="list-group-item border-0"><a href="">$400.000</a></li>
-                                    <li class="list-group-item border-0"><a href="">$400.000</a></li>
-                                    <li class="list-group-item border-0"><a href="">$400.000</a></li>
-                                </ul>
-                            </form>
-                            </h2>
+                        <h2 class="p-2">Buscar por Marca</h2>
+                        <hr>
+                        <ul class="list-group fs-3">
+                            <li class="list-group-item border-0"><a href="">Ford</a></li>
+                            <li class="list-group-item border-0"><a href="">FJDR</a></li>
+                            <li class="list-group-item border-0"><a href="">Bajaj</a></li>
+                            <li class="list-group-item border-0"><a href="">Peugeot</a></li>
+                            <li class="list-group-item border-0"><a href="">Foton</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-9">
-                <div class="row g-sm-0 g-4">
+                <div class="row justify-content-center">
                     <div id="res">
                     </div>
-                    <div id="cargando" style="display: none;">
-                        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js">
-                        </script>
-                        <lottie-player src="https://assets6.lottiefiles.com/private_files/lf30_o6x7owmk.json"
-                            background="transparent" speed="1" style="width: 300px; height: 300px;margin: 0 auto" loop
-                            autoplay></lottie-player>
-                        <p class="text-center">Cargando Repuestos</p>
-                    </div>
-                    <div id="error" style="display: none">
-                        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js">
-                        </script>
-                        <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_suhe7qtm.json"
-                            background="transparent" speed="1" style="width: 300px; height: 300px;margin: 0 auto" loop
-                            autoplay></lottie-player>
-                    </div>
-
                 </div>
+                <div id="cargando" style="display: none;">
+                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                    <lottie-player src="https://lottie.host/ffaf19c2-00c2-4428-a40f-6c7af3493b23/3bKkp03jsa.json"
+                        background="transparent" speed="1" style="width: 300px; height: 300px; margin: 0 auto;" loop
+                        autoplay></lottie-player>
+                    <p class="text-center">Cargando Repuestos</p>
+                </div>
+                <div id="error" style="display: none">
+                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js">
+                    </script>
+                    <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_suhe7qtm.json"
+                        background="transparent" speed="1" style="width: 300px; height: 300px;margin: 0 auto" loop
+                        autoplay></lottie-player>
+                </div>
+
             </div>
         </div>
 </section>

@@ -98,13 +98,9 @@ switch ($marca) {
             break;
     };
     
-        if (($inspect = file_get_contents($url)) == false) {
-            $error = error_get_last();
-            echo $error;
-        } else {
-            $inspect = array_values(json_decode($inspect, true));
-            $data = $inspect['1'];
-        }
+    $peticion = file_get_contents($url);
+    $datos = json_decode($peticion, true);
+    $data =  $datos[0];
 
 
 $filtro = array_filter($data, function($array) use ($modelo){
