@@ -93,7 +93,7 @@ p {
   line-height: inherit;
 }
 
-a[x-apple-data-detectors='true'] {
+a[x-apple-data-detectors="true"] {
   color: inherit !important;
   text-decoration: none !important;
 }
@@ -336,7 +336,6 @@ table, td { color: #000000; } #u_body a { color: #3598db; text-decoration: none;
    $cabeceras = 'MIME-Version: 1.0' . "\r\n" .
        'Content-type: text/html; charset=utf-8' . "\r\n" .
        'Reply-To: remitente@example.com' . "\r\n" .
-       'Cc: juancbastianrv@gmail.com' "\r\n" .
        'X-Mailer: PHP/' . phpversion();
    mail($para, $titulo, $mensaje, $cabeceras);
 
