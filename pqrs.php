@@ -249,24 +249,33 @@ table, td { color: #000000; } #u_body a { color: #3598db; text-decoration: none;
   <div style="line-height: 160%; text-align: center; word-wrap: break-word;">
     <p style="line-height: 160%; text-align: center; margin: 0px;"><span style="font-size: 16px; line-height: 25.6px;"><strong>Información del remitente</strong></span></p>
 <p style="line-height: 160%; text-align: justify; margin: 0px;">Correo</p>
+<p style="line-height: 160%; text-align: justify; margin: 0px;">'.$email.'</p>
 <p style="line-height: 160%; text-align: justify; margin: 0px;">&nbsp;</p>
 <p style="line-height: 160%; text-align: justify; margin: 0px;">Nombre</p>
+<p style="line-height: 160%; text-align: justify; margin: 0px;">'.$nombre.'</p>
 <p style="line-height: 160%; text-align: justify; margin: 0px;">&nbsp;</p>
 <p style="line-height: 160%; text-align: justify; margin: 0px;">Apellidos</p>
+<p style="line-height: 160%; text-align: justify; margin: 0px;">'.$apellidos.'</p>
 <p style="line-height: 160%; text-align: justify; margin: 0px;">&nbsp;</p>
 <p style="line-height: 160%; text-align: justify; margin: 0px;">Numero de documento</p>
+<p style="line-height: 160%; text-align: justify; margin: 0px;">'.$documento.'</p>
 <p style="line-height: 160%; text-align: justify; margin: 0px;">&nbsp;</p>
 <p style="line-height: 160%; text-align: justify; margin: 0px;">Numero de Contacto</p>
+<p style="line-height: 160%; text-align: justify; margin: 0px;">'.$contacto.'</p>
 <p style="line-height: 160%; text-align: justify; margin: 0px;">&nbsp;</p>
 <p style="line-height: 160%; text-align: center; margin: 0px;">&nbsp;</p>
 <p style="line-height: 160%; text-align: center; margin: 0px;"><strong><span style="font-size: 16px; line-height: 25.6px;">Información del caso</span></strong></p>
 <p style="line-height: 160%; text-align: justify; margin: 0px;">tipo de solicitud</p>
+<p style="line-height: 160%; text-align: justify; margin: 0px;">'.$solicitud.'</p>
 <p style="line-height: 160%; text-align: justify; margin: 0px;">&nbsp;</p>
 <p style="line-height: 160%; text-align: justify; margin: 0px;">donde se presento el evento</p>
+<p style="line-height: 160%; text-align: justify; margin: 0px;">'.$evento_lugar.'</p>
 <p style="line-height: 160%; text-align: justify; margin: 0px;">&nbsp;</p>
 <p style="line-height: 160%; text-align: justify; margin: 0px;">fecha del evento</p>
+<p style="line-height: 160%; text-align: justify; margin: 0px;">'.$evento_fecha.'</p>
 <p style="line-height: 160%; text-align: justify; margin: 0px;">&nbsp;</p>
 <p style="line-height: 160%; text-align: justify; margin: 0px;">descripción</p>
+<p style="line-height: 160%; text-align: justify; margin: 0px;">'.$descripcion.'</p>
   </div>
 
       </td>
