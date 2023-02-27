@@ -6,7 +6,6 @@ if (session_status() === PHP_SESSION_NONE) {
 ?>
 <?php include'./dashboard/includes/cn.php';?>
 <?php 
-if (empty($_SESSION['data'])) {
 $modelo = $_GET['modelo'];
 $marca = $_GET['marca'];
 switch ($marca) {
@@ -25,6 +24,18 @@ switch ($marca) {
         case 'Fca':
             $url = 'https://apiautomarcol.up.railway.app/api/fca/inv';
             break;
+        case 'JEEP':
+            $url = 'https://apiautomarcol.up.railway.app/api/fca/inv';
+            break;
+        case 'DODGE':
+            $url = 'https://apiautomarcol.up.railway.app/api/fca/inv';
+            break;
+        case 'RAM':
+            $url = 'https://apiautomarcol.up.railway.app/api/fca/inv';
+            break;
+        case 'FIAT':
+            $url = 'https://apiautomarcol.up.railway.app/api/fca/inv';
+            break;
         default:
             $url = 'https://apiautomarcol.up.railway.app/api/ford/inv';
             break;
@@ -32,9 +43,6 @@ switch ($marca) {
     
 $peticion = file_get_contents($url);
 $data = json_decode($peticion, true);
-}else{
-    $data = $_SESSION['data'];
-}
 // despues de optener los valores de busqueda de data o volverlos a consumir filtramos para mostrar el vehiculo selecionado
 
 $filtro = array_filter($data, function($array) use ($modelo){

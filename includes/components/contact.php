@@ -40,8 +40,8 @@ if (isset($_POST['contactanos'])) {
         <div class="row">
             <div class="col-md-7">
                 <div class="row gx-2 p-4 bg-white rounded mx-4 rounded rounded-3">
-                    <h1 class="fs-1 fw-bold titulo text-center  my-4">AUTOMARCOL MULTIMARCAS</h2>
-                        <div class="col-md-6 p-4 text-center">
+                    <h1 class="fs-1 fw-bold titulo text-center my-5 display-3 fw-bold ls-tight">AUTOMARCOL MULTIMARCAS</h2>
+                        <div class="col-md-12 p-4 text-center">
                             <h2 class="fs-2 subtitulo text-center fw-bold">Sector de Ventas</h2>
                             <p class="fs-4 fw-bold">LUNES | MARTES | MIERCOLES | JUEVES | VIERNES</p>
                             <p class="fs-4">8:00 AM - 6:00 PM</p>
@@ -50,7 +50,7 @@ if (isset($_POST['contactanos'])) {
                             <p class="fs-4 fw-bold">DOMINGO</p>
                             <p class="fs-4">8:00 AM - 2:00 PM</p>
                         </div>
-                        <div class="col-md-6 p-4 text-center">
+                        <div class="col-md-12 p-4 text-center">
                             <h2 class="fs-2 subtitulo text-center fw-bold">Sector de Taller</h2>
                             <p class="fs-4 fw-bold">LUNES | MARTES | MIERCOLES | JUEVES | VIERNES</p>
                             <p class="fs-4">8:00 AM -6:00 PM</p>
@@ -59,10 +59,9 @@ if (isset($_POST['contactanos'])) {
                             <p class="fs-4 fw-bold">DOMINGO</p>
                             <p class="fs-4">CERRADO</p>
                         </div>
-                        <p class="fs-4 text-center  text-black">Encuentranos en la Av. Libertadores #2-160, Cúcuta,
-                            Norte de Santander</p>
-                        <p class="fs-4 text-center text-black"><i class='bx bx-phone-call'></i>Pide tu cita al Telefono +57 3157006633</p>
+                       
                 </div>
+
             </div>
             <div class="col-md-5">
                 <div class="row gx-2 mx-2 bg-white p-4 mx-2 rounded">
@@ -114,7 +113,8 @@ if (isset($_POST['contactanos'])) {
                                 condiciones</label>
                         </div>
                         <div class="mb-3 form-check">
-                           <a href="./tratamientodp" class="fs-3 text-body" target="_blank">Leer Terminos y Condiciones</a>
+                            <a href="./tratamientodp" class="fs-3 text-body" target="_blank">Leer Terminos y
+                                Condiciones</a>
                         </div>
                         <div class="d-grid gap-2">
                             <button type="submit" name="contactanos" class="btn btn-dark fs-3">Enviar</button>
@@ -134,3 +134,4 @@ if (isset($_POST['contactanos'])) {
             referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 </section>
+

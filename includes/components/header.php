@@ -233,6 +233,6 @@ p {
     <div class="loader">
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
         <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_x62chJ.json" background="transparent"
-            speed="1" style="width: 35rem; height: 35rem;" loop autoplay></lottie-player>
+            speed="1" style="width: 30rem; height: 30rem;" loop autoplay></lottie-player>
     </div>
     <?php include'./includes/components/whatsapp.php';?>

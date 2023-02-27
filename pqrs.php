@@ -14,6 +14,15 @@ if (isset($_POST['PQR'])) {
    $query = "INSERT INTO pqrs(correo, nombre, apellido, documento, ncontacto, tsolicitud, levento, fevento, descripcion, estado) 
    VALUES ('$correo', '$nombre', '$apellidos','$documento', '$contacto', '$solicitud', '$evento_lugar', '$evento_fecha', '$descripcion','Activo')";
    mysqli_query($conn, $query);
+   $para = 'isistemas@automarcol.com';
+   $titulo = 'Asunto del correo';
+   $mensaje = 'Contenido del correo';
+   $cabeceras = 'From: remitente@example.com' . "\r\n" .
+       'Reply-To: remitente@example.com' . "\r\n" .
+       'X-Mailer: PHP/' . phpversion();
+   
+   mail($para, $titulo, $mensaje, $cabeceras);
+
    unset($_POST['PQR']);
    $response = "<script> enviado(); </script>";
 }

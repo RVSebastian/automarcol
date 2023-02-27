@@ -422,7 +422,7 @@ option {
                         style="top:150px !important;">
                         <h2 class="p-2">Buscar por Marca</h2>
                         <hr>
-                        <ul class="list-group fs-3">
+                        <ul class="list-group list-group-flush fs-3">
                             <li class="list-group-item border-0"><a href="">Ford</a></li>
                             <li class="list-group-item border-0"><a href="">FJDR</a></li>
                             <li class="list-group-item border-0"><a href="">Bajaj</a></li>
@@ -479,5 +479,7 @@ option {
 <p id="contact"></p>
 
 <?php include'./includes/components/contact.php';?>
+
+
 
 <?php include'./includes/components/footer.php';?>
