@@ -75,23 +75,25 @@ span {
 <?php
 
 $modelo = $_GET['parte'];
-$marca = $_GET['marca'];
+$marca = strtoupper($_GET['marca']);
+
+echo $marca;
 
 switch ($marca) {
-        case 'Repuestos Ford':
+        case 'REPUESTOS FORD':
             $url = 'https://apiautomarcol.up.railway.app/api/ford/rep';
             break;
-        case 'Bajaj':
-            $url = 'https://apiautomarcol.up.railway.app/api/bajaj/inv';
+        case 'REPUESTOS BAJAJ':
+            $url = 'https://apiautomarcol.up.railway.app/api/bajaj/rep';
             break;
-        case 'Peugeot':
-            $url = 'https://apiautomarcol.up.railway.app/api/peugeot/inv';
+        case 'REPUESTOS PEUGEOT':
+            $url = 'https://apiautomarcol.up.railway.app/api/peugeot/rep';
             break;
-        case 'Foton':
-            $url = 'https://apiautomarcol.up.railway.app/api/foton/inv';
+        case 'REPUESTOS FOTON':
+            $url = 'https://apiautomarcol.up.railway.app/api/foton/rep';
             break;
-        case 'Fca':
-            $url = 'https://apiautomarcol.up.railway.app/api/fca/inv';
+        case 'REPUESTOS MULTIMARCAS FCA':
+            $url = 'https://apiautomarcol.up.railway.app/api/fca/rep';
             break;
         default:
             $url = 'https://apiautomarcol.up.railway.app/api/ford/rep';

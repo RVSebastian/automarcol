@@ -34,13 +34,21 @@ if (isset($_POST['contactanos'])) {
 .fs-4 {
     margin: 12px;
 }
+
+.form-control {
+    background: #EBEDEF;
+    padding: 5px;
+    width: 96%;
+    border-radius: 6px;
+}
 </style>
 <section class="bg-gray">
-    <div class="pb-5 container">
+    <div class="p-5 container">
         <div class="row">
             <div class="col-md-7">
                 <div class="row gx-2 p-4 bg-white rounded mx-4 rounded rounded-3">
-                    <h1 class="fs-1 fw-bold titulo text-center my-5 display-3 fw-bold ls-tight">AUTOMARCOL MULTIMARCAS</h2>
+                    <h1 class="fs-1 fw-bold titulo text-center my-5 display-3 fw-bold ls-tight">AUTOMARCOL MULTIMARCAS
+                        </h2>
                         <div class="col-md-12 p-4 text-center">
                             <h2 class="fs-2 subtitulo text-center fw-bold">Sector de Ventas</h2>
                             <p class="fs-4 fw-bold">LUNES | MARTES | MIERCOLES | JUEVES | VIERNES</p>
@@ -59,7 +67,6 @@ if (isset($_POST['contactanos'])) {
                             <p class="fs-4 fw-bold">DOMINGO</p>
                             <p class="fs-4">CERRADO</p>
                         </div>
-                       
                 </div>
 
             </div>
@@ -134,4 +141,3 @@ if (isset($_POST['contactanos'])) {
             referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 </section>
-

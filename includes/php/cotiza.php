@@ -85,13 +85,14 @@ if (isset($_POST['cotizar'])) {
             <form method="POST" class="p-1 m-2 fs-4">
                 <div class="rounded p-4 mb-3 pb-2">
                     <label for="m_first_name">Nombre:</label>
-                    <input required id="m_first_name" maxlength="40" class="form-control mb-3 pb-2" name="first_name" size="20"
-                        type="text">
+                    <input required id="m_first_name" maxlength="40" class="form-control mb-3 pb-2" name="first_name"
+                        size="20" type="text">
                     <label for="m_last_name">Apellido:</label>
-                    <input required id="m_last_name" maxlength="80" class="form-control mb-3 pb-2" name="last_name" size="20"
-                        type="text">
+                    <input required id="m_last_name" maxlength="80" class="form-control mb-3 pb-2" name="last_name"
+                        size="20" type="text">
                     <label for="m_email">Email:</label>
-                    <input required id="m_email" maxlength="80" name="email" class="form-control mb-3 pb-2" size="20" type="text">
+                    <input required id="m_email" maxlength="80" name="email" class="form-control mb-3 pb-2" size="20"
+                        type="text">
                     <label for="m_mobile">Teléfono Móvil / Contacto:</label>
                     <input required id="m_mobile" maxlength="40" name="mobile" class="form-control mb-3 pb-2" size="20"
                         type="text">
@@ -109,10 +110,19 @@ if (isset($_POST['cotizar'])) {
                     <input type="hidden" name="oid" value="00D6A000001UcOT">
                     <input type="hidden" name="retURL" value="https://automarcol.com/">
 
+                    <div class="mb-3 mt-4">
+                        <input type="checkbox" class="form-check-input fs-4 bg-black" id='exampleCheck1' required name="terminos">
+                        <label class="form-check-label fs-5" for="exampleCheck1">Acepta los términos y
+                            condiciones</label>
+                    </div>
+                    <div class="mb-3">
+                        <a href="./tratamientodp" class="fs-4 text-body" target="_blank">Leer Terminos y
+                            Condiciones</a>
+                    </div>
                     <div class="d-grid gap-2 pb-4 pt-3">
                         <button type="submit" name='cotizar' class='btn btn-dark fs-3 p-2'>Cotiza</button>
                     </div>
-                    
+
                 </div>
             </form>
         </div>

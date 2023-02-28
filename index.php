@@ -164,7 +164,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <div class="container">
-        <div class="mx-md-5">
+        <div class="mx-5">
             <div class="swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -172,7 +172,6 @@ if (session_status() === PHP_SESSION_NONE) {
                             style="background-image: url('https://autoextragti.com/wp-content/uploads/2022/03/bxobvm2023-ford-everest-sport-1400x788.jpeg');"
                             id="carta">
                             <div style="background: linear-gradient(180deg,black,rgba(0,57,81,0));">
-
                                 <h1 class="fw-semibold titulo-marca texto">Vehiculos Ford</h1>
                                 <div class="oculto texto text-justify">
                                     <h3>Ya llegó a Colombia la nueva Ford Bronco, una camioneta lista para la
@@ -230,12 +229,12 @@ if (session_status() === PHP_SESSION_NONE) {
                                         aventura.</h3>
                                     <p>Ver Catalogo</p>
                                 </div>
-                                <div class="sombral"> <a href="./listado?marca=Bajaj" class="stretched-link texto"></a>
-                                </div>
+                                <div class="sombral"></div>
                             </div>
-
+                            <a href="./listado?marca=Bajaj" class="stretched-link texto"></a>
                         </div>
                     </div>
+                   
                     <div class="swiper-slide">
                         <div class="shadow card text-white card-marcas border-0 rounded rounded-4"
                             style="background-image: url('https://electrek.co/wp-content/uploads/sites/3/2019/12/jeep-phev-1-.jpg?quality=82&strip=all');"
@@ -303,23 +302,6 @@ if (session_status() === PHP_SESSION_NONE) {
 
         </div>
 </section>
-
-<script>
-$(document).ready(function() {
-    $.ajax({
-            url: "./includes/components/repuestos/loader.php",
-            beforeSend: function() {
-                $("#cargando").show();
-            },
-        })
-        .done(function(res) {
-            $("#res").html(res), $("#error").hide(), $("#cargando").hide();
-        })
-        .fail(function() {
-            $("#error").show(), $('$cargando').hide();
-        });
-})
-</script>
 
 <style>
 #w {
@@ -413,6 +395,50 @@ option {
     color: #2C2A29 !important;
 }
 </style>
+<script>
+$(document).ready(function() {
+    $("#FORD").click(function() {
+        cargar(marca = 'FORD');
+    });
+    $("#FJDR").click(function() {
+        cargar(marca = 'FJDR');
+    });
+    $("#BAJAJ").click(function() {
+        cargar(marca = 'BAJAJ');
+    });
+    $("#PEUGEOT").click(function() {
+        cargar(marca = 'PEUGEOT');
+    });
+    $("#FOTON").click(function() {
+        cargar(marca = 'FOTON');
+    });
+
+    function cargar(marca) {
+        $.ajax({
+                type: "POST",
+                data: {
+                    marca
+                },
+                url: "./includes/components/repuestos/loader.php",
+                beforeSend: function() {
+                    $("#cargando").show(), $("#res").hide();
+                },
+                error: function(request, error) {
+                    $("#error").show(), $('$cargando').hide();
+                },
+            })
+            .done(function(res) {
+                $("#res").html(res), $("#res").show(), $("#error").hide(), $("#cargando").hide();
+            })
+            .fail(function() {
+                $("#error").show(), $('$cargando').hide();
+            });
+    };
+    $( document ).ready( cargar );
+
+
+});
+</script>
 <section class="vehicles bg-gray" id="repuestos">
     <div class="text-justify container">
         <div class="row gy-4">
@@ -421,19 +447,19 @@ option {
                     <div class="card-body p-4 m-2 sticky rounded  shadow rounded-3 p-2 bg-white "
                         style="top:150px !important;">
                         <h2 class="p-2">Buscar por Marca</h2>
-                        <hr>
+                   
                         <ul class="list-group list-group-flush fs-3">
-                            <li class="list-group-item border-0"><a href="">Ford</a></li>
-                            <li class="list-group-item border-0"><a href="">FJDR</a></li>
-                            <li class="list-group-item border-0"><a href="">Bajaj</a></li>
-                            <li class="list-group-item border-0"><a href="">Peugeot</a></li>
-                            <li class="list-group-item border-0"><a href="">Foton</a></li>
+                            <li class="list-group-item border-0"><a href="#" id='FORD'>Ford</a></li>
+                            <li class="list-group-item border-0"><a href="#" id='FJDR'>FJDR</a></li>
+                            <li class="list-group-item border-0"><a href="#" id='BAJAJ'>Bajaj</a></li>
+                            <li class="list-group-item border-0"><a href="#" id='PEUGEOT'>Peugeot</a></li>
+                            <li class="list-group-item border-0"><a href="#" id='FOTON'>Foton</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-9">
-                <div class="row justify-content-center">
+                <div class="row">
                     <div id="res">
                     </div>
                 </div>

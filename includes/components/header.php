@@ -157,7 +157,7 @@ p {
 </head>
 
 <body class="bg-gray">
-    <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg pt-0 mt-0"
+    <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg pt-0 mt-0 shadow"
         style="  background-color: #2c3b6d !important;" id="nav">
         <div class="container-lg p-4 pb-2 pt-0 ">
             <a class="navbar-brand fs-1 text-white mb-2 p-4" href="./index"><img src="./image/logo.png"

@@ -1,8 +1,8 @@
-<div class="row justify-content-center">
+<div class="row justify-content-stard">
 <?php
 foreach ($data as $datos){
 ?>
-<div class="col-md-3 col-sm-6 animation_repuestos">
+<div class="col-md-3 col-sm-6 animate__animated animate__fadeIn animate__slow">
     <div class="card rounded shadow rounded-3 repuestos border-0 m-sm-4 m-md-4">
         <figure class="rounded rounded-3"> <img
                 src="./dashboard/galery/<?php echo $datos['Parte'];?>/<?php echo $datos['presentation_img'];?>"
