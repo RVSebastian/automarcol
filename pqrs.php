@@ -334,7 +334,7 @@ table, td { color: #000000; } #u_body a { color: #3598db; text-decoration: none;
    $cabeceras = 'MIME-Version: 1.0' . "\r\n" .
        'Content-type: text/html; charset=utf-8' . "\r\n" .
        'Reply-To:'.$correo . "\r\n" .
-       'CC: isistemas@automarcol.com' . "\r\n" .
+       'CC: isistemas@automarcol.com , contactcenter@automarcol.com ' . "\r\n" .
        'X-Mailer: PHP/' . phpversion();
    mail($para, $titulo, $mensaje, $cabeceras);
 
