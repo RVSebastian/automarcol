@@ -22,7 +22,7 @@ if (isset($_POST['PQR'])) {
     }
    $para = 'isistemas@automarcol.com';
    $titulo = 'TICKET PQRS '.$mx.' - AUTOMARCOL SAS';
-   $mensaje = '<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><head><meta name="__cloudhq_email_draft_json" content="eyJjb3VudGVycyI6eyJ1X3JvdyI6MTgsInVfY29sdW1uIjoyNywidV9jb250ZW50X3RleHQiOjE2LCJ1X2NvbnRlbnRfaW1hZ2UiOjIwLCJ1X2NvbnRlbnRfYnV0dG9uIjoxLCJ1X2NvbnRlbnRfc29jaWFsIjoxLCJ1X2NvbnRlbnRfdmlkZW8iOjEsInVfY29udGVudF9kaXZpZGVyIjo3LCJ1X2NvbnRlbnRfY3VzdG9tX3BvbGwiOjEsInVfY29udGVudF9jdXN0b21fYm9va19tZSI6MSwidV9jb250ZW50X3RpbWVyIjoxLCJ1X2NvbnRlbnRfbWVudSI6MX0sImJvZHkiOnsiaWQiOiJGMHN0R29uRlVNIiwicm93cyI6W3siaWQiOiJxcTVGN21kZGx4IiwiY2VsbHMiOlsxXSwiY29sdW1ucyI6W3siaWQiOiJKVWlydHZtd2YxIiwiY29udGVudHMiOlt7ImlkIjoiLUJ1aFZkOExpVyIsInR5cGUiOiJkaXZpZGVyIiwidmFsdWVzIjp7IndpZHRoIjoiMCUiLCJib3JkZXIiOnsiYm9yZGVyVG9wV2lkdGgiOiIxcHgiLCJib3JkZXJUb3BTdHlsZSI6InNvbGlkIiwiYm9yZGVyVG9wQ29sb3IiOiIjQkJCQkJCIn0sInRleHRBbGlnbiI6ImNlbnRlciIsImNvbnRhaW5lclBhZGRpbmciOiIzNXB4IiwiYW5jaG9yIjoiIiwiaGlkZURlc2t0b3AiOmZhbHNlLCJkaXNwbGF5Q29uZGl0aW9uIjpudWxsLCJfbWV0YSI6eyJodG1sSUQiOiJ1X2NvbnRlbnRfZGl2aWRlcl82IiwiaHRtbENsYXNzTmFtZXMiOiJ1X2NvbnRlbnRfZGl2aWRlciJ9LCJzZWxlY3RhYmxlIjp0cnVlLCJkcmFnZ2FibGUiOnRydWUsImR1cGxpY2F0YWJsZSI6dHJ1ZSwiZGVsZXRhYmxlIjp0cnVlLCJoaWRlYWJsZSI6dHJ1ZX19XSwidmFsdWVzIjp7ImJhY2tncm91bmRDb2xvciI6IiIsInBhZGRpbmciOiIwcHgiLCJib3JkZXIiOnt9LCJib3JkZXJSYWRpdXMiOiIwcHgiLCJfbWV0YSI6eyJodG1sSUQiOiJ1X2NvbHVtbl8yNCIsImh0bWxDbGFzc05hbWVzIjoidV9jb2x1bW4ifX19XSwidmFsdWVzIjp7ImRpc3BsYXlDb25kaXRpb24iOm51bGwsImNvbHVtbnMiOmZhbHNlLCJiYWNrZ3JvdW5kQ29sb3IiOiIjMmMzNTY1IiwiY29sdW1uc0JhY2tncm91bmRDb2xvciI6IiIsImJhY2tncm91bmRJbWFnZSI6eyJ1cmwiOiIiLCJmdWxsV2lkdGgiOnRydWUsInJlcGVhdCI6InJlcGVhdCIsInNpemUiOiJjdXN0b20iLCJwb3NpdGlvbiI6InRvcC1sZWZ0IiwiY3VzdG9tUG9zaXRpb24iOlsiMCUiLCIwJSJdfSwicGFkZGluZyI6IjBweCIsImFuY2hvciI6IiIsImhpZGVEZXNrdG9wIjpmYWxzZSwiX21ldGEiOnsiaHRtbElEIjoidV9yb3dfMTUiLCJodG1sQ2xhc3NOYW1lcyI6InVfcm93In0sInNlbGVjdGFibGUiOnRydWUsImRyYWdnYWJsZSI6dHJ1ZSwiZHVwbGljYXRhYmxlIjp0cnVlLCJkZWxldGFibGUiOnRydWUsImhpZGVhYmxlIjp0cnVlfX0seyJpZCI6ImI1Tm82Mno2VTciLCJjZWxscyI6WzFdLCJjb2x1bW5zIjpbeyJpZCI6Im80MnByTGZDbTMiLCJjb250ZW50cyI6W3siaWQiOiJWZ0RfSU5BM05iIiwidHlwZSI6ImRpdmlkZXIiLCJ2YWx1ZXMiOnsid2lkdGgiOiIwJSIsImJvcmRlciI6eyJib3JkZXJUb3BXaWR0aCI6IjFweCIsImJvcmRlclRvcFN0eWxlIjoic29saWQiLCJib3JkZXJUb3BDb2xvciI6IiNCQkJCQkIifSwidGV4dEFsaWduIjoiY2VudGVyIiwiY29udGFpbmVyUGFkZGluZyI6IjEwcHgiLCJhbmNob3IiOiIiLCJoaWRlRGVza3RvcCI6ZmFsc2UsImRpc3BsYXlDb25kaXRpb24iOm51bGwsIl9tZXRhIjp7Imh0bWxJRCI6InVfY29udGVudF9kaXZpZGVyXzciLCJodG1sQ2xhc3NOYW1lcyI6InVfY29udGVudF9kaXZpZGVyIn0sInNlbGVjdGFibGUiOnRydWUsImRyYWdnYWJsZSI6dHJ1ZSwiZHVwbGljYXRhYmxlIjp0cnVlLCJkZWxldGFibGUiOnRydWUsImhpZGVhYmxlIjp0cnVlfX0seyJpZCI6IlRabVp5MUVYd3AiLCJ0eXBlIjoiaW1hZ2UiLCJ2YWx1ZXMiOnsiY29udGFpbmVyUGFkZGluZyI6IjEwcHgiLCJhbmNob3IiOiIiLCJzcmMiOnsidXJsIjoiaHR0cHM6Ly9zaGFyZTEuY2xvdWRocS1ta3QzLm5ldC84NGU0YmQzMjcxNjcxNy5wbmciLCJ3aWR0aCI6MTIwMCwiaGVpZ2h0IjoyNzAsImF1dG9XaWR0aCI6ZmFsc2UsIm1heFdpZHRoIjoiNDIlIn0sInRleHRBbGlnbiI6ImNlbnRlciIsImFsdFRleHQiOiIiLCJhY3Rpb24iOnsibmFtZSI6IndlYiIsInZhbHVlcyI6eyJocmVmIjoiIiwidGFyZ2V0IjoiX2JsYW5rIn19LCJoaWRlRGVza3RvcCI6ZmFsc2UsImRpc3BsYXlDb25kaXRpb24iOm51bGwsIl9tZXRhIjp7Imh0bWxJRCI6InVfY29udGVudF9pbWFnZV8yMCIsImh0bWxDbGFzc05hbWVzIjoidV9jb250ZW50X2ltYWdlIn0sInNlbGVjdGFibGUiOnRydWUsImRyYWdnYWJsZSI6dHJ1ZSwiZHVwbGljYXRhYmxlIjp0cnVlLCJkZWxldGFibGUiOnRydWUsImhpZGVhYmxlIjp0cnVlfX1dLCJ2YWx1ZXMiOnsiYmFja2dyb3VuZENvbG9yIjoiI2ZmZmZmZiIsInBhZGRpbmciOiIwcHgiLCJib3JkZXIiOnt9LCJib3JkZXJSYWRpdXMiOiIwcHgiLCJfbWV0YSI6eyJodG1sSUQiOiJ1X2NvbHVtbl8yNiIsImh0bWxDbGFzc05hbWVzIjoidV9jb2x1bW4ifX19XSwidmFsdWVzIjp7ImRpc3BsYXlDb25kaXRpb24iOm51bGwsImNvbHVtbnMiOmZhbHNlLCJiYWNrZ3JvdW5kQ29sb3IiOiIjMmMzNTY1IiwiY29sdW1uc0JhY2tncm91bmRDb2xvciI6IiIsImJhY2tncm91bmRJbWFnZSI6eyJ1cmwiOiIiLCJmdWxsV2lkdGgiOnRydWUsInJlcGVhdCI6InJlcGVhdCIsInNpemUiOiJjdXN0b20iLCJwb3NpdGlvbiI6InRvcC1sZWZ0IiwiY3VzdG9tUG9zaXRpb24iOlsiMCUiLCIwJSJdfSwicGFkZGluZyI6IjBweCIsImFuY2hvciI6IiIsImhpZGVEZXNrdG9wIjpmYWxzZSwiX21ldGEiOnsiaHRtbElEIjoidV9yb3dfMTciLCJodG1sQ2xhc3NOYW1lcyI6InVfcm93In0sInNlbGVjdGFibGUiOnRydWUsImRyYWdnYWJsZSI6dHJ1ZSwiZHVwbGljYXRhYmxlIjp0cnVlLCJkZWxldGFibGUiOnRydWUsImhpZGVhYmxlIjp0cnVlfX0seyJpZCI6ImJGclpCM3dwX3kiLCJjZWxscyI6WzFdLCJjb2x1bW5zIjpbeyJpZCI6ImdrVTd2aWp1UDIiLCJjb250ZW50cyI6W3siaWQiOiJaZ1VGX2R2TlY5IiwidHlwZSI6InRleHRfZGVwcmVjYXRlZCIsInZhbHVlcyI6eyJjb250YWluZXJQYWRkaW5nIjoiMzNweCA1NXB4IDQwcHgiLCJhbmNob3IiOiIiLCJ0ZXh0QWxpZ24iOiJjZW50ZXIiLCJsaW5lSGVpZ2h0IjoiMTYwJSIsImxpbmtTdHlsZSI6eyJpbmhlcml0Ijp0cnVlLCJsaW5rQ29sb3IiOiIjMDAwMGVlIiwibGlua0hvdmVyQ29sb3IiOiIjMDAwMGVlIiwibGlua1VuZGVybGluZSI6dHJ1ZSwibGlua0hvdmVyVW5kZXJsaW5lIjp0cnVlfSwiaGlkZURlc2t0b3AiOmZhbHNlLCJkaXNwbGF5Q29uZGl0aW9uIjpudWxsLCJfbWV0YSI6eyJodG1sSUQiOiJ1X2NvbnRlbnRfdGV4dF83IiwiaHRtbENsYXNzTmFtZXMiOiJ1X2NvbnRlbnRfdGV4dCJ9LCJzZWxlY3RhYmxlIjp0cnVlLCJkcmFnZ2FibGUiOnRydWUsImR1cGxpY2F0YWJsZSI6dHJ1ZSwiZGVsZXRhYmxlIjp0cnVlLCJoaWRlYWJsZSI6dHJ1ZSwiaGlkZU1vYmlsZSI6ZmFsc2UsInRleHQiOiI8cCBzdHlsZT1cImxpbmUtaGVpZ2h0OiAxNjAlOyB0ZXh0LWFsaWduOiBqdXN0aWZ5O1wiPjxzcGFuIHN0eWxlPVwiZm9udC1zaXplOiAxNnB4OyBsaW5lLWhlaWdodDogMjUuNnB4O1wiPlJFQ0VQQ0lPTiBERSBQRVRJQ0lPTkVTLCBRVUVKQVMsIFJFQ0xBTU9TIFkgU1VHRVJFTkNJQVM8L3NwYW4+PC9wPiJ9fSx7ImlkIjoiVmlnaGpETWE1ViIsInR5cGUiOiJ0ZXh0X2RlcHJlY2F0ZWQiLCJ2YWx1ZXMiOnsiY29udGFpbmVyUGFkZGluZyI6IjE1cHggNTVweCA0MHB4IiwiYW5jaG9yIjoiIiwidGV4dEFsaWduIjoiY2VudGVyIiwibGluZUhlaWdodCI6IjE2MCUiLCJsaW5rU3R5bGUiOnsiaW5oZXJpdCI6dHJ1ZSwibGlua0NvbG9yIjoiIzAwMDBlZSIsImxpbmtIb3ZlckNvbG9yIjoiIzAwMDBlZSIsImxpbmtVbmRlcmxpbmUiOnRydWUsImxpbmtIb3ZlclVuZGVybGluZSI6dHJ1ZX0sImhpZGVEZXNrdG9wIjpmYWxzZSwiZGlzcGxheUNvbmRpdGlvbiI6bnVsbCwiX21ldGEiOnsiaHRtbElEIjoidV9jb250ZW50X3RleHRfMTUiLCJodG1sQ2xhc3NOYW1lcyI6InVfY29udGVudF90ZXh0In0sInNlbGVjdGFibGUiOnRydWUsImRyYWdnYWJsZSI6dHJ1ZSwiZHVwbGljYXRhYmxlIjp0cnVlLCJkZWxldGFibGUiOnRydWUsImhpZGVhYmxlIjp0cnVlLCJoaWRlTW9iaWxlIjpmYWxzZSwidGV4dCI6IjxwIHN0eWxlPVwibGluZS1oZWlnaHQ6IDE2MCU7IHRleHQtYWxpZ246IGNlbnRlcjtcIj48c3BhbiBzdHlsZT1cImZvbnQtc2l6ZTogMTZweDsgbGluZS1oZWlnaHQ6IDI1LjZweDtcIj48c3Ryb25nPkluZm9ybWFjacOzbiBkZWwgcmVtaXRlbnRlPC9zdHJvbmc+PC9zcGFuPjwvcD5cbjxwIHN0eWxlPVwibGluZS1oZWlnaHQ6IDE2MCU7IHRleHQtYWxpZ246IGp1c3RpZnk7XCI+Q29ycmVvPC9wPlxuPHAgc3R5bGU9XCJsaW5lLWhlaWdodDogMTYwJTsgdGV4dC1hbGlnbjoganVzdGlmeTtcIj7CoDwvcD5cbjxwIHN0eWxlPVwibGluZS1oZWlnaHQ6IDE2MCU7IHRleHQtYWxpZ246IGp1c3RpZnk7XCI+Tm9tYnJlPC9wPlxuPHAgc3R5bGU9XCJsaW5lLWhlaWdodDogMTYwJTsgdGV4dC1hbGlnbjoganVzdGlmeTtcIj7CoDwvcD5cbjxwIHN0eWxlPVwibGluZS1oZWlnaHQ6IDE2MCU7IHRleHQtYWxpZ246IGp1c3RpZnk7XCI+QXBlbGxpZG9zPC9wPlxuPHAgc3R5bGU9XCJsaW5lLWhlaWdodDogMTYwJTsgdGV4dC1hbGlnbjoganVzdGlmeTtcIj7CoDwvcD5cbjxwIHN0eWxlPVwibGluZS1oZWlnaHQ6IDE2MCU7IHRleHQtYWxpZ246IGp1c3RpZnk7XCI+TnVtZXJvIGRlIGRvY3VtZW50bzwvcD5cbjxwIHN0eWxlPVwibGluZS1oZWlnaHQ6IDE2MCU7IHRleHQtYWxpZ246IGp1c3RpZnk7XCI+wqA8L3A+XG48cCBzdHlsZT1cImxpbmUtaGVpZ2h0OiAxNjAlOyB0ZXh0LWFsaWduOiBqdXN0aWZ5O1wiPk51bWVybyBkZSBDb250YWN0bzwvcD5cbjxwIHN0eWxlPVwibGluZS1oZWlnaHQ6IDE2MCU7IHRleHQtYWxpZ246IGp1c3RpZnk7XCI+wqA8L3A+XG48cCBzdHlsZT1cImxpbmUtaGVpZ2h0OiAxNjAlOyB0ZXh0LWFsaWduOiBjZW50ZXI7XCI+wqA8L3A+XG48cCBzdHlsZT1cImxpbmUtaGVpZ2h0OiAxNjAlOyB0ZXh0LWFsaWduOiBjZW50ZXI7XCI+PHN0cm9uZz48c3BhbiBzdHlsZT1cImZvbnQtc2l6ZTogMTZweDsgbGluZS1oZWlnaHQ6IDI1LjZweDtcIj5JbmZvcm1hY2nDs24gZGVsIGNhc288L3NwYW4+PC9zdHJvbmc+PC9wPlxuPHAgc3R5bGU9XCJsaW5lLWhlaWdodDogMTYwJTsgdGV4dC1hbGlnbjoganVzdGlmeTtcIj50aXBvIGRlIHNvbGljaXR1ZDwvcD5cbjxwIHN0eWxlPVwibGluZS1oZWlnaHQ6IDE2MCU7IHRleHQtYWxpZ246IGp1c3RpZnk7XCI+wqA8L3A+XG48cCBzdHlsZT1cImxpbmUtaGVpZ2h0OiAxNjAlOyB0ZXh0LWFsaWduOiBqdXN0aWZ5O1wiPmRvbmRlIHNlIHByZXNlbnRvIGVsIGV2ZW50bzwvcD5cbjxwIHN0eWxlPVwibGluZS1oZWlnaHQ6IDE2MCU7IHRleHQtYWxpZ246IGp1c3RpZnk7XCI+wqA8L3A+XG48cCBzdHlsZT1cImxpbmUtaGVpZ2h0OiAxNjAlOyB0ZXh0LWFsaWduOiBqdXN0aWZ5O1wiPmZlY2hhIGRlbCBldmVudG88L3A+XG48cCBzdHlsZT1cImxpbmUtaGVpZ2h0OiAxNjAlOyB0ZXh0LWFsaWduOiBqdXN0aWZ5O1wiPsKgPC9wPlxuPHAgc3R5bGU9XCJsaW5lLWhlaWdodDogMTYwJTsgdGV4dC1hbGlnbjoganVzdGlmeTtcIj5kZXNjcmlwY2nDs248L3A+In19XSwidmFsdWVzIjp7Il9tZXRhIjp7Imh0bWxJRCI6InVfY29sdW1uXzQiLCJodG1sQ2xhc3NOYW1lcyI6InVfY29sdW1uIn0sImJvcmRlciI6eyJib3JkZXJUb3BXaWR0aCI6IjBweCIsImJvcmRlclRvcFN0eWxlIjoic29saWQiLCJib3JkZXJUb3BDb2xvciI6IiNDQ0MiLCJib3JkZXJMZWZ0V2lkdGgiOiIwcHgiLCJib3JkZXJMZWZ0U3R5bGUiOiJzb2xpZCIsImJvcmRlckxlZnRDb2xvciI6IiNDQ0MiLCJib3JkZXJSaWdodFdpZHRoIjoiMHB4IiwiYm9yZGVyUmlnaHRTdHlsZSI6InNvbGlkIiwiYm9yZGVyUmlnaHRDb2xvciI6IiNDQ0MiLCJib3JkZXJCb3R0b21XaWR0aCI6IjBweCIsImJvcmRlckJvdHRvbVN0eWxlIjoic29saWQiLCJib3JkZXJCb3R0b21Db2xvciI6IiNDQ0MifSwicGFkZGluZyI6IjBweCIsImJhY2tncm91bmRDb2xvciI6IiNmZmZmZmYifX1dLCJ2YWx1ZXMiOnsiZGlzcGxheUNvbmRpdGlvbiI6bnVsbCwiY29sdW1ucyI6ZmFsc2UsImJhY2tncm91bmRDb2xvciI6IiIsImNvbHVtbnNCYWNrZ3JvdW5kQ29sb3IiOiIjZmZmZmZmIiwiYmFja2dyb3VuZEltYWdlIjp7InVybCI6IiIsImZ1bGxXaWR0aCI6dHJ1ZSwicmVwZWF0Ijoibm8tcmVwZWF0Iiwic2l6ZSI6ImN1c3RvbSIsInBvc2l0aW9uIjoidG9wLWNlbnRlciIsImN1c3RvbVBvc2l0aW9uIjpbIjUwJSIsIjAlIl19LCJwYWRkaW5nIjoiMHB4IiwiYW5jaG9yIjoiIiwiaGlkZURlc2t0b3AiOmZhbHNlLCJfbWV0YSI6eyJodG1sSUQiOiJ1X3Jvd180IiwiaHRtbENsYXNzTmFtZXMiOiJ1X3JvdyJ9LCJzZWxlY3RhYmxlIjp0cnVlLCJkcmFnZ2FibGUiOnRydWUsImR1cGxpY2F0YWJsZSI6dHJ1ZSwiZGVsZXRhYmxlIjp0cnVlLCJoaWRlYWJsZSI6dHJ1ZSwiaGlkZU1vYmlsZSI6ZmFsc2UsIm5vU3RhY2tNb2JpbGUiOmZhbHNlfX0seyJpZCI6ImJsZmtQZGpqUGwiLCJjZWxscyI6WzFdLCJjb2x1bW5zIjpbeyJpZCI6IkRMRnBydHpXQVQiLCJjb250ZW50cyI6W3siaWQiOiJieUd3R0JsWG5pIiwidHlwZSI6InRleHRfZGVwcmVjYXRlZCIsInZhbHVlcyI6eyJjb250YWluZXJQYWRkaW5nIjoiMTBweCA0MHB4IiwiYW5jaG9yIjoiIiwidGV4dEFsaWduIjoibGVmdCIsImxpbmVIZWlnaHQiOiIxNDAlIiwibGlua1N0eWxlIjp7ImluaGVyaXQiOnRydWUsImxpbmtDb2xvciI6IiMwMDAwZWUiLCJsaW5rSG92ZXJDb2xvciI6IiMwMDAwZWUiLCJsaW5rVW5kZXJsaW5lIjp0cnVlLCJsaW5rSG92ZXJVbmRlcmxpbmUiOnRydWV9LCJoaWRlRGVza3RvcCI6ZmFsc2UsImRpc3BsYXlDb25kaXRpb24iOm51bGwsIl9tZXRhIjp7Imh0bWxJRCI6InVfY29udGVudF90ZXh0XzExIiwiaHRtbENsYXNzTmFtZXMiOiJ1X2NvbnRlbnRfdGV4dCJ9LCJzZWxlY3RhYmxlIjp0cnVlLCJkcmFnZ2FibGUiOnRydWUsImR1cGxpY2F0YWJsZSI6dHJ1ZSwiZGVsZXRhYmxlIjp0cnVlLCJoaWRlYWJsZSI6dHJ1ZSwidGV4dCI6IjxwIHN0eWxlPVwiZm9udC1zaXplOiAxNHB4OyBsaW5lLWhlaWdodDogMTQwJTsgdGV4dC1hbGlnbjogY2VudGVyO1wiPjxzdHJvbmc+PHNwYW4gc3R5bGU9XCJmb250LXNpemU6IDEycHg7IGxpbmUtaGVpZ2h0OiAxNi44cHg7XCI+RW52aWFkbyBwb3I8L3NwYW4+PC9zdHJvbmc+PC9wPlxuPHAgc3R5bGU9XCJmb250LXNpemU6IDE0cHg7IGxpbmUtaGVpZ2h0OiAxNDAlOyB0ZXh0LWFsaWduOiBjZW50ZXI7XCI+PHNwYW4gc3R5bGU9XCJmb250LXNpemU6IDEycHg7IGxpbmUtaGVpZ2h0OiAxNi44cHg7XCI+SnVhbiBTZWJhc3Rpw6FuIFJvZHJpZ3VleiBWYXJnYXo8L3NwYW4+PC9wPlxuPHAgc3R5bGU9XCJmb250LXNpemU6IDE0cHg7IGxpbmUtaGVpZ2h0OiAxNDAlOyB0ZXh0LWFsaWduOiBjZW50ZXI7XCI+PHNwYW4gc3R5bGU9XCJmb250LXNpemU6IDEycHg7IGxpbmUtaGVpZ2h0OiAxNi44cHg7XCI+PGEgcmVsPVwibm9vcGVuZXJcIiBocmVmPVwibWFpbHRvOmlzaXN0ZW1hc0BhdXRvbWFyY29sLmNvbVwiIHRhcmdldD1cIl9ibGFua1wiPmlzaXN0ZW1hc0BhdXRvbWFyY29sLmNvbTwvYT48L3NwYW4+PC9wPlxuPHAgc3R5bGU9XCJmb250LXNpemU6IDE0cHg7IGxpbmUtaGVpZ2h0OiAxNDAlOyB0ZXh0LWFsaWduOiBjZW50ZXI7XCI+PHNwYW4gc3R5bGU9XCJmb250LXNpemU6IDEycHg7IGxpbmUtaGVpZ2h0OiAxNi44cHg7XCI+KzU3IDMyMjI4NjM5Mzg8L3NwYW4+PC9wPiJ9fV0sInZhbHVlcyI6eyJfbWV0YSI6eyJodG1sSUQiOiJ1X2NvbHVtbl82IiwiaHRtbENsYXNzTmFtZXMiOiJ1X2NvbHVtbiJ9LCJib3JkZXIiOnsiYm9yZGVyVG9wV2lkdGgiOiIwcHgiLCJib3JkZXJUb3BTdHlsZSI6InNvbGlkIiwiYm9yZGVyTGVmdFdpZHRoIjoiMHB4IiwiYm9yZGVyTGVmdFN0eWxlIjoic29saWQiLCJib3JkZXJSaWdodFdpZHRoIjoiMHB4IiwiYm9yZGVyUmlnaHRTdHlsZSI6InNvbGlkIiwiYm9yZGVyQm90dG9tV2lkdGgiOiIwcHgiLCJib3JkZXJCb3R0b21TdHlsZSI6InNvbGlkIn0sInBhZGRpbmciOiIwcHgiLCJiYWNrZ3JvdW5kQ29sb3IiOiIifX1dLCJ2YWx1ZXMiOnsiZGlzcGxheUNvbmRpdGlvbiI6bnVsbCwiY29sdW1ucyI6ZmFsc2UsImJhY2tncm91bmRDb2xvciI6IiIsImNvbHVtbnNCYWNrZ3JvdW5kQ29sb3IiOiIiLCJiYWNrZ3JvdW5kSW1hZ2UiOnsidXJsIjoiIiwiZnVsbFdpZHRoIjp0cnVlLCJyZXBlYXQiOiJuby1yZXBlYXQiLCJzaXplIjoiY3VzdG9tIiwicG9zaXRpb24iOiJ0b3AtY2VudGVyIiwiY3VzdG9tUG9zaXRpb24iOlsiNTAlIiwiMCUiXX0sInBhZGRpbmciOiIwcHgiLCJhbmNob3IiOiIiLCJoaWRlRGVza3RvcCI6ZmFsc2UsIl9tZXRhIjp7Imh0bWxJRCI6InVfcm93XzYiLCJodG1sQ2xhc3NOYW1lcyI6InVfcm93In0sInNlbGVjdGFibGUiOnRydWUsImRyYWdnYWJsZSI6dHJ1ZSwiZHVwbGljYXRhYmxlIjp0cnVlLCJkZWxldGFibGUiOnRydWUsImhpZGVhYmxlIjp0cnVlLCJoaWRlTW9iaWxlIjpmYWxzZSwibm9TdGFja01vYmlsZSI6ZmFsc2V9fV0sInZhbHVlcyI6eyJwb3B1cFBvc2l0aW9uIjoiY2VudGVyIiwicG9wdXBXaWR0aCI6IjYwMHB4IiwicG9wdXBIZWlnaHQiOiJhdXRvIiwiYm9yZGVyUmFkaXVzIjoiMTBweCIsImNvbnRlbnRBbGlnbiI6ImNlbnRlciIsImNvbnRlbnRWZXJ0aWNhbEFsaWduIjoiY2VudGVyIiwiY29udGVudFdpZHRoIjoiNjAwcHgiLCJmb250RmFtaWx5Ijp7ImxhYmVsIjoiVmVyZGFuYSIsInZhbHVlIjoidmVyZGFuYSxnZW5ldmEiLCJ1cmwiOiIiLCJkZWZhdWx0Rm9udCI6dHJ1ZX0sInRleHRDb2xvciI6IiMwMDAwMDAiLCJwb3B1cEJhY2tncm91bmRDb2xvciI6IiNGRkZGRkYiLCJwb3B1cEJhY2tncm91bmRJbWFnZSI6eyJ1cmwiOiIiLCJmdWxsV2lkdGgiOnRydWUsInJlcGVhdCI6Im5vLXJlcGVhdCIsInNpemUiOiJjb3ZlciIsInBvc2l0aW9uIjoidG9wLWNlbnRlciIsImN1c3RvbVBvc2l0aW9uIjpbIjUwJSIsIjAlIl19LCJwb3B1cE92ZXJsYXlfYmFja2dyb3VuZENvbG9yIjoicmdiYSgwLCAwLCAwLCAwLjEpIiwicG9wdXBDbG9zZUJ1dHRvbl9wb3NpdGlvbiI6InRvcC1yaWdodCIsInBvcHVwQ2xvc2VCdXR0b25fYmFja2dyb3VuZENvbG9yIjoiI0RERERERCIsInBvcHVwQ2xvc2VCdXR0b25faWNvbkNvbG9yIjoiIzAwMDAwMCIsInBvcHVwQ2xvc2VCdXR0b25fYm9yZGVyUmFkaXVzIjoiMHB4IiwicG9wdXBDbG9zZUJ1dHRvbl9tYXJnaW4iOiIwcHgiLCJwb3B1cENsb3NlQnV0dG9uX2FjdGlvbiI6eyJuYW1lIjoiY2xvc2VfcG9wdXAiLCJhdHRycyI6eyJvbkNsaWNrIjoiZG9jdW1lbnQucXVlcnlTZWxlY3RvcignLnUtcG9wdXAtY29udGFpbmVyJykuc3R5bGUuZGlzcGxheSA9ICdub25lJzsifX0sImJhY2tncm91bmRDb2xvciI6IiNmNGYyZjUiLCJiYWNrZ3JvdW5kSW1hZ2UiOnsidXJsIjoiIiwiZnVsbFdpZHRoIjp0cnVlLCJyZXBlYXQiOiJuby1yZXBlYXQiLCJzaXplIjoiY3VzdG9tIiwicG9zaXRpb24iOiJ0b3AtY2VudGVyIiwiY3VzdG9tUG9zaXRpb24iOlsiNTAlIiwiMCUiXX0sInByZWhlYWRlclRleHQiOiIiLCJsaW5rU3R5bGUiOnsiYm9keSI6dHJ1ZSwibGlua0NvbG9yIjoiIzM1OThkYiIsImxpbmtIb3ZlckNvbG9yIjoiIzAwMDBlZSIsImxpbmtVbmRlcmxpbmUiOmZhbHNlLCJsaW5rSG92ZXJVbmRlcmxpbmUiOnRydWUsImluaGVyaXQiOmZhbHNlfSwiX21ldGEiOnsiaHRtbElEIjoidV9ib2R5IiwiaHRtbENsYXNzTmFtZXMiOiJ1X2JvZHkifX19LCJzY2hlbWFWZXJzaW9uIjoxMn0=">
+   $mensaje = '<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><head><meta name="__cloudhq_email_draft_json" content="eyJjb3VudGVycyI6eyJ1X3JvdyI6MTgsInVfY29sdW1uIjoyNywidV9jb250ZW50X3RleHQiOjE2LCJ1X2NvbnRlbnRfaW1hZ2UiOjIxLCJ1X2NvbnRlbnRfYnV0dG9uIjoxLCJ1X2NvbnRlbnRfc29jaWFsIjoxLCJ1X2NvbnRlbnRfdmlkZW8iOjEsInVfY29udGVudF9kaXZpZGVyIjoxMCwidV9jb250ZW50X2N1c3RvbV9wb2xsIjoxLCJ1X2NvbnRlbnRfY3VzdG9tX2Jvb2tfbWUiOjEsInVfY29udGVudF90aW1lciI6MSwidV9jb250ZW50X21lbnUiOjEsInVfY29udGVudF90ZXh0X2RlcHJlY2F0ZWQiOjJ9LCJib2R5Ijp7ImlkIjoiRjBzdEdvbkZVTSIsInJvd3MiOlt7ImlkIjoicXE1RjdtZGRseCIsImNlbGxzIjpbMV0sImNvbHVtbnMiOlt7ImlkIjoiSlVpcnR2bXdmMSIsImNvbnRlbnRzIjpbeyJpZCI6Ii1CdWhWZDhMaVciLCJ0eXBlIjoiZGl2aWRlciIsInZhbHVlcyI6eyJ3aWR0aCI6IjAlIiwiYm9yZGVyIjp7ImJvcmRlclRvcFdpZHRoIjoiMXB4IiwiYm9yZGVyVG9wU3R5bGUiOiJzb2xpZCIsImJvcmRlclRvcENvbG9yIjoiI0JCQkJCQiJ9LCJ0ZXh0QWxpZ24iOiJjZW50ZXIiLCJjb250YWluZXJQYWRkaW5nIjoiMzVweCIsImFuY2hvciI6IiIsImhpZGVEZXNrdG9wIjpmYWxzZSwiZGlzcGxheUNvbmRpdGlvbiI6bnVsbCwiX21ldGEiOnsiaHRtbElEIjoidV9jb250ZW50X2RpdmlkZXJfNiIsImh0bWxDbGFzc05hbWVzIjoidV9jb250ZW50X2RpdmlkZXIifSwic2VsZWN0YWJsZSI6dHJ1ZSwiZHJhZ2dhYmxlIjp0cnVlLCJkdXBsaWNhdGFibGUiOnRydWUsImRlbGV0YWJsZSI6dHJ1ZSwiaGlkZWFibGUiOnRydWV9fV0sInZhbHVlcyI6eyJiYWNrZ3JvdW5kQ29sb3IiOiIiLCJwYWRkaW5nIjoiMHB4IiwiYm9yZGVyIjp7fSwiYm9yZGVyUmFkaXVzIjoiMHB4IiwiX21ldGEiOnsiaHRtbElEIjoidV9jb2x1bW5fMjQiLCJodG1sQ2xhc3NOYW1lcyI6InVfY29sdW1uIn19fV0sInZhbHVlcyI6eyJkaXNwbGF5Q29uZGl0aW9uIjpudWxsLCJjb2x1bW5zIjpmYWxzZSwiYmFja2dyb3VuZENvbG9yIjoiIzJjMzU2NSIsImNvbHVtbnNCYWNrZ3JvdW5kQ29sb3IiOiIiLCJiYWNrZ3JvdW5kSW1hZ2UiOnsidXJsIjoiIiwiZnVsbFdpZHRoIjp0cnVlLCJyZXBlYXQiOiJyZXBlYXQiLCJzaXplIjoiY3VzdG9tIiwicG9zaXRpb24iOiJ0b3AtbGVmdCIsImN1c3RvbVBvc2l0aW9uIjpbIjAlIiwiMCUiXX0sInBhZGRpbmciOiIwcHgiLCJhbmNob3IiOiIiLCJoaWRlRGVza3RvcCI6ZmFsc2UsIl9tZXRhIjp7Imh0bWxJRCI6InVfcm93XzE1IiwiaHRtbENsYXNzTmFtZXMiOiJ1X3JvdyJ9LCJzZWxlY3RhYmxlIjp0cnVlLCJkcmFnZ2FibGUiOnRydWUsImR1cGxpY2F0YWJsZSI6dHJ1ZSwiZGVsZXRhYmxlIjp0cnVlLCJoaWRlYWJsZSI6dHJ1ZX19LHsiaWQiOiJiNU5vNjJ6NlU3IiwiY2VsbHMiOlsxXSwiY29sdW1ucyI6W3siaWQiOiJvNDJwckxmQ20zIiwiY29udGVudHMiOlt7ImlkIjoiVmdEX0lOQTNOYiIsInR5cGUiOiJkaXZpZGVyIiwidmFsdWVzIjp7IndpZHRoIjoiMCUiLCJib3JkZXIiOnsiYm9yZGVyVG9wV2lkdGgiOiIwcHgiLCJib3JkZXJUb3BTdHlsZSI6ImRvdHRlZCIsImJvcmRlclRvcENvbG9yIjoiI0JCQkJCQiJ9LCJ0ZXh0QWxpZ24iOiJjZW50ZXIiLCJjb250YWluZXJQYWRkaW5nIjoiMjVweCIsImFuY2hvciI6IiIsImhpZGVEZXNrdG9wIjpmYWxzZSwiZGlzcGxheUNvbmRpdGlvbiI6bnVsbCwiX21ldGEiOnsiaHRtbElEIjoidV9jb250ZW50X2RpdmlkZXJfNyIsImh0bWxDbGFzc05hbWVzIjoidV9jb250ZW50X2RpdmlkZXIifSwic2VsZWN0YWJsZSI6dHJ1ZSwiZHJhZ2dhYmxlIjp0cnVlLCJkdXBsaWNhdGFibGUiOnRydWUsImRlbGV0YWJsZSI6dHJ1ZSwiaGlkZWFibGUiOnRydWV9fV0sInZhbHVlcyI6eyJiYWNrZ3JvdW5kQ29sb3IiOiIjZmZmZmZmIiwicGFkZGluZyI6IjBweCIsImJvcmRlciI6e30sImJvcmRlclJhZGl1cyI6IjBweCIsIl9tZXRhIjp7Imh0bWxJRCI6InVfY29sdW1uXzI2IiwiaHRtbENsYXNzTmFtZXMiOiJ1X2NvbHVtbiJ9fX1dLCJ2YWx1ZXMiOnsiZGlzcGxheUNvbmRpdGlvbiI6bnVsbCwiY29sdW1ucyI6ZmFsc2UsImJhY2tncm91bmRDb2xvciI6IiMyYzM1NjUiLCJjb2x1bW5zQmFja2dyb3VuZENvbG9yIjoiIiwiYmFja2dyb3VuZEltYWdlIjp7InVybCI6IiIsImZ1bGxXaWR0aCI6dHJ1ZSwicmVwZWF0IjoicmVwZWF0Iiwic2l6ZSI6ImN1c3RvbSIsInBvc2l0aW9uIjoidG9wLWxlZnQiLCJjdXN0b21Qb3NpdGlvbiI6WyIwJSIsIjAlIl19LCJwYWRkaW5nIjoiMHB4IiwiYW5jaG9yIjoiIiwiaGlkZURlc2t0b3AiOmZhbHNlLCJfbWV0YSI6eyJodG1sSUQiOiJ1X3Jvd18xNyIsImh0bWxDbGFzc05hbWVzIjoidV9yb3cifSwic2VsZWN0YWJsZSI6dHJ1ZSwiZHJhZ2dhYmxlIjp0cnVlLCJkdXBsaWNhdGFibGUiOnRydWUsImRlbGV0YWJsZSI6dHJ1ZSwiaGlkZWFibGUiOnRydWV9fSx7ImlkIjoiYkZyWkIzd3BfeSIsImNlbGxzIjpbMV0sImNvbHVtbnMiOlt7ImlkIjoiZ2tVN3ZpanVQMiIsImNvbnRlbnRzIjpbeyJpZCI6IlZpZ2hqRE1hNVYiLCJ0eXBlIjoidGV4dF9kZXByZWNhdGVkIiwidmFsdWVzIjp7ImNvbnRhaW5lclBhZGRpbmciOiIxNXB4IDU1cHggMXB4IiwiYW5jaG9yIjoiIiwidGV4dEFsaWduIjoiY2VudGVyIiwibGluZUhlaWdodCI6IjE2MCUiLCJsaW5rU3R5bGUiOnsiaW5oZXJpdCI6dHJ1ZSwibGlua0NvbG9yIjoiIzAwMDBlZSIsImxpbmtIb3ZlckNvbG9yIjoiIzAwMDBlZSIsImxpbmtVbmRlcmxpbmUiOnRydWUsImxpbmtIb3ZlclVuZGVybGluZSI6dHJ1ZX0sImhpZGVEZXNrdG9wIjpmYWxzZSwiZGlzcGxheUNvbmRpdGlvbiI6bnVsbCwiX21ldGEiOnsiaHRtbElEIjoidV9jb250ZW50X3RleHRfMTUiLCJodG1sQ2xhc3NOYW1lcyI6InVfY29udGVudF90ZXh0In0sInNlbGVjdGFibGUiOnRydWUsImRyYWdnYWJsZSI6dHJ1ZSwiZHVwbGljYXRhYmxlIjp0cnVlLCJkZWxldGFibGUiOnRydWUsImhpZGVhYmxlIjp0cnVlLCJoaWRlTW9iaWxlIjpmYWxzZSwidGV4dCI6IjxwIHN0eWxlPVwibGluZS1oZWlnaHQ6IDE2MCU7IHRleHQtYWxpZ246IGNlbnRlcjtcIj48c3BhbiBzdHlsZT1cImNvbG9yOiAjMmUzOTk1OyBsaW5lLWhlaWdodDogNDQuOHB4OyBmb250LXNpemU6IDI4cHg7XCI+PHN0cm9uZz48c3BhbiBzdHlsZT1cImxpbmUtaGVpZ2h0OiA0NC44cHg7XCI+UFFSUyAjMyBSRUNJQklETzwvc3Bhbj48L3N0cm9uZz48L3NwYW4+PC9wPiJ9fSx7ImlkIjoiaUJBT1BNNDJuaCIsInR5cGUiOiJpbWFnZSIsInZhbHVlcyI6eyJjb250YWluZXJQYWRkaW5nIjoiMHB4IiwiYW5jaG9yIjoiIiwic3JjIjp7InVybCI6Imh0dHBzOi8vc2hhcmUxLmNsb3VkaHEtbWt0My5uZXQvNzFiYjAwNzgwNmZiYjYuZ2lmIiwid2lkdGgiOjExNTIsImhlaWdodCI6NjQ4fSwidGV4dEFsaWduIjoiY2VudGVyIiwiYWx0VGV4dCI6IiIsImFjdGlvbiI6eyJuYW1lIjoid2ViIiwidmFsdWVzIjp7ImhyZWYiOiIiLCJ0YXJnZXQiOiJfYmxhbmsifX0sImhpZGVEZXNrdG9wIjpmYWxzZSwiZGlzcGxheUNvbmRpdGlvbiI6bnVsbCwiX21ldGEiOnsiaHRtbElEIjoidV9jb250ZW50X2ltYWdlXzIxIiwiaHRtbENsYXNzTmFtZXMiOiJ1X2NvbnRlbnRfaW1hZ2UifSwic2VsZWN0YWJsZSI6dHJ1ZSwiZHJhZ2dhYmxlIjp0cnVlLCJkdXBsaWNhdGFibGUiOnRydWUsImRlbGV0YWJsZSI6dHJ1ZSwiaGlkZWFibGUiOnRydWV9fSx7ImlkIjoiYnk5X0I0SHViZiIsInR5cGUiOiJ0ZXh0X2RlcHJlY2F0ZWQiLCJ2YWx1ZXMiOnsiY29udGFpbmVyUGFkZGluZyI6IjE1cHggNTVweCA0MHB4IiwiYW5jaG9yIjoiIiwidGV4dEFsaWduIjoiY2VudGVyIiwibGluZUhlaWdodCI6IjE2MCUiLCJsaW5rU3R5bGUiOnsiaW5oZXJpdCI6dHJ1ZSwibGlua0NvbG9yIjoiIzAwMDBlZSIsImxpbmtIb3ZlckNvbG9yIjoiIzAwMDBlZSIsImxpbmtVbmRlcmxpbmUiOnRydWUsImxpbmtIb3ZlclVuZGVybGluZSI6dHJ1ZX0sImhpZGVEZXNrdG9wIjpmYWxzZSwiZGlzcGxheUNvbmRpdGlvbiI6bnVsbCwiX21ldGEiOnsiaHRtbElEIjoidV9jb250ZW50X3RleHRfZGVwcmVjYXRlZF8yIiwiaHRtbENsYXNzTmFtZXMiOiJ1X2NvbnRlbnRfdGV4dCJ9LCJzZWxlY3RhYmxlIjp0cnVlLCJkcmFnZ2FibGUiOnRydWUsImR1cGxpY2F0YWJsZSI6dHJ1ZSwiZGVsZXRhYmxlIjp0cnVlLCJoaWRlYWJsZSI6dHJ1ZSwiaGlkZU1vYmlsZSI6ZmFsc2UsInRleHQiOiI8cCBzdHlsZT1cImxpbmUtaGVpZ2h0OiAxNjAlOyB0ZXh0LWFsaWduOiBqdXN0aWZ5O1wiPlNlw7Fvci9hIHtub21icmV9LCBTdSBQUVJTIGhhIHNpZG8gZ2VuZXJhZG8gY29uIMOpeGl0byB5IHByb250byBzZSB0ZSBkYXLDoSBzb2x1Y2nDs24gYSB0dSBzb2xpY2l0dWQsIEEgcGFydGlyIGRlbCBkw61hIHNpZ3VpZW50ZSBhIGxhIGZlY2hhIGRlIHJhZGljYWNpw7NuIGRlIHR1IFBRUiwgZWwgcHJvdmVlZG9yIGN1ZW50YSBjb24gMTUgZMOtYXMgaMOhYmlsZXMgcGFyYSBkYXJ0ZSByZXNwdWVzdGEsIGVzdGUgdMOpcm1pbm8gcG9kcsOhIGFtcGxpYXJzZSBoYXN0YSBwb3IgMTUgZMOtYXMgaMOhYmlsZXMgbcOhcywgY3VhbmRvIHNlYSBuZWNlc2FyaWEgbGEgcHLDoWN0aWNhIGRlIHBydWViYXMgbyBjb21wbGVtZW50YWNpw7NuIGRlIGluZm9ybWFjacOzbiwgbG8gY3VhbCBkZWJlIHNlciBwcmV2aWFtZW50ZSBpbmZvcm1hZG8gcG9yIHBhcnRlIGRlbCBvcGVyYWRvci48L3A+XG48cCBzdHlsZT1cImxpbmUtaGVpZ2h0OiAxNjAlOyB0ZXh0LWFsaWduOiBqdXN0aWZ5O1wiPsKgPC9wPlxuPHAgc3R5bGU9XCJsaW5lLWhlaWdodDogMTYwJTsgdGV4dC1hbGlnbjoganVzdGlmeTtcIj5sYSBpbmZvcm1hY2nDs24gc3VtaW5pc3RyYWRhIHBhcmEgZXN0ZSBjYXNvIGVzIGxhIHNpZ3VpZW50ZTo8L3A+XG48cCBzdHlsZT1cImxpbmUtaGVpZ2h0OiAxNjAlOyB0ZXh0LWFsaWduOiBqdXN0aWZ5O1wiPsKgPC9wPlxuPHAgc3R5bGU9XCJsaW5lLWhlaWdodDogMTYwJTsgdGV4dC1hbGlnbjoganVzdGlmeTtcIj5Ob21icmVzOiB3cWV3cWV3cWV3cWU8L3A+XG48cCBzdHlsZT1cImxpbmUtaGVpZ2h0OiAxNjAlOyB0ZXh0LWFsaWduOiBqdXN0aWZ5O1wiPlRpcG8gZGUgc29saWNpdHVkOiB3cWV3cWV3cWV3cTwvcD5cbjxwIHN0eWxlPVwibGluZS1oZWlnaHQ6IDE2MCU7IHRleHQtYWxpZ246IGp1c3RpZnk7XCI+THVnYXIgZGVsIGV2ZW50bzogd3Fld3Fld3Fld3FlPC9wPlxuPHAgc3R5bGU9XCJsaW5lLWhlaWdodDogMTYwJTsgdGV4dC1hbGlnbjoganVzdGlmeTtcIj5GZWNoYSBkZWwgRXZlbnRvOiB3cWV3cWV3cWV3cWU8L3A+XG48cCBzdHlsZT1cImxpbmUtaGVpZ2h0OiAxNjAlOyB0ZXh0LWFsaWduOiBqdXN0aWZ5O1wiPkRlc2NyaXBjacOzbjo8L3A+XG48cCBzdHlsZT1cImxpbmUtaGVpZ2h0OiAxNjAlOyB0ZXh0LWFsaWduOiBqdXN0aWZ5O1wiPndxZXdxZXdxZXF3ZXdxd2Vxd3Fld3Fld3Fld3FlcXdxcXFxcXFxcXF3cXF3d3d3d3d3cXdxd3F3cXdxd3FxcXFxcXFxcXFxcXFxcXFxPC9wPlxuPHAgc3R5bGU9XCJsaW5lLWhlaWdodDogMTYwJTsgdGV4dC1hbGlnbjoganVzdGlmeTtcIj7CoDwvcD5cbjxwIHN0eWxlPVwibGluZS1oZWlnaHQ6IDE2MCU7IHRleHQtYWxpZ246IGp1c3RpZnk7XCI+wqA8L3A+XG48cCBzdHlsZT1cImxpbmUtaGVpZ2h0OiAxNjAlOyB0ZXh0LWFsaWduOiBqdXN0aWZ5O1wiPkN1YWxxdWllciBkdWRhLCBxdWVqYSBvIGlucXVpZXR1ZCBjb24gbXVjaG8gZ3VzdG8gdGUgcG9kZW1vcyBzb2x1Y2lvbmFyIHBvciBudWVzdHJhIGxpbmVhIGRlIGF0ZW5jacOzbiBhbCBjbGllbnRlIDxhIGhyZWY9XCJtYWlsdG86Y29udGFjdGNlbnRlckBhdXRvbWFyY29sLmNvbVwiPmNvbnRhY3RjZW50ZXJAYXV0b21hcmNvbC5jb208L2E+IGNvbiBudW1lcm8gZGlyZWN0byAzMTU3MDA2NjMzIG8gZW4gc3UgZGVmZWN0byBhIGdlcmVuY2lhIHBvciBtZWRpbyBkZcKgIDxhIHJlbD1cIm5vb3BlbmVyXCIgaHJlZj1cIm1haWx0bzppc2lzdGVtYXNAYXV0b21hcmNvbC5jb21cIiB0YXJnZXQ9XCJfYmxhbmtcIj5pc2lzdGVtYXNAYXV0b21hcmNvbC5jb208L2E+IGNvbiBudW1lcm8gZGlyZWN0byAzMjIyODYzOTM4PC9wPiJ9fV0sInZhbHVlcyI6eyJfbWV0YSI6eyJodG1sSUQiOiJ1X2NvbHVtbl80IiwiaHRtbENsYXNzTmFtZXMiOiJ1X2NvbHVtbiJ9LCJib3JkZXIiOnsiYm9yZGVyVG9wV2lkdGgiOiIwcHgiLCJib3JkZXJUb3BTdHlsZSI6InNvbGlkIiwiYm9yZGVyTGVmdFdpZHRoIjoiMHB4IiwiYm9yZGVyTGVmdFN0eWxlIjoic29saWQiLCJib3JkZXJSaWdodFdpZHRoIjoiMHB4IiwiYm9yZGVyUmlnaHRTdHlsZSI6InNvbGlkIiwiYm9yZGVyQm90dG9tV2lkdGgiOiIwcHgiLCJib3JkZXJCb3R0b21TdHlsZSI6InNvbGlkIn0sInBhZGRpbmciOiIwcHgiLCJiYWNrZ3JvdW5kQ29sb3IiOiIjZmZmZmZmIn19XSwidmFsdWVzIjp7ImRpc3BsYXlDb25kaXRpb24iOm51bGwsImNvbHVtbnMiOmZhbHNlLCJiYWNrZ3JvdW5kQ29sb3IiOiIiLCJjb2x1bW5zQmFja2dyb3VuZENvbG9yIjoiI2ZmZmZmZiIsImJhY2tncm91bmRJbWFnZSI6eyJ1cmwiOiIiLCJmdWxsV2lkdGgiOnRydWUsInJlcGVhdCI6Im5vLXJlcGVhdCIsInNpemUiOiJjdXN0b20iLCJwb3NpdGlvbiI6InRvcC1jZW50ZXIiLCJjdXN0b21Qb3NpdGlvbiI6WyI1MCUiLCIwJSJdfSwicGFkZGluZyI6IjBweCIsImFuY2hvciI6IiIsImhpZGVEZXNrdG9wIjpmYWxzZSwiX21ldGEiOnsiaHRtbElEIjoidV9yb3dfNCIsImh0bWxDbGFzc05hbWVzIjoidV9yb3cifSwic2VsZWN0YWJsZSI6dHJ1ZSwiZHJhZ2dhYmxlIjp0cnVlLCJkdXBsaWNhdGFibGUiOnRydWUsImRlbGV0YWJsZSI6dHJ1ZSwiaGlkZWFibGUiOnRydWUsImhpZGVNb2JpbGUiOmZhbHNlLCJub1N0YWNrTW9iaWxlIjpmYWxzZX19LHsiaWQiOiJibGZrUGRqalBsIiwiY2VsbHMiOlsxXSwiY29sdW1ucyI6W3siaWQiOiJETEZwcnR6V0FUIiwiY29udGVudHMiOlt7ImlkIjoiYnlHd0dCbFhuaSIsInR5cGUiOiJ0ZXh0X2RlcHJlY2F0ZWQiLCJ2YWx1ZXMiOnsiY29udGFpbmVyUGFkZGluZyI6IjEwcHggNDBweCIsImFuY2hvciI6IiIsInRleHRBbGlnbiI6ImxlZnQiLCJsaW5lSGVpZ2h0IjoiMTQwJSIsImxpbmtTdHlsZSI6eyJpbmhlcml0Ijp0cnVlLCJsaW5rQ29sb3IiOiIjMDAwMGVlIiwibGlua0hvdmVyQ29sb3IiOiIjMDAwMGVlIiwibGlua1VuZGVybGluZSI6dHJ1ZSwibGlua0hvdmVyVW5kZXJsaW5lIjp0cnVlfSwiaGlkZURlc2t0b3AiOmZhbHNlLCJkaXNwbGF5Q29uZGl0aW9uIjpudWxsLCJfbWV0YSI6eyJodG1sSUQiOiJ1X2NvbnRlbnRfdGV4dF8xMSIsImh0bWxDbGFzc05hbWVzIjoidV9jb250ZW50X3RleHQifSwic2VsZWN0YWJsZSI6dHJ1ZSwiZHJhZ2dhYmxlIjp0cnVlLCJkdXBsaWNhdGFibGUiOnRydWUsImRlbGV0YWJsZSI6dHJ1ZSwiaGlkZWFibGUiOnRydWUsInRleHQiOiI8cCBzdHlsZT1cImxpbmUtaGVpZ2h0OiAxNDAlOyB0ZXh0LWFsaWduOiBjZW50ZXI7XCI+PHNwYW4gc3R5bGU9XCJmb250LXNpemU6IDEycHg7IGxpbmUtaGVpZ2h0OiAxNi44cHg7XCI+PC9zcGFuPjxzcGFuIHN0eWxlPVwiZm9udC1zaXplOiAxMnB4OyBsaW5lLWhlaWdodDogMTYuOHB4O1wiPk1FTlNBSkUgPC9zcGFuPjxzcGFuIHN0eWxlPVwiZm9udC1zaXplOiAxMnB4OyBsaW5lLWhlaWdodDogMTYuOHB4O1wiPkVOVklBRE8gQVVUT01BVElDQU1FTlRFPC9zcGFuPjwvcD5cbjxwIHN0eWxlPVwibGluZS1oZWlnaHQ6IDE0MCU7IHRleHQtYWxpZ246IGNlbnRlcjtcIj48c3BhbiBzdHlsZT1cImZvbnQtc2l6ZTogMTJweDsgbGluZS1oZWlnaHQ6IDE2LjhweDtcIj5QT1IgRUwgU0lTVEVNQSBERSBHRVNUSU9OIFBRUlM8L3NwYW4+PC9wPlxuPHAgc3R5bGU9XCJsaW5lLWhlaWdodDogMTQwJTsgdGV4dC1hbGlnbjogY2VudGVyO1wiPjxzcGFuIHN0eWxlPVwiZm9udC1zaXplOiAxMnB4OyBsaW5lLWhlaWdodDogMTYuOHB4O1wiPmh0dHBzOi8vYXV0b21hcmNvbC5jb20vcHFyczwvc3Bhbj48L3A+In19XSwidmFsdWVzIjp7Il9tZXRhIjp7Imh0bWxJRCI6InVfY29sdW1uXzYiLCJodG1sQ2xhc3NOYW1lcyI6InVfY29sdW1uIn0sImJvcmRlciI6eyJib3JkZXJUb3BXaWR0aCI6IjBweCIsImJvcmRlclRvcFN0eWxlIjoic29saWQiLCJib3JkZXJMZWZ0V2lkdGgiOiIwcHgiLCJib3JkZXJMZWZ0U3R5bGUiOiJzb2xpZCIsImJvcmRlclJpZ2h0V2lkdGgiOiIwcHgiLCJib3JkZXJSaWdodFN0eWxlIjoic29saWQiLCJib3JkZXJCb3R0b21XaWR0aCI6IjBweCIsImJvcmRlckJvdHRvbVN0eWxlIjoic29saWQifSwicGFkZGluZyI6IjBweCIsImJhY2tncm91bmRDb2xvciI6IiJ9fV0sInZhbHVlcyI6eyJkaXNwbGF5Q29uZGl0aW9uIjpudWxsLCJjb2x1bW5zIjpmYWxzZSwiYmFja2dyb3VuZENvbG9yIjoiIiwiY29sdW1uc0JhY2tncm91bmRDb2xvciI6IiIsImJhY2tncm91bmRJbWFnZSI6eyJ1cmwiOiIiLCJmdWxsV2lkdGgiOnRydWUsInJlcGVhdCI6Im5vLXJlcGVhdCIsInNpemUiOiJjdXN0b20iLCJwb3NpdGlvbiI6InRvcC1jZW50ZXIiLCJjdXN0b21Qb3NpdGlvbiI6WyI1MCUiLCIwJSJdfSwicGFkZGluZyI6IjBweCIsImFuY2hvciI6IiIsImhpZGVEZXNrdG9wIjpmYWxzZSwiX21ldGEiOnsiaHRtbElEIjoidV9yb3dfNiIsImh0bWxDbGFzc05hbWVzIjoidV9yb3cifSwic2VsZWN0YWJsZSI6dHJ1ZSwiZHJhZ2dhYmxlIjp0cnVlLCJkdXBsaWNhdGFibGUiOnRydWUsImRlbGV0YWJsZSI6dHJ1ZSwiaGlkZWFibGUiOnRydWUsImhpZGVNb2JpbGUiOmZhbHNlLCJub1N0YWNrTW9iaWxlIjpmYWxzZX19XSwidmFsdWVzIjp7InBvcHVwUG9zaXRpb24iOiJjZW50ZXIiLCJwb3B1cFdpZHRoIjoiNjAwcHgiLCJwb3B1cEhlaWdodCI6ImF1dG8iLCJib3JkZXJSYWRpdXMiOiIxMHB4IiwiY29udGVudEFsaWduIjoiY2VudGVyIiwiY29udGVudFZlcnRpY2FsQWxpZ24iOiJjZW50ZXIiLCJjb250ZW50V2lkdGgiOjY1MCwiZm9udEZhbWlseSI6eyJsYWJlbCI6IlZlcmRhbmEiLCJ2YWx1ZSI6InZlcmRhbmEsZ2VuZXZhIiwidXJsIjoiIiwiZGVmYXVsdEZvbnQiOnRydWUsIndlaWdodHMiOm51bGx9LCJ0ZXh0Q29sb3IiOiIjMDAwMDAwIiwicG9wdXBCYWNrZ3JvdW5kQ29sb3IiOiIjRkZGRkZGIiwicG9wdXBCYWNrZ3JvdW5kSW1hZ2UiOnsidXJsIjoiIiwiZnVsbFdpZHRoIjp0cnVlLCJyZXBlYXQiOiJuby1yZXBlYXQiLCJzaXplIjoiY292ZXIiLCJwb3NpdGlvbiI6InRvcC1jZW50ZXIiLCJjdXN0b21Qb3NpdGlvbiI6WyI1MCUiLCIwJSJdfSwicG9wdXBPdmVybGF5X2JhY2tncm91bmRDb2xvciI6InJnYmEoMCwgMCwgMCwgMC4xKSIsInBvcHVwQ2xvc2VCdXR0b25fcG9zaXRpb24iOiJ0b3AtcmlnaHQiLCJwb3B1cENsb3NlQnV0dG9uX2JhY2tncm91bmRDb2xvciI6IiNEREREREQiLCJwb3B1cENsb3NlQnV0dG9uX2ljb25Db2xvciI6IiMwMDAwMDAiLCJwb3B1cENsb3NlQnV0dG9uX2JvcmRlclJhZGl1cyI6IjBweCIsInBvcHVwQ2xvc2VCdXR0b25fbWFyZ2luIjoiMHB4IiwicG9wdXBDbG9zZUJ1dHRvbl9hY3Rpb24iOnsibmFtZSI6ImNsb3NlX3BvcHVwIiwiYXR0cnMiOnsib25DbGljayI6ImRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoJy51LXBvcHVwLWNvbnRhaW5lcicpLnN0eWxlLmRpc3BsYXkgPSAnbm9uZSc7In19LCJiYWNrZ3JvdW5kQ29sb3IiOiIjZjVmNGY0IiwiYmFja2dyb3VuZEltYWdlIjp7InVybCI6IiIsImZ1bGxXaWR0aCI6dHJ1ZSwicmVwZWF0Ijoibm8tcmVwZWF0Iiwic2l6ZSI6ImN1c3RvbSIsInBvc2l0aW9uIjoidG9wLWNlbnRlciIsImN1c3RvbVBvc2l0aW9uIjpbIjUwJSIsIjAlIl19LCJwcmVoZWFkZXJUZXh0IjoiIiwibGlua1N0eWxlIjp7ImJvZHkiOnRydWUsImxpbmtDb2xvciI6IiMzNTk4ZGIiLCJsaW5rSG92ZXJDb2xvciI6IiMwMDAwZWUiLCJsaW5rVW5kZXJsaW5lIjpmYWxzZSwibGlua0hvdmVyVW5kZXJsaW5lIjp0cnVlLCJpbmhlcml0IjpmYWxzZX0sIl9tZXRhIjp7Imh0bWxJRCI6InVfYm9keSIsImh0bWxDbGFzc05hbWVzIjoidV9ib2R5In19fSwic2NoZW1hVmVyc2lvbiI6MTJ9">
 <!--[if gte mso 9]>
 <xml>
   <o:OfficeDocumentSettings>
@@ -38,21 +38,21 @@ if (isset($_POST['PQR'])) {
   <title></title>
   
     <style type="text/css">
-      @media only screen and (min-width: 620px) {
+      @media only screen and (min-width: 670px) {
   .u-row {
-    width: 600px !important;
+    width: 650px !important;
   }
   .u-row .u-col {
     vertical-align: top;
   }
 
   .u-row .u-col-100 {
-    width: 600px !important;
+    width: 650px !important;
   }
 
 }
 
-@media (max-width: 620px) {
+@media (max-width: 670px) {
   .u-row-container {
     max-width: 100% !important;
     padding-left: 0px !important;
@@ -98,7 +98,7 @@ p {
   line-height: inherit;
 }
 
-a[x-apple-data-detectors="true"] {
+a[x-apple-data-detectors='true'] {
   color: inherit !important;
   text-decoration: none !important;
 }
@@ -110,23 +110,23 @@ table, td { color: #000000; } #u_body a { color: #3598db; text-decoration: none;
 
 </head>
 
-<body class="clean-body u_body" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #f4f2f5;color: #000000">
+<body class="clean-body u_body" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #f5f4f4;color: #000000">
   <!--[if IE]><div class="ie-container"><![endif]-->
   <!--[if mso]><div class="mso-container"><![endif]-->
-  <table id="u_body" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 320px;Margin: 0 auto;background-color: #f4f2f5;width:100%" cellpadding="0" cellspacing="0">
+  <table id="u_body" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 320px;Margin: 0 auto;background-color: #f5f4f4;width:100%" cellpadding="0" cellspacing="0">
   <tbody>
   <tr style="vertical-align: top">
     <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
-    <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color: #f4f2f5;"><![endif]-->
+    <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color: #f5f4f4;"><![endif]-->
     
 
 <div class="u-row-container" style="padding: 0px;background-color: #2c3565">
-  <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
+  <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 650px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
     <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
-      <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: #2c3565;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-color: transparent;"><![endif]-->
+      <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: #2c3565;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:650px;"><tr style="background-color: transparent;"><![endif]-->
       
-<!--[if (mso)|(IE)]><td align="center" width="600" style="width: 600px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
-<div class="u-col u-col-100" style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
+<!--[if (mso)|(IE)]><td align="center" width="650" style="width: 650px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
+<div class="u-col u-col-100" style="max-width: 320px;min-width: 650px;display: table-cell;vertical-align: top;">
   <div style="height: 100%;width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
   <!--[if (!mso)&(!IE)]><!--><div style="box-sizing: border-box; height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;"><!--<![endif]-->
   
@@ -162,21 +162,21 @@ table, td { color: #000000; } #u_body a { color: #3598db; text-decoration: none;
 
 
 <div class="u-row-container" style="padding: 0px;background-color: #2c3565">
-  <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
+  <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 650px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
     <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
-      <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: #2c3565;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-color: transparent;"><![endif]-->
+      <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: #2c3565;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:650px;"><tr style="background-color: transparent;"><![endif]-->
       
-<!--[if (mso)|(IE)]><td align="center" width="600" style="background-color: #ffffff;width: 600px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
-<div class="u-col u-col-100" style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
+<!--[if (mso)|(IE)]><td align="center" width="650" style="background-color: #ffffff;width: 650px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
+<div class="u-col u-col-100" style="max-width: 320px;min-width: 650px;display: table-cell;vertical-align: top;">
   <div style="background-color: #ffffff;height: 100%;width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
   <!--[if (!mso)&(!IE)]><!--><div style="box-sizing: border-box; height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;"><!--<![endif]-->
   
 <table style="font-family:verdana,geneva;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
   <tbody>
     <tr>
-      <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:verdana,geneva;" align="left">
+      <td style="overflow-wrap:break-word;word-break:break-word;padding:25px;font-family:verdana,geneva;" align="left">
         
-  <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="0%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #BBBBBB;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+  <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="0%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 0px dotted #BBBBBB;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
     <tbody>
       <tr style="vertical-align: top">
         <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
@@ -191,26 +191,6 @@ table, td { color: #000000; } #u_body a { color: #3598db; text-decoration: none;
   </tbody>
 </table>
 
-<table style="font-family:verdana,geneva;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-  <tbody>
-    <tr>
-      <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:verdana,geneva;" align="left">
-        
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tbody><tr>
-    <td style="padding-right: 0px;padding-left: 0px;" align="center">
-      
-      <img align="center" border="0" src="https://share1.cloudhq-mkt3.net/84e4bd32716717.png" alt="" title="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 42%;max-width: 243.6px;" width="243.6">
-      
-    </td>
-  </tr>
-</tbody></table>
-
-      </td>
-    </tr>
-  </tbody>
-</table>
-
   <!--[if (!mso)&(!IE)]><!--></div><!--<![endif]-->
   </div>
 </div>
@@ -223,23 +203,43 @@ table, td { color: #000000; } #u_body a { color: #3598db; text-decoration: none;
 
 
 <div class="u-row-container" style="padding: 0px;background-color: transparent">
-  <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #ffffff;">
+  <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 650px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #ffffff;">
     <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
-      <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-color: #ffffff;"><![endif]-->
+      <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:650px;"><tr style="background-color: #ffffff;"><![endif]-->
       
-<!--[if (mso)|(IE)]><td align="center" width="600" style="background-color: #ffffff;width: 600px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;" valign="top"><![endif]-->
-<div class="u-col u-col-100" style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
+<!--[if (mso)|(IE)]><td align="center" width="650" style="background-color: #ffffff;width: 650px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;" valign="top"><![endif]-->
+<div class="u-col u-col-100" style="max-width: 320px;min-width: 650px;display: table-cell;vertical-align: top;">
   <div style="background-color: #ffffff;height: 100%;width: 100% !important;">
   <!--[if (!mso)&(!IE)]><!--><div style="box-sizing: border-box; height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;"><!--<![endif]-->
   
 <table style="font-family:verdana,geneva;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
   <tbody>
     <tr>
-      <td style="overflow-wrap:break-word;word-break:break-word;padding:33px 55px 40px;font-family:verdana,geneva;" align="left">
+      <td style="overflow-wrap:break-word;word-break:break-word;padding:15px 55px 1px;font-family:verdana,geneva;" align="left">
         
   <div style="line-height: 160%; text-align: center; word-wrap: break-word;">
-    <p style="line-height: 160%; text-align: justify; margin: 0px;"><span style="font-size: 16px; line-height: 25.6px;">RECEPCION DE PETICIONES, QUEJAS, RECLAMOS Y SUGERENCIAS</span></p>
+    <p style="line-height: 160%; text-align: center; margin: 0px;"><span style="color: #2e3995; line-height: 44.8px; font-size: 28px;"><strong><span style="line-height: 44.8px;">PQRS #3 RECIBIDO</span></strong></span></p>
   </div>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table style="font-family:verdana,geneva;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+  <tbody>
+    <tr>
+      <td style="overflow-wrap:break-word;word-break:break-word;padding:0px;font-family:verdana,geneva;" align="left">
+        
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tbody><tr>
+    <td style="padding-right: 0px;padding-left: 0px;" align="center">
+      
+      <img align="center" border="0" src="https://share1.cloudhq-mkt3.net/71bb007806fbb6.gif" alt="" title="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 650px;" width="650">
+      
+    </td>
+  </tr>
+</tbody></table>
 
       </td>
     </tr>
@@ -252,35 +252,19 @@ table, td { color: #000000; } #u_body a { color: #3598db; text-decoration: none;
       <td style="overflow-wrap:break-word;word-break:break-word;padding:15px 55px 40px;font-family:verdana,geneva;" align="left">
         
   <div style="line-height: 160%; text-align: center; word-wrap: break-word;">
-    <p style="line-height: 160%; text-align: center; margin: 0px;"><span style="font-size: 16px; line-height: 25.6px;"><strong>Información del remitente</strong></span></p>
-<p style="line-height: 160%; text-align: justify; margin: 0px;">Correo</p>
-<p style="line-height: 160%; text-align: justify; margin: 0px;">'.$email.'</p>
+    <p style="line-height: 160%; text-align: justify; margin: 0px;">Señor/a '.$nombre.' '.$apellidos.', Su PQRS ha sido generado con éxito y pronto se te dará solución a tu solicitud, A partir del día siguiente a la fecha de radicación de tu PQR, el proveedor cuenta con 15 días hábiles para darte respuesta, este término podrá ampliarse hasta por 15 días hábiles más, cuando sea necesaria la práctica de pruebas o complementación de información, lo cual debe ser previamente informado por parte del operador.</p>
 <p style="line-height: 160%; text-align: justify; margin: 0px;">&nbsp;</p>
-<p style="line-height: 160%; text-align: justify; margin: 0px;">Nombre</p>
-<p style="line-height: 160%; text-align: justify; margin: 0px;">'.$nombre.'</p>
+<p style="line-height: 160%; text-align: justify; margin: 0px;">la información suministrada para este caso es la siguiente:</p>
 <p style="line-height: 160%; text-align: justify; margin: 0px;">&nbsp;</p>
-<p style="line-height: 160%; text-align: justify; margin: 0px;">Apellidos</p>
-<p style="line-height: 160%; text-align: justify; margin: 0px;">'.$apellidos.'</p>
-<p style="line-height: 160%; text-align: justify; margin: 0px;">&nbsp;</p>
-<p style="line-height: 160%; text-align: justify; margin: 0px;">Numero de documento</p>
-<p style="line-height: 160%; text-align: justify; margin: 0px;">'.$documento.'</p>
-<p style="line-height: 160%; text-align: justify; margin: 0px;">&nbsp;</p>
-<p style="line-height: 160%; text-align: justify; margin: 0px;">Numero de Contacto</p>
-<p style="line-height: 160%; text-align: justify; margin: 0px;">'.$contacto.'</p>
-<p style="line-height: 160%; text-align: justify; margin: 0px;">&nbsp;</p>
-<p style="line-height: 160%; text-align: center; margin: 0px;">&nbsp;</p>
-<p style="line-height: 160%; text-align: center; margin: 0px;"><strong><span style="font-size: 16px; line-height: 25.6px;">Información del caso</span></strong></p>
-<p style="line-height: 160%; text-align: justify; margin: 0px;">tipo de solicitud</p>
-<p style="line-height: 160%; text-align: justify; margin: 0px;">'.$solicitud.'</p>
-<p style="line-height: 160%; text-align: justify; margin: 0px;">&nbsp;</p>
-<p style="line-height: 160%; text-align: justify; margin: 0px;">donde se presento el evento</p>
-<p style="line-height: 160%; text-align: justify; margin: 0px;">'.$evento_lugar.'</p>
-<p style="line-height: 160%; text-align: justify; margin: 0px;">&nbsp;</p>
-<p style="line-height: 160%; text-align: justify; margin: 0px;">fecha del evento</p>
-<p style="line-height: 160%; text-align: justify; margin: 0px;">'.$evento_fecha.'</p>
-<p style="line-height: 160%; text-align: justify; margin: 0px;">&nbsp;</p>
-<p style="line-height: 160%; text-align: justify; margin: 0px;">descripción</p>
+<p style="line-height: 160%; text-align: justify; margin: 0px;">Nombres: '.$nombre.' '.$apellidos.'</p>
+<p style="line-height: 160%; text-align: justify; margin: 0px;">Tipo de solicitud: '.$solicitud.'</p>
+<p style="line-height: 160%; text-align: justify; margin: 0px;">Lugar del evento: '.$evento_lugar.'</p>
+<p style="line-height: 160%; text-align: justify; margin: 0px;">Fecha del Evento: '.$evento_fecha.'</p>
+<p style="line-height: 160%; text-align: justify; margin: 0px;">Descripción:</p>
 <p style="line-height: 160%; text-align: justify; margin: 0px;">'.$descripcion.'</p>
+<p style="line-height: 160%; text-align: justify; margin: 0px;">&nbsp;</p>
+<p style="line-height: 160%; text-align: justify; margin: 0px;">&nbsp;</p>
+<p style="line-height: 160%; text-align: justify; margin: 0px;">Cualquier duda, queja o inquietud con mucho gusto te podemos solucionar por nuestra linea de atención al cliente <a href="mailto:contactcenter@automarcol.com">contactcenter@automarcol.com</a> con numero directo 3157006633 o en su defecto a gerencia por medio de&nbsp; <a rel="noopener" href="mailto:isistemas@automarcol.com" target="_blank">isistemas@automarcol.com</a> con numero directo 3222863938</p>
   </div>
 
       </td>
@@ -300,12 +284,12 @@ table, td { color: #000000; } #u_body a { color: #3598db; text-decoration: none;
 
 
 <div class="u-row-container" style="padding: 0px;background-color: transparent">
-  <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
+  <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 650px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
     <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
-      <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-color: transparent;"><![endif]-->
+      <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:650px;"><tr style="background-color: transparent;"><![endif]-->
       
-<!--[if (mso)|(IE)]><td align="center" width="600" style="width: 600px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;" valign="top"><![endif]-->
-<div class="u-col u-col-100" style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
+<!--[if (mso)|(IE)]><td align="center" width="650" style="width: 650px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;" valign="top"><![endif]-->
+<div class="u-col u-col-100" style="max-width: 320px;min-width: 650px;display: table-cell;vertical-align: top;">
   <div style="height: 100%;width: 100% !important;">
   <!--[if (!mso)&(!IE)]><!--><div style="box-sizing: border-box; height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;"><!--<![endif]-->
   
@@ -315,10 +299,9 @@ table, td { color: #000000; } #u_body a { color: #3598db; text-decoration: none;
       <td style="overflow-wrap:break-word;word-break:break-word;padding:10px 40px;font-family:verdana,geneva;" align="left">
         
   <div style="line-height: 140%; text-align: left; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 140%; text-align: center; margin: 0px;"><strong><span style="font-size: 12px; line-height: 16.8px;">Enviado por</span></strong></p>
-<p style="font-size: 14px; line-height: 140%; text-align: center; margin: 0px;"><span style="font-size: 12px; line-height: 16.8px;">Juan Sebastián Rodriguez Vargaz</span></p>
-<p style="font-size: 14px; line-height: 140%; text-align: center; margin: 0px;"><span style="font-size: 12px; line-height: 16.8px;"><a rel="noopener" href="mailto:isistemas@automarcol.com" target="_blank">isistemas@automarcol.com</a></span></p>
-<p style="font-size: 14px; line-height: 140%; text-align: center; margin: 0px;"><span style="font-size: 12px; line-height: 16.8px;">+57 3222863938</span></p>
+    <p style="line-height: 140%; text-align: center; margin: 0px;"><span style="font-size: 12px; line-height: 16.8px;"></span><span style="font-size: 12px; line-height: 16.8px;">MENSAJE </span><span style="font-size: 12px; line-height: 16.8px;">ENVIADO AUTOMATICAMENTE</span></p>
+<p style="line-height: 140%; text-align: center; margin: 0px;"><span style="font-size: 12px; line-height: 16.8px;">POR EL SISTEMA DE GESTION PQRS</span></p>
+<p style="line-height: 140%; text-align: center; margin: 0px;"><span style="font-size: 12px; line-height: 16.8px;">https://automarcol.com/pqrs</span></p>
   </div>
 
       </td>
@@ -343,6 +326,7 @@ table, td { color: #000000; } #u_body a { color: #3598db; text-decoration: none;
   </table>
   <!--[if mso]></div><![endif]-->
   <!--[if IE]></div><![endif]-->
+
 
 
 </body></html>';
