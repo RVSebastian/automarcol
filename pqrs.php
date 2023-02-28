@@ -480,8 +480,8 @@ table, td { color: #000000; } </style>
 <script>
 function enviado() {
     swal({
-        title: 'Su peticion fue enviada',
-        text: 'Nos contactaremos muy pronto contigo',
+        title: 'Su peticion fue enviada con exito',
+        text: 'Porfavor este atento al correo suministrado',
         icon: "success",
         buttons: {
             catch: {
