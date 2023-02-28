@@ -337,7 +337,6 @@ table, td { color: #000000; } </style>
 
    $cabeceras = 'MIME-Version: 1.0' . "\r\n" .
        'Content-type:text/html;charset=UTF-8' . "\r\n" .
-       'From: contactcenter@automarcol.com' . "\r\n" .
        'Reply-To: '.$correo. "\r\n" .
        'CC: contactcenter@automarcol.com , isistemas@automarcol.com' . "\r\n" .
        'X-Mailer: PHP/' . phpversion();
