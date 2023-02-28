@@ -218,7 +218,7 @@ table, td { color: #000000; } #u_body a { color: #3598db; text-decoration: none;
       <td style="overflow-wrap:break-word;word-break:break-word;padding:15px 55px 1px;font-family:verdana,geneva;" align="left">
         
   <div style="line-height: 160%; text-align: center; word-wrap: break-word;">
-    <p style="line-height: 160%; text-align: center; margin: 0px;"><span style="color: #2e3995; line-height: 44.8px; font-size: 28px;"><strong><span style="line-height: 44.8px;">PQRS #3 RECIBIDO</span></strong></span></p>
+    <p style="line-height: 160%; text-align: center; margin: 0px;"><span style="color: #2e3995; line-height: 44.8px; font-size: 28px;"><strong><span style="line-height: 44.8px;">PQRS #'.$mx.' RECIBIDO</span></strong></span></p>
   </div>
 
       </td>
