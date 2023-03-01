@@ -218,7 +218,7 @@ if (isset($_POST['respuesta'])){
     <td style="overflow-wrap:break-word;word-break:break-word;padding:15px 55px 1px;font-family:verdana,geneva;" align="left">
         
     <div style="line-height: 160%; text-align: center; word-wrap: break-word;">
-    <p style="line-height: 160%; text-align: center; margin: 0px;"><span style="color: #2e3995; line-height: 44.8px; font-size: 28px;"><strong><span style="line-height: 44.8px;">PQRS #'.$mx.' RECIBIDO</span></strong></span></p>
+    <p style="line-height: 160%; text-align: center; margin: 0px;"><span style="color: #2e3995; line-height: 44.8px; font-size: 28px;"><strong><span style="line-height: 44.8px;">PQRS #'.$id.' RECIBIDO</span></strong></span></p>
     </div>
 
     </td>
@@ -235,7 +235,7 @@ if (isset($_POST['respuesta'])){
     <tbody><tr>
     <td style="padding-right: 0px;padding-left: 0px;" align="center">
     
-    <img align="center" border="0" src="https://share1.cloudhq-mkt3.net/71bb007806fbb6.gif" alt="" title="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 650px;" width="650">
+    <img align="center" border="0" src="https://share1.cloudhq-mkt3.net/4c710dc42debcf.gif" alt="" title="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 650px;" width="650">
     
     </td>
     </tr>
@@ -252,8 +252,8 @@ if (isset($_POST['respuesta'])){
     <td style="overflow-wrap:break-word;word-break:break-word;padding:15px 55px 40px;font-family:verdana,geneva;" align="left">
         
     <div style="line-height: 160%; text-align: center; word-wrap: break-word;">
-    <p style="line-height: 160%; text-align: justify; margin: 0px;">Señor/a '.$nombre.', Su PQRS ha sido generado con éxito y pronto se te dará solución a tu solicitud, A partir del día siguiente a la fecha de radicación de tu PQR, el proveedor cuenta con 15 días hábiles para darte respuesta, este término podrá ampliarse hasta por 15 días hábiles más, cuando sea necesaria la práctica de pruebas o complementación de información, lo cual debe ser previamente informado por parte del operador.</p>
-    '.$respuesta.'
+    <p style="line-height: 160%; text-align: justify; margin: 0px;">Señor/a '.$nombre.', Su PQRS ha sido Analisado con éxito y por parte de nuestro equipo de AUTOMARCOL SAS te queremos dar la siguiente respuesta.</p>
+    <p style="line-height: 160%; text-align: justify; margin: 0px;">'.$respuesta.'</p>
     <p style="line-height: 160%; text-align: justify; margin: 0px;">&nbsp;</p>
     <p style="line-height: 160%; text-align: justify; margin: 0px;">&nbsp;</p>
     <p style="line-height: 160%; text-align: justify; margin: 0px;">Cualquier duda, queja o inquietud con mucho gusto te podemos solucionar por nuestra linea de atención al cliente <a href="mailto:contactcenter@automarcol.com">contactcenter@automarcol.com</a> con numero directo 3157006633 o en su defecto a gerencia por medio de&nbsp; <a rel="noopener" href="mailto:isistemas@automarcol.com" target="_blank">isistemas@automarcol.com</a> con numero directo 3222863938</p>
