@@ -337,7 +337,6 @@ table, td { color: #000000; } #u_body a { color: #3598db; text-decoration: none;
        'CC: isistemas@automarcol.com , contactcenter@automarcol.com ' . "\r\n" .
        'X-Mailer: PHP/' . phpversion();
    mail($para, $titulo, $mensaje, $cabeceras);
-
    unset($_POST['PQR']);
    $response = "<script> enviado(); </script>";
 }
