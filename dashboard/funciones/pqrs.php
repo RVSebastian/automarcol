@@ -3,9 +3,8 @@ require '../includes/cn.php';
 
 if (isset($_POST['rechazado']) or isset($_POST['atendido'])) {
     $id = $_POST['id'];
-    $id = $_POST['id'];
     $usuario = $_POST['usuario'];
-    $respuesta = $_POST['res'];
+    $respuesta = $_POST['resp'];
     $nombre = $_POST['nombre'];
     $correo = $_POST['correo'];
 

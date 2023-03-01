@@ -158,6 +158,7 @@
                                     <div class="flex items-center p-6 space-x-2 border-t  bg-gray-100 rounded-b">
                                         <form method='POST' action="./funciones/pqrs.php">
                                             <input type="hidden" name="id" value='<?php echo $row['id'] ?>'>
+                                            <input type="hidden" name="resp" value='<?php echo $row['respuesta'];?>'>
                                             <input type="hidden" name="correo" value='<?php echo $row['correo'] ?>'>
                                             <input type="hidden" name="nombre" value='<?php echo $row['nombre'] ?> <?php echo $row['apellido'] ?>'>
                                             <input type="hidden" name="usuario"
