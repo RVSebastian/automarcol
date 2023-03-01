@@ -8,7 +8,7 @@ if (isset($_POST['rechazado']) or isset($_POST['atendido'])) {
     $respuesta = $_POST['res'];
     $nombre = $_POST['nombre'];
     $correo = $_POST['correo'];
-    
+
     if (isset($_POST['rechazado'])) {
         $accion = 'Rechazado';
     }else {
@@ -251,7 +251,7 @@ if (isset($_POST['rechazado']) or isset($_POST['atendido'])) {
     <p style="line-height: 160%; text-align: justify; margin: 0px;">Señor/a '.$nombre.', Su PQRS ha sido Finalizado con éxito por parte de nuestro equipo de AUTOMARCOL S.A.S, te agradecemos la espera y espero que te halla complacido la respuesta y recuerda que cualquier duda, queja o inquietud con mucho gusto te podemos solucionar por nuestra linea de atención al cliente contactcenter@automarcol.com con numero directo 3157006633 o en su defecto a gerencia por medio de  isistemas@automarcol.com con numero directo 3222863938.</p>
     <p style="line-height: 160%; text-align: justify; margin: 0px;">&nbsp;</p>
     <p style="line-height: 160%; text-align: justify; margin: 0px;">Respuesta del caso</p>
-    <p style="line-height: 160%; text-align: justify; margin: 0px;">'.$respuesta.'</p>
+    <p style="line-height: 160%; text-align: justify !important; margin: 0px;">'.$respuesta.'</p>
     <p style="line-height: 160%; text-align: justify; margin: 0px;">&nbsp;</p>
     <p style="line-height: 160%; text-align: justify; margin: 0px;">&nbsp;</p>
     </div>
@@ -569,7 +569,8 @@ if (isset($_POST['respuesta'])){
         
     <div style="line-height: 160%; text-align: center; word-wrap: break-word;">
     <p style="line-height: 160%; text-align: justify; margin: 0px;">Señor/a '.$nombre.', Su PQRS ha sido Analisado con éxito y por parte de nuestro equipo de AUTOMARCOL SAS te queremos dar la siguiente respuesta.</p>
-    <p style="line-height: 160%; text-align: justify; margin: 0px;">'.$respuesta.'</p>
+    <p style="line-height: 160%; text-align: justify; margin: 0px;">&nbsp;</p>
+    <p style="line-height: 160%; text-align: justify !important; margin: 0px;">'.$respuesta.'</p>
     <p style="line-height: 160%; text-align: justify; margin: 0px;">&nbsp;</p>
     <p style="line-height: 160%; text-align: justify; margin: 0px;">&nbsp;</p>
     <p style="line-height: 160%; text-align: justify; margin: 0px;">Cualquier duda, queja o inquietud con mucho gusto te podemos solucionar por nuestra linea de atención al cliente <a href="mailto:contactcenter@automarcol.com">contactcenter@automarcol.com</a> con numero directo 3157006633 o en su defecto a gerencia por medio de&nbsp; <a rel="noopener" href="mailto:isistemas@automarcol.com" target="_blank">isistemas@automarcol.com</a> con numero directo 3222863938</p>
