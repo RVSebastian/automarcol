@@ -44,8 +44,21 @@ switch ($marca) {
 
 
 <section class="bg-gray pt-0 mt-0 <?php echo $marca ?>" id="vehiculos">
-<br><br><br><br><br><br><br><br>
-    <?php include'./includes/components/vehiculos/card.php';?>
+    <br><br><br><br><br><br><br><br>
+    <?php 
+    if (empty($data)) {
+        echo '<div id="errori" class="animate__animated animate__fadeIn animate__slow">
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js">
+        </script>
+        <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_suhe7qtm.json"
+            background="transparent" speed="1" style="width: 300px; height: 300px;margin: 0 auto" loop
+            autoplay></lottie-player>
+            <p class="text-center">No se encontro ningun Vehiculo</p>
+            </div> ';
+    }else{
+        include'./includes/components/vehiculos/card.php';
+    }
+    ?>
 </section>
 
 

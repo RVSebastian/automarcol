@@ -155,8 +155,7 @@ $query = "select * from usuarios where "
                 <h2 class="p-0 m-0"><?php echo $datos['Marca']?></h2>
                 <h1 class="pb-0 mb-0 modelo"><?php echo $datos['Version_DescipcionModelo']?></h1>
                 <h1 class="fs-1 fw-bold" style="font-size: 70px;"><?php echo $datos['CostoTotal']?></h1>
-                <a href="https://web.whatsapp.com/send?phone=573222863938" class="btn btn-success fs-3"><i
-                        class="fab fa-whatsapp"></i> Contactar a un Asesor</a>
+      
             </div>
             <img src="./dashboard/galery/<?php echo $datos['Version_DescipcionModelo'].'/'.$datos['CarrouselIMG']?>"
                 class="img-fluid shadow rounded rounded-4" alt=""

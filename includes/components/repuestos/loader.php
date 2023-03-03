@@ -38,7 +38,7 @@ if (empty($data)) {
    <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_suhe7qtm.json"
        background="transparent" speed="1" style="width: 300px; height: 300px;margin: 0 auto" loop
        autoplay></lottie-player>
-       <p class="text-center">No se encontro ningun repuesto de '.$marca.'</p>
+       <p class="text-center">No se encontro ningun repuesto</p>
        </div> 
 ';
 } else {

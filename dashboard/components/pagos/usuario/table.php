@@ -9,14 +9,17 @@
    $result_task = mysqli_query($conn, $sql);
 ?>
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-0 mb-0 pb-0">
-    <div class="p-4" style="height: 60rem">
-        <div class="relative overflow-x-auto bg-white shadow p-4 h-5/6">
-            <table class="w-full text-sm text-center text-gray-500 text-xs " id="mytable">
-                <thead class="text-xs uppercase bg-gray-100 text-gray-900">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-0 mb-0 pb-0 pt-0 mt-0">
+    <div class="p-4 pb-0" style="height: 60rem">
+        <div class="relative overflow-x-auto bg-white shadow h-5/6">
+            <table class="w-full text-sm text-center text-gray-500 text-xs">
+                <thead class="text-xs uppercase bg-blue-900 text-gray-100 sticky top-0 ">
                     <tr>
                         <th scope="col" class="px-2 py-3">
                             ID
+                        </th>
+                        <th scope="col" class="px-2 py-3">
+                            Imagen
                         </th>
                         <th scope="col" class="px-2 py-3">
                             Cuenta
@@ -48,6 +51,9 @@
                             <?php echo $row['id'] ?>
                         </td>
                         <td class="px-2 py-4">
+                            <img src="./galery/pagos/<?php echo $row['img'] ?>" style="height: 200px; margin: 0 auto">
+                        </td>
+                        <td class="px-2 py-4">
                             <?php echo $row['cuenta'] ?>
                         </td>
                         <td class="px-2 py-4">
@@ -73,13 +79,16 @@
             </table>
         </div>
     </div>
-    <div class="p-4" style="height: 60rem">
-        <div class="relative overflow-x-auto bg-white shadow p-4  h-5/6">
+    <div class="p-4 pb-0" style="height: 60rem">
+        <div class="relative overflow-x-auto bg-white shadow h-5/6">
             <table class="w-full text-sm text-center text-gray-500 text-xs ">
-                <thead class="text-xs uppercase bg-gray-100 text-gray-900">
+                <thead class="text-xs uppercase bg-blue-900 text-gray-100 sticky top-0 ">
                     <tr>
                         <th scope="col" class="px-2 py-3">
                             ID
+                        </th>
+                        <th scope="col" class="px-2 py-3">
+                            Imagen
                         </th>
                         <th scope="col" class="px-2 py-3">
                             Cuenta
@@ -109,6 +118,9 @@
                         onclick="openModal(id='<?php echo $row['id'];?>')">
                         <td class="px-2 py-4">
                             <?php echo $row['id'] ?>
+                        </td>
+                        <td class="px-2 py-4">
+                            <img src="./galery/pagos/<?php echo $row['img'] ?>" style="height: 200px; margin: 0 auto">
                         </td>
                         <td class="px-2 py-4">
                             <?php echo $row['cuenta'] ?>
@@ -141,14 +153,13 @@
 <?php
 foreach ($result_task as $row) {
     include '../../../components/pagos/usuario/viewpay.php'; 
-    include '../../../components/pagos/usuario/viewimg.php' ;
 }
 ?>
 
 <script>
 function openModal(id) {
     const modalID = document.getElementById('viewpay' + id);
-    const modalBG = document.getElementById('backdrop'+ id);
+    const modalBG = document.getElementById('backdrop' + id);
     console.log(modalID);
     modalID.classList.remove("hidden");
     modalBG.classList.remove("hidden");
@@ -156,14 +167,15 @@ function openModal(id) {
 
 function closeModal(id) {
     const modalID = document.getElementById('viewpay' + id);
-    const modalBG = document.getElementById('backdrop'+ id);
+    const modalBG = document.getElementById('backdrop' + id);
     console.log(modalID);
     modalID.classList.add("hidden");
     modalBG.classList.add("hidden");
 }
-function openImg(id){
+
+function openImg(id) {
     const modalID = document.getElementById('imgmodal' + id);
-    const modalBG = document.getElementById('backdrop'+ id);
+    const modalBG = document.getElementById('backdrop' + id);
     console.log(modalID);
     modalID.classList.remove("hidden");
     modalBG.classList.remove("hidden");

@@ -29,19 +29,19 @@ switch ($marca) {
         break;
     // URL DE REPUESTOS
     case 'RFORD':
-            $url = 'https://apiautomarcol.up.railway.app/api/ford/rep';
+            $url = 'https://apiautomarcol.up.railway.app/api/ford/rep/all';
             break;
     case 'RBAJAJ':
-            $url = 'https://apiautomarcol.up.railway.app/api/bajaj/rep';
+            $url = 'https://apiautomarcol.up.railway.app/api/bajaj/rep/all';
             break;
     case 'RPEUGEOT':
-            $url = 'https://apiautomarcol.up.railway.app/api/peugeot/rep';
+            $url = 'https://apiautomarcol.up.railway.app/api/peugeot/rep/all';
             break;
     case 'RFOTON':
-            $url = 'https://apiautomarcol.up.railway.app/api/foton/rep';
+            $url = 'https://apiautomarcol.up.railway.app/api/foton/rep/all';
             break;
     case 'RFCA':
-            $url = 'https://apiautomarcol.up.railway.app/api/fca/rep';
+            $url = 'https://apiautomarcol.up.railway.app/api/fca/rep/all';
             break;
     default:
         $url = 'none';
@@ -120,7 +120,7 @@ if (isset($repuesto)) {
         </thead>
         <tbody class="h-9 overflow-y-scroll">
             <?php 
-                               foreach ($data as $datos) { 
+                               foreach ($data[0] as $datos) { 
                                 ?>
             <tr class="border-b text-slate-900">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">

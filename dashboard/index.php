@@ -12,12 +12,12 @@
         unset($data);
     }
     $data = array(
-        'initialMonth' => '',
+        'initialMonth' => '1',
         'finalMonth' => '',
-        'initialYear' => '',
-        'finalYear' => '',
-        'initialDay' => '',
-        'finalDay' => '',
+        'initialYear' => '2023',
+        'finalYear' => '2023',
+        'initialDay' => '1',
+        'finalDay' => '31',
     );
     $marcas = array(
         "ford", "bajaj", "foton", "fca", "peugeot"
