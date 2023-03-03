@@ -65,7 +65,7 @@
         const ctx = document.getElementById('myChart');
 
         new Chart(ctx, {
-            type: 'line',
+            type: 'doughnut',
             data: {
                 labels: ['1', '2', '3', '4', '5', '6'],
                 datasets: [{
@@ -85,7 +85,7 @@
         const ctx2 = document.getElementById('myChart2');
 
         new Chart(ctx2, {
-            type: 'line',
+            type: 'doughnut',
             data: {
                 labels: ['1', '2', '3', '4', '5', '6'],
                 datasets: [{
@@ -105,7 +105,7 @@
         const ctx3 = document.getElementById('myChart3');
 
         new Chart(ctx3, {
-            type: 'line',
+            type: 'doughnut',
             data: {
                 labels: ['1', '2', '3', '4', '5', '6'],
                 datasets: [{

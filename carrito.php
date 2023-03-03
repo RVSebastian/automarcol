@@ -8,7 +8,7 @@
 
 <br><br><br><br>
 <section class="bg-gray">
-<br><br><br><br><br>
+    <br><br><br><br><br>
     <div class="container carrito">
         <div class="row">
             <div class="col-md-6">
@@ -60,7 +60,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="p-4" style="max-width: 600px;">
                     <h2 class="card-title fs-1 text-center">Costo total $VALOR</h5>
                         <p class="card-title fs-3 text-center">Cantidad de items: 3 </p>
@@ -142,24 +142,34 @@
 
                         </div>
 
-                        <input type="submit" value="Realizar pago" class="submit-btn">
-
+                  
+                        <form class="submit-btn">
+                            <script src='https://checkout.epayco.co/checkout.js'
+                                data-epayco-key='469fe269ca4ceef7be7c63238ce4653c' class='epayco-button'
+                                data-epayco-amount='23800' data-epayco-tax='3800.00' data-epayco-tax-ico='0.00'
+                                data-epayco-tax-base='20000' data-epayco-name='test' data-epayco-description='test'
+                                data-epayco-currency='cop' data-epayco-country='CO' data-epayco-test='true'
+                                data-epayco-external='true' data-epayco-response='' data-epayco-confirmation=''
+                                data-epayco-button='https://multimedia.epayco.co/dashboard/btns/btn6.png'>
+                            </script>
+                        </form>
                     </form>
 
                 </div>
-            
+
 
 
 
             </div>
         </div>
-        
+
         <br><br>
         <br><br><br>
     </div>
 </section>
 <style>
-.container form , .carrito .card {
+.container form,
+.carrito .card {
     width: 100%;
     background: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
