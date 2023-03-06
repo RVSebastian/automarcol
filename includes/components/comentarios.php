@@ -1,6 +1,5 @@
 <section class="bg-gray">
-    <div class="container rounded shadow bg-white p-4">
-
+    <div class="container rounded  bg-white p-4">
         <div id="disqus_thread"></div>
     </div>
 

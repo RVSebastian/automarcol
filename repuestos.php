@@ -77,8 +77,6 @@ span {
 $modelo = $_GET['parte'];
 $marca = strtoupper($_GET['marca']);
 
-echo $marca;
-
 switch ($marca) {
         case 'REPUESTOS FORD':
             $url = 'https://apiautomarcol.up.railway.app/api/ford/rep';
@@ -228,8 +226,9 @@ $data = $filtro;
                                 style="color: var(--main)"><?php echo $datos['existencia'];?></span>
                         </p>
                         <h1 class="fs-1 fw-bold" style="color: var(--main)"><?php echo $datos['Costo$'];?></h1>
-                        
-                        <button class="btn btn-dark fs-2 p-2"><i class='bx bx-shopping-bag bx-tada mx-2'></i> Añadir al carrito</button> 
+                        <button class="btn btn-dark fs-2 p-2" id="añadirc"><i
+                                class='bx bx-shopping-bag bx-tada mx-2'></i> Añadir al
+                            carrito </button>
                 </div>
                 <div class="bg-light rounded p-4 mb-4 mt-4 otro">
                     <h1 class="fs-2 text-muted">Detalle del articulo</h1>
@@ -262,11 +261,94 @@ $data = $filtro;
             </div>
 
         </div>
-
+        <input type="hidden" id="parte" value="<?php echo $datos['Parte'] ?>">
+        <input type="hidden" id="existencia" value="<?php echo $datos['existencia'] ?>">
+        <input type="hidden" id="costo" value="<?php echo $datos['Costo$'] ?>">
+        <input type="hidden" id="desc" value="<?php echo $datos['Descripcion'] ?>">
+        <input type="text" id="imagen" value='<?php echo json_encode($imagenes)?>'></input>
     </div>
-
 </section>
 <?php } ?>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    $("#añadirc").click(function() {
+        const parte = document.getElementById("parte").value;
+        const stock = document.getElementById("existencia").value;
+        const precio = document.getElementById("costo").value;
+        const descripcion = document.getElementById("desc").value;
+        const imagen = document.getElementById("imagen").value;
+        swal({
+            title: 'Confirmacion',
+            text: 'Estas comprando ' + descripcion + ' con un costo de ' + precio +
+                ' la unidad',
+            icon: "warning",
+            buttons: {
+                cancel: "Cancelar",
+                catch: {
+                    id: "comprar",
+                    text: "Comprar",
+                    value: "true",
+                },
+            },
+
+            content: {
+                element: "input",
+                attributes: {
+                    id: "cantidad",
+                    placeholder: "Escribe la cantidad a comprar",
+                    type: "number",
+                },
+            },
+        });
+        $(".swal-button--catch").click(function() {
+            var cantidad = document.getElementById("cantidad").value;
+            if (cantidad > stock) {
+                swal({
+                    title: 'Advertencia',
+                    text: 'Este Articulo tiene un stock de '+ stock + ' , por favor añade un valor dentro de dicha cantidad',
+                    icon: "error",
+                    buttons: {
+                        cancel: "Cancelar",
+                        catch: {
+                            id: "comprar",
+                            text: "Comprar",
+                            value: "true",
+                        },
+                    },
+
+                    content: {
+                        element: "input",
+                        attributes: {
+                            id: "cantidad",
+                            placeholder: "Escribe la cantidad a comprar",
+                            type: "number",
+                        },
+                    },
+                });
+            } else {
+                $.ajax({
+                    type: "POST",
+                    url: "./includes/php/carrito.php",
+                    data: {
+                        parte,
+                        descripcion,
+                        stock,
+                        cantidad,
+                        precio,
+                        imagen,
+                        guardar: 'true',
+                    }
+                }).done(function(res) {
+              
+                });
+            }
+        });
+    });
+});
+</script>
+
 
 <?php include'./includes/components/comentarios.php';?>
 <?php include'./includes/components/footer.php';?>

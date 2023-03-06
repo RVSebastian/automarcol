@@ -220,11 +220,18 @@ p {
                     <li class="nav-item m-sm-2">
                         <a class="nav-link text-white" href="./index#contact" class="fs-2">Contact</a>
                     </li>
-                 
+
                     <li class="nav-item m-sm-2">
-                        <a class="nav-link text-white" href="./carrito" class="fs-1 fw-bold carrito bx-tada">Carrito</a>
+                        <a type="button" href="./carrito" class="nav-link text-white position-relative" style="background-color: transparent;">
+                        <i class='bx bx-store-alt mr-4' ></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                <?php echo count($_SESSION['carrito'])?>+
+                                <span class="visually-hidden">unread messages</span>
+                            </span>
+                        </a>
                     </li>
-               
+
                 </ul>
             </div>
         </div>

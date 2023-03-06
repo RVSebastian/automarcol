@@ -1,160 +1,180 @@
 <?php include'./includes/components/header.php';?>
-
+<?php require'./includes/php/carrito.php';?>
 <style>
 .bg-dark {
     background-color: #2c3b6d !important;
 }
-</style>
 
-<br><br><br><br>
+.flickity-prev-next-button {
+    top: 80%;
+}
+</style>
+<br><br><br>
 <section class="bg-gray">
-    <br><br><br><br><br>
+    <br><br><br><br>
     <div class="container carrito">
         <div class="row">
             <div class="col-md-6">
-                <div class="card border-0 mb-3" style="max-width: 600px;">
+                <?php foreach ($_SESSION['carrito'] as $parte => $row):   
+                $objet = json_decode($_SESSION['carrito'][$parte]['imagen']);
+                ?>
+                <div class="card border-0 mb-3">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="./image/base.png" class="img-fluid rounded-start" alt="...">
+                            <div class="carousel carousel-main"
+                                data-flickity='{"contain": true, "prevNextButtons": false, "pageDots": false}'>
+                                <?php 
+                    if (!empty($objet->img1 . PHP_EOL )) {
+                    ?>
+                                <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
+                                        onerror="this.onerror=null;this.src='https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-1_large.png?format=jpg&quality=90&v=1530129113';"
+                                        src="./dashboard/galery/<?php echo $_SESSION['carrito'][$parte]['parte']?>/<?php echo $objet->img1 . PHP_EOL;  ?>"
+                                        alt="">
+                                </div>
+                                <?php 
+                    }
+                    ?>
+                                <?php 
+                    if (!empty($objet->img2 . PHP_EOL )) {
+                    ?>
+                                <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
+                                        onerror="this.onerror=null;this.src='https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-1_large.png?format=jpg&quality=90&v=1530129113';"
+                                        src="./dashboard/galery/<?php echo $_SESSION['carrito'][$parte]['parte']?>/<?php echo $objet->img2 . PHP_EOL;  ?>"
+                                        alt="">
+                                </div>
+                                <?php 
+                    }
+                    ?>
+                                <?php 
+                    if (!empty($objet->img3 . PHP_EOL )) {
+                    ?>
+                                <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
+                                        onerror="this.onerror=null;this.src='https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-1_large.png?format=jpg&quality=90&v=1530129113';"
+                                        src="./dashboard/galery/<?php echo $_SESSION['carrito'][$parte]['parte']?>/<?php echo $objet->img3 . PHP_EOL;  ?>"
+                                        alt="">
+                                </div>
+                                <?php 
+                    }
+                    ?>
+                                <?php 
+                    if (!empty($objet->img4 . PHP_EOL )) {
+                    ?>
+                                <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
+                                        onerror="this.onerror=null;this.src='https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-1_large.png?format=jpg&quality=90&v=1530129113';"
+                                        src="./dashboard/galery/<?php echo $_SESSION['carrito'][$parte]['parte']?>/<?php echo $objet->img4 . PHP_EOL;  ?>"
+                                        alt="">
+                                </div>
+                                <?php 
+                    }
+                    ?>
+                                <?php 
+                    if (!empty($objet->img5 . PHP_EOL )) {
+                    ?>
+                                <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
+                                        onerror="this.onerror=null;this.src='https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-1_large.png?format=jpg&quality=90&v=1530129113';"
+                                        src="./dashboard/galery/<?php echo $_SESSION['carrito'][$parte]['parte']?>/<?php echo $objet->img5 . PHP_EOL;  ?>"
+                                        alt="">
+                                </div>
+                                <?php 
+                    }
+                    ?>
+                            </div>
                         </div>
                         <div class="col-md-8">
-                            <div class="card-body mx-auto p-4">
-                                <h2 class="card-title fs-3">Nombre del Articulo</h5>
-                                    <p class="card-title fs-3">Precio: $Valor </p>
-                                    <p class="card-title fs-3">Cantidad: 3 </p>
-                                    <p class="fw-bold fs-3 text-gray-100" style="color: var(--main)"><i
-                                            class='bx bx-map'></i>Entrega en sucursal</p>
+                            <div class="card-body mx-auto p-4 my-4">
+                                <h2 class="card-title fs-3">Codigo: <?php echo $_SESSION['carrito'][$parte]['parte']; ?>
+                                    </h5>
+                                    <h2 class="card-title fs-3">
+                                        Descripcion: <?php echo $_SESSION['carrito'][$parte]['descripcion']; ?></h5>
+                                        <p class="card-title fs-3">Precio:
+                                            <?php echo $_SESSION['carrito'][$parte]['precio']; ?> </p>
+                                        <p class="card-title fs-3">Cantidad:
+                                            <?php echo $_SESSION['carrito'][$parte]['cantidad']; ?> </p>
+                                        <p class="fw-bold fs-3 text-gray-100" style="color: var(--main)"><i
+                                                class='bx bx-map'></i>Entrega en sucursal</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card border-0 mb-3" style="max-width: 600px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="./image/base.png" class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body mx-auto p-4">
-                                <h2 class="card-title fs-3">Nombre del Articulo</h5>
-                                    <p class="card-title fs-3">Precio: $Valor </p>
-                                    <p class="card-title fs-3">Cantidad: 3 </p>
-                                    <p class="fw-bold fs-3 text-success" style="color: var(--main)"><i
-                                            class='bx bx-package'></i>Envio gratis</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card border-0 mb-3" style="max-width: 600px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="./image/base.png" class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body mx-auto p-4">
-                                <h2 class="card-title fs-3">Nombre del Articulo</h5>
-                                    <p class="card-title fs-3">Precio: $Valor </p>
-                                    <p class="card-title fs-3">Cantidad: 3 </p>
-                                    <p class="fw-bold fs-3 text-success" style="color: var(--main)"><i
-                                            class='bx bx-package'></i>Envio gratis</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="p-4" style="max-width: 600px;">
-                    <h2 class="card-title fs-1 text-center">Costo total $VALOR</h5>
-                        <p class="card-title fs-3 text-center">Cantidad de items: 3 </p>
-                </div>
-
+                <?php endforeach; ?>
             </div>
-            <div class="col-md-6 sticky">
+            <div class="col-md-6 sticky sticky-top" style="top:150px !important;">
                 <div class="container">
                     <form action="">
                         <div class="row p-4">
-
                             <div class="col">
+                                <div class="p-2">
+                                    <table class="table text-stard fs-3 p-4 table-striped">
+                                        <thead>
+                                            <tr class="">
+                                                <th scope="col">parte</th>
+                                                <th scope="col">cantidad</th>
+                                                <th scope="col">descuento</th>
+                                                <th scope="col">iva</th>
+                                                <th scope="col">valor</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php foreach ($_SESSION['carrito'] as $parte => $row):   ?>
+                                            <tr class="p-2 m-2">
+                                                <td><?php echo $_SESSION['carrito'][$parte]['descripcion']; ?></td>
+                                                <td><?php echo $_SESSION['carrito'][$parte]['cantidad']; ?></td>
+                                                <td>0%</td>
+                                                <td>19%</td>
+                                                <td><?php echo $_SESSION['carrito'][$parte]['precio']; ?></td>
+                                            </tr>
+                                            <?php endforeach; ?>
+                                            <?php
+                                             $valores = valor_pagar();
+                                            ?>
 
-                                <h3 class="title">billing address</h3>
+                                            <tr class="">
+                                                <td>Total</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>$ <?php echo get_total();?></td>
+                                            </tr>
+                                            <tr class="">
+                                                <td>Total + descuentos</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>$ <?php echo get_total(); ?></td>
 
-                                <div class="inputBox">
-                                    <span>full name :</span>
-                                    <input type="text" placeholder="john deo">
-                                </div>
-                                <div class="inputBox">
-                                    <span>email :</span>
-                                    <input type="email" placeholder="example@example.com">
-                                </div>
-                                <div class="inputBox">
-                                    <span>address :</span>
-                                    <input type="text" placeholder="room - street - locality">
-                                </div>
-                                <div class="inputBox">
-                                    <span>city :</span>
-                                    <input type="text" placeholder="mumbai">
-                                </div>
+                                            </tr>
+                                            <tr class="fw-semibold">
+                                                <td>Total + inpuestos</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>$ <?php echo get_total_iva(); ?></td>
 
-                                <div class="flex">
-                                    <div class="inputBox">
-                                        <span>state :</span>
-                                        <input type="text" placeholder="india">
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                    <div class="pt-2 fs-3">
+                                        <label class="form-check-label fw-semibold" for="flexCheckDefault">
+                                            Información para el domicilio
+                                        </label>
+                                        <p>El domicilio es totalmente gratis, los envios a nivel nacional se realizan
+                                            con SERVIENTREGA y tiene un exedente en el costo dependiendo el peso de la
+                                            mercancia, aplica TYC</p>
                                     </div>
-                                    <div class="inputBox">
-                                        <span>zip code :</span>
-                                        <input type="text" placeholder="123 456">
-                                    </div>
+                                    <input type="text" class="fs-4 pt-2" style="width: 100%" placeholder='direccion:'>
+                                    <hr>
+                                    <input type="text" class="fs-4 pt-2" placeholder='Telefono:'>
+                                    <hr>
                                 </div>
-
                             </div>
-
-                            <div class="col">
-
-                                <h3 class="title">payment</h3>
-
-                                <div class="inputBox">
-                                    <span>cards accepted :</span>
-                                    <img src="./image/card_img.png" alt="">
-                                </div>
-                                <div class="inputBox">
-                                    <span>name on card :</span>
-                                    <input type="text" placeholder="mr. john deo">
-                                </div>
-                                <div class="inputBox">
-                                    <span>credit card number :</span>
-                                    <input type="number" placeholder="1111-2222-3333-4444">
-                                </div>
-                                <div class="inputBox">
-                                    <span>exp month :</span>
-                                    <input type="text" placeholder="january">
-                                </div>
-
-                                <div class="flex">
-                                    <div class="inputBox">
-                                        <span>exp year :</span>
-                                        <input type="number" placeholder="2022">
-                                    </div>
-                                    <div class="inputBox">
-                                        <span>CVV :</span>
-                                        <input type="text" placeholder="1234">
-                                    </div>
-                                </div>
-
-                            </div>
-
                         </div>
 
-                  
-                        <form class="submit-btn">
-                            <script src='https://checkout.epayco.co/checkout.js'
-                                data-epayco-key='469fe269ca4ceef7be7c63238ce4653c' class='epayco-button'
-                                data-epayco-amount='23800' data-epayco-tax='3800.00' data-epayco-tax-ico='0.00'
-                                data-epayco-tax-base='20000' data-epayco-name='test' data-epayco-description='test'
-                                data-epayco-currency='cop' data-epayco-country='CO' data-epayco-test='true'
-                                data-epayco-external='true' data-epayco-response='' data-epayco-confirmation=''
-                                data-epayco-button='https://multimedia.epayco.co/dashboard/btns/btn6.png'>
-                            </script>
-                        </form>
-                    </form>
+                        <div class="p-4">
+                            <p class="text-center">La pasarela de pagos se añadira proximamente</p>
 
+                        </div>
+                    </form>
                 </div>
 
 
@@ -242,5 +262,5 @@
     background: #2ecc71;
 }
 </style>
-
+<br><br><br><br><br><br><br>
 <?php include'./includes/components/footer.php';?>
