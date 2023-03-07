@@ -11,11 +11,19 @@ if (!isset($_SESSION['carrito'])) {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+h1,h2,h3,h4,h5,h6{
+    font-weight: 700;
+}
 p {
     font-size: 13px !important;
     text-align: justify !important;
 }
-
+.onhov:hover img {
+    -webkit-transform: rotate(1deg) scale(1.4);
+    transform: scale(1.1);
+    -webkit-transition: .6s ease-in-out;
+    transition: .6s ease-in-out;
+}
 .bg-dark {
     background-color: #2c3b6d !important;
 }
@@ -153,14 +161,16 @@ p {
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="anime.min.js"></script>
     <script>
     ScrollReveal().destroy();
     </script>
+    
 </head>
 
 <body class="bg-gray">
     <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg pt-0 mt-0 shadow"
-        style="  background-color: #2c3b6d !important;" id="nav">
+        style="background-color: #2c3b6d !important;" id="nav">
         <div class="container-lg p-4 pb-2 pt-0 ">
             <a class="navbar-brand fs-1 text-white mb-2 p-4" href="./index"><img src="./image/logo.png"
                     style="width: 27rem" alt=""></a>

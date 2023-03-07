@@ -15,7 +15,18 @@
     <div class="container carrito">
         <div class="row">
             <div class="col-md-6">
-                <?php foreach ($_SESSION['carrito'] as $parte => $row):   
+                <?php 
+                $contador = count($_SESSION['carrito']);
+                if ($contador == 0) {
+                    echo '
+                    <div style="margin: 0 auto"> 
+                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                    <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_m3mzsgwp.json"  background="transparent"  speed="1"  style="width: 50rem; height: 50rem;"  loop  autoplay></lottie-player>
+                    <p class="p-2 text-center fs-4 fw-semibold">Aun no tienes nada en tu carrito</p>
+                    </div>
+                    ';
+                 }
+                foreach ($_SESSION['carrito'] as $parte => $row):   
                 $objet = json_decode($_SESSION['carrito'][$parte]['imagen']);
                 ?>
                 <div class="card border-0 mb-3">
@@ -98,6 +109,8 @@
                 </div>
                 <?php endforeach; ?>
             </div>
+
+
             <div class="col-md-6 sticky sticky-top" style="top:150px !important;">
                 <div class="container">
                     <form action="">

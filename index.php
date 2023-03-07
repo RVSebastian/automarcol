@@ -134,7 +134,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 .card-marcas:hover .titulo-marca {
-    bottom: 170;
+    bottom: 180;
     left: 20;
 }
 
@@ -160,6 +160,12 @@ if (session_status() === PHP_SESSION_NONE) {
 <br>
 <br>
 <br>
+<script>
+anime({
+    targets: '.test',
+    translateX: 250
+});
+</script>
 <section class="bg-gray" id="vehiculos">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
@@ -191,8 +197,8 @@ if (session_status() === PHP_SESSION_NONE) {
 
                                 <h1 class="fw-semibold titulo-marca texto">Vehiculos Peugeot</h1>
                                 <div class="oculto texto">
-                                    <h3>Ya llegó a Colombia la nueva Ford Bronco, una camioneta lista para la
-                                        aventura.</h3>
+                                    <h3>Con nosotros podrás simular tu financiación o reservar tu próximo Peugeot de
+                                        manera online.</h3>
                                     <p>Ver Catalogo</p>
                                 </div>
                                 <div class="sombral"></div>
@@ -208,8 +214,8 @@ if (session_status() === PHP_SESSION_NONE) {
 
                                 <h1 class="fw-semibold titulo-marca texto">Vehiculos Foton</h1>
                                 <div class="oculto texto">
-                                    <h3>Ya llegó a Colombia la nueva Ford Bronco, una camioneta lista para la
-                                        aventura.</h3>
+                                    <h3>El quinto mayor fabricante de automóviles de China, con ventas anuales sobre el
+                                        millón de unidades.</h3>
                                     <p>Ver Catalogo</p>
                                 </div>
                                 <div class="sombral"></div>
@@ -225,8 +231,8 @@ if (session_status() === PHP_SESSION_NONE) {
 
                                 <h1 class="fw-semibold titulo-marca texto">Vehiculos Bajaj</h1>
                                 <div class="oculto texto">
-                                    <h3>Ya llegó a Colombia la nueva Ford Bronco, una camioneta lista para la
-                                        aventura.</h3>
+                                    <h3>Bajaj ha diseñado de manera inteligente la Cámara de Expansión de Torque ó
+                                        ExhausTEC.</h3>
                                     <p>Ver Catalogo</p>
                                 </div>
                                 <div class="sombral"></div>
@@ -234,16 +240,16 @@ if (session_status() === PHP_SESSION_NONE) {
                             <a href="./listado?marca=Bajaj" class="stretched-link texto"></a>
                         </div>
                     </div>
-                   
+
                     <div class="swiper-slide">
                         <div class="shadow card text-white card-marcas border-0 rounded rounded-4"
                             style="background-image: url('https://electrek.co/wp-content/uploads/sites/3/2019/12/jeep-phev-1-.jpg?quality=82&strip=all');"
                             id="carta">
                             <div class="" style="background: linear-gradient(180deg,black,rgba(0,57,81,0));">
-                                <h1 class="fw-semibold titulo-marca texto">Vehiculos FCA</h1>
+                                <h1 class="fw-semibold titulo-marca texto">Vehiculos FJDR</h1>
                                 <div class="oculto texto">
-                                    <h3>Ya llegó a Colombia la nueva Ford Bronco, una camioneta lista para la
-                                        aventura.</h3>
+                                    <h3>Desde los trabajos más exigentes hasta los viajes más largos, la RAM 700 SLT te
+                                        llevará a donde necesites llegar.</h3>
                                     <p>Ver Catalogo</p>
                                 </div>
                                 <div class="sombral"></div>
@@ -394,6 +400,9 @@ option {
     font-weight: 500;
     color: #2C2A29 !important;
 }
+.animate__animated.animate__pulse {
+  --animate-duration: 7s;
+}
 </style>
 <script>
 $(document).ready(function() {
@@ -434,9 +443,7 @@ $(document).ready(function() {
                 $("#error").show(), $('$cargando').hide();
             });
     };
-    $( document ).ready( cargar );
-
-
+    $(document).ready(cargar);
 });
 </script>
 <section class="vehicles bg-gray" id="repuestos">
@@ -447,7 +454,7 @@ $(document).ready(function() {
                     <div class="card-body p-4 m-2 sticky rounded  shadow rounded-3 p-2 bg-white "
                         style="top:150px !important;">
                         <h2 class="p-2">Buscar por Marca</h2>
-                   
+
                         <ul class="list-group list-group-flush fs-3">
                             <li class="list-group-item border-0"><a href="#" id='FORD'>Ford</a></li>
                             <li class="list-group-item border-0"><a href="#" id='FJDR'>FJDR</a></li>
@@ -481,10 +488,126 @@ $(document).ready(function() {
             </div>
         </div>
 </section>
+<div class="container-xxl py-5" id="test">
+    <div class="container">
+        <div class="row g-5 mb-5">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s"
+                style="visibility: visible; animation-delay: 0.1s; animation-name: test;">
+                <div class="position-relative overflow-hidden rounded ps-5 pt-5 h-100" style="min-height: 550px">
+                    <img class="position-absolute w-100 h-100 animate__animated animate__slow animate__pulse animate__infinite"
+                        src="https://img.freepik.com/foto-gratis/atento-trabajo-mecanico-computadora-portatil_1170-1546.jpg?w=1380&t=st=1678216536~exp=1678217136~hmac=fd60e2a711598ba85d6c49f9ae106fd6be521ea5381f411c248649b6757c62e4"
+                        alt="" style="object-fit: cover">
+                    <div class="position-absolute top-0 start-0 bg-gray rounded pe-3 pb-3"
+                        style="width: 200px; height: 200px">
+                        <div class="d-flex flex-column justify-content-center text-center bg-dark rounded h-100 p-3">
+                            <h1 class="text-white mb-0">Horarios</h1>
+                            <h2 class="text-white">De Atencion</h2>
+                            <h2 class="text-white">Taller</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s"
+                style="visibility: visible; animation-delay: 3s; animation-name: fadeInUp;">
+                <div class="h-100 pt-2">
+                    <h2 class="my-5 text-justify p-2" style="font-size: 3rem; color: var(--main)">
+                        TALLER AUTORIZADO MULTIMARCA
+                    </h2>
+                    <p class="mb-4 fs-4">
+                        ¡Bienvenidos a nuestro taller multimarcas en Cúcuta! Somos un equipo de expertos en reparación y
+                        mantenimiento de vehículos de todas las marcas y modelos. Nos especializamos en brindar un
+                        servicio de alta calidad, con rapidez y eficiencia.
+                    </p>
+                    <p class="mb-4 fs-4">
+                        En nuestro taller encontrarás tecnología de última generación y herramientas especializadas para
+                        garantizar que tu vehículo reciba el mejor tratamiento posible. Además, nuestro personal está
+                        altamente capacitado y cuenta con años de experiencia en el campo de la mecánica automotriz.
+                    </p>
+                    <p class="mb-4 fs-4">
+                        Nos aseguramos de que nuestros clientes se sientan cómodos y confiados en nuestra atención
+                        personalizada. Queremos que tu experiencia sea excepcional, desde el momento en que ingresas a
+                        nuestro taller hasta el momento en que recibes tu vehículo totalmente reparado.
+                    </p>
+                    <p class="mb-4 fs-4">
+                        Te invitamos a visitarnos y dejarnos demostrarte por qué somos la mejor opción para el cuidado
+                        de tu vehículo en Cúcuta. ¡Te esperamos!
+                    </p>
+                    <p class="mb-4 fs-4">
+                        Lunes a Viernes de 8:00 a.m hasta las 12:00 p.m, se reanuda de 2:00 p.m a 6:00 p.m
+                    </p>
+                    <p class="mb-4 fs-4">
+                        Sabados de 8:00 a.m a 2:00 p.m, horario continuo
+                    </p>
+                    <hr>
+                    <div class=" mt-4 pt-4">
+                        <div class="d-flex align-items-center">
+                            <img class="flex-shrink-0 rounded-circle me-3" src="img/profile.jpg" alt="">
+                            <h3 class="mb-0">Numero de Atencion: +57 315 7006633</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row g-5 mt-5">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s"
+                style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                <div class="h-100 pt-2">
+                    <h2 class="my-5 text-justify p-2" style="font-size: 3rem; color: var(--main)">
+                        VENTAS DE VEHICULOS NUEVOS
+                    </h2>
+                    <p class="mb-4 fs-4">
+                        ¡Gracias por tu interés en nuestros vehículos! Nuestro horario de atención para ventas es de
+                        lunes a viernes, de 8:00 a.m. a 12:00 p.m, se reanuda de 2:00 pm hasta las 6:pm , Estamos
+                        cerrados los domingos y festivos.
+                    </p>
+                    <p class="mb-4 fs-4">
+                        Durante nuestro horario de atención, nuestro equipo de ventas estará disponible para brindarte
+                        una atención personalizada y responder a todas tus preguntas sobre nuestros vehículos en venta.
+                        Te invitamos a visitarnos en nuestra sala de ventas y explorar nuestra amplia selección de
+                        vehículos de todas las marcas y modelos.
+                    </p>
+                    <p class="mb-4 fs-4">
+                        Si no puedes visitarnos durante nuestro horario de atención, no te preocupes, puedes comunicarte
+                        con nosotros en nuestro sitio web o en nuestras redes sociales. Uno de nuestros representantes
+                        de ventas estará encantado de ayudarte y programar una cita para que puedas ver los vehículos
+                        que te interesan.
+                    </p>
+                    <p class="mb-4 fs-4">
+                        Estamos comprometidos a brindarte el mejor servicio posible y a ayudarte a encontrar el vehículo
+                        que mejor se adapte a tus necesidades y presupuesto. ¡Esperamos verte pronto!
+                    </p>
+                    <hr>
+                    <div class=" mt-4 pt-4">
+                        <div class="d-flex align-items-center">
+                            <img class="flex-shrink-0 rounded-circle me-3" src="img/profile.jpg" alt="">
+                            <h3 class="mb-0">Numero de Atencion: +57 315 7006633</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s"
+                style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                <div class="position-relative overflow-hidden rounded ps-5 pt-5 h-100" style="min-height: 550px">
+                    <img class="position-absolute w-100 h-100 onhov"
+                        src="https://img.freepik.com/foto-gratis/pareja-joven-hablando-vendedor-sala-exposicion-automoviles_1303-20444.jpg?w=1380&t=st=1678216672~exp=1678217272~hmac=0f97a79dbb3ea4bef07a5e266c78bc4f3c24a7e0bb70e71fb495a50c262dd1ef"
+                        alt="" style="object-fit: cover">
+                    <div class="position-absolute top-0 start-0 bg-gray rounded pe-3 pb-3"
+                        style="width: 200px; height: 200px">
+                        <div class="d-flex flex-column justify-content-center text-center bg-dark rounded h-100 p-3">
+                            <h1 class="text-white mb-0">Horarios</h1>
+                            <h2 class="text-white">De Atencion</h2>
+                            <h2 class="text-white">Ventas</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <?php include'./includes/components/anuncios/reviews.php';?>
-<br>
-<br>
 <?php include'./includes/components/anuncios/taller.php';?>
 <style>
 .form-control {
@@ -503,9 +626,5 @@ $(document).ready(function() {
 }
 </style>
 <p id="contact"></p>
-
 <?php include'./includes/components/contact.php';?>
-
-
-
 <?php include'./includes/components/footer.php';?>
