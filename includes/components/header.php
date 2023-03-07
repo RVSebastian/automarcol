@@ -3,7 +3,9 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 } // inicimoas la session nuevamente
-
+if (!isset($_SESSION['carrito'])) {
+    $_SESSION['carrito'] = array();
+  }
 
 ?>
 <style>
