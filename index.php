@@ -401,7 +401,7 @@ option {
     color: #2C2A29 !important;
 }
 .animate__animated.animate__pulse {
-  --animate-duration: 7s;
+  --animate-duration: 5s;
 }
 </style>
 <script>
@@ -490,12 +490,12 @@ $(document).ready(function() {
 </section>
 <div class="container-xxl py-5" id="test">
     <div class="container">
-        <div class="row g-5 mb-5">
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s"
+        <div class="row g-5 mb-5 ">
+            <div class="col-lg-6" data-wow-delay="0.1s"
                 style="visibility: visible; animation-delay: 0.1s; animation-name: test;">
                 <div class="position-relative overflow-hidden rounded ps-5 pt-5 h-100" style="min-height: 550px">
                     <img class="position-absolute w-100 h-100 animate__animated animate__slow animate__pulse animate__infinite"
-                        src="https://img.freepik.com/foto-gratis/atento-trabajo-mecanico-computadora-portatil_1170-1546.jpg?w=1380&t=st=1678216536~exp=1678217136~hmac=fd60e2a711598ba85d6c49f9ae106fd6be521ea5381f411c248649b6757c62e4"
+                        src="./image/t1.jpg"
                         alt="" style="object-fit: cover">
                     <div class="position-absolute top-0 start-0 bg-gray rounded pe-3 pb-3"
                         style="width: 200px; height: 200px">
@@ -541,7 +541,6 @@ $(document).ready(function() {
                     <hr>
                     <div class=" mt-4 pt-4">
                         <div class="d-flex align-items-center">
-                            <img class="flex-shrink-0 rounded-circle me-3" src="img/profile.jpg" alt="">
                             <h3 class="mb-0">Numero de Atencion: +57 315 7006633</h3>
                         </div>
                     </div>
@@ -581,7 +580,6 @@ $(document).ready(function() {
                     <hr>
                     <div class=" mt-4 pt-4">
                         <div class="d-flex align-items-center">
-                            <img class="flex-shrink-0 rounded-circle me-3" src="img/profile.jpg" alt="">
                             <h3 class="mb-0">Numero de Atencion: +57 315 7006633</h3>
                         </div>
                     </div>
@@ -590,8 +588,8 @@ $(document).ready(function() {
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s"
                 style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
                 <div class="position-relative overflow-hidden rounded ps-5 pt-5 h-100" style="min-height: 550px">
-                    <img class="position-absolute w-100 h-100 onhov"
-                        src="https://img.freepik.com/foto-gratis/pareja-joven-hablando-vendedor-sala-exposicion-automoviles_1303-20444.jpg?w=1380&t=st=1678216672~exp=1678217272~hmac=0f97a79dbb3ea4bef07a5e266c78bc4f3c24a7e0bb70e71fb495a50c262dd1ef"
+                    <img class="position-absolute w-100 h-100 animate__animated animate__slow animate__pulse animate__infinite" 
+                    src="./image/t2.jpg"
                         alt="" style="object-fit: cover">
                     <div class="position-absolute top-0 start-0 bg-gray rounded pe-3 pb-3"
                         style="width: 200px; height: 200px">

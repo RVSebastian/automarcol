@@ -11,19 +11,27 @@ if (!isset($_SESSION['carrito'])) {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-h1,h2,h3,h4,h5,h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 700;
 }
+
 p {
     font-size: 13px !important;
     text-align: justify !important;
 }
+
 .onhov:hover img {
     -webkit-transform: rotate(1deg) scale(1.4);
     transform: scale(1.1);
     -webkit-transition: .6s ease-in-out;
     transition: .6s ease-in-out;
 }
+
 .bg-dark {
     background-color: #2c3b6d !important;
 }
@@ -161,11 +169,16 @@ p {
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="anime.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
+    <link rel="stylesheet" href="css/animate.css">
+
     <script>
     ScrollReveal().destroy();
     </script>
-    
+
 </head>
 
 <body class="bg-gray">
@@ -234,8 +247,9 @@ p {
                     </li>
 
                     <li class="nav-item m-sm-2">
-                        <a type="button" href="./carrito" class="nav-link text-white position-relative" style="background-color: transparent;">
-                        <i class='bx bx-store-alt mr-4' ></i>
+                        <a type="button" href="./carrito" class="nav-link text-white position-relative"
+                            style="background-color: transparent;">
+                            <i class='bx bx-store-alt mr-4'></i>
                             <span
                                 class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                 <?php echo count($_SESSION['carrito'])?>+
