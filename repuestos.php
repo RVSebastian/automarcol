@@ -265,12 +265,13 @@ $data = $filtro;
         <input type="hidden" id="existencia" value="<?php echo $datos['existencia'] ?>">
         <input type="hidden" id="costo" value="<?php echo $datos['Costo$'] ?>">
         <input type="hidden" id="desc" value="<?php echo $datos['Descripcion'] ?>">
-        <input type="text" id="imagen" value='<?php echo json_encode($imagenes)?>'></input>
+        <input type="hidden" id="imagen" value='<?php echo json_encode($imagenes)?>'></input>
     </div>
 </section>
 <?php } ?>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
 <script>
 $(document).ready(function() {
     $("#añadirc").click(function() {

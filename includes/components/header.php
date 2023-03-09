@@ -169,11 +169,7 @@ p {
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script>
-    new WOW().init();
-    </script>
-    <link rel="stylesheet" href="css/animate.css">
+    <script src="./includes/js/wow.min.js"></script>
 
     <script>
     ScrollReveal().destroy();
@@ -245,14 +241,13 @@ p {
                     <li class="nav-item m-sm-2">
                         <a class="nav-link text-white" href="./index#contact" class="fs-2">Contact</a>
                     </li>
-
-                    <li class="nav-item m-sm-2">
+                    <li class="nav-item m-sm-2 pt-2">
                         <a type="button" href="./carrito" class="nav-link text-white position-relative"
                             style="background-color: transparent;">
-                            <i class='bx bx-store-alt mr-4'></i>
+                            <i class='bx bxs-cart pe-3' style='color:#ffffff'></i>
                             <span
                                 class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                <?php echo count($_SESSION['carrito'])?>+
+                                <div id="carritonumber"><?php echo count($_SESSION['carrito'])?>+</div>
                                 <span class="visually-hidden">unread messages</span>
                             </span>
                         </a>

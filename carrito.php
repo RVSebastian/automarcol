@@ -10,192 +10,107 @@
 }
 </style>
 <br><br><br>
+<script>
+$(document).ready(function($) {
+    function cargar() {
+        $.ajax({
+                type: "POST",
+                url: "./includes/components/carrito/listado",
+            })
+            .done(function(res) {
+                $("#productos").html(res);
+            });
+        $.ajax({
+                type: "POST",
+                url: "./includes/components/carrito/precios",
+            })
+            .done(function(res) {
+                $("#precios").html(res);
+            })
+    };
+    cargar();
+});
+
+
+function cargar() {
+    $.ajax({
+            type: "POST",
+            url: "./includes/components/carrito/listado",
+            beforeSend: function() {
+                $("#cargando").show();
+            },
+        })
+        .done(function(res) {
+            $("#productos").html(res),$("#cargando").hide();
+        });
+    $.ajax({
+            type: "POST",
+            url: "./includes/components/carrito/precios",
+            beforeSend: function() {
+                $("#cargando").show();
+            },
+        })
+        .done(function(res) {
+            $("#precios").html(res),$("#cargando").hide();;
+        })
+};
+
+function test(parte, value) {
+    if (value == '0 - Eliminar') {
+        $.ajax({
+                type: "POST",
+                data: {
+                    eliminar: parte
+                },
+                url: "./includes/php/carrito",
+                beforeSend: function() {
+                    $("#cargando").show();
+                },
+            })
+            .done(function() {
+                cargar();
+                $("#cargando").hide();
+            });
+    } else {
+        $.ajax({
+                type: "POST",
+                data: {
+                    editar: parte,
+                    cantidad: value,
+                },
+                url: "./includes/php/carrito",
+                beforeSend: function() {
+                    $("#cargando").show();
+                },
+            })
+            .done(function() {
+                cargar();
+                $("#cargando").hide();
+            });
+    }
+}
+</script>
 <section class="bg-gray">
     <br><br><br><br>
     <div class="container carrito">
         <div class="row">
             <div class="col-md-6">
-                <?php 
-                $contador = count($_SESSION['carrito']);
-                if ($contador == 0) {
-                    echo '
-                    <div style="margin: 0 auto"> 
+                <div id="cargando">
                     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                    <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_m3mzsgwp.json"  background="transparent"  speed="1"  style="width: 50rem; height: 50rem;"  loop  autoplay></lottie-player>
-                    <p class="p-2 text-center fs-4 fw-semibold">Aun no tienes nada en tu carrito</p>
-                    </div>
-                    ';
-                 }
-                foreach ($_SESSION['carrito'] as $parte => $row):   
-                $objet = json_decode($_SESSION['carrito'][$parte]['imagen']);
-                ?>
-                <div class="card border-0 mb-3">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <div class="carousel carousel-main"
-                                data-flickity='{"contain": true, "prevNextButtons": false, "pageDots": false}'>
-                                <?php 
-                    if (!empty($objet->img1 . PHP_EOL )) {
-                    ?>
-                                <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                                        onerror="this.onerror=null;this.src='https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-1_large.png?format=jpg&quality=90&v=1530129113';"
-                                        src="./dashboard/galery/<?php echo $_SESSION['carrito'][$parte]['parte']?>/<?php echo $objet->img1 . PHP_EOL;  ?>"
-                                        alt="">
-                                </div>
-                                <?php 
-                    }
-                    ?>
-                                <?php 
-                    if (!empty($objet->img2 . PHP_EOL )) {
-                    ?>
-                                <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                                        onerror="this.onerror=null;this.src='https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-1_large.png?format=jpg&quality=90&v=1530129113';"
-                                        src="./dashboard/galery/<?php echo $_SESSION['carrito'][$parte]['parte']?>/<?php echo $objet->img2 . PHP_EOL;  ?>"
-                                        alt="">
-                                </div>
-                                <?php 
-                    }
-                    ?>
-                                <?php 
-                    if (!empty($objet->img3 . PHP_EOL )) {
-                    ?>
-                                <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                                        onerror="this.onerror=null;this.src='https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-1_large.png?format=jpg&quality=90&v=1530129113';"
-                                        src="./dashboard/galery/<?php echo $_SESSION['carrito'][$parte]['parte']?>/<?php echo $objet->img3 . PHP_EOL;  ?>"
-                                        alt="">
-                                </div>
-                                <?php 
-                    }
-                    ?>
-                                <?php 
-                    if (!empty($objet->img4 . PHP_EOL )) {
-                    ?>
-                                <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                                        onerror="this.onerror=null;this.src='https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-1_large.png?format=jpg&quality=90&v=1530129113';"
-                                        src="./dashboard/galery/<?php echo $_SESSION['carrito'][$parte]['parte']?>/<?php echo $objet->img4 . PHP_EOL;  ?>"
-                                        alt="">
-                                </div>
-                                <?php 
-                    }
-                    ?>
-                                <?php 
-                    if (!empty($objet->img5 . PHP_EOL )) {
-                    ?>
-                                <div class="carousel-cell"> <img class="img-fluid" style="height: 100%; width: 100%"
-                                        onerror="this.onerror=null;this.src='https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-1_large.png?format=jpg&quality=90&v=1530129113';"
-                                        src="./dashboard/galery/<?php echo $_SESSION['carrito'][$parte]['parte']?>/<?php echo $objet->img5 . PHP_EOL;  ?>"
-                                        alt="">
-                                </div>
-                                <?php 
-                    }
-                    ?>
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body mx-auto p-4 my-4">
-                                <h2 class="card-title fs-3">Codigo: <?php echo $_SESSION['carrito'][$parte]['parte']; ?>
-                                    </h5>
-                                    <h2 class="card-title fs-3">
-                                        Descripcion: <?php echo $_SESSION['carrito'][$parte]['descripcion']; ?></h5>
-                                        <p class="card-title fs-3">Precio:
-                                            <?php echo $_SESSION['carrito'][$parte]['precio']; ?> </p>
-                                        <p class="card-title fs-3">Cantidad:
-                                            <?php echo $_SESSION['carrito'][$parte]['cantidad']; ?> </p>
-                                        <p class="fw-bold fs-3 text-gray-100" style="color: var(--main)"><i
-                                                class='bx bx-map'></i>Entrega en sucursal</p>
-                            </div>
-                        </div>
-                    </div>
+                    <lottie-player src="https://lottie.host/ffaf19c2-00c2-4428-a40f-6c7af3493b23/3bKkp03jsa.json"
+                        background="transparent" speed="1" style="width: 300px; height: 300px; margin: 0 auto;" loop
+                        autoplay></lottie-player>
+                    <p class="text-center">Cargando Repuestos</p>
                 </div>
-                <?php endforeach; ?>
+                <div id="productos"></div>
             </div>
 
-
-            <div class="col-md-6 sticky sticky-top" style="top:150px !important;">
+            <div class="col-md-6">
                 <div class="container">
-                    <form action="">
-                        <div class="row p-4">
-                            <div class="col">
-                                <div class="p-2">
-                                    <table class="table text-stard fs-3 p-4 table-striped">
-                                        <thead>
-                                            <tr class="">
-                                                <th scope="col">parte</th>
-                                                <th scope="col">cantidad</th>
-                                                <th scope="col">descuento</th>
-                                                <th scope="col">iva</th>
-                                                <th scope="col">valor</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php foreach ($_SESSION['carrito'] as $parte => $row):   ?>
-                                            <tr class="p-2 m-2">
-                                                <td><?php echo $_SESSION['carrito'][$parte]['descripcion']; ?></td>
-                                                <td><?php echo $_SESSION['carrito'][$parte]['cantidad']; ?></td>
-                                                <td>0%</td>
-                                                <td>19%</td>
-                                                <td><?php echo $_SESSION['carrito'][$parte]['precio']; ?></td>
-                                            </tr>
-                                            <?php endforeach; ?>
-                                            <?php
-                                             $valores = valor_pagar();
-                                            ?>
-
-                                            <tr class="">
-                                                <td>Total</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>$ <?php echo get_total();?></td>
-                                            </tr>
-                                            <tr class="">
-                                                <td>Total + descuentos</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>$ <?php echo get_total(); ?></td>
-
-                                            </tr>
-                                            <tr class="fw-semibold">
-                                                <td>Total + inpuestos</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>$ <?php echo get_total_iva(); ?></td>
-
-                                            </tr>
-                                        </tbody>
-
-                                    </table>
-                                    <div class="pt-2 fs-3">
-                                        <label class="form-check-label fw-semibold" for="flexCheckDefault">
-                                            Información para el domicilio
-                                        </label>
-                                        <p>El domicilio es totalmente gratis, los envios a nivel nacional se realizan
-                                            con SERVIENTREGA y tiene un exedente en el costo dependiendo el peso de la
-                                            mercancia, aplica TYC</p>
-                                    </div>
-                                    <input type="text" class="fs-4 pt-2" style="width: 100%" placeholder='direccion:'>
-                                    <hr>
-                                    <input type="text" class="fs-4 pt-2" placeholder='Telefono:'>
-                                    <hr>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-4">
-                            <p class="text-center">La pasarela de pagos se añadira proximamente</p>
-
-                        </div>
-                    </form>
+                    <div id="precios"></div>
                 </div>
-
-
-
-
             </div>
         </div>
-
         <br><br>
         <br><br><br>
     </div>

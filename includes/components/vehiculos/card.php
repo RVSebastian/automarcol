@@ -50,7 +50,7 @@ figure {
         <?php 
               if ($datos['PresentationIMG'] !='') {
             ?>
-        <div class="col-sm-12 col-md-4 col-lg-4">
+        <div class="col-sm-6 col-md-4 col-lg-4 mb-2">
             <div class="card rounded vehicle carousel-cells m-4 shadow border-0 mx-auto animation_repuestos"
                 style="width: 31rem;">
                 <figure class="rounded-top" style="height: 25rem; width: 100%; background-color: transparent;">

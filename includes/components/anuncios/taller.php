@@ -37,14 +37,16 @@
     display: none !important;
 }
 
-/* Anything udner 1024px */
+
 @media screen and (max-width: 1024px) {
     .image-grid {
         --num-cols: 2;
         --row-height: 150px;
     }
 }
+
 </style>
+
 <section class="bg-dark">
     <div class="container">
         <div class="row gy-5">
