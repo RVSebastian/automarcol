@@ -7,8 +7,8 @@ if ($contador == 0) {
                     echo '
                     <div style="margin: 0 auto"> 
                     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                    <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_m3mzsgwp.json"  background="transparent"  speed="1"  style="width: 50rem; height: 50rem;"  loop  autoplay></lottie-player>
-                    <p class="p-2 text-center fs-4 fw-semibold">Aun no tienes nada en tu carrito</p>
+                    <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_m3mzsgwp.json"  background="transparent"  speed="1"  style="width: 50rem; height: 50rem; margin:0 auto;"  loop  autoplay></lottie-player>
+                    <p class="p-2 text-center fs-4 fw-semibold">Aun no tienes nada en tu carrito, <a href="./index#repuestos">Agrega productos aqui!</a></p>
                     </div>
                     ';
 }
@@ -17,13 +17,10 @@ $objet = json_decode($_SESSION['carrito'][$parte]['imagen']);
 ?>
 <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-<link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 
-<div class="card border-0 mb-3 animate__animated animate__bounce">
+<div class="card border-0 mb-3 animate__animated animate__fadeInUp animate__slower">
     <div class="row g-0">
         <div class="col-md-4">
             <div class="carousel carousel-main"

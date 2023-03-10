@@ -1,5 +1,5 @@
 <?php include'./includes/components/header.php';?>
-
+<br><br><br><br>
 <style>
 .carousel-cell {
     width: 100%;
@@ -42,15 +42,13 @@
     background-size: cover;
     filter: onblur('100%');
 }
-</style>
-<br><br><br><br>
-<style>
+
 .carousel-cell {
     width: 100%;
 }
 
 .otro p,
-span {
+.otro span {
     background-color: transparent !important;
 }
 
@@ -280,72 +278,101 @@ $(document).ready(function() {
         const precio = document.getElementById("costo").value;
         const descripcion = document.getElementById("desc").value;
         const imagen = document.getElementById("imagen").value;
-        swal({
-            title: 'Confirmacion',
-            text: 'Estas comprando ' + descripcion + ' con un costo de ' + precio +
-                ' la unidad',
-            icon: "warning",
-            buttons: {
-                cancel: "Cancelar",
-                catch: {
-                    id: "comprar",
-                    text: "Comprar",
-                    value: "true",
-                },
-            },
 
-            content: {
-                element: "input",
-                attributes: {
-                    id: "cantidad",
-                    placeholder: "Escribe la cantidad a comprar",
-                    type: "number",
+        function carritof1() {
+            swal({
+                title: 'Confirmacion',
+                text: 'Estas comprando ' + descripcion + ' con un costo de ' + precio +
+                    ' la unidad',
+                icon: "warning",
+                buttons: {
+                    cancel: "Cancelar",
+                    catch: {
+                        id: "comprar",
+                        text: "Comprar",
+                        value: "guardar",
+                    },
                 },
-            },
-        });
-        $(".swal-button--catch").click(function() {
-            var cantidad = document.getElementById("cantidad").value;
-            if (cantidad > stock) {
-                swal({
-                    title: 'Advertencia',
-                    text: 'Este Articulo tiene un stock de '+ stock + ' , por favor añade un valor dentro de dicha cantidad',
-                    icon: "error",
-                    buttons: {
-                        cancel: "Cancelar",
-                        catch: {
-                            id: "comprar",
-                            text: "Comprar",
-                            value: "true",
-                        },
+                content: {
+                    element: "input",
+                    attributes: {
+                        id: "cantidad",
+                        placeholder: "Escribe la cantidad a comprar",
+                        type: "number",
                     },
+                },
+            }).then((value) => {
+                if (value == 'guardar') {
+                    const cantidad = document.getElementById("cantidad").value;
+                    if (cantidad <= stock && cantidad > 0) {
+                        carritoguardar(cantidad);
+                    } else {
+                        carritoerror();
+                    };
+                }
+            });
+        };
 
-                    content: {
-                        element: "input",
-                        attributes: {
-                            id: "cantidad",
-                            placeholder: "Escribe la cantidad a comprar",
-                            type: "number",
-                        },
+        function carritoerror() {
+            swal({
+                title: 'Advertencia',
+                text: 'Este Articulo tiene un stock de ' + stock +
+                    ' articulos, por favor añade un valor dentro de dicha cantidad',
+                icon: "error",
+                buttons: {
+                    cancel: "Cancelar",
+                    catch: {
+                        id: "comprar",
+                        text: "Comprar",
+                        value: "guardar",
                     },
-                });
-            } else {
-                $.ajax({
-                    type: "POST",
-                    url: "./includes/php/carrito.php",
-                    data: {
-                        parte,
-                        descripcion,
-                        stock,
-                        cantidad,
-                        precio,
-                        imagen,
-                        guardar: 'true',
-                    }
-                }).done(function(res) {
-              
-                });
-            }
-        });
+                },
+                content: {
+                    element: "input",
+                    attributes: {
+                        id: "cantidad",
+                        placeholder: "Escribe la cantidad a comprar",
+                        type: "number",
+                    },
+                },
+            }).then((value) => {
+                if (value == 'guardar') {
+                    const cantidad = document.getElementById("cantidad").value;
+                    if (cantidad <= stock && cantidad > 0) {
+                        carritoguardar(cantidad);
+                    } else {
+                        carritoerror();
+                    };
+                }
+            });
+        };
+
+        function carritoguardar(cantidad) {
+            swal({
+                title: 'Confirmacion',
+                text: 'Se añadio ' + descripcion +
+                    ' a tu carrito, podras editar la cantidad nuevamente al momento de pagar',
+                icon: "success",
+            });
+            console.log(parte, descripcion, stock, cantidad, precio, imagen);
+            $.ajax({
+                type: "POST",
+                url: "./includes/php/carrito.php",
+                data: {
+                    parte,
+                    descripcion,
+                    stock,
+                    cantidad,
+                    precio,
+                    imagen,
+                    guardar: 'true',
+                }
+            }).done(function() {
+                window.location.reload();
+            });
+        };
+
+        carritof1();
     });
 });
 </script>

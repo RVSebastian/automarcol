@@ -179,7 +179,7 @@ anime({
                             style="background-image: url('https://autoextragti.com/wp-content/uploads/2022/03/bxobvm2023-ford-everest-sport-1400x788.jpeg');"
                             id="carta">
                             <div style="background: linear-gradient(180deg,black,rgba(0,57,81,0));">
-                                <h1 class="fw-semibold titulo-marca texto">Vehiculos Ford</h1>
+                                <h1 class="fw-semibold titulo-marca texto">Vehículos Ford</h1>
                                 <div class="oculto texto text-justify">
                                     <h3>Ya llegó a Colombia la nueva Ford Bronco, una camioneta lista para la
                                         aventura.</h3>
@@ -196,7 +196,7 @@ anime({
                             id="carta">
                             <div style="background: linear-gradient(180deg,black,rgba(0,57,81,0));">
 
-                                <h1 class="fw-semibold titulo-marca texto">Vehiculos Peugeot</h1>
+                                <h1 class="fw-semibold titulo-marca texto">Vehículos Peugeot</h1>
                                 <div class="oculto texto">
                                     <h3>Con nosotros podrás simular tu financiación o reservar tu próximo Peugeot de
                                         manera online.</h3>
@@ -213,7 +213,7 @@ anime({
                             id="carta">
                             <div style="background: linear-gradient(180deg,black,rgba(0,57,81,0));">
 
-                                <h1 class="fw-semibold titulo-marca texto">Vehiculos Foton</h1>
+                                <h1 class="fw-semibold titulo-marca texto">Vehículos Foton</h1>
                                 <div class="oculto texto">
                                     <h3>El quinto mayor fabricante de automóviles de China, con ventas anuales sobre el
                                         millón de unidades.</h3>
@@ -230,7 +230,7 @@ anime({
                             id="carta">
                             <div style="background: linear-gradient(180deg,black,rgba(0,57,81,0));">
 
-                                <h1 class="fw-semibold titulo-marca texto">Vehiculos Bajaj</h1>
+                                <h1 class="fw-semibold titulo-marca texto">Vehículos Bajaj</h1>
                                 <div class="oculto texto">
                                     <h3>Bajaj ha diseñado de manera inteligente la Cámara de Expansión de Torque ó
                                         ExhausTEC.</h3>
@@ -247,7 +247,7 @@ anime({
                             style="background-image: url('https://electrek.co/wp-content/uploads/sites/3/2019/12/jeep-phev-1-.jpg?quality=82&strip=all');"
                             id="carta">
                             <div class="" style="background: linear-gradient(180deg,black,rgba(0,57,81,0));">
-                                <h1 class="fw-semibold titulo-marca texto">Vehiculos FJDR</h1>
+                                <h1 class="fw-semibold titulo-marca texto">Vehículos FJDR</h1>a
                                 <div class="oculto texto">
                                     <h3>Desde los trabajos más exigentes hasta los viajes más largos, la RAM 700 SLT te
                                         llevará a donde necesites llegar.</h3>
@@ -506,7 +506,7 @@ $(document).ready(function() {
                             <div
                                 class="d-flex flex-column justify-content-center text-center bg-dark rounded h-100 p-3">
                                 <h1 class="text-white mb-0">Horarios</h1>
-                                <h2 class="text-white">De Atencion</h2>
+                                <h2 class="text-white">De Atención</h2>
                                 <h2 class="text-white">Taller</h2>
                             </div>
                         </div>
@@ -516,7 +516,7 @@ $(document).ready(function() {
                     style="visibility: visible; animation-delay: 3s; animation-name: fadeInUp;">
                     <div class="h-100 pt-2 wow fadeInUp">
                         <h2 class="my-5 text-justify p-2" style="font-size: 3rem; color: var(--main)">
-                            TALLER AUTORIZADO MULTIMARCA
+                            TALLER AUTORIZADO MULTIMARCAS
                         </h2>
                         <p class="mb-4 fs-4">
                             ¡Bienvenidos a nuestro taller multimarcas en Cúcuta! Somos un equipo de expertos en
@@ -546,12 +546,12 @@ $(document).ready(function() {
                             Lunes a Viernes de 8:00 a.m hasta las 12:00 p.m, se reanuda de 2:00 p.m a 6:00 p.m
                         </p>
                         <p class="mb-4 fs-4">
-                            Sabados de 8:00 a.m a 2:00 p.m, horario continuo
+                            Sábados de 8:00 a.m a 2:00 p.m, horario continuo
                         </p>
                         <hr>
                         <div class=" mt-4 pt-4">
                             <div class="d-flex align-items-center">
-                                <h3 class="mb-0">Numero de Atencion: +57 315 7006633</h3>
+                                <h3 class="mb-0">Numero de Atención: +57 315 7006633</h3>
                             </div>
                         </div>
                     </div>
@@ -564,7 +564,7 @@ $(document).ready(function() {
                     style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
                     <div class="h-100 pt-2">
                         <h2 class="my-5 text-justify p-2" style="font-size: 3rem; color: var(--main)">
-                            VENTAS DE VEHICULOS NUEVOS
+                            VENTAS DE VEHÍCULOS NUEVOS
                         </h2>
                         <p class="mb-4 fs-4">
                             ¡Gracias por tu interés en nuestros vehículos! Nuestro horario de atención para ventas es de
@@ -596,7 +596,7 @@ $(document).ready(function() {
                         <hr>
                         <div class=" mt-4 pt-4">
                             <div class="d-flex align-items-center">
-                                <h3 class="mb-0">Numero de Atencion: +57 315 7006633</h3>
+                                <h3 class="mb-0">Numero gerencial +57 315 4240028</h3>
                             </div>
                         </div>
                     </div>
@@ -611,7 +611,7 @@ $(document).ready(function() {
                             <div
                                 class="d-flex flex-column justify-content-center text-center bg-dark rounded h-100 p-3">
                                 <h1 class="text-white mb-0">Horarios</h1>
-                                <h2 class="text-white">De Atencion</h2>
+                                <h2 class="text-white">De Atención</h2>
                                 <h2 class="text-white">Ventas</h2>
                             </div>
                         </div>

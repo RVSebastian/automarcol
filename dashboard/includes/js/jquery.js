@@ -17,6 +17,14 @@ $("#marca").change(function () {
     .fail(function () {
       $("#error").show();
     });
+    var table = $("#prueba").DataTable({
+      ajax: "./components/stocklist.php",
+      order: [
+          [0, 'desc']
+      ],
+      select: true,
+  });
+
 });
 
 $("#marca2").change(function () {

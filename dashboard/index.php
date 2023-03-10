@@ -13,7 +13,7 @@
     }
     $data = array(
         'initialMonth' => '1',
-        'finalMonth' => '',
+        'finalMonth' => '12',
         'initialYear' => '2023',
         'finalYear' => '2023',
         'initialDay' => '1',
@@ -41,21 +41,37 @@
     }
     $result =  $almacenador;
     }
+
+    $marcas = array('FVN','FVF','FVNB','FVNP','FVNM');
+    $mes = date("m");
+    $i=0;
+    $total = 0;
+    $cantidad=0;
+    for($recorrido=0; $recorrido <= $mes; $recorrido++){
+        $i++;
+        foreach ($result as $documento) {
+           if (strtotime($documento['FechaFactura']) == $mes) {
+            if (in_array($documento->Factura, $marcas[$i])) {
+                $cantidad++;
+                $total += floatval(preg_replace("/[^0-9]/", "", $documento['ventatotal']));
+                echo '<input type="hidden" id="'.$marcas[$recorrido].$i.'_cantidad" value="'.$cantidad.'">';
+                echo '<input type="hidden" id="'.$marcas[$recorrido].$i.'_total" value="'.$total.'">';
+            }
+           }
+            
+        }
+    }
+
 ?>
-
-
-
-<div class="home-content">
-    <div class="basis-11/12 m-4 mt-1 p-4 bg-white shadow">
-        <div class="flex flex-wrap items-center">
-            <div class="basis-1/4">
+<div class="home-content ">
+    <div class="basis-11/12 m-4 mt-1 p-4">
+        <div class="flex flex-wrap items-center mx-auto">
+            <div class="md:basis-9/12 bg-white shadow p-4">
                 <canvas id="myChart" class="w-fill"></canvas>
             </div>
-            <div class="basis-1/4">
-                <canvas id="myChart2" class="w-fill"></canvas>
-            </div>
-            <div class="basis-1/4">
-                <canvas id="myChart3" class="w-fill"></canvas>
+            <div class="basis-3/12 mx-2 p-4" style="max-width: 22rem !important;">
+                <canvas id="myChart2" class="bg-white shadow m-2 p-4 w-fill h-fill"></canvas>
+                <canvas id="myChart3" class="bg-white shadow m-2 p-4 w-fill h-fill"></canvas>
             </div>
         </div>
 
@@ -63,61 +79,91 @@
 
         <script>
         const ctx = document.getElementById('myChart');
+        const ctx2 = document.getElementById('myChart2');
+        const ctx3 = document.getElementById('myChart3');
 
+        const FVN_total = document.getElementById('FVN_total').value;
+        /*
+        const FVF_total = document.getElementById('FVF_total').value;
+        const FVNB_total = document.getElementById('FVNB_total').value;
+        const FVNP_total = document.getElementById('FVNP_total').value;
+        const FVNM_total = document.getElementById('FVNM_total').value;
+        const FVN_cantidad = document.getElementById('FVN_cantidad').value;
+        const FVF_cantidad = document.getElementById('FVF_cantidad').value;
+        const FVNB_cantidad = document.getElementById('FVNB_cantidad').value;
+        const FVNP_cantidad = document.getElementById('FVNP_cantidad').value;
+        const FVNM_cantidad = document.getElementById('FVNM_cantidad').value;
+        */
         new Chart(ctx, {
-            type: 'doughnut',
+            type: 'line',
             data: {
-                labels: ['1', '2', '3', '4', '5', '6'],
+                labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Junio', 'Julio', 'Agosto', 'Septiembre',
+                    'Octubre', 'Noviembre', 'Diciembre'
+                ],
                 datasets: [{
-                    label: 'Post Ventas',
-                    data: [12, 19, 3, 5, 2, 3],
-                    borderWidth: 1
-                }]
+                    label: 'FORD NUEVOS',
+                    data: [FVN_total_1, FVN_total_2, FVN_total_3, FVN_total_4, FVN_total_5, FVN_total_6,
+                        FVN_total_7, FVN_total_8, FVN_total_9, FVN_total_10, FVN_total_11,
+                        FVN_total_12,
+                    ],
+                    borderWidth: 3
+                }, ]
             },
             options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Venta de Nuevos en el Año'
                     }
                 }
             }
         });
-        const ctx2 = document.getElementById('myChart2');
-
         new Chart(ctx2, {
             type: 'doughnut',
             data: {
-                labels: ['1', '2', '3', '4', '5', '6'],
+                labels: ['Ford', 'Foton', 'Bajaj', 'Peugeot', 'FJDR'],
                 datasets: [{
-                    label: 'Post Ventas',
-                    data: [12, 19, 3, 5, 2, 3],
-                    borderWidth: 1
+                    label: 'Venta de Nuevos',
+                    data: [FVN_cantidad, FVF_cantidad, FVNB_cantidad, FVNP_cantidad, FVNM_cantidad],
+                    borderWidth: 3
                 }]
             },
             options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Cantidad Vendida en el Año'
                     }
                 }
             }
         });
-        const ctx3 = document.getElementById('myChart3');
-
         new Chart(ctx3, {
             type: 'doughnut',
             data: {
-                labels: ['1', '2', '3', '4', '5', '6'],
+                labels: ['Ford', 'Foton', 'Bajaj', 'Peugeot', 'FJDR'],
                 datasets: [{
-                    label: 'Post Ventas',
-                    data: [12, 19, 3, 5, 2, 3],
-                    borderWidth: 1
+                    label: 'Venta de Nuevos',
+                    data: [FVN_cantidad, FVF_cantidad, FVNB_cantidad, FVNP_cantidad, FVNM_cantidad],
+                    borderWidth: 3
                 }]
             },
             options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Cantidad Vendida en el Año'
                     }
                 }
             }

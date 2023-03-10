@@ -7,6 +7,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <div class="row p-4 bg-white shadow sticky-top">
     <div class="col">
         <div class="p-2">
+
             <table class="table text-stard fs-4 p-4 table-striped overflow-x-scroll">
                 <thead>
                     <tr class="">

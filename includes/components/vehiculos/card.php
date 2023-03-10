@@ -53,7 +53,7 @@ figure {
         <div class="col-sm-6 col-md-4 col-lg-4 mb-2">
             <div class="card rounded vehicle carousel-cells m-4 shadow border-0 mx-auto animation_repuestos"
                 style="width: 31rem;">
-                <figure class="rounded-top" style="height: 25rem; width: 100%; background-color: transparent;">
+                <figure class="rounded-top" style="height: 20rem; width: 100%; background-color: transparent;">
                     <img src="./dashboard/galery/<?php echo $datos['Version_DescipcionModelo'];?>/<?php echo $datos['PresentationIMG'];?>"
                         class="img-fluid" style="display: block; margin: auto; height: 100%; width: 100%;"
                         onerror="this.onerror=null;this.src='https://autonal.com/wp-content/uploads/2021/07/placeholder-image-300x300.jpg';">

@@ -25,7 +25,11 @@ if (!isset($_SESSION['carrito'])) {
 }
 
 if (array_key_exists($parte, $_SESSION['carrito'])){
+  if($cantidad > $stock){
+    $_SESSION['carrito'][$parte]['cantidad'] = $stock;
+  }else{
     $_SESSION['carrito'][$parte]['cantidad'] += $cantidad;
+  }
 }else{
     $_SESSION['carrito'][$parte] = array(
     'parte'=>$parte,'descripcion'=>$descripcion, 'stock'=>$stock, 'precio'=>$precio, 'cantidad'=>$cantidad , 'imagen'=>$imagen

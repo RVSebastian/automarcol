@@ -18,14 +18,14 @@ $(document).ready(function($) {
                 url: "./includes/components/carrito/listado",
             })
             .done(function(res) {
-                $("#productos").html(res);
+                $("#productos").html(res),$("#cargando").hide();
             });
         $.ajax({
                 type: "POST",
                 url: "./includes/components/carrito/precios",
             })
             .done(function(res) {
-                $("#precios").html(res);
+                $("#precios").html(res),$("#cargando").hide();
             })
     };
     cargar();
@@ -51,7 +51,7 @@ function cargar() {
             },
         })
         .done(function(res) {
-            $("#precios").html(res),$("#cargando").hide();;
+            $("#precios").html(res),$("#cargando").hide();
         })
 };
 
