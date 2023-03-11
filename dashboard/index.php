@@ -42,26 +42,26 @@
     $result =  $almacenador;
     }
 
+
     $marcas = array('FVN','FVF','FVNB','FVNP','FVNM');
     $mes = date("m");
     $i=0;
     $total = 0;
     $cantidad=0;
-    for($recorrido=0; $recorrido <= $mes; $recorrido++){
-        $i++;
-        foreach ($result as $documento) {
-           if (strtotime($documento['FechaFactura']) == $mes) {
-            if (in_array($documento->Factura, $marcas[$i])) {
-                $cantidad++;
-                $total += floatval(preg_replace("/[^0-9]/", "", $documento['ventatotal']));
-                echo '<input type="hidden" id="'.$marcas[$recorrido].$i.'_cantidad" value="'.$cantidad.'">';
-                echo '<input type="hidden" id="'.$marcas[$recorrido].$i.'_total" value="'.$total.'">';
+    foreach ($marcas as $marca) {
+        for($recorrido=0; $recorrido <= $mes; ){
+            foreach ($result as $documento) {
+                if (strpos($documento['Factura'], $marcas[$recorrido]) !== false && substr($documento['FechaFactura'], 5, 2) <= $mes) {
+                    $total = $total + floatval(preg_replace("/[^0-9]/", "", $documento['ventatotal']));
+                }
             }
-           }
-            
+            echo 
+            '
+            <input type="hidden" name="datacontrol" id="'.$marcas[$recorrido].'_'.$recorrido.'_total'.'" value="'.$total.'">
+            ';
         }
+       
     }
-
 ?>
 <div class="home-content ">
     <div class="basis-11/12 m-4 mt-1 p-4">
@@ -81,19 +81,16 @@
         const ctx = document.getElementById('myChart');
         const ctx2 = document.getElementById('myChart2');
         const ctx3 = document.getElementById('myChart3');
+        const data = document.getElementById('data').value;
+        const inputs = document.querySelectorAll('input[name*="datacontrol"]');
+        const valores = [];
+        inputs.forEach((input) => {
+            const valor = input.value;
+            valores.push(valor);
+        });
 
-        const FVN_total = document.getElementById('FVN_total').value;
-        /*
-        const FVF_total = document.getElementById('FVF_total').value;
-        const FVNB_total = document.getElementById('FVNB_total').value;
-        const FVNP_total = document.getElementById('FVNP_total').value;
-        const FVNM_total = document.getElementById('FVNM_total').value;
-        const FVN_cantidad = document.getElementById('FVN_cantidad').value;
-        const FVF_cantidad = document.getElementById('FVF_cantidad').value;
-        const FVNB_cantidad = document.getElementById('FVNB_cantidad').value;
-        const FVNP_cantidad = document.getElementById('FVNP_cantidad').value;
-        const FVNM_cantidad = document.getElementById('FVNM_cantidad').value;
-        */
+        console.log(valores);
+        console.log(data);
         new Chart(ctx, {
             type: 'line',
             data: {
@@ -102,10 +99,7 @@
                 ],
                 datasets: [{
                     label: 'FORD NUEVOS',
-                    data: [FVN_total_1, FVN_total_2, FVN_total_3, FVN_total_4, FVN_total_5, FVN_total_6,
-                        FVN_total_7, FVN_total_8, FVN_total_9, FVN_total_10, FVN_total_11,
-                        FVN_total_12,
-                    ],
+                    data: valores,
                     borderWidth: 3
                 }, ]
             },
@@ -128,7 +122,7 @@
                 labels: ['Ford', 'Foton', 'Bajaj', 'Peugeot', 'FJDR'],
                 datasets: [{
                     label: 'Venta de Nuevos',
-                    data: [FVN_cantidad, FVF_cantidad, FVNB_cantidad, FVNP_cantidad, FVNM_cantidad],
+                    data: valores,
                     borderWidth: 3
                 }]
             },
@@ -151,7 +145,7 @@
                 labels: ['Ford', 'Foton', 'Bajaj', 'Peugeot', 'FJDR'],
                 datasets: [{
                     label: 'Venta de Nuevos',
-                    data: [FVN_cantidad, FVF_cantidad, FVNB_cantidad, FVNP_cantidad, FVNM_cantidad],
+                    data: valores,
                     borderWidth: 3
                 }]
             },
