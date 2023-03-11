@@ -42,14 +42,13 @@
     $result =  $almacenador;
     }
 
-
     $marcas = array('FVN','FVF','FVNB','FVNP','FVNM');
     $mes = date("m");
     $i=0;
     $total = 0;
     $cantidad=0;
     foreach ($marcas as $marca) {
-        for($recorrido=0; $recorrido <= $mes; ){
+        for($recorrido=0; $recorrido <= $mes; $recorrido++){
             foreach ($result as $documento) {
                 if (strpos($documento['Factura'], $marcas[$recorrido]) !== false && substr($documento['FechaFactura'], 5, 2) <= $mes) {
                     $total = $total + floatval(preg_replace("/[^0-9]/", "", $documento['ventatotal']));
@@ -81,7 +80,6 @@
         const ctx = document.getElementById('myChart');
         const ctx2 = document.getElementById('myChart2');
         const ctx3 = document.getElementById('myChart3');
-        const data = document.getElementById('data').value;
         const inputs = document.querySelectorAll('input[name*="datacontrol"]');
         const valores = [];
         inputs.forEach((input) => {
@@ -90,7 +88,7 @@
         });
 
         console.log(valores);
-        console.log(data);
+
         new Chart(ctx, {
             type: 'line',
             data: {
