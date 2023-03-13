@@ -34,6 +34,7 @@
     );
     curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
     $buscador=json_decode(curl_exec($ch),true);
+    $datasave[$i] = $buscador;
     if ($i != 0) {
         $almacenador=array_merge($almacenador,$buscador);
     }else{
@@ -62,11 +63,11 @@
                     $total = $total + floatval(preg_replace("/[^0-9]/", "", $documento['ventatotal']));
                 }
             }
-            array_push($total_tipo1[$tipo], $total);
+            array_push($total_tipo1, $total);
             $total_tipo1 = json_encode($total_tipo1, true);
             echo 
             '
-            <input type="hidden" name="datacontrol" value='.$total_tipo1.'></input>
+            <input type="hidden" name="datacontrol" value='.$total_tipo1[$tipo].'></input>
             ';
         }
     }
