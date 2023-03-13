@@ -47,19 +47,28 @@
     $i=0;
     $total = 0;
     $cantidad=0;
+    $total_tipo1 = array(
+        'FVN' => array(),
+        'FVF' => array(),
+        'FVNB' => array(),
+        'FVNP' => array(),
+        'FVNM' => array(),
+    );    
     foreach ($marcas as $marca) {
         for($recorrido=0; $recorrido <= $mes; $recorrido++){
+            $tipo = $marcas[$recorrido];
             foreach ($result as $documento) {
-                if (strpos($documento['Factura'], $marcas[$recorrido]) !== false && substr($documento['FechaFactura'], 5, 2) <= $mes) {
+                if (strpos($documento['Factura'], $tipo) !== false && substr($documento['FechaFactura'], 5, 2) <= $mes) {
                     $total = $total + floatval(preg_replace("/[^0-9]/", "", $documento['ventatotal']));
                 }
             }
+            array_push($total_tipo1[$tipo], $total);
+            $total_tipo1 = json_encode($total_tipo1, true);
             echo 
             '
-            <input type="hidden" name="datacontrol" id="'.$marcas[$recorrido].'_'.$recorrido.'_total'.'" value="'.$total.'">
+            <input type="hidden" name="datacontrol" value='.$total_tipo1.'></input>
             ';
         }
-       
     }
 ?>
 <div class="home-content ">
@@ -84,7 +93,7 @@
         const valores = [];
         inputs.forEach((input) => {
             const valor = input.value;
-            valores.push(valor);
+            valores.push(JSON.parse(valor));
         });
 
         console.log(valores);
@@ -97,7 +106,7 @@
                 ],
                 datasets: [{
                     label: 'FORD NUEVOS',
-                    data: valores,
+                    data: valores[0],
                     borderWidth: 3
                 }, ]
             },
